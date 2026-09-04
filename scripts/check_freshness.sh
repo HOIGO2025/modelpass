@@ -24,20 +24,44 @@ if [ -n "${MARKERS}" ]; then
 elif [ ! -f "${DB}" ]; then
     MSG="ModelPass: database ${DB} does not exist -- collection has never run."
 else
-    LAST="$(sqlite3 "${DB}" \
-        "SELECT COALESCE(MAX(finished_at),'') FROM runs WHERE status IN ('success','partial');")"
-    if [ -z "${LAST}" ]; then
-        MSG="ModelPass: no successful run has ever been recorded."
-    else
-        AGE_H="$(sqlite3 "${DB}" \
-            "SELECT CAST((julianday('now') - julianday(MAX(finished_at))) * 24 AS INT)
-             FROM runs WHERE status IN ('success','partial');")"
-        if [ "${AGE_H}" -lt "${MAX_AGE_HOURS}" ]; then
-            echo "ok: last successful run ${LAST} (${AGE_H}h ago)"
-            exit 0
-        fi
-        MSG="ModelPass: no successful run for ${AGE_H}h (last: ${LAST}, threshold ${MAX_AGE_HOURS}h). A day of the series may already be lost."
+    # python3 rather than the sqlite3 CLI: this check has to run on the host,
+    # outside the container, and a monitoring script must not need a package
+    # installed to tell you monitoring is broken.
+    OUT="$(python3 - "${DB}" "${MAX_AGE_HOURS}" <<'PYEOF'
+import sqlite3, sys
+from datetime import datetime, timezone
+
+db, max_age = sys.argv[1], float(sys.argv[2])
+try:
+    con = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
+    row = con.execute(
+        "SELECT MAX(finished_at) FROM runs WHERE status IN ('success','partial')"
+    ).fetchone()
+except sqlite3.Error as exc:
+    print(f"STALE|database unreadable ({exc})")
+    raise SystemExit(0)
+
+last = row[0] if row else None
+if not last:
+    print("STALE|no successful run has ever been recorded")
+    raise SystemExit(0)
+
+when = datetime.fromisoformat(last.replace("Z", "+00:00"))
+hours = (datetime.now(timezone.utc) - when).total_seconds() / 3600
+if hours < max_age:
+    print(f"OK|last successful run {last} ({hours:.1f}h ago)")
+else:
+    print(
+        f"STALE|no successful run for {hours:.1f}h (last: {last}, "
+        f"threshold {max_age:.0f}h). A day of the series may already be lost."
+    )
+PYEOF
+)"
+    if [ "${OUT%%|*}" = "OK" ]; then
+        echo "ok: ${OUT#*|}"
+        exit 0
     fi
+    MSG="ModelPass: ${OUT#*|}"
 fi
 
 echo "${MSG}" >&2
