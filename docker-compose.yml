@@ -11,8 +11,10 @@ services:
       args:
         # Must match the host user that owns ./data and ./db, or the container
         # cannot write its own archives. `id -u` / `id -g` on the host.
-        UID: "${UID:-1000}"
-        GID: "${GID:-1000}"
+        # Deliberately not named UID/GID: the shell scripts source .env, and
+        # UID is readonly in bash -- assigning it aborts them under `set -e`.
+        UID: "${MODELPASS_UID:-1000}"
+        GID: "${MODELPASS_GID:-1000}"
     image: modelpass:latest
     container_name: modelpass
     restart: unless-stopped

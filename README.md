@@ -239,8 +239,11 @@ Set `UID`/`GID` to the host account that owns `./data` and `./db` (the compose
 file defaults to 1000, which is `ubuntu` on most VPS images):
 
 ```bash
-echo "UID=$(id -u)" >> .env && echo "GID=$(id -g)" >> .env
+echo "MODELPASS_UID=$(id -u)" >> .env && echo "MODELPASS_GID=$(id -g)" >> .env
 ```
+
+(Not `UID`/`GID`: the shell scripts `source .env`, and `UID` is readonly in
+bash — assigning it would abort them under `set -e`.)
 
 The container runs as that user, never as root — otherwise `chmod 444` on the
 archives is decorative.
