@@ -11,7 +11,9 @@ FILE="data/daily/${DATE}.md"
 
 [ -f "${FILE}" ] || { echo "publish.sh: ${FILE} does not exist" >&2; exit 1; }
 
-git add "${FILE}"
+# Stage every unpublished summary, not just today's: a day the publish step
+# was missed then repairs itself on the next run instead of staying invisible.
+git add data/daily/
 if git diff --cached --quiet; then
     echo "publish.sh: nothing new to commit for ${DATE}"
     exit 0
@@ -22,7 +24,10 @@ fi
 # must run on the host free of a sqlite3 dependency.
 ROOT_HASH="$(python3 scripts/merkle_roots.py "${DATE}")"
 
-git commit -q -m "data: ${DATE}" -m "merkle_root: ${ROOT_HASH}"
+PENDING="$(git diff --cached --name-only | sed 's|data/daily/||;s|\.md$||' | tr '\n' ' ')"
+git commit -q -m "data: ${DATE}" \
+    -m "days in this commit: ${PENDING}" \
+    -m "merkle_root: ${ROOT_HASH}"
 if git remote get-url origin >/dev/null 2>&1; then
     git push -q origin HEAD
     echo "publish.sh: committed and pushed ${FILE}"
