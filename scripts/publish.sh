@@ -17,9 +17,10 @@ if git diff --cached --quiet; then
     exit 0
 fi
 
-ROOT_HASH="$(sqlite3 "${MODELPASS_DB:-db/modelpass.db}" \
-    "SELECT COALESCE(GROUP_CONCAT(merkle_root, ' '), 'none') FROM runs
-     WHERE substr(started_at,1,10)='${DATE}' AND merkle_root IS NOT NULL;")"
+# Read the roots straight from the day's manifests rather than the database:
+# the manifest is the authoritative record, and it keeps the one script that
+# must run on the host free of a sqlite3 dependency.
+ROOT_HASH="$(python3 scripts/merkle_roots.py "${DATE}")"
 
 git commit -q -m "data: ${DATE}" -m "merkle_root: ${ROOT_HASH}"
 if git remote get-url origin >/dev/null 2>&1; then
