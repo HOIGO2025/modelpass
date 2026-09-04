@@ -80,7 +80,13 @@ fi
 rm -f "${ROOT}"/logs/ALERT-*.txt
 
 if [ "${collect_rc}" -eq 2 ] || [ "${aux_rc}" -ne 0 ]; then
-    notify WARN "ModelPass ${DATE}: data collected and archived, but collect=${collect_rc} (2 = partial) aux=${aux_rc} (backup/publish). See ${ROOT}/${LOG}."
+    WARN_WHY=""
+    [ "${collect_rc}" -eq 2 ] && WARN_WHY="part of the run was lost (some models unreachable)"
+    if [ "${aux_rc}" -ne 0 ]; then
+        [ -n "${WARN_WHY}" ] && WARN_WHY="${WARN_WHY}; "
+        WARN_WHY="${WARN_WHY}backup or publish failed -- today's archive exists on this host only"
+    fi
+    notify WARN "ModelPass ${DATE}: the day was collected and archived, but ${WARN_WHY}. See ${ROOT}/${LOG}."
     exit 2
 fi
 
