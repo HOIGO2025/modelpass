@@ -29,40 +29,59 @@ DATE=$(date -u +%F)
 LOG="logs/${DATE}.log"
 mkdir -p logs
 
-alert() {
-    # 铁律 4: never fail silently.  Mail if we can, and always leave a marker
-    # file behind -- check_freshness.sh trips on it, so an unreachable MTA
-    # cannot turn a failure into silence.
-    local body="$1"
-    echo "${body}" >&2
-    printf '%s\n' "${body}" > "${ROOT}/logs/ALERT-${DATE}.txt"
+# 铁律 4 says a failure must never be silent.  It does not say every failure
+# is the same failure.  Two levels, because an alarm that is always red is an
+# alarm nobody reads:
+#
+#   ALERT  the day's data is lost or at risk -- collection or export failed
+#   WARN   the data was collected and archived, but something around it did
+#          not work: part of the run was lost, or backup/publish failed
+#
+# check_freshness.sh treats ALERT as red and WARN as a warning it prints
+# without failing.
+notify() {
+    local level="$1" body="$2"
+    echo "${level}: ${body}" >&2
+    printf '%s\n' "${body}" > "${ROOT}/logs/${level}-${DATE}.txt"
     if [ -n "${ALERT_EMAIL}" ] && command -v mail >/dev/null 2>&1; then
-        printf '%s\n' "${body}" | mail -s "[ModelPass] daily run failed" "${ALERT_EMAIL}" || true
+        printf '%s\n' "${body}" | \
+            mail -s "[ModelPass] ${level} ${DATE}" "${ALERT_EMAIL}" || true
     fi
 }
 
 # Every step runs even if an earlier one failed.  A partial day still wrote a
 # real archive that must be backed up, and a failed day's summary is exactly
 # the one the public record most needs to show.
-rc=0
+collect_rc=0
+export_rc=0
+aux_rc=0
 {
     echo "=== ModelPass daily run ${DATE} ==="
-    python -m src.collect --source huggingface --top "${MODELPASS_TOP:-1000}" || rc=$?
-    python -m src.export --date "${DATE}"                  || rc=1
-    bash scripts/backup.sh                                 || rc=1
+    python -m src.collect --source huggingface --top "${MODELPASS_TOP:-1000}" || collect_rc=$?
+    python -m src.export --date "${DATE}"                                     || export_rc=1
+    bash scripts/backup.sh                                                    || aux_rc=1
     if [ -d .git ]; then
-        bash scripts/publish.sh "${DATE}"                  || rc=1
+        bash scripts/publish.sh                                               || aux_rc=1
     else
         echo "publish: no git repo here (container?); run scripts/publish.sh on the host"
     fi
-    echo "=== done (rc=${rc}) ==="
+    echo "=== done (collect=${collect_rc} export=${export_rc} aux=${aux_rc}) ==="
 } >> "${LOG}" 2>&1
 
-if [ "${rc}" -ne 0 ]; then
-    alert "ModelPass daily run ${DATE} finished with rc=${rc}; see ${ROOT}/${LOG}"
+# collect exits 0 success, 1 failed, 2 partial.
+if [ "${collect_rc}" -eq 1 ] || [ "${export_rc}" -ne 0 ]; then
+    notify ALERT "ModelPass ${DATE}: collection or export FAILED (collect=${collect_rc} export=${export_rc}). See ${ROOT}/${LOG}. This day may be unrecoverable."
     exit 1
 fi
 
-# A good day clears the board.  Only clearing today's marker would leave
-# yesterday's failure flag up forever, and check_freshness.sh trips on it.
+# Collection succeeded, so today's data exists.  Clear any red flag left by an
+# earlier day -- a good day clears the board, or yesterday's failure stays lit
+# forever and the alarm stops meaning anything.
 rm -f "${ROOT}"/logs/ALERT-*.txt
+
+if [ "${collect_rc}" -eq 2 ] || [ "${aux_rc}" -ne 0 ]; then
+    notify WARN "ModelPass ${DATE}: data collected and archived, but collect=${collect_rc} (2 = partial) aux=${aux_rc} (backup/publish). See ${ROOT}/${LOG}."
+    exit 2
+fi
+
+rm -f "${ROOT}"/logs/WARN-*.txt

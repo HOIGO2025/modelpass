@@ -16,11 +16,17 @@ ALERT_EMAIL="${ALERT_EMAIL:-}"
 MAX_AGE_HOURS="${MAX_AGE_HOURS:-25}"
 DB="${MODELPASS_DB:-db/modelpass.db}"
 
-# A marker left by daily.sh means the run itself reported trouble, whether or
-# not the mail got out.  Trip on it even if the database looks fresh.
+# Markers left by daily.sh, so a failure is visible even when the mail did not
+# get out.  WARN is printed and moved past; only ALERT is red.  An alarm that
+# is permanently red -- because, say, no backup target is configured yet -- is
+# an alarm that gets ignored, which is the outcome 铁律 4 exists to prevent.
+for w in logs/WARN-*.txt; do
+    [ -e "${w}" ] || continue
+    echo "warning: $(cat "${w}")" >&2
+done
 MARKERS="$(ls -1 logs/ALERT-*.txt 2>/dev/null || true)"
 if [ -n "${MARKERS}" ]; then
-    MSG="ModelPass: daily.sh left failure markers: $(echo "${MARKERS}" | tr '\n' ' ')"
+    MSG="ModelPass: daily.sh reported a FAILED day: $(echo "${MARKERS}" | tr '\n' ' ')"
 elif [ ! -f "${DB}" ]; then
     MSG="ModelPass: database ${DB} does not exist -- collection has never run."
 else
