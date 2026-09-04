@@ -1,0 +1,7 @@
+# One model id per line. Blank lines and lines starting with # are ignored.
+# Used by:  python -m src.collect --source huggingface --list config/watchlist.txt
+Qwen/Qwen3-32B
+meta-llama/Llama-3.3-70B-Instruct
+mistralai/Mistral-7B-Instruct-v0.3
+deepseek-ai/DeepSeek-V3
+google/gemma-3-27b-it

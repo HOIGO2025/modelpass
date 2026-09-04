@@ -1,0 +1,24 @@
+# Secrets
+.env
+
+# Local database (rebuildable from data/raw/ via --replay)
+db/*.db
+db/*.db-wal
+db/*.db-shm
+db/snapshot.db
+
+# Raw archives: the irreplaceable asset, but too large for git.
+# Lives on the collection host + the backup host (scripts/backup.sh).
+data/raw/
+
+# Run logs
+logs/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Agent/tooling runtime state (operational artifacts, not project data)
+.omc/
+.claude/settings.local.json

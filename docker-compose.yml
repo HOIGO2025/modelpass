@@ -1,0 +1,33 @@
+# One service. Not a stack.
+#
+# The only thing that matters in this file is the volumes block: data/ and
+# db/ are bind mounts to the host, so rebuilding or deleting the container
+# cannot touch the archive. Never replace these with named volumes, and never
+# run `docker compose down -v` against this project.
+services:
+  modelpass:
+    build:
+      context: .
+      args:
+        # Must match the host user that owns ./data and ./db, or the container
+        # cannot write its own archives. `id -u` / `id -g` on the host.
+        UID: "${UID:-1000}"
+        GID: "${GID:-1000}"
+    image: modelpass:latest
+    container_name: modelpass
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      RUN_AT_UTC: "03:00"
+      TOP: "1000"
+      # The host's db/ is mounted at /app/state, NOT /app/db: mounting over
+      # /app/db would hide db/schema.sql that ships in the image, and the
+      # collector could not create its tables.
+      MODELPASS_DB: /app/state/modelpass.db
+    volumes:
+      - ./data:/app/data      # archives + daily summaries  <- irreplaceable
+      - ./db:/app/state       # database (rebuildable from data/raw)
+      - ./logs:/app/logs      # run logs and failure markers
+      # Off-site backup over ssh needs a key. Read-only, and only if you use
+      # BACKUP_HOST rather than R2.
+      # - ~/.ssh:/root/.ssh:ro

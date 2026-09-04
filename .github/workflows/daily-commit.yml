@@ -1,0 +1,80 @@
+# Third-party witness + independent "it didn't run" alarm.
+#
+# The collection host pushes data/daily/{date}.md every night
+# (scripts/publish.sh, called from scripts/daily.sh).  GitHub's commit
+# timestamp is then an outside party attesting that we held that data on
+# that date.
+#
+# This workflow does NOT collect anything -- the runner cannot see the
+# server's archives.  It does two things:
+#   * on push: sanity-check the summary that just arrived
+#   * on schedule: fail loudly if today's summary never showed up.  That
+#     failing run is a second alarm, independent of the server's own mail
+#     (铁律 4: a run that dies takes its own alert with it).
+name: daily-commit
+
+on:
+  push:
+    paths:
+      - 'data/daily/**'
+  schedule:
+    # 06:00 UTC, three hours after the 03:00 UTC collection cron.
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  witness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Summary for today exists
+        if: github.event_name != 'push'
+        run: |
+          DATE=$(date -u +%F)
+          FILE="data/daily/${DATE}.md"
+          if [ ! -f "${FILE}" ]; then
+            echo "::error::${FILE} is missing -- the collection host did not publish today."
+            echo "A day of the time series may have been lost. It cannot be back-filled."
+            exit 1
+          fi
+          echo "found ${FILE}"
+
+      - name: Latest summary is well formed
+        run: |
+          FILE=$(ls -1 data/daily/*.md 2>/dev/null | sort | tail -1 || true)
+          if [ -z "${FILE}" ]; then
+            echo "::error::no daily summaries in data/daily/"
+            exit 1
+          fi
+          echo "checking ${FILE}"
+          grep -q '^# ModelPass' "${FILE}" || {
+            echo "::error::${FILE} does not look like a ModelPass summary"; exit 1; }
+          if grep -q '\*\*No run recorded for this date\.\*\*' "${FILE}"; then
+            echo "::error::${FILE} records a day with no run at all"
+            exit 1
+          fi
+          # Red only when the day has NO good run at all. A failed run
+          # followed by a successful rerun is a recovered day.
+          if ! grep -qE '^\| [0-9]+ \|.*\*\*(success|partial)\*\*' "${FILE}"; then
+            echo "::error::${FILE} has no successful run -- that day was lost"
+            exit 1
+          fi
+          if grep -qE '^\| [0-9]+ \|.*\*\*(failed|partial)\*\*' "${FILE}"; then
+            echo "::warning::${FILE} contains a failed or partial run"
+          fi
+
+      - name: Raw archives stayed out of git
+        run: |
+          if git ls-files --error-unmatch data/raw >/dev/null 2>&1; then
+            echo "::error::data/raw/ is tracked in git; it must not be"
+            exit 1
+          fi
+          if git ls-files | grep -E '\.(db|env)$'; then
+            echo "::error::a database or .env file is tracked in git"
+            exit 1
+          fi
+          echo "clean"
