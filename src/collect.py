@@ -38,6 +38,10 @@ from .sources import huggingface
 
 SOURCES = {"huggingface": huggingface}
 
+# Cooldown before re-asking for the targets that failed.  Rate limiting is
+# the common cause and it is cured by waiting, not by trying harder.
+RETRY_SWEEP_WAIT = 60
+
 
 def utcnow():
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
@@ -190,27 +194,22 @@ def collect(source, top=None, listfile=None, db=None):
         attempted = len(targets)
 
         # --- 3. fetch, writing raw responses to disk as they arrive ------
+        pacer = mod.Pacer()
+        failures = []
+
         with open(tmp, "w", encoding="utf-8") as fh:
 
             def emit(rec):
                 fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
                 fh.flush()
 
-            for url, body in raw_pages:
-                emit(
-                    archive.make_record(
-                        "list", source, "__list__", url, utcnow(), 200, body
-                    )
-                )
-
-            for i, ext in enumerate(targets, 1):
+            def fetch_into(ext):
+                """Fetch one target and archive it.  Returns an error or None."""
+                nonlocal recorded, gone
                 try:
-                    status_code, body, url = mod.fetch_model(session, ext)
+                    status_code, body, url = mod.fetch_model(session, ext, pacer)
                 except mod.FetchError as exc:
-                    failed += 1
-                    notes.append(f"{ext}: {exc}")
-                    print(f"[collect] FAIL {ext}: {exc}", file=sys.stderr)
-                    continue
+                    return str(exc)
                 emit(
                     archive.make_record(
                         "model", source, ext, url, utcnow(), status_code, body
@@ -220,9 +219,56 @@ def collect(source, top=None, listfile=None, db=None):
                 if status_code in mod.ABSENT_STATUS:
                     gone += 1
                     print(f"[collect] ABSENT {ext}: HTTP {status_code}")
+                return None
+
+            for url, body in raw_pages:
+                emit(
+                    archive.make_record(
+                        "list", source, "__list__", url, utcnow(), 200, body
+                    )
+                )
+
+            for i, ext in enumerate(targets, 1):
+                err = fetch_into(ext)
+                if err:
+                    failures.append((ext, err))
+                    print(f"[collect] FAIL {ext}: {err}", file=sys.stderr)
                 if i % 100 == 0 or i == len(targets):
-                    print(f"[collect] {i}/{len(targets)} recorded={recorded} failed={failed}")
-                time.sleep(mod.REQUEST_PAUSE)
+                    print(
+                        f"[collect] {i}/{len(targets)} recorded={recorded} "
+                        f"failed={len(failures)} pause={pacer.pause:.2f}s"
+                    )
+                pacer.wait()
+
+            # Second pass.  A model missed today is missed forever, so pay a
+            # cooldown and ask again before the archive is frozen -- most
+            # failures are rate limiting, which cures itself with patience.
+            if failures:
+                print(
+                    f"[collect] {len(failures)} failed; cooling down "
+                    f"{RETRY_SWEEP_WAIT}s before a second pass"
+                )
+                time.sleep(RETRY_SWEEP_WAIT)
+                remaining = []
+                for ext, _ in failures:
+                    err = fetch_into(ext)
+                    if err:
+                        remaining.append((ext, err))
+                    pacer.wait()
+                print(
+                    f"[collect] second pass recovered "
+                    f"{len(failures) - len(remaining)} of {len(failures)}"
+                )
+                failures = remaining
+
+        failed = len(failures)
+        notes.extend(f"{ext}: {err}" for ext, err in failures[:40])
+        if failed > 40:
+            notes.append(f"... and {failed - 40} more failures")
+        if pacer.rate_limited:
+            notes.append(
+                f"rate limited {pacer.rate_limited}x; pause ended at {pacer.pause:.2f}s"
+            )
 
         # --- 4. freeze ---------------------------------------------------
         if not recorded:

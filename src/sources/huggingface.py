@@ -20,8 +20,15 @@ WEB = "https://huggingface.co"
 
 PAGE_LIMIT = 1000          # hub caps a single page here
 REQUEST_PAUSE = 0.3        # seconds between requests
+MAX_PAUSE = 3.0            # ceiling for adaptive slow-down
 TIMEOUT = 30               # seconds
 MAX_TRIES = 3              # 1 attempt + 2 retries on transient failures
+# 429 gets its own, larger budget: being rate limited is not an error, it is
+# the hub asking us to wait, and a datacentre IP will hear it far more often
+# than a home connection. Losing 3% of the day to impatience is not
+# acceptable for a series that cannot be back-filled.
+RATE_LIMIT_TRIES = 6
+MAX_RETRY_AFTER = 120      # seconds we are willing to honour
 RETRY_STATUS = {429, 500, 502, 503, 504}
 
 # Statuses that mean "we asked, and this model is not publicly there any
@@ -36,6 +43,27 @@ VERSION = "0.1"
 
 class FetchError(RuntimeError):
     """A target we could not observe at all (network / server side)."""
+
+
+class Pacer:
+    """Request spacing that tightens when the hub pushes back.
+
+    One 429 means the next thousand requests are about to be rejected too,
+    so slow the whole run down rather than burning retries one model at a
+    time. The pause never decays within a run: politeness is cheap, and a
+    missing observation is permanent.
+    """
+
+    def __init__(self, pause=REQUEST_PAUSE):
+        self.pause = pause
+        self.rate_limited = 0
+
+    def wait(self):
+        time.sleep(self.pause)
+
+    def penalize(self):
+        self.rate_limited += 1
+        self.pause = min(self.pause * 2, MAX_PAUSE)
 
 
 def build_session(contact=None):
@@ -53,7 +81,7 @@ def build_session(contact=None):
     return s
 
 
-def _get(session, url, params=None):
+def _get(session, url, params=None, pacer=None):
     """GET with bounded exponential backoff.
 
     Returns the requests.Response.  404/410 come back normally: "this model
@@ -61,20 +89,27 @@ def _get(session, url, params=None):
     when we never got an answer worth recording.
     """
     last = None
-    for attempt in range(1, MAX_TRIES + 1):
+    attempt = 0
+    budget = MAX_TRIES
+    while attempt < budget:
+        attempt += 1
         try:
             resp = session.get(url, params=params, timeout=TIMEOUT)
-            if resp.status_code in RETRY_STATUS and attempt < MAX_TRIES:
-                wait = _retry_after(resp, attempt)
+            if resp.status_code == 429:
+                # Rate limiting gets its own budget and slows the whole run.
+                budget = max(budget, RATE_LIMIT_TRIES)
+                if pacer is not None:
+                    pacer.penalize()
+            if resp.status_code in RETRY_STATUS and attempt < budget:
                 last = f"HTTP {resp.status_code}"
-                time.sleep(wait)
+                time.sleep(_retry_after(resp, attempt))
                 continue
             if resp.status_code in RETRY_STATUS:
                 raise FetchError(f"HTTP {resp.status_code} after {attempt} attempts: {url}")
             return resp
         except requests.RequestException as exc:
             last = f"{type(exc).__name__}: {exc}"
-            if attempt >= MAX_TRIES:
+            if attempt >= budget:
                 raise FetchError(f"{last} after {attempt} attempts: {url}") from exc
             time.sleep(2 ** (attempt - 1))
     raise FetchError(f"{last}: {url}")
@@ -84,10 +119,10 @@ def _retry_after(resp, attempt):
     raw = resp.headers.get("Retry-After")
     if raw:
         try:
-            return min(float(raw), 60.0)
+            return min(float(raw), MAX_RETRY_AFTER)
         except ValueError:
             pass
-    return 2 ** (attempt - 1)
+    return min(2 ** (attempt - 1), MAX_RETRY_AFTER)
 
 
 def list_targets(session, top):
@@ -153,10 +188,10 @@ def source_url(external_id):
     return f"{WEB}/{external_id}"
 
 
-def fetch_model(session, external_id):
+def fetch_model(session, external_id, pacer=None):
     """Return (http_status, raw_bytes, url).  Raises FetchError if unanswered."""
     url = model_url(external_id)
-    resp = _get(session, url)
+    resp = _get(session, url, pacer=pacer)
     return resp.status_code, resp.content, url
 
 

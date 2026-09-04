@@ -333,8 +333,24 @@ Adding a source means one new module in `src/sources/` exposing
 `parse_observation`, `ABSENT_STATUS`, `REQUEST_PAUSE`, `FetchError`, and one
 line in `SOURCES` in `src/collect.py`.
 
-## Manners
+## Manners, and rate limiting
 
 0.3 s between requests, 30 s timeout, 3 tries with exponential backoff,
-`Retry-After` honoured, 404 never retried, and a User-Agent that names the
-project and a contact address. One model failing never stops the run.
+`Retry-After` honoured, absent models never retried, and a User-Agent that
+names the project and a contact address. One model failing never stops the run.
+
+**A datacentre IP gets rate limited where a home connection does not.** The
+first 1000-model run from the collection host lost 31 models to HTTP 429; the
+same run from a residential link lost none. Three things address it:
+
+- 429 has its own, larger retry budget (`RATE_LIMIT_TRIES`), separate from the
+  budget for genuine errors.
+- The first 429 slows the whole run — the pause doubles, up to `MAX_PAUSE`, and
+  never decays within a run. Being rate limited once means the next thousand
+  requests are about to be rejected too.
+- Whatever still failed gets a **second pass** after a 60 s cooldown, before
+  the archive is frozen. A model missed today is missed forever, so it is worth
+  a minute.
+
+The real fix is `HF_TOKEN` in `.env`: authenticated requests get much higher
+limits. A read-only token is enough. Set it before the model count grows.
