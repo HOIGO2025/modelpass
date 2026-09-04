@@ -1,36 +1,40 @@
 #!/usr/bin/env bash
-# Commit the day's summary (and only the summary) to the public repo.
+# Commit the daily summaries (and only the summaries) to the public repo.
 #
-# GitHub's commit timestamp is a third party attesting that we held this
-# data on this date.  Raw archives never leave the collection host.
+# GitHub's commit timestamp is a third party attesting that we held this data
+# on this date. Raw archives never leave the collection host.
+#
+# Safe to run on any schedule, including hourly: it stages whatever summaries
+# are not yet committed and exits quietly when there is nothing new. That makes
+# it independent of the collector's clock -- which matters, because the
+# container schedules in UTC while cron runs in the host's local timezone.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-DATE="${1:-$(date -u +%F)}"
-FILE="data/daily/${DATE}.md"
+[ -d .git ] || { echo "publish.sh: not a git repository"; exit 1; }
 
-[ -f "${FILE}" ] || { echo "publish.sh: ${FILE} does not exist" >&2; exit 1; }
-
-# Stage every unpublished summary, not just today's: a day the publish step
+# Stage every unpublished summary, not just today's: a day whose publish step
 # was missed then repairs itself on the next run instead of staying invisible.
 git add data/daily/
+
 if git diff --cached --quiet; then
-    echo "publish.sh: nothing new to commit for ${DATE}"
+    echo "publish.sh: nothing new to publish"
     exit 0
 fi
 
-# Read the roots straight from the day's manifests rather than the database:
-# the manifest is the authoritative record, and it keeps the one script that
-# must run on the host free of a sqlite3 dependency.
-ROOT_HASH="$(python3 scripts/merkle_roots.py "${DATE}")"
+DAYS="$(git diff --cached --name-only \
+        | sed 's|.*/||; s|\.md$||' | sort | tr '\n' ' ' | sed 's/ $//')"
+LATEST="${DAYS##* }"
 
-PENDING="$(git diff --cached --name-only | sed 's|data/daily/||;s|\.md$||' | tr '\n' ' ')"
-git commit -q -m "data: ${DATE}" \
-    -m "days in this commit: ${PENDING}" \
+ROOT_HASH="$(python3 scripts/merkle_roots.py "${LATEST}")"
+
+git commit -q -m "data: ${LATEST}" \
+    -m "days in this commit: ${DAYS}" \
     -m "merkle_root: ${ROOT_HASH}"
+
 if git remote get-url origin >/dev/null 2>&1; then
     git push -q origin HEAD
-    echo "publish.sh: committed and pushed ${FILE}"
+    echo "publish.sh: published ${DAYS}"
 else
-    echo "publish.sh: committed ${FILE} (no 'origin' remote configured; not pushed)"
+    echo "publish.sh: committed ${DAYS} (no 'origin' remote; not pushed)"
 fi
