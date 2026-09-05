@@ -320,6 +320,8 @@ about 35 KB/day, but that is still the same vendor already holding the code and
 the summaries, and a public repo publishes the raw data the day it is
 collected rather than after the intended embargo.
 
+`docs/` is generated on the collection host and committed from there. Anywhere else, pass `--out` and preview it: two machines generating the same committed file means a merge conflict on every push, and only the host holding the real database produces the correct one.
+
 ## Restore
 
 ```bash

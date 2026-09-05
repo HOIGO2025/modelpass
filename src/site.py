@@ -336,7 +336,8 @@ def render(d, repo=None):
     return "\n".join(P) + "\n"
 
 
-def build(con, repo=None, verbose=False):
+def build(con, repo=None, verbose=False, outdir=None):
+    DOCS = outdir or globals()["DOCS"]
     DOCS.mkdir(parents=True, exist_ok=True)
     d = gather(con)
     (DOCS / "index.html").write_text(render(d, repo), encoding="utf-8")
@@ -357,10 +358,18 @@ def main(argv=None):
     ap = argparse.ArgumentParser(prog="python -m src.site")
     ap.add_argument("--db", help="database path")
     ap.add_argument("--repo", default="https://github.com/HOIGO2025/modelpass")
+    ap.add_argument(
+        "--out", metavar="DIR",
+        help="write somewhere other than docs/. Use this anywhere that is not "
+             "the collection host: docs/ is committed and served by GitHub "
+             "Pages, and only the machine holding the real database should "
+             "generate it -- two machines generating it means a merge conflict "
+             "on every push, and one of the two versions is simply wrong.")
     args = ap.parse_args(argv)
     con = connect(args.db)
     try:
-        build(con, args.repo, verbose=True)
+        from pathlib import Path as _P
+        build(con, args.repo, verbose=True, outdir=_P(args.out) if args.out else None)
     finally:
         con.close()
     return 0
