@@ -1,25 +1,20 @@
 {
- "generated_at": "2026-09-05T12:11:38Z",
- "last_success": "2026-09-05T03:25:24Z",
- "hours_since_success": 8.8,
- "stale": false,
- "observations": 3969,
+ "generated_at": "2026-09-05T17:39:51Z",
+ "last_success": "2026-09-04T13:12:09Z",
+ "hours_since_success": 28.5,
+ "stale": true,
+ "observations": 1000,
  "entities": 1000,
  "days": [
-  "2026-09-04",
-  "2026-09-05"
+  "2026-09-04"
  ],
  "first_day": "2026-09-04",
  "day_status": {
-  "2026-09-04": "partial",
-  "2026-09-05": "success"
+  "2026-09-04": "success"
  },
- "days_covered": 2,
- "days_missing": 0,
- "changes_by_severity": {
-  "low": 276,
-  "medium": 7
- },
+ "days_covered": 1,
+ "days_missing": 1,
+ "changes_by_severity": {},
  "declared": 915,
  "has_file": 221,
  "gap": 704,
@@ -79,24 +74,6 @@
  ],
  "archives": [
   {
-   "d": "2026-09-05",
-   "archive_path": "data/raw/huggingface/2026-09-05.jsonl.gz",
-   "archive_sha256": "92496f634c72b5be30d2b5db2f4cd34ee483a927967a59510b653fb02602efad",
-   "merkle_root": "2234ed962f2a45f53aa37c27c79e480046b5ae4a67dc6e92c19ffd2364321238"
-  },
-  {
-   "d": "2026-09-04",
-   "archive_path": "data/raw/huggingface/2026-09-04.3.jsonl.gz",
-   "archive_sha256": "cff380ab7a2baf12e7accc7e87d40757f952244ee451854f3c19a66d62811168",
-   "merkle_root": "bf6bcb24ee0daf62ad86191880f809dc19f0b9e5c5d701959fa4df7b9ea5aa63"
-  },
-  {
-   "d": "2026-09-04",
-   "archive_path": "data/raw/huggingface/2026-09-04.2.jsonl.gz",
-   "archive_sha256": "8510486545f30d7b032ec5364de3907744fc20004c00dcd92ea041269abff1e0",
-   "merkle_root": "a58e924bc240f7401345ec351a60ef8050033eeaffe3be8005917a94ebbc5d86"
-  },
-  {
    "d": "2026-09-04",
    "archive_path": "data/raw/huggingface/2026-09-04.jsonl.gz",
    "archive_sha256": "d73bca152e81e1b968ddeecadfc84d76064f28bae819809fde6e6c81d36a55e0",
@@ -106,69 +83,12 @@
  "calendar": [
   {
    "date": "2026-09-04",
-   "status": "partial"
+   "status": "success"
   },
   {
    "date": "2026-09-05",
-   "status": "success"
+   "status": "missing"
   }
  ],
- "notable_changes": [
-  {
-   "detected_date": "2026-09-05",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "6217ae6389e8d690256c71af9be8c48aeebf99a0",
-   "new_value": "304d34f7751f8ba9ca0eb55d5d10044234cdbfe2",
-   "external_id": "DeepBeepMeep/MiniMax-H3"
-  },
-  {
-   "detected_date": "2026-09-05",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "9c900de8cba582a887141f43a82d06d5316dcf38",
-   "new_value": "b0a090dc5c91b525109ca022d5aa0a0989a9e3d9",
-   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
-  },
-  {
-   "detected_date": "2026-09-05",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "1d2f88e021f6e18cccffbf5cdba5b59d451894da",
-   "new_value": "34792c22ef14d981910c7d2dc1351b54e4d8b1fb",
-   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-V13-GGUF"
-  },
-  {
-   "detected_date": "2026-09-04",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "b8ca3826548c9a7735642feb05c3c473f1fede1f",
-   "new_value": "4b8533275c5e5e267838c0312737f5a4323c01d0",
-   "external_id": "gittensor-model-hub/Qwen3.8-27B-NVFP4-RTX5090"
-  },
-  {
-   "detected_date": "2026-09-04",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "7c2fb757100090e125b01ba0294043260cadd522",
-   "new_value": "9c900de8cba582a887141f43a82d06d5316dcf38",
-   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
-  },
-  {
-   "detected_date": "2026-09-04",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "7c06fa317b050ea677764db46c87701e8cd2cff8",
-   "new_value": "1d2f88e021f6e18cccffbf5cdba5b59d451894da",
-   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-V13-GGUF"
-  },
-  {
-   "detected_date": "2026-09-04",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "78f9d27aa214792b77256affe774eea57e35b9ae",
-   "new_value": "dc6fecccc2b0c6bdda0a8b2f38fa61394fee0b9c",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  }
- ]
+ "notable_changes": []
 }

@@ -198,14 +198,17 @@ def digest(con, date):
     bad = [r for r in runs if r["status"] not in ("success",)]
     if not runs:
         L.append(f"{date}:没有任何运行记录。这一天补不回来。")
+        L.append("No run recorded. This day cannot be back-filled.")
     else:
         ok = [r for r in runs if r["status"] == "success"]
         tot = sum(r["succeeded"] for r in runs)
         L.append(f"{date}:{len(ok)}/{len(runs)} 次运行成功,记录 {tot} 条观测")
+        L.append(f"{len(ok)}/{len(runs)} runs ok · {tot} observations")
         for r in bad:
             L.append(
                 f"  ! run {r['id']} {r['status']}:"
                 f"成功 {r['succeeded']}/{r['attempted']},丢失 {r['failed']} 个模型"
+                f" / lost {r['failed']} models"
             )
 
     counts = dict(_rows(con, "SELECT severity, count(*) FROM changes WHERE detected_date=?"
@@ -222,7 +225,7 @@ def digest(con, date):
         if not rows:
             continue
         L.append("")
-        L.append(f"{sev.upper()}({'需要立刻看' if sev == 'high' else '留意'}):")
+        L.append(f"{sev.upper()}({'需要立刻看 look now' if sev == 'high' else '留意 worth a look'}):")
         for r in rows:
             L.append(f"  {r['external_id']}")
             L.append(f"    {r['field']}: {_fmt(r['old_value'], 34)} -> {_fmt(r['new_value'], 34)}")
