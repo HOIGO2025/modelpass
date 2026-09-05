@@ -30,6 +30,9 @@ services:
       - ./data:/app/data      # archives + daily summaries  <- irreplaceable
       - ./db:/app/state       # database (rebuildable from data/raw)
       - ./logs:/app/logs      # run logs and failure markers
+      # The control panel is generated into the repo and served by GitHub
+      # Pages, so it must land on the host, not in the container's layer.
+      - ./docs:/app/docs
       # Off-site backup over ssh needs a key. Read-only, and only if you use
       # BACKUP_HOST rather than R2.
       # - ~/.ssh:/root/.ssh:ro

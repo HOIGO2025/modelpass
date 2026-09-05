@@ -29,7 +29,7 @@ COPY scripts/            scripts/
 COPY config/             config/
 COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh scripts/*.sh \
- && mkdir -p /app/data /app/state /app/logs \
+ && mkdir -p /app/data /app/state /app/logs /app/docs \
  && chown -R "${UID}:${GID}" /app
 
 USER modelpass
@@ -37,7 +37,7 @@ USER modelpass
 # Everything the container must keep is a mount point, never image state.
 # /app/db is NOT a mount point: it holds schema.sql from the image.
 # The database itself lives under /app/state (see MODELPASS_DB).
-VOLUME ["/app/data", "/app/state", "/app/logs"]
+VOLUME ["/app/data", "/app/state", "/app/logs", "/app/docs"]
 
 ENV PYTHONUNBUFFERED=1 \
     RUN_AT_UTC=03:00 \
