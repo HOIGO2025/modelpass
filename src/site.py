@@ -220,7 +220,7 @@ def render(d, repo=None):
       f'<div class="why">{why}<div class="en">{en}</div></div></div>')
 
     # --- numbers -----------------------------------------------------------
-    a('<h2>累计</h2><div class="grid">')
+    a('<h2>累计 <span class="en">Totals</span></h2><div class="grid">')
     for n, l in [
         (f'{d["observations"]:,}', '观测记录<span class="en">observations</span>'),
         (f'{d["entities"]:,}', '追踪的模型<span class="en">models tracked</span>'),

@@ -1,5 +1,7 @@
 # ModelPass
 
+*English · [中文](README.zh.md)*
+
 A daily collector that records how open AI model metadata changes over time.
 
 The value here is not "which models exist" — anyone can scrape that this
