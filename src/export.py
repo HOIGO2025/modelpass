@@ -197,18 +197,21 @@ def digest(con, date):
     runs = _rows(con, "SELECT * FROM runs WHERE substr(started_at,1,10)=? ORDER BY id", (date,))
     bad = [r for r in runs if r["status"] not in ("success",)]
     if not runs:
-        L.append(f"{date}: NO RUN RECORDED. This day cannot be back-filled.")
+        L.append(f"{date}:没有任何运行记录。这一天补不回来。")
     else:
         ok = [r for r in runs if r["status"] == "success"]
         tot = sum(r["succeeded"] for r in runs)
-        L.append(f"{date}: {len(ok)}/{len(runs)} runs ok, {tot} observations recorded")
+        L.append(f"{date}:{len(ok)}/{len(runs)} 次运行成功,记录 {tot} 条观测")
         for r in bad:
-            L.append(f"  ! run {r['id']} {r['status']}: {r['succeeded']}/{r['attempted']} ok, {r['failed']} lost")
+            L.append(
+                f"  ! run {r['id']} {r['status']}:"
+                f"成功 {r['succeeded']}/{r['attempted']},丢失 {r['failed']} 个模型"
+            )
 
     counts = dict(_rows(con, "SELECT severity, count(*) FROM changes WHERE detected_date=?"
                              " GROUP BY severity", (date,)))
-    L.append(f"changes: {counts.get('high',0)} high, {counts.get('medium',0)} medium,"
-             f" {counts.get('low',0)} low")
+    L.append(f"变更:high {counts.get('high',0)} · medium {counts.get('medium',0)}"
+             f" · low {counts.get('low',0)}")
 
     for sev in ("high", "medium"):
         rows = _rows(con,
@@ -219,7 +222,7 @@ def digest(con, date):
         if not rows:
             continue
         L.append("")
-        L.append(f"{sev.upper()}:")
+        L.append(f"{sev.upper()}({'需要立刻看' if sev == 'high' else '留意'}):")
         for r in rows:
             L.append(f"  {r['external_id']}")
             L.append(f"    {r['field']}: {_fmt(r['old_value'], 34)} -> {_fmt(r['new_value'], 34)}")

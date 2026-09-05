@@ -26,9 +26,9 @@ for w in logs/WARN-*.txt; do
 done
 MARKERS="$(ls -1 logs/ALERT-*.txt 2>/dev/null || true)"
 if [ -n "${MARKERS}" ]; then
-    MSG="ModelPass: daily.sh reported a FAILED day: $(echo "${MARKERS}" | tr '\n' ' ')"
+    MSG="daily.sh 报告了失败的一天:$(echo "${MARKERS}" | tr '\n' ' ')"
 elif [ ! -f "${DB}" ]; then
-    MSG="ModelPass: database ${DB} does not exist -- collection has never run."
+    MSG="数据库 ${DB} 不存在 —— 采集从未运行过。"
 else
     # python3 rather than the sqlite3 CLI: this check has to run on the host,
     # outside the container, and a monitoring script must not need a package
@@ -44,22 +44,22 @@ try:
         "SELECT MAX(finished_at) FROM runs WHERE status IN ('success','partial')"
     ).fetchone()
 except sqlite3.Error as exc:
-    print(f"STALE|database unreadable ({exc})")
+    print(f"STALE|数据库无法读取({exc})")
     raise SystemExit(0)
 
 last = row[0] if row else None
 if not last:
-    print("STALE|no successful run has ever been recorded")
+    print("STALE|从未有过成功的采集记录")
     raise SystemExit(0)
 
 when = datetime.fromisoformat(last.replace("Z", "+00:00"))
 hours = (datetime.now(timezone.utc) - when).total_seconds() / 3600
 if hours < max_age:
-    print(f"OK|last successful run {last} ({hours:.1f}h ago)")
+    print(f"OK|最近一次成功采集 {last},{hours:.1f} 小时前")
 else:
     print(
-        f"STALE|no successful run for {hours:.1f}h (last: {last}, "
-        f"threshold {max_age:.0f}h). A day of the series may already be lost."
+        f"STALE|已经 {hours:.1f} 小时没有成功采集(上次 {last},阈值 "
+        f"{max_age:.0f} 小时)。这份时间序列可能已经断了一天。"
     )
 PYEOF
 )"
@@ -67,7 +67,7 @@ PYEOF
         echo "ok: ${OUT#*|}"
         exit 0
     fi
-    MSG="ModelPass: ${OUT#*|}"
+    MSG="${OUT#*|}"
 fi
 
 echo "${MSG}" >&2

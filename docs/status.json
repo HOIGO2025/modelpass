@@ -1,0 +1,94 @@
+{
+ "generated_at": "2026-09-05T12:06:51Z",
+ "last_success": "2026-09-04T13:12:09Z",
+ "hours_since_success": 22.9,
+ "stale": false,
+ "observations": 1000,
+ "entities": 1000,
+ "days": [
+  "2026-09-04"
+ ],
+ "first_day": "2026-09-04",
+ "day_status": {
+  "2026-09-04": "success"
+ },
+ "days_covered": 1,
+ "days_missing": 1,
+ "changes_by_severity": {},
+ "declared": 915,
+ "has_file": 221,
+ "gap": 704,
+ "undeclared": 85,
+ "gated": 35,
+ "licenses": [
+  {
+   "lic": "apache-2.0",
+   "total": 553,
+   "nofile": 444
+  },
+  {
+   "lic": "mit",
+   "total": 173,
+   "nofile": 140
+  },
+  {
+   "lic": "other",
+   "total": 86,
+   "nofile": 37
+  },
+  {
+   "lic": "cc-by-nc-4.0",
+   "total": 16,
+   "nofile": 16
+  },
+  {
+   "lic": "gemma",
+   "total": 15,
+   "nofile": 15
+  },
+  {
+   "lic": "cc-by-4.0",
+   "total": 14,
+   "nofile": 14
+  },
+  {
+   "lic": "cc-by-nc-sa-4.0",
+   "total": 8,
+   "nofile": 6
+  },
+  {
+   "lic": "llama3.1",
+   "total": 6,
+   "nofile": 2
+  },
+  {
+   "lic": "creativeml-openrail-m",
+   "total": 6,
+   "nofile": 6
+  },
+  {
+   "lic": "bsd-3-clause",
+   "total": 5,
+   "nofile": 5
+  }
+ ],
+ "archives": [
+  {
+   "d": "2026-09-04",
+   "archive_path": "data/raw/huggingface/2026-09-04.jsonl.gz",
+   "archive_sha256": "d73bca152e81e1b968ddeecadfc84d76064f28bae819809fde6e6c81d36a55e0",
+   "merkle_root": "bde4d5da698f64a7ee52945b77a2b282547ce162c7cca11f51894183af7cff81"
+  }
+ ],
+ "calendar": [
+  {
+   "date": "2026-09-04",
+   "status": "success"
+  },
+  {
+   "date": "2026-09-05",
+   "status": "missing"
+  }
+ ],
+ "notable_changes": []
+}

@@ -56,6 +56,7 @@ aux_rc=0
     echo "=== ModelPass daily run ${DATE} ==="
     python -m src.collect --source huggingface --top "${MODELPASS_TOP:-1000}" || collect_rc=$?
     python -m src.export --date "${DATE}"                                     || export_rc=1
+    python -m src.site                                                        || export_rc=1
     bash scripts/backup.sh                                                    || aux_rc=1
     if [ -d .git ]; then
         bash scripts/publish.sh                                               || aux_rc=1
@@ -67,7 +68,7 @@ aux_rc=0
 
 # collect exits 0 success, 1 failed, 2 partial.
 if [ "${collect_rc}" -eq 1 ] || [ "${export_rc}" -ne 0 ]; then
-    notify ALERT "ModelPass ${DATE}: collection or export FAILED (collect=${collect_rc} export=${export_rc}). See ${ROOT}/${LOG}. This day may be unrecoverable."
+    notify ALERT "${DATE}:采集或导出失败(collect=${collect_rc} export=${export_rc})。这一天可能补不回来。\n日志:${ROOT}/${LOG}"
     exit 1
 fi
 
@@ -78,12 +79,12 @@ rm -f "${ROOT}"/logs/ALERT-*.txt
 
 if [ "${collect_rc}" -eq 2 ] || [ "${aux_rc}" -ne 0 ]; then
     WARN_WHY=""
-    [ "${collect_rc}" -eq 2 ] && WARN_WHY="part of the run was lost (some models unreachable)"
+    [ "${collect_rc}" -eq 2 ] && WARN_WHY="部分模型没采到(partial run)"
     if [ "${aux_rc}" -ne 0 ]; then
-        [ -n "${WARN_WHY}" ] && WARN_WHY="${WARN_WHY}; "
-        WARN_WHY="${WARN_WHY}backup or publish failed -- today's archive exists on this host only"
+        [ -n "${WARN_WHY}" ] && WARN_WHY="${WARN_WHY};"
+        WARN_WHY="${WARN_WHY}备份或发布失败 —— 今天的归档只存在于这一台机器上"
     fi
-    notify WARN "ModelPass ${DATE}: the day was collected and archived, but ${WARN_WHY}. See ${ROOT}/${LOG}."
+    notify WARN "${DATE}:数据已采集并归档,但 ${WARN_WHY}。\n日志:${ROOT}/${LOG}"
     exit 2
 fi
 

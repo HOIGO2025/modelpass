@@ -15,7 +15,8 @@ cd "$(dirname "$0")/.."
 
 # Stage every unpublished summary, not just today's: a day whose publish step
 # was missed then repairs itself on the next run instead of staying invisible.
-git add data/daily/
+# docs/ is the control panel, regenerated each run and served by GitHub Pages.
+git add data/daily/ docs/
 
 if git diff --cached --quiet; then
     echo "publish.sh: nothing new to publish"
@@ -23,8 +24,11 @@ if git diff --cached --quiet; then
 fi
 
 DAYS="$(git diff --cached --name-only \
-        | sed 's|.*/||; s|\.md$||' | sort | tr '\n' ' ' | sed 's/ $//')"
+        | grep '^data/daily/' | sed 's|.*/||; s|\.md$||' | sort | tr '\n' ' ' \
+        | sed 's/ $//')"
 LATEST="${DAYS##* }"
+[ -n "${LATEST}" ] || LATEST="$(date -u +%F)"
+[ -n "${DAYS}" ] || DAYS="(panel only)"
 
 ROOT_HASH="$(python3 scripts/merkle_roots.py "${LATEST}")"
 
