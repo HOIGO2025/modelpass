@@ -26,23 +26,34 @@ fail() {
     exit 1
 }
 
-if [ -z "${BACKUP_HOST:-}" ]; then
-    fail "BACKUP_HOST is not set"
+if [ -z "${BACKUP_HOST:-}" ] && [ -z "${R2_REMOTE:-}" ]; then
+    fail "neither BACKUP_HOST nor R2_REMOTE is set"
 fi
 
 WORK="$(mktemp -d)"
 trap 'rm -rf "${WORK}"' EXIT
 
-# Pick a random archived day that exists on the BACKUP host, not locally --
-# the point is to prove the remote copy is good.
-DAY_FILE="$(ssh "${BACKUP_HOST}" \
-    "ls /archive/modelpass/${SOURCE}/*.jsonl.gz 2>/dev/null" | sort -R | head -1)" \
-    || fail "cannot list archives on ${BACKUP_HOST}"
-[ -n "${DAY_FILE}" ] || fail "no archives found on ${BACKUP_HOST}"
-
-BASE="${DAY_FILE%.jsonl.gz}"
-scp -q "${BACKUP_HOST}:${DAY_FILE}" "${WORK}/" || fail "scp failed for ${DAY_FILE}"
-scp -q "${BACKUP_HOST}:${BASE}.manifest.json" "${WORK}/" || fail "scp failed for manifest of ${DAY_FILE}"
+# Pick a random archived day that exists on the BACKUP side, not locally --
+# the point is to prove the remote copy is good, not the one we already have.
+if [ -n "${R2_REMOTE:-}" ]; then
+    DAY_FILE="$(rclone lsf "${R2_REMOTE}/raw/${SOURCE}" --include '*.jsonl.gz' 2>/dev/null \
+                | sort -R | head -1)" || fail "cannot list ${R2_REMOTE}"
+    [ -n "${DAY_FILE}" ] || fail "no archives found in ${R2_REMOTE}/raw/${SOURCE}"
+    BASE="${DAY_FILE%.jsonl.gz}"
+    rclone copy "${R2_REMOTE}/raw/${SOURCE}/${DAY_FILE}" "${WORK}/" \
+        || fail "rclone copy failed for ${DAY_FILE}"
+    rclone copy "${R2_REMOTE}/raw/${SOURCE}/${BASE}.manifest.json" "${WORK}/" \
+        || fail "rclone copy failed for the manifest of ${DAY_FILE}"
+else
+    DAY_FILE="$(ssh "${BACKUP_HOST}" \
+        "ls /archive/modelpass/${SOURCE}/*.jsonl.gz 2>/dev/null" | sort -R | head -1)" \
+        || fail "cannot list archives on ${BACKUP_HOST}"
+    [ -n "${DAY_FILE}" ] || fail "no archives found on ${BACKUP_HOST}"
+    BASE="${DAY_FILE%.jsonl.gz}"
+    scp -q "${BACKUP_HOST}:${DAY_FILE}" "${WORK}/" || fail "scp failed for ${DAY_FILE}"
+    scp -q "${BACKUP_HOST}:${BASE}.manifest.json" "${WORK}/" \
+        || fail "scp failed for the manifest of ${DAY_FILE}"
+fi
 
 LOCAL="${WORK}/$(basename "${DAY_FILE}")"
 chmod u+w "${LOCAL}" "${WORK}/$(basename "${BASE}").manifest.json" 2>/dev/null || true

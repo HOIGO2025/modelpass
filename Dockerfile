@@ -7,7 +7,7 @@ FROM python:3.12-slim
 # sqlite3 CLI: backup snapshots, freshness checks, publish.
 # rsync + openssh-client: scripts/backup.sh to an off-site host.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        sqlite3 rsync openssh-client ca-certificates tzdata \
+        sqlite3 rsync openssh-client ca-certificates tzdata rclone \
     && rm -rf /var/lib/apt/lists/*
 
 # Run as a real user, not root. chmod 444 on an archive is worthless if the
