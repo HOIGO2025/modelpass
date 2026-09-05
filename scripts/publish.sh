@@ -23,16 +23,21 @@ if git diff --cached --quiet; then
     exit 0
 fi
 
+# `grep` exits 1 when nothing matches, and the panel changes on every run
+# while a new summary appears only once a day -- so "docs/ only" is the
+# common case, and it must not abort the script under `set -e`.
 DAYS="$(git diff --cached --name-only \
-        | grep '^data/daily/' | sed 's|.*/||; s|\.md$||' | sort | tr '\n' ' ' \
-        | sed 's/ $//')"
+        | { grep '^data/daily/' || :; } | sed 's|.*/||; s|\.md$||' \
+        | sort | tr '\n' ' ' | sed 's/ $//')"
 LATEST="${DAYS##* }"
 [ -n "${LATEST}" ] || LATEST="$(date -u +%F)"
 [ -n "${DAYS}" ] || DAYS="(panel only)"
 
 ROOT_HASH="$(python3 scripts/merkle_roots.py "${LATEST}")"
 
-git commit -q -m "data: ${LATEST}" \
+SUBJECT="data: ${LATEST}"
+[ "${DAYS}" = "(panel only)" ] && SUBJECT="panel: ${LATEST}"
+git commit -q -m "${SUBJECT}" \
     -m "days in this commit: ${DAYS}" \
     -m "merkle_root: ${ROOT_HASH}"
 
