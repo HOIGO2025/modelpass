@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Pull the archives down from the collection host, on this machine.
+
+  launchd rather than cron, for one reason: StartCalendarInterval fires on
+  wake if the machine was asleep at the scheduled time. cron simply skips it.
+  A laptop that is shut at noon must still take the backup when it opens.
+
+  Install:
+    cp launchd/com.modelpass.pullbackup.plist ~/Library/LaunchAgents/
+    launchctl load ~/Library/LaunchAgents/com.modelpass.pullbackup.plist
+    launchctl start com.modelpass.pullbackup      # run once now
+  Remove:
+    launchctl unload ~/Library/LaunchAgents/com.modelpass.pullbackup.plist
+
+  Edit ProgramArguments below if the repo is not at ~/bmshowshow.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.modelpass.pullbackup</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>--login</string>
+    <string>-c</string>
+    <string>exec "$HOME/bmshowshow/scripts/pull_backup.sh"</string>
+  </array>
+
+  <!-- Twice a day. The collection host runs at 03:00 UTC (11:00 in Asia/
+       Shanghai); the later slot catches a laptop that was shut at noon. -->
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Hour</key><integer>12</integer><key>Minute</key><integer>30</integer></dict>
+    <dict><key>Hour</key><integer>21</integer><key>Minute</key><integer>30</integer></dict>
+  </array>
+
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>/tmp/modelpass-pull.out</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/modelpass-pull.err</string>
+
+  <!-- Never let a backup pull get in the way of what the machine is doing. -->
+  <key>Nice</key>
+  <integer>10</integer>
+  <key>ProcessType</key>
+  <string>Background</string>
+</dict>
+</plist>

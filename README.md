@@ -279,6 +279,45 @@ says so rather than failing. Run `scripts/publish.sh` from the host, e.g.:
 30 4 * * * cd /path/to/modelpass && scripts/publish.sh $(date -u +\%F)
 ```
 
+## Backups: three copies, and only one of them is safe from this host
+
+`data/raw/` is the only thing in this project that cannot be rebuilt from
+anything else. It needs more than one copy, and the copies are not equivalent:
+
+| copy | how | can the collection host destroy it? |
+|---|---|---|
+| `scripts/pull_backup.sh` on a laptop or NAS | **pull** over ssh | **no** |
+| Cloudflare R2 (`R2_REMOTE`) | push via rclone | yes — the host holds write keys |
+| rsync to another server (`BACKUP_HOST`) | push over ssh | yes — same |
+
+That column is the whole point. A push target is only as safe as the machine
+pushing to it: whatever owns the collection host — a compromise, ransomware, a
+mistaken `rm -rf`, a suspended cloud account — owns those backups too. A pull
+from a machine the host cannot reach is the one copy that survives all of it.
+
+It is also the one that stops when the laptop is shut, which is why it does not
+replace R2. Keep both: the pull copy is the immutable one, R2 is the one that
+runs unattended.
+
+```bash
+# on any machine that can ssh to the collection host, and that the collection
+# host cannot ssh back into
+MODELPASS_HOST=lisong-cf scripts/pull_backup.sh
+```
+
+It never passes `--delete`: an archive that disappears upstream must not
+disappear here, because that disappearance is exactly what a backup is for.
+Every pull re-verifies every archive it holds with `verify_merkle.py`, and
+writes `status.json` next to the mirror. On macOS, `launchd/` has a job that
+runs it twice a day and, unlike cron, catches up after the machine wakes.
+
+Do not put the archives in the public repo. Committing `.jsonl.gz` costs
+3.0 MB/day with no delta compression — gzip is opaque to git — which is 1.1 GB
+a year and past GitHub's guidance within months. Uncompressed it deltas to
+about 35 KB/day, but that is still the same vendor already holding the code and
+the summaries, and a public repo publishes the raw data the day it is
+collected rather than after the intended embargo.
+
 ## Restore
 
 ```bash
