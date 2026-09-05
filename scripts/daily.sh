@@ -43,10 +43,7 @@ notify() {
     local level="$1" body="$2"
     echo "${level}: ${body}" >&2
     printf '%s\n' "${body}" > "${ROOT}/logs/${level}-${DATE}.txt"
-    if [ -n "${ALERT_EMAIL}" ] && command -v mail >/dev/null 2>&1; then
-        printf '%s\n' "${body}" | \
-            mail -s "[ModelPass] ${level} ${DATE}" "${ALERT_EMAIL}" || true
-    fi
+    bash scripts/notify.sh "${level}" "${body}" || true
 }
 
 # Every step runs even if an earlier one failed.  A partial day still wrote a
@@ -91,3 +88,11 @@ if [ "${collect_rc}" -eq 2 ] || [ "${aux_rc}" -ne 0 ]; then
 fi
 
 rm -f "${ROOT}"/logs/WARN-*.txt
+
+# A clean day is not worth a notification on its own -- that is what the daily
+# commit is for. But a day that actually found something is: a licence change
+# is the entire point of running this, and it should reach a phone the day it
+# happens, not whenever someone next opens the repo.
+python -m src.export --date "${DATE}" --digest --only-notable 2>/dev/null \
+    | { read -r first || exit 0; { printf '%s\n' "${first}"; cat; } \
+        | bash scripts/notify.sh INFO - ; } || true

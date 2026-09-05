@@ -187,6 +187,58 @@ def write_daily(con, date, verbose=False):
     return path
 
 
+def digest(con, date):
+    """Short plain-text summary of a day, for a notification.
+
+    Only what would make someone look: run trouble, and high/medium changes.
+    Nobody needs a push notification about 121 likes.
+    """
+    L = []
+    runs = _rows(con, "SELECT * FROM runs WHERE substr(started_at,1,10)=? ORDER BY id", (date,))
+    bad = [r for r in runs if r["status"] not in ("success",)]
+    if not runs:
+        L.append(f"{date}: NO RUN RECORDED. This day cannot be back-filled.")
+    else:
+        ok = [r for r in runs if r["status"] == "success"]
+        tot = sum(r["succeeded"] for r in runs)
+        L.append(f"{date}: {len(ok)}/{len(runs)} runs ok, {tot} observations recorded")
+        for r in bad:
+            L.append(f"  ! run {r['id']} {r['status']}: {r['succeeded']}/{r['attempted']} ok, {r['failed']} lost")
+
+    counts = dict(_rows(con, "SELECT severity, count(*) FROM changes WHERE detected_date=?"
+                             " GROUP BY severity", (date,)))
+    L.append(f"changes: {counts.get('high',0)} high, {counts.get('medium',0)} medium,"
+             f" {counts.get('low',0)} low")
+
+    for sev in ("high", "medium"):
+        rows = _rows(con,
+            "SELECT e.external_id, c.field, c.old_value, c.new_value"
+            " FROM changes c JOIN entities e ON e.id=c.entity_id"
+            " WHERE c.detected_date=? AND c.severity=? ORDER BY c.field LIMIT 15",
+            (date, sev))
+        if not rows:
+            continue
+        L.append("")
+        L.append(f"{sev.upper()}:")
+        for r in rows:
+            L.append(f"  {r['external_id']}")
+            L.append(f"    {r['field']}: {_fmt(r['old_value'], 34)} -> {_fmt(r['new_value'], 34)}")
+    return "\n".join(L)
+
+
+def has_notable(con, date):
+    """Is there anything here worth interrupting someone for?"""
+    n = con.execute(
+        "SELECT count(*) FROM changes WHERE detected_date=? AND severity IN ('high','medium')",
+        (date,),
+    ).fetchone()[0]
+    bad = con.execute(
+        "SELECT count(*) FROM runs WHERE substr(started_at,1,10)=? AND status<>'success'",
+        (date,),
+    ).fetchone()[0]
+    return n > 0 or bad > 0
+
+
 def write_csv(con, outdir, date=None):
     outdir = Path(outdir)
     outdir.mkdir(parents=True, exist_ok=True)
@@ -227,11 +279,22 @@ def main(argv=None):
     ap = argparse.ArgumentParser(prog="python -m src.export")
     ap.add_argument("--date", help="YYYY-MM-DD (UTC)")
     ap.add_argument("--csv", metavar="DIR", help="also dump tables as CSV into DIR")
+    ap.add_argument("--digest", action="store_true",
+                    help="print a short plain-text digest for --date and exit")
+    ap.add_argument("--only-notable", action="store_true",
+                    help="with --digest, print nothing unless something is worth reporting")
     ap.add_argument("--db", help="database path (default db/modelpass.db)")
     args = ap.parse_args(argv)
 
     con = connect(args.db)
     try:
+        if args.digest:
+            if not args.date:
+                ap.error("--digest needs --date")
+            if args.only_notable and not has_notable(con, args.date):
+                return 0
+            print(digest(con, args.date))
+            return 0
         if args.date:
             write_daily(con, args.date, verbose=True)
         elif not args.csv:

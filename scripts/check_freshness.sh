@@ -73,7 +73,5 @@ fi
 echo "${MSG}" >&2
 mkdir -p logs
 printf '%s\n' "${MSG}" >> "logs/freshness-alerts.log"
-if [ -n "${ALERT_EMAIL}" ] && command -v mail >/dev/null 2>&1; then
-    printf '%s\n' "${MSG}" | mail -s "[ModelPass] collection is stale" "${ALERT_EMAIL}" || true
-fi
+bash scripts/notify.sh ALERT "${MSG}" || true
 exit 1
