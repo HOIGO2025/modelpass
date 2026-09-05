@@ -36,6 +36,16 @@
     <dict><key>Hour</key><integer>21</integer><key>Minute</key><integer>30</integer></dict>
   </array>
 
+  <!-- Direct ssh, not the Cloudflare Access tunnel. An unattended job should
+       depend on as little as possible: the tunnel needs cloudflared on PATH
+       and an Access token that expires, and it is slower besides. Change this
+       to your own ssh host alias. -->
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>MODELPASS_HOST</key>
+    <string>lisong</string>
+  </dict>
+
   <key>RunAtLoad</key>
   <false/>
 

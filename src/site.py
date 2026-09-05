@@ -163,6 +163,21 @@ def gather(con):
         FROM observations o WHERE {latest} AND declared_license IS NOT NULL
         GROUP BY lic ORDER BY total DESC LIMIT 10""")]
 
+    # An off-host copy reports in after each successful pull. Absent or old
+    # means the only copy of the archives is on this machine.
+    d["offhost"] = None
+    bs = ROOT / "logs" / "backup-status.json"
+    if bs.exists():
+        try:
+            with open(bs, encoding="utf-8") as fh:
+                b = json.load(fh)
+            age = _hours_since(b.get("pulled_at"))
+            b["hours_ago"] = None if age is None else round(age, 1)
+            b["stale"] = age is None or age >= 48
+            d["offhost"] = b
+        except (OSError, ValueError):
+            pass
+
     d["archives"] = [dict(r) for r in _rows(
         con, "SELECT substr(started_at,1,10) d, archive_path, archive_sha256, merkle_root"
              " FROM runs WHERE archive_path IS NOT NULL ORDER BY id DESC LIMIT 10")]
@@ -233,6 +248,30 @@ def render(d, repo=None):
     ]:
         a(f'<div class="card"><div class="n">{n}</div><div class="l">{l}</div></div>')
     a("</div>")
+
+    # --- off-host copy -----------------------------------------------------
+    o = d.get("offhost")
+    if o is None:
+        a('<div class="banner bad" style="margin-top:10px">'
+          '<div class="big">异地副本:没有 '
+          '<span class="en">Off-host copy: none</span></div>'
+          '<div class="why">归档目前只存在于采集主机上。这台机器坏掉,整份序列归零。'
+          '<div class="en">The archives exist only on the collection host. '
+          "If it dies, the entire series goes with it.</div></div></div>")
+    else:
+        cls = "warn" if o.get("stale") else "ok"
+        word = "已陈旧" if o.get("stale") else "正常"
+        en = "stale" if o.get("stale") else "current"
+        a(f'<div class="banner {cls}" style="margin-top:10px">'
+          f'<div class="big">异地副本:{word} '
+          f'<span class="en">Off-host copy: {en}</span></div>'
+          f'<div class="why">{o.get("hours_ago")} 小时前拉取,'
+          f'{o.get("archives_ok", 0)} 份归档校验通过,'
+          f'{o.get("archives_failed", 0)} 份失败,共 {int(o.get("mirror_kb", 0))//1024} MB。'
+          f'<div class="en">Pulled {o.get("hours_ago")}h ago · '
+          f'{o.get("archives_ok", 0)} archives verified, '
+          f'{o.get("archives_failed", 0)} failed · '
+          f'{int(o.get("mirror_kb", 0))//1024} MB.</div></div></div>')
 
     # --- calendar ----------------------------------------------------------
     a('<h2>每日运行 · 一格一天 <span class="en">Daily runs — one cell per day</span></h2>')

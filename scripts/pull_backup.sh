@@ -90,4 +90,13 @@ PY
 
 [ "${rc}" -eq 0 ] || die "${BAD} archive(s) failed verification in the mirror"
 [ "${OK}" -gt 0 ] || die "the mirror holds no verifiable archive"
+
+# Report back to the collection host, so the control panel can show whether
+# this copy is current. A backup nobody watches stops silently, and silence
+# is indistinguishable from success -- which is the whole failure mode.
+# Only a status file travels; the archives never go back the other way.
+scp -q -o BatchMode=yes "${MIRROR}/status.json" \
+    "${HOST}:${REMOTE}/logs/backup-status.json" 2>/dev/null \
+    || say "warn: could not report status back to ${HOST} (the copy itself is fine)"
+
 say "OK"
