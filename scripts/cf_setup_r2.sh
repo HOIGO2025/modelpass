@@ -53,49 +53,69 @@ EOF
         exit 1
     fi
 fi
+# Pasting picks up strays -- a trailing newline, a stray space, a zero-width
+# character from a web page. Cloudflare rejects those with "Invalid format for
+# Authorization header", which reads like a bad token rather than a bad paste.
+TOKEN="$(printf '%s' "${TOKEN}" | tr -d '[:space:]')"
 [ -n "${TOKEN}" ] || { echo "empty token" >&2; exit 1; }
 
-cf() {  # cf METHOD PATH [JSON]
+# curl writes the body to one file and the status to another. The obvious
+# `HTTP_STATUS=...` inside the function does not survive: every call site uses
+# `$(cf ...)`, and a command substitution runs in a subshell, so the assignment
+# is discarded before the caller ever sees it. Files cross that boundary.
+BODY_FILE="$(mktemp)"
+STATUS_FILE="$(mktemp)"
+trap 'rm -f "${BODY_FILE}" "${STATUS_FILE}"' EXIT
+
+cf() {  # cf METHOD PATH [JSON]  -- body on stdout, status in STATUS_FILE
     local method="$1" path="$2" body="${3:-}"
-    if [ -n "${body}" ]; then
-        curl -sS -X "${method}" "${API}${path}" \
-            -H "Authorization: Bearer ${TOKEN}" \
-            -H "Content-Type: application/json" --data "${body}"
-    else
-        curl -sS -X "${method}" "${API}${path}" \
-            -H "Authorization: Bearer ${TOKEN}"
-    fi
+    local args=(-sS -X "${method}" "${API}${path}"
+                -H "Authorization: Bearer ${TOKEN}")
+    [ -n "${body}" ] && args+=(-H "Content-Type: application/json" --data "${body}")
+    curl "${args[@]}" -w '%{http_code}' -o "${BODY_FILE}" > "${STATUS_FILE}" 2>/dev/null || true
+    cat "${BODY_FILE}"
 }
+
+status() { cat "${STATUS_FILE}" 2>/dev/null || echo "000"; }
 
 jqp() { python3 -c "import json,sys;d=json.load(sys.stdin);print($1)" 2>/dev/null; }
 
-ok() {  # reads a response on stdin, prints errors and returns non-zero
-    python3 - "$1" <<'PY'
+# python3 -c, not `python3 - <<HEREDOC`: with a heredoc Python reads the program
+# from stdin, so a piped response never reaches json.load(sys.stdin) and every
+# call reports "not JSON" whatever the API actually said. That false alarm is
+# what this script produced on its first outing.
+ok() {  # reads a response on stdin; prints why it failed, returns non-zero
+    python3 -c '
 import json, sys
-label = sys.argv[1]
+label, st = sys.argv[1], sys.argv[2]
+raw = sys.stdin.read()
 try:
-    d = json.load(sys.stdin)
+    d = json.loads(raw)
 except ValueError:
-    print(f"{label}: response was not JSON", file=sys.stderr); raise SystemExit(1)
+    print(f"{label}: HTTP {st}, body was not JSON:", file=sys.stderr)
+    print("  " + (raw[:300].replace(chr(10), " ") or "(empty)"), file=sys.stderr)
+    raise SystemExit(1)
 if d.get("success"):
     raise SystemExit(0)
-for e in d.get("errors") or [{"message": "unknown error"}]:
-    print(f"{label}: {e.get('code','')} {e.get('message','')}".strip(), file=sys.stderr)
+print(f"{label}: HTTP {st}", file=sys.stderr)
+for e in d.get("errors") or [{}]:
+    chain = "; ".join(c.get("message", "") for c in (e.get("error_chain") or []))
+    line = f"  {e.get('"'"'code'"'"', '"'"'?'"'"')} {e.get('"'"'message'"'"', '"'"'unknown error'"'"')}"
+    print(line + (f" ({chain})" if chain else ""), file=sys.stderr)
 raise SystemExit(1)
-PY
+' "$1" "$(status)"
 }
 
-echo "== 1/4  verifying the token =="
-RESP="$(cf GET /user/tokens/verify || true)"
-printf '%s' "${RESP}" | ok "token verify" || {
-    echo "The token is not usable. Check it was copied whole and has not expired." >&2
+echo "== 1/3  finding the account =="
+# Deliberately not /user/tokens/verify: that endpoint answers a different
+# question (is this a valid user token) than the one that matters (can this
+# token list accounts and touch R2). Let the first real call be the check.
+ACCOUNTS="$(cf GET '/accounts?per_page=50')"
+printf '%s' "${ACCOUNTS}" | ok "list accounts" || {
+    echo "The token cannot list accounts. Check it was pasted whole, has not" >&2
+    echo "expired, and includes account access." >&2
     exit 1
 }
-echo "  token is valid"
-
-echo "== 2/4  finding the account =="
-ACCOUNTS="$(cf GET '/accounts?per_page=50')"
-printf '%s' "${ACCOUNTS}" | ok "list accounts" || exit 1
 N="$(printf '%s' "${ACCOUNTS}" | jqp 'len(d["result"])')"
 if [ "${N}" != "1" ]; then
     echo "  ${N} accounts on this token:"
@@ -107,7 +127,7 @@ ACCOUNT_ID="${CF_ACCOUNT_ID:-$(printf '%s' "${ACCOUNTS}" | jqp 'd["result"][0]["
 ACCOUNT_NAME="$(printf '%s' "${ACCOUNTS}" | jqp 'd["result"][0]["name"]')"
 echo "  ${ACCOUNT_ID}  (${ACCOUNT_NAME})"
 
-echo "== 3/4  creating bucket '${BUCKET}' =="
+echo "== 2/3  creating bucket '${BUCKET}' =="
 RESP="$(cf POST "/accounts/${ACCOUNT_ID}/r2/buckets" "{\"name\":\"${BUCKET}\"}" || true)"
 if printf '%s' "${RESP}" | ok "create bucket" 2>/dev/null; then
     echo "  created"
@@ -120,7 +140,7 @@ else
     fi
 fi
 
-echo "== 4/4  locking the raw/ prefix, indefinitely =="
+echo "== 3/3  locking the raw/ prefix, indefinitely =="
 # Only raw/. The database snapshot at db/ is overwritten every day, and a
 # whole-bucket lock would break it on the second day.
 LOCK_BODY='{"rules":[{"id":"archives-forever","enabled":true,"prefix":"raw/","condition":{"type":"Indefinite"}}]}'
