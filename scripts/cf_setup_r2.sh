@@ -18,19 +18,42 @@ cd "$(dirname "$0")/.."
 
 BUCKET="${1:-modelpass}"
 API="https://api.cloudflare.com/client/v4"
+
+# The script asks for the token itself rather than expecting you to chain
+# `read -rs ... && ...` in front of it. A chain like that fails silently
+# wherever stdin is not a terminal -- an editor's shell, a CI step, a `!`
+# command in a coding agent -- because `read` hits EOF, returns 1, and the
+# `&&` swallows everything after it. Nothing runs, nothing is printed.
 TOKEN="${CLOUDFLARE_API_TOKEN:-}"
-
-if [ -z "${TOKEN}" ]; then
-    cat >&2 <<'EOF'
-CLOUDFLARE_API_TOKEN is not set.
-
-  read -rs CLOUDFLARE_API_TOKEN && export CLOUDFLARE_API_TOKEN
-  scripts/cf_setup_r2.sh
-
-`read -rs` keeps it off your screen and out of your shell history.
-EOF
-    exit 1
+if [ -z "${TOKEN}" ] && [ -n "${CLOUDFLARE_API_TOKEN_FILE:-}" ]; then
+    [ -r "${CLOUDFLARE_API_TOKEN_FILE}" ] \
+        || { echo "cannot read ${CLOUDFLARE_API_TOKEN_FILE}" >&2; exit 1; }
+    TOKEN="$(tr -d '\r\n' < "${CLOUDFLARE_API_TOKEN_FILE}")"
 fi
+if [ -z "${TOKEN}" ]; then
+    if [ -t 0 ]; then
+        printf 'Cloudflare API token (not echoed): ' >&2
+        read -rs TOKEN < /dev/tty
+        printf '\n' >&2
+    else
+        cat >&2 <<'EOF'
+No token, and stdin is not a terminal so I cannot ask for one.
+
+Run this in a real terminal:
+
+    scripts/cf_setup_r2.sh
+
+or supply it without typing it into a command line:
+
+    CLOUDFLARE_API_TOKEN_FILE=~/.cf_token scripts/cf_setup_r2.sh
+
+Do not pass the token as an argument: `ps` shows arguments to every
+process on the machine.
+EOF
+        exit 1
+    fi
+fi
+[ -n "${TOKEN}" ] || { echo "empty token" >&2; exit 1; }
 
 cf() {  # cf METHOD PATH [JSON]
     local method="$1" path="$2" body="${3:-}"

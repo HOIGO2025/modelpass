@@ -315,10 +315,10 @@ Read & Write on one bucket**, which can write and cannot unlock. So the host can
 add tomorrow's archive and cannot destroy yesterday's — which is exactly the
 property an append-only series needs from its backup.
 
-`scripts/cf_setup_r2.sh` does the bucket and the lock rule for you: run it
-from your own shell with `CLOUDFLARE_API_TOKEN` exported (from the
-environment, never as an argument — `ps` shows arguments to every process
-on the machine). It does not create the S3 access key: that secret is
+`scripts/cf_setup_r2.sh` does the bucket and the lock rule for you. Run it
+in a terminal and it asks for the token without echoing it; elsewhere pass
+`CLOUDFLARE_API_TOKEN` or `CLOUDFLARE_API_TOKEN_FILE`. Never pass it as an
+argument — `ps` shows arguments to every process on the machine. It does not create the S3 access key: that secret is
 returned once, and it belongs in `.env` on the collection host and nowhere
 else.
 

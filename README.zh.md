@@ -145,9 +145,10 @@ parent = sha256((左 hex + 右 hex).encode("utf-8")).hexdigest()
 
 于是主机能加上明天的归档,却毁不掉昨天的 —— 这恰好是一份只追加的序列对它的备份的要求。
 
-`scripts/cf_setup_r2.sh` 会替你建桶并加好锁规则:在你自己的 shell 里导出
-`CLOUDFLARE_API_TOKEN` 后运行(从环境变量读,绝不走命令行参数 —— `ps` 能让
-机器上任何进程看到 argv)。它不创建 S3 access key:那个密钥只返回一次,
+`scripts/cf_setup_r2.sh` 会替你建桶并加好锁规则。在终端里直接运行,它会自己
+提示输入 token 且不回显;非终端环境用 `CLOUDFLARE_API_TOKEN` 或
+`CLOUDFLARE_API_TOKEN_FILE` 传入。绝不要作为命令行参数传 —— `ps` 能让机器上
+任何进程看到 argv。它不创建 S3 access key:那个密钥只返回一次,
 只该出现在采集主机的 `.env` 里。
 
 配置要点:
