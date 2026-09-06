@@ -288,18 +288,77 @@ anything else. It needs more than one copy, and the copies are not equivalent:
 
 | copy | how | can the collection host destroy it? |
 |---|---|---|
-| `scripts/pull_backup.sh` on a laptop or NAS | **pull** over ssh | **no** |
-| Cloudflare R2 (`R2_REMOTE`) | push via rclone | yes — the host holds write keys |
+| `scripts/pull_backup.sh` on a laptop or NAS | **pull** over ssh | **no** — the host holds no credential for it |
+| Cloudflare R2 **with a bucket lock** | push via rclone | **no** — it can write, it cannot unlock |
+| Cloudflare R2 without a lock | push via rclone | yes — the host holds write keys |
 | rsync to another server (`BACKUP_HOST`) | push over ssh | yes — same |
 
-That column is the whole point. A push target is only as safe as the machine
-pushing to it: whatever owns the collection host — a compromise, ransomware, a
-mistaken `rm -rf`, a suspended cloud account — owns those backups too. A pull
-from a machine the host cannot reach is the one copy that survives all of it.
+That column is the whole point. A push target is normally only as safe as the
+machine pushing to it: whatever owns the collection host — a compromise,
+ransomware, a mistaken `rm -rf`, a suspended cloud account — owns those backups
+too. Two things break that.
 
-It is also the one that stops when the laptop is shut, which is why it does not
-replace R2. Keep both: the pull copy is the immutable one, R2 is the one that
-runs unattended.
+The first is direction. A pull from a machine the host cannot reach survives
+anything that happens to the host, because the host has no way to reach back.
+It is also the copy that stops when the laptop is shut, which is why it does
+not replace an unattended one.
+
+The second is a lock at the far end, and it is what makes R2 worth having.
+
+### R2 with a bucket lock
+
+An [R2 bucket lock](https://developers.cloudflare.com/r2/buckets/bucket-locks/)
+makes objects undeletable and unoverwritable for a fixed period or indefinitely,
+and a bucket cannot be emptied while any lock rule exists. Removing a rule takes
+account-level access; the collection host is given a token scoped to **Object
+Read & Write on one bucket**, which can write and cannot unlock. So the host can
+add tomorrow's archive and cannot destroy yesterday's — which is exactly the
+property an append-only series needs from its backup.
+
+Set it up as:
+
+1. A **dedicated bucket**, not an existing one. A lifecycle rule or cleanup
+   script belonging to something else must never be able to reach the archives.
+2. A token scoped to **that bucket only**. Least privilege here is not
+   hygiene — it is the reason the lock holds.
+3. A lock rule with **prefix `raw/`, retention indefinite**.
+
+Step 3's prefix is not optional. `backup.sh` pushes two things with opposite
+natures:
+
+```
+data/raw/    -> r2:<bucket>/raw/    archives, never change      <- lock this
+snapshot.db  -> r2:<bucket>/db/     overwritten every day       <- must stay writable
+```
+
+A whole-bucket lock breaks the daily database snapshot on the second day.
+Lock rules also take precedence over lifecycle rules, so nothing else in the
+account can expire the archives out from under you.
+
+The honest cost: an indefinite lock means **you** cannot delete them either
+without first removing the rule. For a project whose first rule is
+"append only, never overwrite", that is the correct trade.
+
+```bash
+# .env on the collection host
+R2_REMOTE=r2:modelpass
+RCLONE_CONFIG_R2_TYPE=s3
+RCLONE_CONFIG_R2_PROVIDER=Cloudflare
+RCLONE_CONFIG_R2_REGION=auto
+RCLONE_CONFIG_R2_ENDPOINT=https://<account-id>.r2.cloudflarestorage.com
+RCLONE_CONFIG_R2_ACCESS_KEY_ID=...
+RCLONE_CONFIG_R2_SECRET_ACCESS_KEY=...
+```
+
+Free tier covers this for years: 10 GB of storage and a million writes a month
+against 3.2 MB and roughly ten writes a day, with egress always free.
+
+Verify it the same day you configure it, not the morning you need it:
+
+```bash
+scripts/backup.sh                 # should end "pushed to r2:<bucket>"
+scripts/verify.sh                 # pulls a random day back and replays it
+```
 
 ```bash
 # on any machine that can ssh to the collection host, and that the collection
