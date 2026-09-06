@@ -39,7 +39,11 @@ USER modelpass
 # The database itself lives under /app/state (see MODELPASS_DB).
 VOLUME ["/app/data", "/app/state", "/app/logs", "/app/docs"]
 
-ENV PYTHONUNBUFFERED=1 \
+# R2 is configured through RCLONE_CONFIG_* variables, so there is no config
+# file. Point rclone at an empty one: otherwise every backup logs a NOTICE
+# about the missing file, and log noise trains you to stop reading logs.
+ENV RCLONE_CONFIG=/dev/null \
+    PYTHONUNBUFFERED=1 \
     RUN_AT_UTC=03:00 \
     TOP=1000 \
     MODELPASS_DB=/app/state/modelpass.db
