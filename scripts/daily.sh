@@ -68,7 +68,8 @@ aux_rc=0
 
 # collect exits 0 success, 1 failed, 2 partial.
 if [ "${collect_rc}" -eq 1 ] || [ "${export_rc}" -ne 0 ]; then
-    notify ALERT "${DATE}:采集或导出失败(collect=${collect_rc} export=${export_rc})。这一天可能补不回来。\n日志:${ROOT}/${LOG}"
+    notify ALERT "${DATE}:采集或导出失败(collect=${collect_rc} export=${export_rc})。这一天可能补不回来。
+日志:${ROOT}/${LOG}"
     exit 1
 fi
 
@@ -84,7 +85,8 @@ if [ "${collect_rc}" -eq 2 ] || [ "${aux_rc}" -ne 0 ]; then
         [ -n "${WARN_WHY}" ] && WARN_WHY="${WARN_WHY};"
         WARN_WHY="${WARN_WHY}备份或发布失败 —— 今天的归档只存在于这一台机器上"
     fi
-    notify WARN "${DATE}:数据已采集并归档,但 ${WARN_WHY}。\n日志:${ROOT}/${LOG}"
+    notify WARN "${DATE}:数据已采集并归档,但 ${WARN_WHY}。
+日志:${ROOT}/${LOG}"
     exit 2
 fi
 
