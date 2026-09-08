@@ -1,44 +1,46 @@
 {
- "generated_at": "2026-09-07T03:25:24Z",
- "last_success": "2026-09-07T03:25:24Z",
+ "generated_at": "2026-09-08T03:25:19Z",
+ "last_success": "2026-09-08T03:25:18Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 5969,
- "entities": 1020,
+ "observations": 6969,
+ "entities": 1027,
  "days": [
   "2026-09-04",
   "2026-09-05",
   "2026-09-06",
-  "2026-09-07"
+  "2026-09-07",
+  "2026-09-08"
  ],
  "first_day": "2026-09-04",
  "day_status": {
   "2026-09-04": "partial",
   "2026-09-05": "success",
   "2026-09-06": "success",
-  "2026-09-07": "success"
+  "2026-09-07": "success",
+  "2026-09-08": "success"
  },
- "days_covered": 4,
+ "days_covered": 5,
  "days_missing": 0,
  "changes_by_severity": {
-  "low": 2737,
-  "medium": 17
+  "low": 4005,
+  "medium": 21
  },
- "declared": 930,
- "has_file": 225,
- "gap": 716,
- "undeclared": 90,
- "gated": 36,
+ "declared": 936,
+ "has_file": 226,
+ "gap": 721,
+ "undeclared": 91,
+ "gated": 37,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 562,
-   "nofile": 453
+   "total": 566,
+   "nofile": 456
   },
   {
    "lic": "mit",
-   "total": 175,
-   "nofile": 142
+   "total": 177,
+   "nofile": 144
   },
   {
    "lic": "other",
@@ -86,10 +88,16 @@
   "archives_ok": 5,
   "archives_failed": 0,
   "mirror_kb": 17268,
-  "hours_ago": 13.9,
+  "hours_ago": 37.9,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-09-08",
+   "archive_path": "data/raw/huggingface/2026-09-08.jsonl.gz",
+   "archive_sha256": "88effdc08e42b2b2f944afb93b11d8e0fe6d3a7ae2862dfd846b47ad7f89ed5a",
+   "merkle_root": "c40ca63cde7fd11b1064ea16f42b64c5693d6072ce2cf52e6de171c7b787d6e5"
+  },
   {
    "d": "2026-09-07",
    "archive_path": "data/raw/huggingface/2026-09-07.jsonl.gz",
@@ -143,9 +151,45 @@
   {
    "date": "2026-09-07",
    "status": "success"
+  },
+  {
+   "date": "2026-09-08",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-09-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "4bcfcb843112e791c0b4618faa3e4ead3309689b",
+   "new_value": "8e2c0cd25468ac5c1f85f621c2b8edb15ea1f03a",
+   "external_id": "gittensor-model-hub/Qwen3.8-27B-NVFP4-RTX5090"
+  },
+  {
+   "detected_date": "2026-09-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "690b705278a3a58e538fcb37c2ca8b5f9511213c",
+   "new_value": "eb9eb208eb0d988989d07a6a12d0fdeb5f52574a",
+   "external_id": "zai-org/GLM-5.3-Flash"
+  },
+  {
+   "detected_date": "2026-09-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "8ec086b6559f9bd2fbc40f8f0745bf6351368d51",
+   "new_value": "727740c79c777919ad465d24ca293cef5dcf911f",
+   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
+  },
+  {
+   "detected_date": "2026-09-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "04367978d3474804ab1a00a9bd6548b741764069",
+   "new_value": "96cb0d0342c7afb80cab76ecc58b265fa44da256",
+   "external_id": "Falconsai/nsfw_image_detection"
+  },
   {
    "detected_date": "2026-09-07",
    "severity": "medium",
