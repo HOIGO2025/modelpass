@@ -14,6 +14,8 @@ if [ -f .env ]; then
 fi
 ALERT_EMAIL="${ALERT_EMAIL:-}"
 MAX_AGE_HOURS="${MAX_AGE_HOURS:-25}"
+MSG=""
+COLLECTION_OK=""
 DB="${MODELPASS_DB:-db/modelpass.db}"
 
 # Markers left by daily.sh, so a failure is visible even when the mail did not
@@ -64,10 +66,59 @@ else:
 PYEOF
 )"
     if [ "${OUT%%|*}" = "OK" ]; then
-        echo "ok: ${OUT#*|}"
-        exit 0
+        COLLECTION_OK="${OUT#*|}"
+    else
+        MSG="${OUT#*|}"
     fi
-    MSG="${OUT#*|}"
+fi
+
+# The collection alarm above only watches the database. Two more things can
+# stop without anyone noticing, and both did: publishing to the public repo,
+# and the off-host mirror. Each gets its own line so one cannot hide behind
+# the other.
+EXTRA=""
+if [ -d .git ] && git remote get-url origin >/dev/null 2>&1; then
+    git fetch -q origin 2>/dev/null || true
+    UNPUB="$(git rev-list --count origin/main..HEAD 2>/dev/null || echo 0)"
+    if [ "${UNPUB}" -gt 0 ]; then
+        OLDEST="$(git log --format=%ct "origin/main..HEAD" 2>/dev/null | tail -1)"
+        AGE_H=$(( ( $(date +%s) - ${OLDEST:-0} ) / 3600 ))
+        if [ "${AGE_H}" -ge "${PUBLISH_MAX_AGE_HOURS:-3}" ]; then
+            EXTRA="见证已停:${UNPUB} 个提交未发布,最早的已积压 ${AGE_H} 小时。公开记录停在上一次成功那天。"
+        fi
+    fi
+fi
+if [ -f logs/backup-status.json ]; then
+    MIRROR_AGE="$(python3 -c '
+import json, sys
+from datetime import datetime, timezone
+try:
+    t = json.load(open("logs/backup-status.json"))["pulled_at"]
+    w = datetime.fromisoformat(t.replace("Z", "+00:00"))
+    print(int((datetime.now(timezone.utc) - w).total_seconds() // 3600))
+except Exception:
+    print(-1)
+' 2>/dev/null || echo -1)"
+    if [ "${MIRROR_AGE}" -ge "${MIRROR_MAX_AGE_HOURS:-48}" ]; then
+        [ -n "${EXTRA}" ] && EXTRA="${EXTRA}
+"
+        EXTRA="${EXTRA}异地副本已陈旧:${MIRROR_AGE} 小时没有拉取成功。"
+    fi
+fi
+# Three independent things can stop, and each must be able to raise the alarm
+# on its own. Collecting is the one that loses data forever; publishing and the
+# off-host copy fail more quietly, which is precisely why they both ran broken
+# for days before anyone looked.
+if [ -z "${MSG}" ] && [ -z "${EXTRA}" ]; then
+    echo "ok: ${COLLECTION_OK}"
+    exit 0
+fi
+if [ -z "${MSG}" ]; then
+    MSG="采集正常(${COLLECTION_OK}),但:
+${EXTRA}"
+elif [ -n "${EXTRA}" ]; then
+    MSG="${MSG}
+${EXTRA}"
 fi
 
 echo "${MSG}" >&2

@@ -23,7 +23,12 @@
 # vanish here -- that disappearance is exactly what a backup is for.
 set -euo pipefail
 
-HOST="${MODELPASS_HOST:-lisong-cf}"
+# Two routes, tried in order. The direct one is faster and needs no extra
+# software; it is also the one that timed out three times in two days, which
+# is why the tunnel exists in the first place. Preferring simplicity over a
+# fallback here cost three backups, silently.
+HOST="${MODELPASS_HOST:-lisong}"
+HOST_FALLBACK="${MODELPASS_HOST_FALLBACK:-lisong-cf}"
 REMOTE="${MODELPASS_REMOTE_DIR:-modelpass}"
 MIRROR="${MODELPASS_MIRROR:-${HOME}/modelpass-backup}"
 HERE="$(cd "$(dirname "$0")" && pwd)"
@@ -39,6 +44,17 @@ die() {
 镜像目录:${MIRROR}" 2>/dev/null || true
     exit 1
 }
+
+# Pick a route that actually answers before doing anything slow.
+reachable() { ssh -o BatchMode=yes -o ConnectTimeout=15 "$1" true 2>/dev/null; }
+if ! reachable "${HOST}"; then
+    if [ -n "${HOST_FALLBACK}" ] && reachable "${HOST_FALLBACK}"; then
+        say "warn: ${HOST} did not answer, falling back to ${HOST_FALLBACK}"
+        HOST="${HOST_FALLBACK}"
+    else
+        die "neither ${HOST} nor ${HOST_FALLBACK:-<none>} answered"
+    fi
+fi
 
 say "pull from ${HOST}:${REMOTE} -> ${MIRROR}"
 
