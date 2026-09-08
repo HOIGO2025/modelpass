@@ -42,7 +42,7 @@ mkdir -p logs
 notify() {
     local level="$1" body="$2"
     echo "${level}: ${body}" >&2
-    printf '%s\n' "${body}" > "${ROOT}/logs/${level}-${DATE}.txt"
+    printf '%s\n' "${body}" > "${ROOT}/logs/${level}.txt"
     bash scripts/notify.sh "${level}" "${body}" || true
 }
 
@@ -77,7 +77,7 @@ fi
 # Collection succeeded, so today's data exists.  Clear any red flag left by an
 # earlier day -- a good day clears the board, or yesterday's failure stays lit
 # forever and the alarm stops meaning anything.
-rm -f "${ROOT}"/logs/ALERT-*.txt
+rm -f "${ROOT}"/logs/ALERT.txt "${ROOT}"/logs/ALERT-*.txt
 
 if [ "${collect_rc}" -eq 2 ] || [ "${backup_rc}" -ne 0 ] || [ "${publish_rc}" -ne 0 ]; then
     # Name each failure separately. Lumping them together is how a publish
@@ -93,7 +93,7 @@ if [ "${collect_rc}" -eq 2 ] || [ "${backup_rc}" -ne 0 ] || [ "${publish_rc}" -n
     exit 2
 fi
 
-rm -f "${ROOT}"/logs/WARN-*.txt
+rm -f "${ROOT}"/logs/WARN.txt "${ROOT}"/logs/WARN-*.txt
 
 # A clean day is not worth a notification on its own -- that is what the daily
 # commit is for. But a day that actually found something is: a licence change

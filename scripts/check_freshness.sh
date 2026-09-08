@@ -22,11 +22,16 @@ DB="${MODELPASS_DB:-db/modelpass.db}"
 # get out.  WARN is printed and moved past; only ALERT is red.  An alarm that
 # is permanently red -- because, say, no backup target is configured yet -- is
 # an alarm that gets ignored, which is the outcome 铁律 4 exists to prevent.
-for w in logs/WARN-*.txt; do
-    [ -e "${w}" ] || continue
-    echo "warning: $(cat "${w}")" >&2
-done
-MARKERS="$(ls -1 logs/ALERT-*.txt 2>/dev/null || true)"
+# One line, not one per accumulated file: four copies of the same complaint
+# push the line that matters off the screen, and a status you have to scroll
+# to find is a status nobody reads.
+WARN_FILES="$(ls -1 logs/WARN.txt logs/WARN-*.txt 2>/dev/null || true)"
+if [ -n "${WARN_FILES}" ]; then
+    NEWEST="$(ls -t1 logs/WARN.txt logs/WARN-*.txt 2>/dev/null | head -1)"
+    COUNT="$(printf '%s\n' "${WARN_FILES}" | grep -c . || true)"
+    echo "warning (${COUNT} 个标记,最新):$(head -1 "${NEWEST}")" >&2
+fi
+MARKERS="$(ls -1 logs/ALERT.txt logs/ALERT-*.txt 2>/dev/null || true)"
 if [ -n "${MARKERS}" ]; then
     MSG="daily.sh 报告了失败的一天:$(echo "${MARKERS}" | tr '\n' ' ')"
 elif [ ! -f "${DB}" ]; then
