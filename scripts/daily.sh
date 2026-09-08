@@ -51,19 +51,20 @@ notify() {
 # the one the public record most needs to show.
 collect_rc=0
 export_rc=0
-aux_rc=0
+backup_rc=0
+publish_rc=0
 {
     echo "=== ModelPass daily run ${DATE} ==="
     python -m src.collect --source huggingface --top "${MODELPASS_TOP:-1000}" || collect_rc=$?
     python -m src.export --date "${DATE}"                                     || export_rc=1
     python -m src.site                                                        || export_rc=1
-    bash scripts/backup.sh                                                    || aux_rc=1
+    bash scripts/backup.sh                                                    || backup_rc=1
     if [ -d .git ]; then
-        bash scripts/publish.sh                                               || aux_rc=1
+        bash scripts/publish.sh                                               || publish_rc=1
     else
         echo "publish: no git repo here (container?); run scripts/publish.sh on the host"
     fi
-    echo "=== done (collect=${collect_rc} export=${export_rc} aux=${aux_rc}) ==="
+    echo "=== done (collect=${collect_rc} export=${export_rc} backup=${backup_rc} publish=${publish_rc}) ==="
 } >> "${LOG}" 2>&1
 
 # collect exits 0 success, 1 failed, 2 partial.
@@ -78,13 +79,15 @@ fi
 # forever and the alarm stops meaning anything.
 rm -f "${ROOT}"/logs/ALERT-*.txt
 
-if [ "${collect_rc}" -eq 2 ] || [ "${aux_rc}" -ne 0 ]; then
+if [ "${collect_rc}" -eq 2 ] || [ "${backup_rc}" -ne 0 ] || [ "${publish_rc}" -ne 0 ]; then
+    # Name each failure separately. Lumping them together is how a publish
+    # step that had been broken for two days stayed invisible behind the
+    # expected "backup is not configured yet".
     WARN_WHY=""
-    [ "${collect_rc}" -eq 2 ] && WARN_WHY="部分模型没采到(partial run)"
-    if [ "${aux_rc}" -ne 0 ]; then
-        [ -n "${WARN_WHY}" ] && WARN_WHY="${WARN_WHY};"
-        WARN_WHY="${WARN_WHY}备份或发布失败 —— 今天的归档只存在于这一台机器上"
-    fi
+    add_why() { [ -n "${WARN_WHY}" ] && WARN_WHY="${WARN_WHY};"; WARN_WHY="${WARN_WHY}$1"; }
+    [ "${collect_rc}" -eq 2 ] && add_why "部分模型没采到(partial run)"
+    [ "${backup_rc}" -ne 0 ] && add_why "备份失败 —— 归档只存在于这一台机器上"
+    [ "${publish_rc}" -ne 0 ] && add_why "发布失败 —— 公开记录停在上一次成功那天,第三方见证断了"
     notify WARN "${DATE}:数据已采集并归档,但 ${WARN_WHY}。
 日志:${ROOT}/${LOG}"
     exit 2

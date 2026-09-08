@@ -9,6 +9,7 @@ This file reports what was observed.  It does not interpret it (铁律 5).
 import argparse
 import csv
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 from .db import ROOT, connect
@@ -179,6 +180,17 @@ def render(con, date):
 
 
 def write_daily(con, date, verbose=False):
+    # A summary for a day that has not started yet says "No run recorded",
+    # which is true of the future and useless as a signal. Worse, its mere
+    # existence satisfies the workflow check for "today's summary is present",
+    # so a phantom file would quietly disable the alarm for a genuinely
+    # missed day.
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    if date > today:
+        raise ValueError(
+            f"{date} has not happened yet in UTC (today is {today}); "
+            "refusing to write a summary for it"
+        )
     DAILY_DIR.mkdir(parents=True, exist_ok=True)
     path = DAILY_DIR / f"{date}.md"
     path.write_text(render(con, date), encoding="utf-8")
@@ -302,7 +314,11 @@ def main(argv=None):
             print(digest(con, args.date))
             return 0
         if args.date:
-            write_daily(con, args.date, verbose=True)
+            try:
+                write_daily(con, args.date, verbose=True)
+            except ValueError as exc:
+                print(f"[export] {exc}", file=sys.stderr)
+                return 1
         elif not args.csv:
             ap.error("give --date YYYY-MM-DD and/or --csv DIR")
         if args.csv:
