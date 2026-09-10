@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-09-09T03:25:22Z",
- "last_success": "2026-09-09T03:25:22Z",
+ "generated_at": "2026-09-10T03:25:22Z",
+ "last_success": "2026-09-10T03:25:22Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 7969,
+ "observations": 8969,
  "entities": 1035,
  "days": [
   "2026-09-04",
@@ -11,7 +11,8 @@
   "2026-09-06",
   "2026-09-07",
   "2026-09-08",
-  "2026-09-09"
+  "2026-09-09",
+  "2026-09-10"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -20,23 +21,25 @@
   "2026-09-06": "success",
   "2026-09-07": "success",
   "2026-09-08": "success",
-  "2026-09-09": "success"
+  "2026-09-09": "success",
+  "2026-09-10": "success"
  },
- "days_covered": 6,
+ "days_covered": 7,
  "days_missing": 0,
  "changes_by_severity": {
-  "low": 5272,
-  "medium": 32
+  "high": 1,
+  "low": 5727,
+  "medium": 35
  },
- "declared": 942,
- "has_file": 229,
+ "declared": 943,
+ "has_file": 230,
  "gap": 724,
- "undeclared": 93,
+ "undeclared": 92,
  "gated": 37,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 570,
+   "total": 571,
    "nofile": 459
   },
   {
@@ -86,14 +89,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-09-08T13:30:04Z",
-  "archives_ok": 7,
+  "pulled_at": "2026-09-09T13:30:05Z",
+  "archives_ok": 8,
   "archives_failed": 0,
-  "mirror_kb": 25964,
+  "mirror_kb": 27360,
   "hours_ago": 13.9,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-09-10",
+   "archive_path": "data/raw/huggingface/2026-09-10.jsonl.gz",
+   "archive_sha256": "5cf04036a2a59506b6b9fa6ffa3b68a221f146517163a15bcfc74835574e584c",
+   "merkle_root": "d929fb4f8ec97451b5d5c5d78746b231c327b4e3950cb033681a25f0effbc8b7"
+  },
   {
    "d": "2026-09-09",
    "archive_path": "data/raw/huggingface/2026-09-09.jsonl.gz",
@@ -167,9 +176,45 @@
   {
    "date": "2026-09-09",
    "status": "success"
+  },
+  {
+   "date": "2026-09-10",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-09-10",
+   "severity": "high",
+   "field": "declared_license",
+   "old_value": null,
+   "new_value": "apache-2.0",
+   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
+  },
+  {
+   "detected_date": "2026-09-10",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "8e2c0cd25468ac5c1f85f621c2b8edb15ea1f03a",
+   "new_value": "5b7a687fc8211a5d631c8ca6a593dd37eb26ce33",
+   "external_id": "gittensor-model-hub/Qwen3.8-27B-NVFP4-RTX5090"
+  },
+  {
+   "detected_date": "2026-09-10",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "e0f336a048a3de02b29b8ad92969217d9ecffe3e",
+   "new_value": "b7ee2e8c7459c3bea99da23e3d178125a7d1713c",
+   "external_id": "Serveurperso/Qwen3-TTS-GGUF"
+  },
+  {
+   "detected_date": "2026-09-10",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "d2f72f8e641a3654a867853f7e14ab43bd0fb07a",
+   "new_value": "6c3f02be8e720d3ccfd1bd320de8ea7f864a04e6",
+   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
+  },
   {
    "detected_date": "2026-09-09",
    "severity": "medium",
