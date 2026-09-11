@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-10T03:25:22Z",
- "last_success": "2026-09-10T03:25:22Z",
+ "generated_at": "2026-09-11T03:25:26Z",
+ "last_success": "2026-09-11T03:25:25Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 8969,
- "entities": 1035,
+ "observations": 9969,
+ "entities": 1062,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -12,7 +12,8 @@
   "2026-09-07",
   "2026-09-08",
   "2026-09-09",
-  "2026-09-10"
+  "2026-09-10",
+  "2026-09-11"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -22,35 +23,36 @@
   "2026-09-07": "success",
   "2026-09-08": "success",
   "2026-09-09": "success",
-  "2026-09-10": "success"
+  "2026-09-10": "success",
+  "2026-09-11": "success"
  },
- "days_covered": 7,
+ "days_covered": 8,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 1,
-  "low": 5727,
-  "medium": 35
+  "low": 6985,
+  "medium": 44
  },
- "declared": 943,
- "has_file": 230,
- "gap": 724,
- "undeclared": 92,
- "gated": 37,
+ "declared": 966,
+ "has_file": 238,
+ "gap": 739,
+ "undeclared": 96,
+ "gated": 39,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 571,
-   "nofile": 459
+   "total": 585,
+   "nofile": 472
   },
   {
    "lic": "mit",
-   "total": 177,
+   "total": 180,
    "nofile": 144
   },
   {
    "lic": "other",
-   "total": 91,
-   "nofile": 37
+   "total": 95,
+   "nofile": 38
   },
   {
    "lic": "gemma",
@@ -93,10 +95,16 @@
   "archives_ok": 8,
   "archives_failed": 0,
   "mirror_kb": 27360,
-  "hours_ago": 13.9,
+  "hours_ago": 37.9,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-09-11",
+   "archive_path": "data/raw/huggingface/2026-09-11.jsonl.gz",
+   "archive_sha256": "13b9039ceb64c7a6c6ec5f61297507150a4c1a52885856a031e818150066674a",
+   "merkle_root": "3558d673a8315fc00fe365c8dfb8e73f638e3537447c9878445fc254b6bab868"
+  },
   {
    "d": "2026-09-10",
    "archive_path": "data/raw/huggingface/2026-09-10.jsonl.gz",
@@ -180,9 +188,85 @@
   {
    "date": "2026-09-10",
    "status": "success"
+  },
+  {
+   "date": "2026-09-11",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-09-11",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "9bcf845f1aa91c8cc2a774800418de3e702206e0",
+   "new_value": "eaa940941c3cfc6bfbccc4e6f0dc8668ac5be019",
+   "external_id": "trl-internal-testing/tiny-LlamaForCausalLM-3.2"
+  },
+  {
+   "detected_date": "2026-09-11",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "b8ed59f79e60ec8758a4fb86a489efe5e65dc570",
+   "new_value": "cfc62b2d93c26805028f78f5605a57712cb4cea3",
+   "external_id": "trl-internal-testing/tiny-RemoteForCausalLM"
+  },
+  {
+   "detected_date": "2026-09-11",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "7ca47f4e239da59dac61a9c67d9a2503b8c49e8b",
+   "new_value": "fffedda96f7480b1feea394e5d32d6b0f999be18",
+   "external_id": "trl-internal-testing/small-Qwen3ForCausalLM"
+  },
+  {
+   "detected_date": "2026-09-11",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "6c3f02be8e720d3ccfd1bd320de8ea7f864a04e6",
+   "new_value": "4e29cb014f759cc1f1b44d9b27f4acdbc59d9711",
+   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
+  },
+  {
+   "detected_date": "2026-09-11",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "1c8deaecc64b91f034d73e08dd8b64625eb3395d",
+   "new_value": "ea30d66debe3740a08b573244286791d423d6b3e",
+   "external_id": "nvidia/nemotron-3.5-asr-streaming-0.6b"
+  },
+  {
+   "detected_date": "2026-09-11",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "2f015e66b37c585cea9dc4ae6f1850ea8788e742",
+   "new_value": "3ec17a324ced54151364f24f8b5fb6bf7e26414f",
+   "external_id": "lightx2v/Minimax-h3-Turbo"
+  },
+  {
+   "detected_date": "2026-09-11",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "cc84af2fe71647d87f4486c064f320e1e7535243",
+   "new_value": "bee7596271d1495f6992ae224aefde4410e816b8",
+   "external_id": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4"
+  },
+  {
+   "detected_date": "2026-09-11",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "7e948f21b7bdbac698d3318db9d350f1096f3b6c",
+   "new_value": "ed944a141a327b47dac02649e05abf2daf679278",
+   "external_id": "handy-computer/parakeet-unified-en-0.6b-gguf"
+  },
+  {
+   "detected_date": "2026-09-11",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "0ef577a5710035bd2d3a3f27e4f5cb2e86a9a9ba",
+   "new_value": "180b2d35e35e4e48f6245367f3b41036f7cdabd6",
+   "external_id": "cyankiwi/gemma-4-26B-A4B-it-AWQ-4bit"
+  },
   {
    "detected_date": "2026-09-10",
    "severity": "high",
@@ -430,46 +514,6 @@
    "old_value": "9c900de8cba582a887141f43a82d06d5316dcf38",
    "new_value": "b0a090dc5c91b525109ca022d5aa0a0989a9e3d9",
    "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
-  },
-  {
-   "detected_date": "2026-09-05",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "1d2f88e021f6e18cccffbf5cdba5b59d451894da",
-   "new_value": "34792c22ef14d981910c7d2dc1351b54e4d8b1fb",
-   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-V13-GGUF"
-  },
-  {
-   "detected_date": "2026-09-04",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "b8ca3826548c9a7735642feb05c3c473f1fede1f",
-   "new_value": "4b8533275c5e5e267838c0312737f5a4323c01d0",
-   "external_id": "gittensor-model-hub/Qwen3.8-27B-NVFP4-RTX5090"
-  },
-  {
-   "detected_date": "2026-09-04",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "7c2fb757100090e125b01ba0294043260cadd522",
-   "new_value": "9c900de8cba582a887141f43a82d06d5316dcf38",
-   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
-  },
-  {
-   "detected_date": "2026-09-04",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "7c06fa317b050ea677764db46c87701e8cd2cff8",
-   "new_value": "1d2f88e021f6e18cccffbf5cdba5b59d451894da",
-   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-V13-GGUF"
-  },
-  {
-   "detected_date": "2026-09-04",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "78f9d27aa214792b77256affe774eea57e35b9ae",
-   "new_value": "dc6fecccc2b0c6bdda0a8b2f38fa61394fee0b9c",
-   "external_id": "audio-cpp/audio.cpp-gguf"
   }
  ]
 }
