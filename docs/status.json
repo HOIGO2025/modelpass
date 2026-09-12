@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-11T03:25:26Z",
- "last_success": "2026-09-11T03:25:25Z",
+ "generated_at": "2026-09-12T03:25:22Z",
+ "last_success": "2026-09-12T03:25:22Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 9969,
- "entities": 1062,
+ "observations": 10969,
+ "entities": 1072,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -13,7 +13,8 @@
   "2026-09-08",
   "2026-09-09",
   "2026-09-10",
-  "2026-09-11"
+  "2026-09-11",
+  "2026-09-12"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -24,35 +25,36 @@
   "2026-09-08": "success",
   "2026-09-09": "success",
   "2026-09-10": "success",
-  "2026-09-11": "success"
+  "2026-09-11": "success",
+  "2026-09-12": "success"
  },
- "days_covered": 8,
+ "days_covered": 9,
  "days_missing": 0,
  "changes_by_severity": {
-  "high": 1,
-  "low": 6985,
-  "medium": 44
+  "high": 2,
+  "low": 8246,
+  "medium": 51
  },
- "declared": 966,
- "has_file": 238,
- "gap": 739,
- "undeclared": 96,
+ "declared": 974,
+ "has_file": 239,
+ "gap": 746,
+ "undeclared": 98,
  "gated": 39,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 585,
-   "nofile": 472
+   "total": 588,
+   "nofile": 475
   },
   {
    "lic": "mit",
-   "total": 180,
-   "nofile": 144
+   "total": 182,
+   "nofile": 146
   },
   {
    "lic": "other",
-   "total": 95,
-   "nofile": 38
+   "total": 97,
+   "nofile": 39
   },
   {
    "lic": "gemma",
@@ -91,14 +93,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-09-09T13:30:05Z",
-  "archives_ok": 8,
+  "pulled_at": "2026-09-11T23:08:16Z",
+  "archives_ok": 10,
   "archives_failed": 0,
-  "mirror_kb": 27360,
-  "hours_ago": 37.9,
+  "mirror_kb": 33964,
+  "hours_ago": 4.3,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-09-12",
+   "archive_path": "data/raw/huggingface/2026-09-12.jsonl.gz",
+   "archive_sha256": "13d30cd1fdf3c97503b1b8768fb952665ed1b34f0123c9ee21b5ce708a67f3ca",
+   "merkle_root": "5eec6535ac5197157eb2326734498e3a192f5b2e8279b82785ea48d1edcb2da9"
+  },
   {
    "d": "2026-09-11",
    "archive_path": "data/raw/huggingface/2026-09-11.jsonl.gz",
@@ -152,12 +160,6 @@
    "archive_path": "data/raw/huggingface/2026-09-04.2.jsonl.gz",
    "archive_sha256": "8510486545f30d7b032ec5364de3907744fc20004c00dcd92ea041269abff1e0",
    "merkle_root": "a58e924bc240f7401345ec351a60ef8050033eeaffe3be8005917a94ebbc5d86"
-  },
-  {
-   "d": "2026-09-04",
-   "archive_path": "data/raw/huggingface/2026-09-04.jsonl.gz",
-   "archive_sha256": "d73bca152e81e1b968ddeecadfc84d76064f28bae819809fde6e6c81d36a55e0",
-   "merkle_root": "bde4d5da698f64a7ee52945b77a2b282547ce162c7cca11f51894183af7cff81"
   }
  ],
  "calendar": [
@@ -192,9 +194,77 @@
   {
    "date": "2026-09-11",
    "status": "success"
+  },
+  {
+   "date": "2026-09-12",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-09-12",
+   "severity": "high",
+   "field": "declared_license",
+   "old_value": "apache-2.0",
+   "new_value": null,
+   "external_id": "bartowski/Qwen3.8-27B-GGUF"
+  },
+  {
+   "detected_date": "2026-09-12",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "f0eec4a4bb4975114a030d048952d83c0a53c034",
+   "new_value": "e4cc3ff3b37f5aabf253d8583b0b0247e8b25b70",
+   "external_id": "bartowski/Qwen3.8-27B-GGUF"
+  },
+  {
+   "detected_date": "2026-09-12",
+   "severity": "medium",
+   "field": "base_model_ref",
+   "old_value": "Qwen/Qwen3.8-27B",
+   "new_value": null,
+   "external_id": "bartowski/Qwen3.8-27B-GGUF"
+  },
+  {
+   "detected_date": "2026-09-12",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "4e29cb014f759cc1f1b44d9b27f4acdbc59d9711",
+   "new_value": "1df62a3ffb2474711bd2079f12bb408d4b1f701f",
+   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
+  },
+  {
+   "detected_date": "2026-09-12",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "63768c10df38c0395e12ef49edac1bd539eaeeea",
+   "new_value": "6e134bae811fb5adac50ee042ae5f029ac6779aa",
+   "external_id": "cyankiwi/Qwen3.8-27B-AWQ-INT4"
+  },
+  {
+   "detected_date": "2026-09-12",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "984166f60a9b1fcede5e9b9287b7a7aebc050010",
+   "new_value": "7d41107b653d3039be20972fb82398b01b3213eb",
+   "external_id": "Comfy-Org/Qwen-Image-Edit_ComfyUI"
+  },
+  {
+   "detected_date": "2026-09-12",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "056144d2744697c9439bd32647279674dba0c964",
+   "new_value": "77af7ee6a8223df27baa2a952aebe142a8a4a929",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
+  {
+   "detected_date": "2026-09-12",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "ca5d8b3e287e52589e37c28385d9655ee4372f9d",
+   "new_value": "2e85a62840ccac27daa451df36c736c4636b8628",
+   "external_id": "zai-org/GLM-OCR"
+  },
   {
    "detected_date": "2026-09-11",
    "severity": "medium",
@@ -450,70 +520,6 @@
    "old_value": "e05fb719a8e6083facf83bc82b5d4045622eb0b8",
    "new_value": "2eac14aae9d71cc7b25760bfddd2302c9800c2d9",
    "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-V13-GGUF"
-  },
-  {
-   "detected_date": "2026-09-07",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "4cc1d817b6184899b41293954329f576cb5ae86b",
-   "new_value": "a98869194787969724c7425d95d0ed73ce9202af",
-   "external_id": "Comfy-Org/MiniMax-H3"
-  },
-  {
-   "detected_date": "2026-09-06",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "6392c1ca4fee8f17a2376c235cb62a06e3e8b1ff",
-   "new_value": "7e10e2fbd7627fd0228eb2dbdc9e9da264442bbe",
-   "external_id": "emrecan/bert-base-turkish-cased-mean-nli-stsb-tr"
-  },
-  {
-   "detected_date": "2026-09-06",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "19dd1cc02917c4ea30380f0c669113396240a09c",
-   "new_value": "8b7e9cffb4b41918cb638b9f62f0a751184d14a6",
-   "external_id": "pnnbao-ump/VieNeu-TTS-v3-Turbo"
-  },
-  {
-   "detected_date": "2026-09-06",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "b0a090dc5c91b525109ca022d5aa0a0989a9e3d9",
-   "new_value": "ffea2095609970cc5ea45ea427fcf05440257f16",
-   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
-  },
-  {
-   "detected_date": "2026-09-06",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "34792c22ef14d981910c7d2dc1351b54e4d8b1fb",
-   "new_value": "e05fb719a8e6083facf83bc82b5d4045622eb0b8",
-   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-V13-GGUF"
-  },
-  {
-   "detected_date": "2026-09-06",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "6386362d3cc8dbcb895c485a772869bfac5352dc",
-   "new_value": "246becd5a88523e21c58e848e791955719e9d1c9",
-   "external_id": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF"
-  },
-  {
-   "detected_date": "2026-09-05",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "6217ae6389e8d690256c71af9be8c48aeebf99a0",
-   "new_value": "304d34f7751f8ba9ca0eb55d5d10044234cdbfe2",
-   "external_id": "DeepBeepMeep/MiniMax-H3"
-  },
-  {
-   "detected_date": "2026-09-05",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "9c900de8cba582a887141f43a82d06d5316dcf38",
-   "new_value": "b0a090dc5c91b525109ca022d5aa0a0989a9e3d9",
-   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
   }
  ]
 }
