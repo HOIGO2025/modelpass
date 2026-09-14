@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-13T03:25:22Z",
- "last_success": "2026-09-13T03:25:21Z",
+ "generated_at": "2026-09-14T03:25:22Z",
+ "last_success": "2026-09-14T03:25:22Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 11969,
- "entities": 1084,
+ "observations": 12969,
+ "entities": 1095,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -15,7 +15,8 @@
   "2026-09-10",
   "2026-09-11",
   "2026-09-12",
-  "2026-09-13"
+  "2026-09-13",
+  "2026-09-14"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -28,34 +29,35 @@
   "2026-09-10": "success",
   "2026-09-11": "success",
   "2026-09-12": "success",
-  "2026-09-13": "success"
+  "2026-09-13": "success",
+  "2026-09-14": "success"
  },
- "days_covered": 10,
+ "days_covered": 11,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 3,
-  "low": 9527,
-  "medium": 57
+  "low": 10826,
+  "medium": 69
  },
- "declared": 987,
- "has_file": 242,
- "gap": 756,
+ "declared": 998,
+ "has_file": 245,
+ "gap": 764,
  "undeclared": 97,
  "gated": 40,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 594,
-   "nofile": 481
+   "total": 599,
+   "nofile": 485
   },
   {
    "lic": "mit",
-   "total": 183,
-   "nofile": 146
+   "total": 186,
+   "nofile": 149
   },
   {
    "lic": "other",
-   "total": 99,
+   "total": 101,
    "nofile": 39
   },
   {
@@ -75,8 +77,8 @@
   },
   {
    "lic": "cc-by-nc-sa-4.0",
-   "total": 8,
-   "nofile": 6
+   "total": 9,
+   "nofile": 7
   },
   {
    "lic": "llama3.1",
@@ -95,14 +97,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-09-12T04:34:13Z",
-  "archives_ok": 11,
+  "pulled_at": "2026-09-13T13:30:05Z",
+  "archives_ok": 12,
   "archives_failed": 0,
-  "mirror_kb": 37288,
-  "hours_ago": 22.9,
+  "mirror_kb": 41636,
+  "hours_ago": 13.9,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-09-14",
+   "archive_path": "data/raw/huggingface/2026-09-14.jsonl.gz",
+   "archive_sha256": "1e59f3cf8f92be5a011a7e3ce4d41664533f074a3c7c5aeb5296ac7d8520152b",
+   "merkle_root": "4cfd03f3df19c79030e8063eccec80e6bba83d55a425d36d8c5d9d42ef0c2514"
+  },
   {
    "d": "2026-09-13",
    "archive_path": "data/raw/huggingface/2026-09-13.jsonl.gz",
@@ -156,12 +164,6 @@
    "archive_path": "data/raw/huggingface/2026-09-05.jsonl.gz",
    "archive_sha256": "92496f634c72b5be30d2b5db2f4cd34ee483a927967a59510b653fb02602efad",
    "merkle_root": "2234ed962f2a45f53aa37c27c79e480046b5ae4a67dc6e92c19ffd2364321238"
-  },
-  {
-   "d": "2026-09-04",
-   "archive_path": "data/raw/huggingface/2026-09-04.3.jsonl.gz",
-   "archive_sha256": "cff380ab7a2baf12e7accc7e87d40757f952244ee451854f3c19a66d62811168",
-   "merkle_root": "bf6bcb24ee0daf62ad86191880f809dc19f0b9e5c5d701959fa4df7b9ea5aa63"
   }
  ],
  "calendar": [
@@ -204,9 +206,109 @@
   {
    "date": "2026-09-13",
    "status": "success"
+  },
+  {
+   "date": "2026-09-14",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-09-14",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "0b4bc07a8c549be631ed8f5fd78b68fb0e80eced",
+   "new_value": "89230607b3708bc1efe174e8fd34d4b164476c88",
+   "external_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF"
+  },
+  {
+   "detected_date": "2026-09-14",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "afdbbc0dcecc3ae663470f6578544233ce7f7cde",
+   "new_value": "d0cf3294f07f2c422f0cf793a75fa48f61d48931",
+   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-Final-GGUF"
+  },
+  {
+   "detected_date": "2026-09-14",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "e4cc3ff3b37f5aabf253d8583b0b0247e8b25b70",
+   "new_value": "125a02af4987b57c7deb88d7f2ec58a5725c07c0",
+   "external_id": "bartowski/Qwen3.8-27B-GGUF"
+  },
+  {
+   "detected_date": "2026-09-14",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "0405b00cc604b41fb82a30cfee1ccf5ff9a395bb",
+   "new_value": "0a4cb85ac1e30106fb5e4568b550f720da92adea",
+   "external_id": "DavidAU/Qwen3.8-27B-Cold-Fusion-GAIN-V1.1-NM-DAU-NEO-MAX-MTP-GGUF"
+  },
+  {
+   "detected_date": "2026-09-14",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "b3e1c979e3775cbd0a49a65878a0ec7f06789ed7",
+   "new_value": "2aefe071b3697319faa5aa92c44e20bc5419f26a",
+   "external_id": "handy-computer/Voxtral-Mini-4B-Realtime-2602-gguf"
+  },
+  {
+   "detected_date": "2026-09-14",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "ec78f06fded51aa82cde751678b78f76f78c8b7f",
+   "new_value": "3bed857d10cd05ea7b7bc58245c9e5e207694e4d",
+   "external_id": "handy-computer/whisper-medium-gguf"
+  },
+  {
+   "detected_date": "2026-09-14",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "85ac09ea12fc4b1112fa76810059364bc6adc9de",
+   "new_value": "e8d63de0b525375ed2e8d99e2f6f0d1ac721c1dc",
+   "external_id": "handy-computer/parakeet-tdt-0.6b-v3-gguf"
+  },
+  {
+   "detected_date": "2026-09-14",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "36cabf7c00b2f386069251d6d0778d041359341c",
+   "new_value": "9a6441874f3358919a5310c2dd84cc3c5723d0c9",
+   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
+  },
+  {
+   "detected_date": "2026-09-14",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "dfa4adebb64f3076b7b6b90b721275cc069cb421",
+   "new_value": "5a57d757f933152eb0d8b04d81887baea957502c",
+   "external_id": "handy-computer/cohere-transcribe-03-2026-gguf"
+  },
+  {
+   "detected_date": "2026-09-14",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "ed944a141a327b47dac02649e05abf2daf679278",
+   "new_value": "98a4652c8b43f52ecbe355ecb69c3db675ba6f6c",
+   "external_id": "handy-computer/parakeet-unified-en-0.6b-gguf"
+  },
+  {
+   "detected_date": "2026-09-14",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "0221a878b3f4c3efd14e976702058fe998d41573",
+   "new_value": "dadc999e538e1747d1ac75f4673f989c74b7d49f",
+   "external_id": "handy-computer/nemotron-3.5-asr-streaming-0.6b-gguf"
+  },
+  {
+   "detected_date": "2026-09-14",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "1509fa38c945c13ffd645d8def423f0c4cb21254",
+   "new_value": "6d5436fc85f7a20c2e9f4e472b7f3a532f686444",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
   {
    "detected_date": "2026-09-13",
    "severity": "high",
@@ -430,102 +532,6 @@
    "old_value": "d2f72f8e641a3654a867853f7e14ab43bd0fb07a",
    "new_value": "6c3f02be8e720d3ccfd1bd320de8ea7f864a04e6",
    "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
-  },
-  {
-   "detected_date": "2026-09-09",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "19bab4f87af901acebc3ba09370656cedfee100a",
-   "new_value": "b8ed59f79e60ec8758a4fb86a489efe5e65dc570",
-   "external_id": "trl-internal-testing/tiny-RemoteForCausalLM"
-  },
-  {
-   "detected_date": "2026-09-09",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "a3f682ea9e67dc091c67b1f82409930b814e97bd",
-   "new_value": "7ca47f4e239da59dac61a9c67d9a2503b8c49e8b",
-   "external_id": "trl-internal-testing/small-Qwen3ForCausalLM"
-  },
-  {
-   "detected_date": "2026-09-09",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "ffe015e42676a3b43e8ff4534b67d3f3eeb0f25a",
-   "new_value": "c5b8dc374d4162901be317d33710365ad6be53bd",
-   "external_id": "trl-internal-testing/tiny-GptOssForCausalLM"
-  },
-  {
-   "detected_date": "2026-09-09",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "727740c79c777919ad465d24ca293cef5dcf911f",
-   "new_value": "d2f72f8e641a3654a867853f7e14ab43bd0fb07a",
-   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
-  },
-  {
-   "detected_date": "2026-09-09",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "2eac14aae9d71cc7b25760bfddd2302c9800c2d9",
-   "new_value": "d49160844ade389af3145095beeb396b7c47a73b",
-   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-V13-GGUF"
-  },
-  {
-   "detected_date": "2026-09-09",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "52b2e48b0004586eff92c403efa5ce5547c43a45",
-   "new_value": "25bb9b8963688237e94750f6f3e48f1947d3c7a3",
-   "external_id": "trl-internal-testing/tiny-Qwen3ForCausalLM"
-  },
-  {
-   "detected_date": "2026-09-09",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "dc6fecccc2b0c6bdda0a8b2f38fa61394fee0b9c",
-   "new_value": "056144d2744697c9439bd32647279674dba0c964",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-09-09",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "246becd5a88523e21c58e848e791955719e9d1c9",
-   "new_value": "8f1b52408a2f6e317535190c9386f776cacf0079",
-   "external_id": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF"
-  },
-  {
-   "detected_date": "2026-09-09",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "57926baca9a82b4d6906b43f2750d55315f5b10f",
-   "new_value": "f0b7c9e722f5565102fff8481c99e4d86ae099c7",
-   "external_id": "unsloth/Qwen3.8-27B-NVFP4"
-  },
-  {
-   "detected_date": "2026-09-09",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "522937ff14a94c47b2d2960b95e474ec7ab40aa2",
-   "new_value": "6d425c3903997f9540be33f507ad363848b0fa06",
-   "external_id": "farbodtavakkoli/OTel-2.0-LLM-31B-IT"
-  },
-  {
-   "detected_date": "2026-09-09",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "4b10ebee6e13a2669155516652960f50984399fd",
-   "new_value": "ce8d0bf270b28c8fab026ced69fe8aa14b0f0eda",
-   "external_id": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5"
-  },
-  {
-   "detected_date": "2026-09-08",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "4bcfcb843112e791c0b4618faa3e4ead3309689b",
-   "new_value": "8e2c0cd25468ac5c1f85f621c2b8edb15ea1f03a",
-   "external_id": "gittensor-model-hub/Qwen3.8-27B-NVFP4-RTX5090"
   }
  ]
 }
