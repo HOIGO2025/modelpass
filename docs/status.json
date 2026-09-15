@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-14T03:25:22Z",
- "last_success": "2026-09-14T03:25:22Z",
+ "generated_at": "2026-09-15T03:25:25Z",
+ "last_success": "2026-09-15T03:25:24Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 12969,
- "entities": 1095,
+ "observations": 13969,
+ "entities": 1103,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -16,7 +16,8 @@
   "2026-09-11",
   "2026-09-12",
   "2026-09-13",
-  "2026-09-14"
+  "2026-09-14",
+  "2026-09-15"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -30,30 +31,31 @@
   "2026-09-11": "success",
   "2026-09-12": "success",
   "2026-09-13": "success",
-  "2026-09-14": "success"
+  "2026-09-14": "success",
+  "2026-09-15": "success"
  },
- "days_covered": 11,
+ "days_covered": 12,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 3,
-  "low": 10826,
-  "medium": 69
+  "low": 12175,
+  "medium": 75
  },
- "declared": 998,
- "has_file": 245,
- "gap": 764,
+ "declared": 1006,
+ "has_file": 246,
+ "gap": 771,
  "undeclared": 97,
  "gated": 40,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 599,
-   "nofile": 485
+   "total": 603,
+   "nofile": 488
   },
   {
    "lic": "mit",
-   "total": 186,
-   "nofile": 149
+   "total": 189,
+   "nofile": 152
   },
   {
    "lic": "other",
@@ -97,14 +99,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-09-13T13:30:05Z",
-  "archives_ok": 12,
+  "pulled_at": "2026-09-14T13:30:02Z",
+  "archives_ok": 13,
   "archives_failed": 0,
-  "mirror_kb": 41636,
+  "mirror_kb": 43932,
   "hours_ago": 13.9,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-09-15",
+   "archive_path": "data/raw/huggingface/2026-09-15.jsonl.gz",
+   "archive_sha256": "5e2399e37c3703ea066c50885761ade0ee2ba64359cf454f385a25431829ca96",
+   "merkle_root": "a11a1440a4388922ed4eaa6a38e75605dc06e9ef2017a14a2b6784b29030d84f"
+  },
   {
    "d": "2026-09-14",
    "archive_path": "data/raw/huggingface/2026-09-14.jsonl.gz",
@@ -158,12 +166,6 @@
    "archive_path": "data/raw/huggingface/2026-09-06.jsonl.gz",
    "archive_sha256": "0d9be554429aab090702a1f63177641a64b88766b5250dae7390df8e7fe0b6f0",
    "merkle_root": "40550e61b19ebc26e7bbbd21e995c370c07ba79c5a0f1b4bc3c7155ec4bbc05e"
-  },
-  {
-   "d": "2026-09-05",
-   "archive_path": "data/raw/huggingface/2026-09-05.jsonl.gz",
-   "archive_sha256": "92496f634c72b5be30d2b5db2f4cd34ee483a927967a59510b653fb02602efad",
-   "merkle_root": "2234ed962f2a45f53aa37c27c79e480046b5ae4a67dc6e92c19ffd2364321238"
   }
  ],
  "calendar": [
@@ -210,9 +212,61 @@
   {
    "date": "2026-09-14",
    "status": "success"
+  },
+  {
+   "date": "2026-09-15",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-09-15",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "c6c7958d63f5f2f1f0fed0bb9462316f8ccceea6",
+   "new_value": "93a69ea81c2c1fa593292b385c62d5f5b19893f9",
+   "external_id": "biohub/ESMFold2-Fast"
+  },
+  {
+   "detected_date": "2026-09-15",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "8fc3ff471022fdce52c77030685eb775de0c00a3",
+   "new_value": "b1324ddff3a32630bd5d36dd47213b2723b4ef50",
+   "external_id": "biohub/ESMFold2"
+  },
+  {
+   "detected_date": "2026-09-15",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "d0cf3294f07f2c422f0cf793a75fa48f61d48931",
+   "new_value": "aa1d107a320a1990d684b091f66dfccc4ed5f979",
+   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-Final-GGUF"
+  },
+  {
+   "detected_date": "2026-09-15",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "fa7ed035f21d341439d4dd763a020fc4a2482c43",
+   "new_value": "c89326b1e3d700b708c36c96dd231f777ae16138",
+   "external_id": "DeepBeepMeep/MiniMax-H3"
+  },
+  {
+   "detected_date": "2026-09-15",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "9a6441874f3358919a5310c2dd84cc3c5723d0c9",
+   "new_value": "5726c13db52effd80423284dc135e1c5c800936f",
+   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
+  },
+  {
+   "detected_date": "2026-09-15",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "45b0fa5d7fb06faefbd5e3b89bdcef35d564e79a",
+   "new_value": "7d0f99a8b716749ad1a0328181c1e0339691b0c2",
+   "external_id": "biohub/ESMC-6B"
+  },
   {
    "detected_date": "2026-09-14",
    "severity": "medium",
@@ -484,54 +538,6 @@
    "old_value": "cc84af2fe71647d87f4486c064f320e1e7535243",
    "new_value": "bee7596271d1495f6992ae224aefde4410e816b8",
    "external_id": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4"
-  },
-  {
-   "detected_date": "2026-09-11",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "7e948f21b7bdbac698d3318db9d350f1096f3b6c",
-   "new_value": "ed944a141a327b47dac02649e05abf2daf679278",
-   "external_id": "handy-computer/parakeet-unified-en-0.6b-gguf"
-  },
-  {
-   "detected_date": "2026-09-11",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "0ef577a5710035bd2d3a3f27e4f5cb2e86a9a9ba",
-   "new_value": "180b2d35e35e4e48f6245367f3b41036f7cdabd6",
-   "external_id": "cyankiwi/gemma-4-26B-A4B-it-AWQ-4bit"
-  },
-  {
-   "detected_date": "2026-09-10",
-   "severity": "high",
-   "field": "declared_license",
-   "old_value": null,
-   "new_value": "apache-2.0",
-   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
-  },
-  {
-   "detected_date": "2026-09-10",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "8e2c0cd25468ac5c1f85f621c2b8edb15ea1f03a",
-   "new_value": "5b7a687fc8211a5d631c8ca6a593dd37eb26ce33",
-   "external_id": "gittensor-model-hub/Qwen3.8-27B-NVFP4-RTX5090"
-  },
-  {
-   "detected_date": "2026-09-10",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "e0f336a048a3de02b29b8ad92969217d9ecffe3e",
-   "new_value": "b7ee2e8c7459c3bea99da23e3d178125a7d1713c",
-   "external_id": "Serveurperso/Qwen3-TTS-GGUF"
-  },
-  {
-   "detected_date": "2026-09-10",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "d2f72f8e641a3654a867853f7e14ab43bd0fb07a",
-   "new_value": "6c3f02be8e720d3ccfd1bd320de8ea7f864a04e6",
-   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
   }
  ]
 }
