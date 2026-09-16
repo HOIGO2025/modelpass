@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-15T03:25:25Z",
- "last_success": "2026-09-15T03:25:24Z",
+ "generated_at": "2026-09-16T03:25:34Z",
+ "last_success": "2026-09-16T03:25:33Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 13969,
- "entities": 1103,
+ "observations": 14969,
+ "entities": 1111,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -17,7 +17,8 @@
   "2026-09-12",
   "2026-09-13",
   "2026-09-14",
-  "2026-09-15"
+  "2026-09-15",
+  "2026-09-16"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -32,35 +33,36 @@
   "2026-09-12": "success",
   "2026-09-13": "success",
   "2026-09-14": "success",
-  "2026-09-15": "success"
+  "2026-09-15": "success",
+  "2026-09-16": "success"
  },
- "days_covered": 12,
+ "days_covered": 13,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 3,
-  "low": 12175,
-  "medium": 75
+  "low": 13524,
+  "medium": 88
  },
- "declared": 1006,
- "has_file": 246,
- "gap": 771,
- "undeclared": 97,
+ "declared": 1013,
+ "has_file": 249,
+ "gap": 775,
+ "undeclared": 98,
  "gated": 40,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 603,
-   "nofile": 488
+   "total": 607,
+   "nofile": 490
   },
   {
    "lic": "mit",
-   "total": 189,
-   "nofile": 152
+   "total": 190,
+   "nofile": 153
   },
   {
    "lic": "other",
-   "total": 101,
-   "nofile": 39
+   "total": 103,
+   "nofile": 40
   },
   {
    "lic": "gemma",
@@ -99,14 +101,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-09-14T13:30:02Z",
-  "archives_ok": 13,
+  "pulled_at": "2026-09-15T13:30:04Z",
+  "archives_ok": 14,
   "archives_failed": 0,
-  "mirror_kb": 43932,
+  "mirror_kb": 48280,
   "hours_ago": 13.9,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-09-16",
+   "archive_path": "data/raw/huggingface/2026-09-16.jsonl.gz",
+   "archive_sha256": "a177d1faa6f004b9931ba165dd44d7f79b8e0f7454cb1241dfa79e064bcd1b47",
+   "merkle_root": "01a04978f18dd959faea6dd65bec5064fa80630418b74ff3c7078b3f16d6c58a"
+  },
   {
    "d": "2026-09-15",
    "archive_path": "data/raw/huggingface/2026-09-15.jsonl.gz",
@@ -160,12 +168,6 @@
    "archive_path": "data/raw/huggingface/2026-09-07.jsonl.gz",
    "archive_sha256": "7cfe7245361f278770c19a162dc57992bc07de64e0e7bf54931644c9f6adb431",
    "merkle_root": "e063ff7de7a03552775e76886f6171d6389efbe13d461f69165c23481e7f9f8e"
-  },
-  {
-   "d": "2026-09-06",
-   "archive_path": "data/raw/huggingface/2026-09-06.jsonl.gz",
-   "archive_sha256": "0d9be554429aab090702a1f63177641a64b88766b5250dae7390df8e7fe0b6f0",
-   "merkle_root": "40550e61b19ebc26e7bbbd21e995c370c07ba79c5a0f1b4bc3c7155ec4bbc05e"
   }
  ],
  "calendar": [
@@ -216,9 +218,117 @@
   {
    "date": "2026-09-15",
    "status": "success"
+  },
+  {
+   "date": "2026-09-16",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-09-16",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "aa1d107a320a1990d684b091f66dfccc4ed5f979",
+   "new_value": "9c289c1591f253d2ff0db731e4610b84dff6f9a5",
+   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-Final-GGUF"
+  },
+  {
+   "detected_date": "2026-09-16",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "2aefe071b3697319faa5aa92c44e20bc5419f26a",
+   "new_value": "65d1c9408859a0ca0f1c11b025ee951486af21d6",
+   "external_id": "handy-computer/Voxtral-Mini-4B-Realtime-2602-gguf"
+  },
+  {
+   "detected_date": "2026-09-16",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "8b7e9cffb4b41918cb638b9f62f0a751184d14a6",
+   "new_value": "c5abb9e10731151dceb09968df7cf8a8dfa85997",
+   "external_id": "pnnbao-ump/VieNeu-TTS-v3-Turbo"
+  },
+  {
+   "detected_date": "2026-09-16",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "3bed857d10cd05ea7b7bc58245c9e5e207694e4d",
+   "new_value": "835ad19fff976143d650e35113a6544980cbd983",
+   "external_id": "handy-computer/whisper-medium-gguf"
+  },
+  {
+   "detected_date": "2026-09-16",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "b46b703285d374f2da3c494d7cfd387fb75d4411",
+   "new_value": "2083adceb2a3df0465e6021e08a7196d21dbbb44",
+   "external_id": "RedHatAI/gemma-4-12B-it-FP8-Dynamic"
+  },
+  {
+   "detected_date": "2026-09-16",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "e8d63de0b525375ed2e8d99e2f6f0d1ac721c1dc",
+   "new_value": "90f082450fcbacdb54e5900c44ef697c9ea59622",
+   "external_id": "handy-computer/parakeet-tdt-0.6b-v3-gguf"
+  },
+  {
+   "detected_date": "2026-09-16",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "5726c13db52effd80423284dc135e1c5c800936f",
+   "new_value": "ba1e9ec8c98940c0d57426f3cf1f995a62f42db9",
+   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
+  },
+  {
+   "detected_date": "2026-09-16",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "239d236baf9172e5a4663add74bd34fd297b1c08",
+   "new_value": "53ffff052f0e144636ea1ca32644fbe7019dc08e",
+   "external_id": "DavidAU/Qwen3.5-9B-The-Defiant-Fable-Uncensored-Heretic-NEO-IMATRIX-MAX-MTP-GGUF"
+  },
+  {
+   "detected_date": "2026-09-16",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "5a57d757f933152eb0d8b04d81887baea957502c",
+   "new_value": "ab667acedcb5d8d56837ef3ed3568c3ad50dde47",
+   "external_id": "handy-computer/cohere-transcribe-03-2026-gguf"
+  },
+  {
+   "detected_date": "2026-09-16",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "9e521b228d6a996d02e43602436367f954bd576d",
+   "new_value": "20fdadf6a713f7a4d52202e7d74a51f4355b44e6",
+   "external_id": "DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF"
+  },
+  {
+   "detected_date": "2026-09-16",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "98a4652c8b43f52ecbe355ecb69c3db675ba6f6c",
+   "new_value": "d5249700b2382bf5c5024c2421d101b8db54a629",
+   "external_id": "handy-computer/parakeet-unified-en-0.6b-gguf"
+  },
+  {
+   "detected_date": "2026-09-16",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "dadc999e538e1747d1ac75f4673f989c74b7d49f",
+   "new_value": "8139c4ec14bdc45c361adf8d57c27c28e7478272",
+   "external_id": "handy-computer/nemotron-3.5-asr-streaming-0.6b-gguf"
+  },
+  {
+   "detected_date": "2026-09-16",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "a98869194787969724c7425d95d0ed73ce9202af",
+   "new_value": "7e75982b97cd5a41d2dcfa1904ee88d0686d6fd1",
+   "external_id": "Comfy-Org/MiniMax-H3"
+  },
   {
    "detected_date": "2026-09-15",
    "severity": "medium",
@@ -434,110 +544,6 @@
    "old_value": "f0eec4a4bb4975114a030d048952d83c0a53c034",
    "new_value": "e4cc3ff3b37f5aabf253d8583b0b0247e8b25b70",
    "external_id": "bartowski/Qwen3.8-27B-GGUF"
-  },
-  {
-   "detected_date": "2026-09-12",
-   "severity": "medium",
-   "field": "base_model_ref",
-   "old_value": "Qwen/Qwen3.8-27B",
-   "new_value": null,
-   "external_id": "bartowski/Qwen3.8-27B-GGUF"
-  },
-  {
-   "detected_date": "2026-09-12",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "4e29cb014f759cc1f1b44d9b27f4acdbc59d9711",
-   "new_value": "1df62a3ffb2474711bd2079f12bb408d4b1f701f",
-   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
-  },
-  {
-   "detected_date": "2026-09-12",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "63768c10df38c0395e12ef49edac1bd539eaeeea",
-   "new_value": "6e134bae811fb5adac50ee042ae5f029ac6779aa",
-   "external_id": "cyankiwi/Qwen3.8-27B-AWQ-INT4"
-  },
-  {
-   "detected_date": "2026-09-12",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "984166f60a9b1fcede5e9b9287b7a7aebc050010",
-   "new_value": "7d41107b653d3039be20972fb82398b01b3213eb",
-   "external_id": "Comfy-Org/Qwen-Image-Edit_ComfyUI"
-  },
-  {
-   "detected_date": "2026-09-12",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "056144d2744697c9439bd32647279674dba0c964",
-   "new_value": "77af7ee6a8223df27baa2a952aebe142a8a4a929",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-09-12",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "ca5d8b3e287e52589e37c28385d9655ee4372f9d",
-   "new_value": "2e85a62840ccac27daa451df36c736c4636b8628",
-   "external_id": "zai-org/GLM-OCR"
-  },
-  {
-   "detected_date": "2026-09-11",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "9bcf845f1aa91c8cc2a774800418de3e702206e0",
-   "new_value": "eaa940941c3cfc6bfbccc4e6f0dc8668ac5be019",
-   "external_id": "trl-internal-testing/tiny-LlamaForCausalLM-3.2"
-  },
-  {
-   "detected_date": "2026-09-11",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "b8ed59f79e60ec8758a4fb86a489efe5e65dc570",
-   "new_value": "cfc62b2d93c26805028f78f5605a57712cb4cea3",
-   "external_id": "trl-internal-testing/tiny-RemoteForCausalLM"
-  },
-  {
-   "detected_date": "2026-09-11",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "7ca47f4e239da59dac61a9c67d9a2503b8c49e8b",
-   "new_value": "fffedda96f7480b1feea394e5d32d6b0f999be18",
-   "external_id": "trl-internal-testing/small-Qwen3ForCausalLM"
-  },
-  {
-   "detected_date": "2026-09-11",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "6c3f02be8e720d3ccfd1bd320de8ea7f864a04e6",
-   "new_value": "4e29cb014f759cc1f1b44d9b27f4acdbc59d9711",
-   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
-  },
-  {
-   "detected_date": "2026-09-11",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "1c8deaecc64b91f034d73e08dd8b64625eb3395d",
-   "new_value": "ea30d66debe3740a08b573244286791d423d6b3e",
-   "external_id": "nvidia/nemotron-3.5-asr-streaming-0.6b"
-  },
-  {
-   "detected_date": "2026-09-11",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "2f015e66b37c585cea9dc4ae6f1850ea8788e742",
-   "new_value": "3ec17a324ced54151364f24f8b5fb6bf7e26414f",
-   "external_id": "lightx2v/Minimax-h3-Turbo"
-  },
-  {
-   "detected_date": "2026-09-11",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "cc84af2fe71647d87f4486c064f320e1e7535243",
-   "new_value": "bee7596271d1495f6992ae224aefde4410e816b8",
-   "external_id": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4"
   }
  ]
 }
