@@ -27,9 +27,16 @@ DB="${MODELPASS_DB:-db/modelpass.db}"
 # to find is a status nobody reads.
 WARN_FILES="$(ls -1 logs/WARN.txt logs/WARN-*.txt 2>/dev/null || true)"
 if [ -n "${WARN_FILES}" ]; then
-    NEWEST="$(ls -t1 logs/WARN.txt logs/WARN-*.txt 2>/dev/null | head -1)"
+    # `|| true` is not decoration. `ls` exits 2 for an argument that does not
+    # exist, and logs/WARN-*.txt usually does not exist -- the glob stays
+    # literal. Under `set -o pipefail` that becomes the pipeline's status and
+    # `set -e` kills the script, silently, producing no output for cron to
+    # log. The condition is reached only when logs/WARN.txt is present, so the
+    # alarm died exactly when it had something to report, and the hourly check
+    # went ten days writing nothing while looking no different from quiet.
+    NEWEST="$(ls -t1 logs/WARN.txt logs/WARN-*.txt 2>/dev/null | head -1 || true)"
     COUNT="$(printf '%s\n' "${WARN_FILES}" | grep -c . || true)"
-    echo "warning (${COUNT} 个标记,最新):$(head -1 "${NEWEST}")" >&2
+    echo "warning (${COUNT} 个标记,最新):$(head -1 "${NEWEST}" 2>/dev/null || true)" >&2
 fi
 MARKERS="$(ls -1 logs/ALERT.txt logs/ALERT-*.txt 2>/dev/null || true)"
 if [ -n "${MARKERS}" ]; then
