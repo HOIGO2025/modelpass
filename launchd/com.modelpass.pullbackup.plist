@@ -6,6 +6,11 @@
   wake if the machine was asleep at the scheduled time. cron simply skips it.
   A laptop that is shut at noon must still take the backup when it opens.
 
+  The catch: the wake launchd fires on is usually a DarkWake -- a few seconds
+  of housekeeping with no network, several times an hour, all night. The
+  script keeps probing the host until the machine is properly awake, so that
+  one early firing is not the day's only chance.
+
   Install:
     cp launchd/com.modelpass.pullbackup.plist ~/Library/LaunchAgents/
     launchctl load ~/Library/LaunchAgents/com.modelpass.pullbackup.plist
@@ -22,6 +27,12 @@
 
   <key>ProgramArguments</key>
   <array>
+    <!-- caffeinate, because waiting for the network is only half of it: the
+         maintenance window that finally answered a probe expires mid-copy,
+         and the transfer dies with "Connection reset by peer". -i holds off
+         idle sleep for as long as the pull runs and nothing longer. -->
+    <string>/usr/bin/caffeinate</string>
+    <string>-i</string>
     <string>/bin/bash</string>
     <string>--login</string>
     <string>-c</string>

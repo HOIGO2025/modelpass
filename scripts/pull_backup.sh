@@ -18,6 +18,9 @@
 #                         lot of throughput (measured 21 KB/s vs direct).
 #   MODELPASS_REMOTE_DIR  its project directory (default ~/modelpass)
 #   MODELPASS_MIRROR      where to keep the copy (default ~/modelpass-backup)
+#   MODELPASS_WAIT_ATTEMPTS / MODELPASS_WAIT_SECS
+#                         how long to keep probing for a route before giving
+#                         up (default 60 probes, 30 s apart) -- see below
 #
 # Deliberately never deletes. An archive that vanishes upstream must not
 # vanish here -- that disappearance is exactly what a backup is for.
@@ -32,12 +35,17 @@ HOST_FALLBACK="${MODELPASS_HOST_FALLBACK:-lisong-cf}"
 REMOTE="${MODELPASS_REMOTE_DIR:-modelpass}"
 MIRROR="${MODELPASS_MIRROR:-${HOME}/modelpass-backup}"
 HERE="$(cd "$(dirname "$0")" && pwd)"
-STAMP="$(date -u +%FT%TZ)"
 
 mkdir -p "${MIRROR}/data/raw" "${MIRROR}/db" "${MIRROR}/logs"
 LOG="${MIRROR}/logs/pull.log"
 
-say() { printf '%s %s\n' "${STAMP}" "$*" | tee -a "${LOG}"; }
+# Stamped when the line is written, not when the job launched. The two used to
+# be the same thing; once this script started waiting hours for a route, a
+# fixed stamp meant every line -- and status.json with it -- claimed a time
+# from before the work happened, which is the one thing a freshness record
+# must never do.
+now() { date -u +%FT%TZ; }
+say() { printf '%s %s\n' "$(now)" "$*" | tee -a "${LOG}"; }
 die() {
     say "FAIL $*"
     bash "${HERE}/notify.sh" ALERT "备份拉取失败:$*
@@ -45,16 +53,35 @@ die() {
     exit 1
 }
 
-# Pick a route that actually answers before doing anything slow.
+# Pick a route that actually answers before doing anything slow -- and keep
+# asking. launchd fires this job on the first wake after the scheduled time,
+# and on a closed laptop that is a DarkWake: a few seconds of housekeeping
+# every quarter hour, with no usable network. One probe in that window fails,
+# the slot is spent, and the archive waits another day; that is how the
+# mirror missed 2026-09-10 twice over. So probe until the machine is properly
+# awake. Bounded by attempts, not by a deadline: a suspended process makes no
+# progress, so a wall clock would run out during the sleep and give up at the
+# very moment the network came back.
 reachable() { ssh -o BatchMode=yes -o ConnectTimeout=15 "$1" true 2>/dev/null; }
-if ! reachable "${HOST}"; then
+route_up() {
+    reachable "${HOST}" && return 0
     if [ -n "${HOST_FALLBACK}" ] && reachable "${HOST_FALLBACK}"; then
         say "warn: ${HOST} did not answer, falling back to ${HOST_FALLBACK}"
         HOST="${HOST_FALLBACK}"
-    else
-        die "neither ${HOST} nor ${HOST_FALLBACK:-<none>} answered"
+        return 0
     fi
-fi
+    return 1
+}
+ATTEMPTS="${MODELPASS_WAIT_ATTEMPTS:-60}"
+PAUSE="${MODELPASS_WAIT_SECS:-30}"
+tries=1
+until route_up; do
+    [ "${tries}" -lt "${ATTEMPTS}" ] \
+        || die "neither ${HOST} nor ${HOST_FALLBACK:-<none>} answered in ${tries} attempts over ${SECONDS}s"
+    tries=$((tries + 1))
+    sleep "${PAUSE}"
+done
+[ "${tries}" -eq 1 ] || say "route answered on attempt ${tries}, ${SECONDS}s after launch"
 
 say "pull from ${HOST}:${REMOTE} -> ${MIRROR}"
 
@@ -68,9 +95,25 @@ ssh -o BatchMode=yes "${HOST}" \
 # No --delete, on purpose. See the header.
 # Plain flags only: this runs on whatever laptop or NAS you have, and macOS
 # still ships rsync 2.6.9 from 2006, which has none of the modern options.
-rsync -az --stats \
-    "${HOST}:${REMOTE}/data/raw/" "${MIRROR}/data/raw/" >>"${LOG}" 2>&1 \
-    || die "rsync of data/raw failed"
+#
+# Retried, because answering a probe is not the same as staying up for a
+# transfer: a laptop that woke for a maintenance window goes back to sleep in
+# the middle of the copy, and the connection dies with "Connection reset by
+# peer". rsync resumes from what is already on disk, so a retry is cheap and
+# repeating it is harmless.
+pull_raw() {
+    rsync -az --stats \
+        "${HOST}:${REMOTE}/data/raw/" "${MIRROR}/data/raw/" >>"${LOG}" 2>&1
+}
+tries=1
+until pull_raw; do
+    [ "${tries}" -lt "${MODELPASS_RSYNC_TRIES:-5}" ] \
+        || die "rsync of data/raw failed ${tries} times"
+    say "warn: rsync of data/raw failed on attempt ${tries}, retrying"
+    tries=$((tries + 1))
+    sleep "${MODELPASS_RSYNC_WAIT:-60}"
+done
+[ "${tries}" -eq 1 ] || say "rsync of data/raw succeeded on attempt ${tries}"
 rsync -az "${HOST}:${REMOTE}/data/daily/" "${MIRROR}/data/daily/" >>"${LOG}" 2>&1 \
     || say "warn: rsync of data/daily failed"
 rsync -az "${HOST}:${REMOTE}/logs/snapshot.db" "${MIRROR}/db/modelpass.db" >>"${LOG}" 2>&1 \
@@ -96,7 +139,7 @@ rm -f "${VERIFY_OUT}"
 BYTES=$(du -sk "${MIRROR}/data/raw" 2>/dev/null | cut -f1)
 say "verified ${OK} archive(s), ${BAD} failed, mirror holds $((BYTES/1024)) MB"
 
-python3 - "${MIRROR}/status.json" "${STAMP}" "${OK}" "${BAD}" "${BYTES}" <<'PY'
+python3 - "${MIRROR}/status.json" "$(now)" "${OK}" "${BAD}" "${BYTES}" <<'PY'
 import json, sys
 path, stamp, ok, bad, kb = sys.argv[1:6]
 json.dump({"pulled_at": stamp, "archives_ok": int(ok), "archives_failed": int(bad),
