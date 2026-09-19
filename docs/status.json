@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-18T03:25:49Z",
- "last_success": "2026-09-18T03:25:48Z",
+ "generated_at": "2026-09-19T03:25:29Z",
+ "last_success": "2026-09-19T03:25:29Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 16969,
- "entities": 1133,
+ "observations": 17969,
+ "entities": 1142,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -20,7 +20,8 @@
   "2026-09-15",
   "2026-09-16",
   "2026-09-17",
-  "2026-09-18"
+  "2026-09-18",
+  "2026-09-19"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -38,35 +39,36 @@
   "2026-09-15": "success",
   "2026-09-16": "success",
   "2026-09-17": "success",
-  "2026-09-18": "success"
+  "2026-09-18": "success",
+  "2026-09-19": "success"
  },
- "days_covered": 15,
+ "days_covered": 16,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 3,
-  "low": 16174,
-  "medium": 107
+  "low": 17434,
+  "medium": 109
  },
- "declared": 1032,
- "has_file": 253,
- "gap": 790,
+ "declared": 1041,
+ "has_file": 255,
+ "gap": 797,
  "undeclared": 101,
- "gated": 42,
+ "gated": 43,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 617,
-   "nofile": 500
+   "total": 622,
+   "nofile": 504
   },
   {
    "lic": "mit",
-   "total": 196,
-   "nofile": 157
+   "total": 197,
+   "nofile": 158
   },
   {
    "lic": "other",
-   "total": 105,
-   "nofile": 41
+   "total": 106,
+   "nofile": 42
   },
   {
    "lic": "gemma",
@@ -80,8 +82,8 @@
   },
   {
    "lic": "cc-by-4.0",
-   "total": 14,
-   "nofile": 14
+   "total": 15,
+   "nofile": 15
   },
   {
    "lic": "cc-by-nc-sa-4.0",
@@ -99,20 +101,26 @@
    "nofile": 6
   },
   {
-   "lic": "bsd-3-clause",
+   "lic": "llama3.2",
    "total": 5,
-   "nofile": 5
+   "nofile": 1
   }
  ],
  "offhost": {
-  "pulled_at": "2026-09-17T13:30:04Z",
-  "archives_ok": 16,
+  "pulled_at": "2026-09-18T13:30:38Z",
+  "archives_ok": 17,
   "archives_failed": 0,
-  "mirror_kb": 54972,
+  "mirror_kb": 58352,
   "hours_ago": 13.9,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-09-19",
+   "archive_path": "data/raw/huggingface/2026-09-19.jsonl.gz",
+   "archive_sha256": "5a2a5030169dfac2c2e247cf93ec0befbfd0ed61528d145234661bf5009874ce",
+   "merkle_root": "e637f6a619f1f79f6625bc8843c6b1ce8e921b06b459126ce172f7f1906a1f7b"
+  },
   {
    "d": "2026-09-18",
    "archive_path": "data/raw/huggingface/2026-09-18.jsonl.gz",
@@ -166,12 +174,6 @@
    "archive_path": "data/raw/huggingface/2026-09-10.jsonl.gz",
    "archive_sha256": "5cf04036a2a59506b6b9fa6ffa3b68a221f146517163a15bcfc74835574e584c",
    "merkle_root": "d929fb4f8ec97451b5d5c5d78746b231c327b4e3950cb033681a25f0effbc8b7"
-  },
-  {
-   "d": "2026-09-09",
-   "archive_path": "data/raw/huggingface/2026-09-09.jsonl.gz",
-   "archive_sha256": "5f3806ee7dd1076f7f010c0be53f34507184cae9ecae8ce3eb275cb8354ba469",
-   "merkle_root": "aeb5a441d0ff09a893e0e87e782cba4dacc00b9c75a8fdf10c79aa93263a81af"
   }
  ],
  "calendar": [
@@ -234,9 +236,29 @@
   {
    "date": "2026-09-18",
    "status": "success"
+  },
+  {
+   "date": "2026-09-19",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-09-19",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "57e783580bfb8eeb9d16d4ed1d19d99ad8df44cf",
+   "new_value": "748360e1d9bbc10f07ea1f0e49a7f5a7c325ea7e",
+   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
+  },
+  {
+   "detected_date": "2026-09-19",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "de70fd9e99aeb8b299fd08dcfd4796cb6e75f8e8",
+   "new_value": "c21e1a9a454946b268c74642a257355c2f54ad5c",
+   "external_id": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF"
+  },
   {
    "detected_date": "2026-09-18",
    "severity": "medium",
@@ -540,22 +562,6 @@
    "old_value": "45b0fa5d7fb06faefbd5e3b89bdcef35d564e79a",
    "new_value": "7d0f99a8b716749ad1a0328181c1e0339691b0c2",
    "external_id": "biohub/ESMC-6B"
-  },
-  {
-   "detected_date": "2026-09-14",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "0b4bc07a8c549be631ed8f5fd78b68fb0e80eced",
-   "new_value": "89230607b3708bc1efe174e8fd34d4b164476c88",
-   "external_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF"
-  },
-  {
-   "detected_date": "2026-09-14",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "afdbbc0dcecc3ae663470f6578544233ce7f7cde",
-   "new_value": "d0cf3294f07f2c422f0cf793a75fa48f61d48931",
-   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-Final-GGUF"
   }
  ]
 }
