@@ -6,8 +6,11 @@ FROM python:3.12-slim
 
 # sqlite3 CLI: backup snapshots, freshness checks, publish.
 # rsync + openssh-client: scripts/backup.sh to an off-site host.
+# curl: every webhook channel in scripts/notify.sh. Without it the daily run
+# can collect, archive, fail, and report that failure to nobody -- which is
+# the one outcome 铁律 4 exists to prevent, arriving by the back door.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        sqlite3 rsync openssh-client ca-certificates tzdata rclone \
+        sqlite3 rsync openssh-client ca-certificates tzdata rclone curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Run as a real user, not root. chmod 444 on an archive is worthless if the

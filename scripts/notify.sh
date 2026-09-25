@@ -42,6 +42,19 @@ TITLE="${ICON} ModelPass ${LEVEL}"
 TEXT="$(printf '%s\n\n%s' "${TITLE}" "${BODY}" | head -c 3900)"
 
 sent=0
+# "nothing was configured" and "everything configured failed" are the same
+# silence to read and opposite problems to fix: the first wants a token, the
+# second wants a look at why the send was refused. Reporting the first when
+# the second happened is how a configured channel goes on delivering nothing
+# while the log insists it was never set up. Counted from the variables rather
+# than inside each block below, so the channels stay untouched.
+configured=0
+for v in "${TELEGRAM_BOT_TOKEN:-}" "${TELEGRAM_CHAT_ID:-}" "${FEISHU_WEBHOOK:-}" \
+         "${DINGTALK_WEBHOOK:-}" "${WECOM_WEBHOOK:-}" "${BARK_URL:-}" \
+         "${SMTP_HOST:-}" "${ALERT_EMAIL:-}"; do
+    [ -n "${v}" ] && configured=1
+done
+
 post_json() {   # post_json <url> <json>   -- returns 0 on 2xx
     local code
     code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 \
@@ -92,5 +105,13 @@ elif [ -n "${ALERT_EMAIL:-}" ] && command -v mail >/dev/null 2>&1; then
     printf '%s\n' "${BODY}" | mail -s "[ModelPass] ${LEVEL}" "${ALERT_EMAIL}" && sent=1
 fi
 
-[ "${sent}" -eq 1 ] || echo "notify.sh: no channel configured; ${LEVEL} logged to file only" >&2
+if [ "${sent}" -ne 1 ]; then
+    if [ "${configured}" -eq 1 ]; then
+        echo "notify.sh: every configured channel failed; ${LEVEL} reached no one" >&2
+        command -v curl >/dev/null 2>&1 \
+            || echo "notify.sh: curl is not installed, and every webhook needs it" >&2
+    else
+        echo "notify.sh: no channel configured; ${LEVEL} logged to file only" >&2
+    fi
+fi
 exit 0
