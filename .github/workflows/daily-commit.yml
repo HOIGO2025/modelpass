@@ -67,6 +67,62 @@ jobs:
             echo "::warning::${FILE} contains a failed or partial run"
           fi
 
+      # The off-host copy is watched here because this is the one alarm with an
+      # exit that needs nothing configured: a failing scheduled run mails the
+      # repo owner, and no notification channel on the collection host is
+      # involved. It is also the copy that stops most quietly. It lives on a
+      # laptop, and a laptop that stays shut simply stops pulling while the
+      # archives sit happily on one disk, looking fine from every other angle.
+      #
+      # Age is recomputed from pulled_at rather than read from the hours_ago
+      # field beside it, which was frozen when the panel was generated. Note
+      # that pulled_at lags too: it is the last report the collection host had
+      # seen by 03:00 UTC, so in healthy operation this reads 16-26 hours even
+      # though the mirror pulls twice a day. The effect is that this fires
+      # about two days after the mirror stops, well behind the host's own
+      # 48-hour check -- which is the right order for a backstop. It exists to
+      # catch the case where that check cannot speak, not to beat it to it.
+      - name: Off-host copy is current
+        if: github.event_name != 'push'
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          from datetime import datetime, timezone
+
+          MAX_HOURS = 48          # the same threshold as src/site.py and check_freshness.sh
+
+          try:
+              with open("docs/status.json", encoding="utf-8") as fh:
+                  d = json.load(fh)
+          except (OSError, ValueError) as exc:
+              print(f"::error::cannot read docs/status.json: {exc}")
+              raise SystemExit(1)
+
+          o = d.get("offhost")
+          if not o or not o.get("pulled_at"):
+              print("::error::no off-host copy has ever reported in.")
+              print("The archives exist only on the collection host. If that host dies, "
+                    "the entire series goes with it.")
+              raise SystemExit(1)
+
+          when = datetime.fromisoformat(o["pulled_at"].replace("Z", "+00:00"))
+          hours = (datetime.now(timezone.utc) - when).total_seconds() / 3600
+          if hours >= MAX_HOURS:
+              print(f"::error::the off-host copy has not pulled for {hours:.0f} hours "
+                    f"(last {o['pulled_at']}, threshold {MAX_HOURS}).")
+              print("Every archive since then exists on exactly one machine.")
+              raise SystemExit(1)
+
+          failed = o.get("archives_failed") or 0
+          if failed:
+              print(f"::error::{failed} archive(s) failed verification in the off-host mirror.")
+              print("A copy that does not verify is not a copy.")
+              raise SystemExit(1)
+
+          print(f"off-host copy pulled {hours:.1f}h ago, "
+                f"{o.get('archives_ok')} archive(s) verified")
+          PY
+
       - name: Raw archives stayed out of git
         run: |
           if git ls-files --error-unmatch data/raw >/dev/null 2>&1; then
