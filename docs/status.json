@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-25T03:25:33Z",
- "last_success": "2026-09-25T03:25:32Z",
+ "generated_at": "2026-09-26T03:25:20Z",
+ "last_success": "2026-09-26T03:25:19Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 23969,
- "entities": 1193,
+ "observations": 24969,
+ "entities": 1206,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -27,7 +27,8 @@
   "2026-09-22",
   "2026-09-23",
   "2026-09-24",
-  "2026-09-25"
+  "2026-09-25",
+  "2026-09-26"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -52,35 +53,36 @@
   "2026-09-22": "success",
   "2026-09-23": "success",
   "2026-09-24": "success",
-  "2026-09-25": "success"
+  "2026-09-25": "success",
+  "2026-09-26": "success"
  },
- "days_covered": 22,
+ "days_covered": 23,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 4,
-  "low": 25222,
-  "medium": 164
+  "low": 26507,
+  "medium": 169
  },
- "declared": 1089,
- "has_file": 265,
- "gap": 836,
- "undeclared": 104,
+ "declared": 1099,
+ "has_file": 266,
+ "gap": 846,
+ "undeclared": 107,
  "gated": 43,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 648,
-   "nofile": 523
+   "total": 655,
+   "nofile": 530
   },
   {
    "lic": "mit",
-   "total": 207,
-   "nofile": 168
+   "total": 208,
+   "nofile": 169
   },
   {
    "lic": "other",
-   "total": 114,
-   "nofile": 48
+   "total": 115,
+   "nofile": 49
   },
   {
    "lic": "gemma",
@@ -89,8 +91,8 @@
   },
   {
    "lic": "cc-by-nc-4.0",
-   "total": 18,
-   "nofile": 18
+   "total": 19,
+   "nofile": 19
   },
   {
    "lic": "cc-by-4.0",
@@ -119,14 +121,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-09-24T13:30:34Z",
-  "archives_ok": 23,
+  "pulled_at": "2026-09-25T13:30:39Z",
+  "archives_ok": 24,
   "archives_failed": 0,
-  "mirror_kb": 77552,
+  "mirror_kb": 80920,
   "hours_ago": 13.9,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-09-26",
+   "archive_path": "data/raw/huggingface/2026-09-26.jsonl.gz",
+   "archive_sha256": "e5799bf5493e7629246059db16a6ef6bf3a736819f3e447e66a91ba1b4891fcd",
+   "merkle_root": "3766d9464f3a0ed52054f31d614c24e6e483cd6663341337eb23629015562496"
+  },
   {
    "d": "2026-09-25",
    "archive_path": "data/raw/huggingface/2026-09-25.jsonl.gz",
@@ -180,12 +188,6 @@
    "archive_path": "data/raw/huggingface/2026-09-17.jsonl.gz",
    "archive_sha256": "e0cdd22ccffc0b4bc011c06eb740c4b150c04b0521f04f8af29fa7469c3ee034",
    "merkle_root": "cb4e8f41974602453b310bfa6c7972886f195020e1012fdbcc45e885624debf1"
-  },
-  {
-   "d": "2026-09-16",
-   "archive_path": "data/raw/huggingface/2026-09-16.jsonl.gz",
-   "archive_sha256": "a177d1faa6f004b9931ba165dd44d7f79b8e0f7454cb1241dfa79e064bcd1b47",
-   "merkle_root": "01a04978f18dd959faea6dd65bec5064fa80630418b74ff3c7078b3f16d6c58a"
   }
  ],
  "calendar": [
@@ -276,9 +278,53 @@
   {
    "date": "2026-09-25",
    "status": "success"
+  },
+  {
+   "date": "2026-09-26",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-09-26",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "2f0fa48fea4949b56685ddfc48c05dd81c7d772b",
+   "new_value": "c063053e004e9783631651df95cf55d0bbf88b32",
+   "external_id": "RedHatAI/Qwen3.8-27B-INT4"
+  },
+  {
+   "detected_date": "2026-09-26",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "65f27a86966957c534ea6ad12149286e01ca7cc0",
+   "new_value": "b072e1d3b35a0a630cece372c2127528e0994386",
+   "external_id": "prism-ml/Ternary-Bonsai-2-27B-gguf"
+  },
+  {
+   "detected_date": "2026-09-26",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "165c5840de98fb1c65d7d3a044ae56730ebf4b2f",
+   "new_value": "1650e9a8bdaef1d048aee516b6f738096e2448a9",
+   "external_id": "CMSManhattan/JiRackUltra_14b"
+  },
+  {
+   "detected_date": "2026-09-26",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "c02caef111a8acf987947f35e1e288aa5450e184",
+   "new_value": "ceb55042229d17dcf45df52ad84698339e63d4c5",
+   "external_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF"
+  },
+  {
+   "detected_date": "2026-09-26",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "652a7ba1c3fb0d926435111acb57a507dddaddd6",
+   "new_value": "c9e42c51357fdd5f25af7cd7dc0e8bf59c81af4d",
+   "external_id": "FINAL-Bench/POCKET-35B-GGUF"
+  },
   {
    "detected_date": "2026-09-25",
    "severity": "high",
@@ -558,46 +604,6 @@
    "old_value": "5f2a3e93092efaba9153253ff5f2e6a8e810e4f2",
    "new_value": "ca58dac87bed1894fa88a784544323aaf48770e4",
    "external_id": "pnnbao-ump/VieNeu-TTS-v3-Turbo"
-  },
-  {
-   "detected_date": "2026-09-23",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "c75dadf28f2f6812355f29f9eab528c8db9def5b",
-   "new_value": "abe4021465bae1921f1d172b49ad817702fb69a7",
-   "external_id": "AnkitAI/Parable-Qwen3-4B-Claude-Fable-5-GGUF"
-  },
-  {
-   "detected_date": "2026-09-23",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "84022ce711b28455e8c4fc364ce68c00cf995875",
-   "new_value": "e7caca5d835a3901a8e0d63e94009429bafafdfc",
-   "external_id": "LiquidAI/LFM2.5-2.6B-GGUF"
-  },
-  {
-   "detected_date": "2026-09-22",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "b454ba1448cd1148e0a47408f009f9e94502c99e",
-   "new_value": "4a83666ac4f27e52530c5e0eebbb1424a866ab9e",
-   "external_id": "CMSManhattan/JiRackUltra_14b"
-  },
-  {
-   "detected_date": "2026-09-22",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "e9f0913aaa3b91734ce8e2cd0322e72fa5419508",
-   "new_value": "37840ff32d0437a49fe180f14cdef46329eed9ee",
-   "external_id": "ReliquaryForge/qwen3-4b-base-dapo-v4"
-  },
-  {
-   "detected_date": "2026-09-22",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "dae47e44d47c340e5c292bc33e0137f1e9e2d835",
-   "new_value": "406756ee8e3b16e902ce40112986c1010775f888",
-   "external_id": "audio-cpp/audio.cpp-gguf"
   }
  ]
 }
