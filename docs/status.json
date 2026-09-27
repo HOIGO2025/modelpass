@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-26T03:25:20Z",
- "last_success": "2026-09-26T03:25:19Z",
+ "generated_at": "2026-09-27T03:25:25Z",
+ "last_success": "2026-09-27T03:25:25Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 24969,
- "entities": 1206,
+ "observations": 25969,
+ "entities": 1215,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -28,7 +28,8 @@
   "2026-09-23",
   "2026-09-24",
   "2026-09-25",
-  "2026-09-26"
+  "2026-09-26",
+  "2026-09-27"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -54,30 +55,31 @@
   "2026-09-23": "success",
   "2026-09-24": "success",
   "2026-09-25": "success",
-  "2026-09-26": "success"
+  "2026-09-26": "success",
+  "2026-09-27": "success"
  },
- "days_covered": 23,
+ "days_covered": 24,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 4,
-  "low": 26507,
-  "medium": 169
+  "low": 27795,
+  "medium": 175
  },
- "declared": 1099,
- "has_file": 266,
- "gap": 846,
+ "declared": 1108,
+ "has_file": 269,
+ "gap": 852,
  "undeclared": 107,
- "gated": 43,
+ "gated": 44,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 655,
-   "nofile": 530
+   "total": 660,
+   "nofile": 533
   },
   {
    "lic": "mit",
-   "total": 208,
-   "nofile": 169
+   "total": 209,
+   "nofile": 170
   },
   {
    "lic": "other",
@@ -85,24 +87,29 @@
    "nofile": 49
   },
   {
+   "lic": "cc-by-nc-4.0",
+   "total": 20,
+   "nofile": 19
+  },
+  {
    "lic": "gemma",
    "total": 19,
    "nofile": 19
   },
   {
-   "lic": "cc-by-nc-4.0",
-   "total": 19,
-   "nofile": 19
-  },
-  {
    "lic": "cc-by-4.0",
-   "total": 15,
-   "nofile": 15
+   "total": 16,
+   "nofile": 16
   },
   {
    "lic": "cc-by-nc-sa-4.0",
    "total": 9,
    "nofile": 7
+  },
+  {
+   "lic": "llama3.2",
+   "total": 6,
+   "nofile": 2
   },
   {
    "lic": "llama3.1",
@@ -113,22 +120,23 @@
    "lic": "creativeml-openrail-m",
    "total": 6,
    "nofile": 6
-  },
-  {
-   "lic": "llama3.2",
-   "total": 5,
-   "nofile": 1
   }
  ],
  "offhost": {
-  "pulled_at": "2026-09-25T13:30:39Z",
-  "archives_ok": 24,
+  "pulled_at": "2026-09-26T13:36:31Z",
+  "archives_ok": 25,
   "archives_failed": 0,
-  "mirror_kb": 80920,
-  "hours_ago": 13.9,
+  "mirror_kb": 84280,
+  "hours_ago": 13.8,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-09-27",
+   "archive_path": "data/raw/huggingface/2026-09-27.jsonl.gz",
+   "archive_sha256": "7e02270188d4248100d0138513e3396e592a8fd9f62086e8eac4d417ea774c42",
+   "merkle_root": "914a9880bfc2c618aed8de7d30793f734bc7d10d9d7f6ffffc4ff2faac271644"
+  },
   {
    "d": "2026-09-26",
    "archive_path": "data/raw/huggingface/2026-09-26.jsonl.gz",
@@ -182,12 +190,6 @@
    "archive_path": "data/raw/huggingface/2026-09-18.jsonl.gz",
    "archive_sha256": "fc9764a14709e512373775522e51cd830a064be67ecc058b2a94215a8f51eece",
    "merkle_root": "e99d7384134954c6037894e64886491fb71d9cae43a5709c445ddff10a3beb98"
-  },
-  {
-   "d": "2026-09-17",
-   "archive_path": "data/raw/huggingface/2026-09-17.jsonl.gz",
-   "archive_sha256": "e0cdd22ccffc0b4bc011c06eb740c4b150c04b0521f04f8af29fa7469c3ee034",
-   "merkle_root": "cb4e8f41974602453b310bfa6c7972886f195020e1012fdbcc45e885624debf1"
   }
  ],
  "calendar": [
@@ -282,9 +284,61 @@
   {
    "date": "2026-09-26",
    "status": "success"
+  },
+  {
+   "date": "2026-09-27",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-09-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "40319fb15542f0ad22921e0124a191a8a935a60a",
+   "new_value": "8fa47c0eb8da2323cd756f01404601ed4ff4706e",
+   "external_id": "abenzerps/Qwen-Image-2.1-Uncensored-GGUF"
+  },
+  {
+   "detected_date": "2026-09-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "6730ab1a80c0d0194df53edce2690e1030feedef",
+   "new_value": "b5e7738e6a1e8c88f9e09930e6b28e6d79aa87be",
+   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-Final-GGUF"
+  },
+  {
+   "detected_date": "2026-09-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "293f5010f29668f529831c6eb52aa85f8c017d56",
+   "new_value": "72147accc0b794361eee38257d2e4a9087ac7698",
+   "external_id": "DeepBeepMeep/Wan2.1"
+  },
+  {
+   "detected_date": "2026-09-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "7b61c8edb895aaf25b248f064e9726ffdcc7ec46",
+   "new_value": "41163f153269fa7931b2bca65132b9486e28e364",
+   "external_id": "DeepBeepMeep/MiniMax-H3"
+  },
+  {
+   "detected_date": "2026-09-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "efbb3b1f70a21d97fd4495240648405f7228554f",
+   "new_value": "71bc7b627595dc8a91039addd9c791ae548d6747",
+   "external_id": "ggml-org/Qwen3.8-27B-GGUF"
+  },
+  {
+   "detected_date": "2026-09-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "0a104324546d2622985e3c676a4b5550cc772127",
+   "new_value": "1a73167f64a9bf0d280f2223a8cbbccb8273ef05",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
   {
    "detected_date": "2026-09-26",
    "severity": "medium",
@@ -556,54 +610,6 @@
    "old_value": "08d04455279082882deaabc8d0d09fc914c071e1",
    "new_value": "6fc90a3b1b653e935a0d175e260736de25b84df5",
    "external_id": "Comfy-Org/z_image_turbo"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "7e75982b97cd5a41d2dcfa1904ee88d0686d6fd1",
-   "new_value": "1c41cfca8ebba91d0af792a05c5761fb2c3a7975",
-   "external_id": "Comfy-Org/MiniMax-H3"
-  },
-  {
-   "detected_date": "2026-09-23",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "ace0edeb3791a594ddfa36ed5f41a178a394e921",
-   "new_value": "5dc5850eb514a3685f6a03a2641728a8f7549c69",
-   "external_id": "Comfy-Org/Qwen-Image-2.1"
-  },
-  {
-   "detected_date": "2026-09-23",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "4a83666ac4f27e52530c5e0eebbb1424a866ab9e",
-   "new_value": "90e6d6b0f78678f8a3d3bf47b8fe4f6d0766750e",
-   "external_id": "CMSManhattan/JiRackUltra_14b"
-  },
-  {
-   "detected_date": "2026-09-23",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "cdf97bd8205908758f44aec508d68ac1aef98f5c",
-   "new_value": "03502067c64ce32ac4fe87b0cec0310a1a13d3e9",
-   "external_id": "LiquidAI/LFM2.5-230M-GGUF"
-  },
-  {
-   "detected_date": "2026-09-23",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "0e4e1fb83e73a7bb0c1ad6f6e689320a04f0bcba",
-   "new_value": "6d07b3bc329fb55e5d1bf2ddcb9244f4e5753553",
-   "external_id": "AnkitAI/Parable-Qwen3-8B-Claude-Fable-5-GGUF"
-  },
-  {
-   "detected_date": "2026-09-23",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "5f2a3e93092efaba9153253ff5f2e6a8e810e4f2",
-   "new_value": "ca58dac87bed1894fa88a784544323aaf48770e4",
-   "external_id": "pnnbao-ump/VieNeu-TTS-v3-Turbo"
   }
  ]
 }
