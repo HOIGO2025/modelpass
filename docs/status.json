@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-27T03:25:25Z",
- "last_success": "2026-09-27T03:25:25Z",
+ "generated_at": "2026-09-28T03:25:25Z",
+ "last_success": "2026-09-28T03:25:24Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 25969,
- "entities": 1215,
+ "observations": 26969,
+ "entities": 1220,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -29,7 +29,8 @@
   "2026-09-24",
   "2026-09-25",
   "2026-09-26",
-  "2026-09-27"
+  "2026-09-27",
+  "2026-09-28"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -56,35 +57,36 @@
   "2026-09-24": "success",
   "2026-09-25": "success",
   "2026-09-26": "success",
-  "2026-09-27": "success"
+  "2026-09-27": "success",
+  "2026-09-28": "success"
  },
- "days_covered": 24,
+ "days_covered": 25,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 4,
-  "low": 27795,
-  "medium": 175
+  "low": 29080,
+  "medium": 183
  },
- "declared": 1108,
- "has_file": 269,
- "gap": 852,
+ "declared": 1113,
+ "has_file": 270,
+ "gap": 856,
  "undeclared": 107,
  "gated": 44,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 660,
-   "nofile": 533
+   "total": 663,
+   "nofile": 536
   },
   {
    "lic": "mit",
-   "total": 209,
+   "total": 210,
    "nofile": 170
   },
   {
    "lic": "other",
-   "total": 115,
-   "nofile": 49
+   "total": 116,
+   "nofile": 50
   },
   {
    "lic": "cc-by-nc-4.0",
@@ -123,14 +125,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-09-26T13:36:31Z",
-  "archives_ok": 25,
+  "pulled_at": "2026-09-27T13:30:40Z",
+  "archives_ok": 26,
   "archives_failed": 0,
-  "mirror_kb": 84280,
-  "hours_ago": 13.8,
+  "mirror_kb": 87656,
+  "hours_ago": 13.9,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-09-28",
+   "archive_path": "data/raw/huggingface/2026-09-28.jsonl.gz",
+   "archive_sha256": "cdbd903bdb19a20557f86aea4634201b6ebe09a46f84b127892235f041fe3f66",
+   "merkle_root": "7c38a0411dbe99bc100e593b348b36465228057c4789b51f43e8c1003d4bff6f"
+  },
   {
    "d": "2026-09-27",
    "archive_path": "data/raw/huggingface/2026-09-27.jsonl.gz",
@@ -184,12 +192,6 @@
    "archive_path": "data/raw/huggingface/2026-09-19.jsonl.gz",
    "archive_sha256": "5a2a5030169dfac2c2e247cf93ec0befbfd0ed61528d145234661bf5009874ce",
    "merkle_root": "e637f6a619f1f79f6625bc8843c6b1ce8e921b06b459126ce172f7f1906a1f7b"
-  },
-  {
-   "d": "2026-09-18",
-   "archive_path": "data/raw/huggingface/2026-09-18.jsonl.gz",
-   "archive_sha256": "fc9764a14709e512373775522e51cd830a064be67ecc058b2a94215a8f51eece",
-   "merkle_root": "e99d7384134954c6037894e64886491fb71d9cae43a5709c445ddff10a3beb98"
   }
  ],
  "calendar": [
@@ -288,9 +290,77 @@
   {
    "date": "2026-09-27",
    "status": "success"
+  },
+  {
+   "date": "2026-09-28",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-09-28",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "74393b0a93db449918f5569d3c29a267844dfd19",
+   "new_value": "4c37721f64dc278a64633117170937daed974b4a",
+   "external_id": "CMSManhattan/JiRackUltra_1b"
+  },
+  {
+   "detected_date": "2026-09-28",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "8fa47c0eb8da2323cd756f01404601ed4ff4706e",
+   "new_value": "7cd41e760c62e49af2073c869bc2b66bdac86258",
+   "external_id": "abenzerps/Qwen-Image-2.1-Uncensored-GGUF"
+  },
+  {
+   "detected_date": "2026-09-28",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "1650e9a8bdaef1d048aee516b6f738096e2448a9",
+   "new_value": "995c097a2df24d3e5df29521985cb0846931dcb0",
+   "external_id": "CMSManhattan/JiRackUltra_14b"
+  },
+  {
+   "detected_date": "2026-09-28",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "b5e7738e6a1e8c88f9e09930e6b28e6d79aa87be",
+   "new_value": "17fd80b58a35d38fa308d2f00e4ff72cfed5dc60",
+   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-Final-GGUF"
+  },
+  {
+   "detected_date": "2026-09-28",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "9585099e705ab97bad441b836f49bba0f0e26ce3",
+   "new_value": "f9634218e53580c56edf0de97ca1a7d3f1c2354e",
+   "external_id": "fastino/gliner2-base-v1"
+  },
+  {
+   "detected_date": "2026-09-28",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "72147accc0b794361eee38257d2e4a9087ac7698",
+   "new_value": "6e277385fc243685070fd73a21278adaaa914b6a",
+   "external_id": "DeepBeepMeep/Wan2.1"
+  },
+  {
+   "detected_date": "2026-09-28",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "5f1b8cd78bc4fb444dd171e59b18f3a3af89a079",
+   "new_value": "8f518e882455312b086101e60691f5e6e2f05c3c",
+   "external_id": "Qdrant/all-MiniLM-L6-v2-onnx"
+  },
+  {
+   "detected_date": "2026-09-28",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "1a73167f64a9bf0d280f2223a8cbbccb8273ef05",
+   "new_value": "83c5d96c03023ff5a7712570d057ce26c8769f98",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
   {
    "detected_date": "2026-09-27",
    "severity": "medium",
@@ -546,70 +616,6 @@
    "old_value": "ab9055628ea245000e610f2aa2c96f4746093546",
    "new_value": "ed33133cd56476eac818c0943b6f9419b3e4a3a1",
    "external_id": "Comfy-Org/flux2-dev"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "7d41107b653d3039be20972fb82398b01b3213eb",
-   "new_value": "f68ace85e60b4a02a323e394253731947657b7d2",
-   "external_id": "Comfy-Org/Qwen-Image-Edit_ComfyUI"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "6b714b26eea5cbd9f31e4edb2541c170afa935ba",
-   "new_value": "5d6c926f44e26b07957b0dd315bbedcb4c17a5fe",
-   "external_id": "vikhyatk/moondream2"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "406756ee8e3b16e902ce40112986c1010775f888",
-   "new_value": "a776907b362419343f4b9996bdd899619efcf3f8",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "7beb7b647f04469fbe64ba8adc2bb0d7e5e9f73f",
-   "new_value": "1f12b17be14c89b026c51a91d67c32f84bb047bc",
-   "external_id": "Comfy-Org/Qwen-Image_ComfyUI"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "617a7633e636506f850e043bc4605f290a466a8e",
-   "new_value": "123acf1cc74bccbb9bfff8ac1ee72edc08c2341d",
-   "external_id": "Comfy-Org/Wan_2.1_ComfyUI_repackaged"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "e5ea8b4dd7f38f348b138eb0fe29f92c0e367e96",
-   "new_value": "eb1eddd3983a54678545a9b2c178c5853b30f7be",
-   "external_id": "Comfy-Org/Krea-2"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "c4f60d30c55a624e35427060fdd217579a6c1d77",
-   "new_value": "ee6f4a40737a995bf5818954cfce6d59443b0f04",
-   "external_id": "Comfy-Org/Wan_2.2_ComfyUI_Repackaged"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "08d04455279082882deaabc8d0d09fc914c071e1",
-   "new_value": "6fc90a3b1b653e935a0d175e260736de25b84df5",
-   "external_id": "Comfy-Org/z_image_turbo"
   }
  ]
 }
