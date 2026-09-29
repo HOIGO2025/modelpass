@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-28T03:25:25Z",
- "last_success": "2026-09-28T03:25:24Z",
+ "generated_at": "2026-09-29T03:25:19Z",
+ "last_success": "2026-09-29T03:25:19Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 26969,
- "entities": 1220,
+ "observations": 27969,
+ "entities": 1224,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -30,7 +30,8 @@
   "2026-09-25",
   "2026-09-26",
   "2026-09-27",
-  "2026-09-28"
+  "2026-09-28",
+  "2026-09-29"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -58,25 +59,26 @@
   "2026-09-25": "success",
   "2026-09-26": "success",
   "2026-09-27": "success",
-  "2026-09-28": "success"
+  "2026-09-28": "success",
+  "2026-09-29": "success"
  },
- "days_covered": 25,
+ "days_covered": 26,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 4,
-  "low": 29080,
-  "medium": 183
+  "low": 30388,
+  "medium": 186
  },
- "declared": 1113,
- "has_file": 270,
- "gap": 856,
+ "declared": 1117,
+ "has_file": 272,
+ "gap": 858,
  "undeclared": 107,
  "gated": 44,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 663,
-   "nofile": 536
+   "total": 666,
+   "nofile": 538
   },
   {
    "lic": "mit",
@@ -110,7 +112,7 @@
   },
   {
    "lic": "llama3.2",
-   "total": 6,
+   "total": 7,
    "nofile": 2
   },
   {
@@ -125,14 +127,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-09-27T13:30:40Z",
-  "archives_ok": 26,
+  "pulled_at": "2026-09-28T13:30:42Z",
+  "archives_ok": 27,
   "archives_failed": 0,
-  "mirror_kb": 87656,
+  "mirror_kb": 91048,
   "hours_ago": 13.9,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-09-29",
+   "archive_path": "data/raw/huggingface/2026-09-29.jsonl.gz",
+   "archive_sha256": "08e1ecd9ae99a0f3bd802cb72596c42a395339a8ad2b12d8f3eda4472bdb27e5",
+   "merkle_root": "f94c78c2099d861d599cca7160400eb0d79317c99716d1b04b292b701608fdda"
+  },
   {
    "d": "2026-09-28",
    "archive_path": "data/raw/huggingface/2026-09-28.jsonl.gz",
@@ -186,12 +194,6 @@
    "archive_path": "data/raw/huggingface/2026-09-20.jsonl.gz",
    "archive_sha256": "552f9460b067e8e53882eb4d7b76e0891d9f92ade7aa844d46efc91032817df5",
    "merkle_root": "9486809bdb87f0345e8bdb7d2279a4fa10e2f423db69e2ae1b3799c69af04ee3"
-  },
-  {
-   "d": "2026-09-19",
-   "archive_path": "data/raw/huggingface/2026-09-19.jsonl.gz",
-   "archive_sha256": "5a2a5030169dfac2c2e247cf93ec0befbfd0ed61528d145234661bf5009874ce",
-   "merkle_root": "e637f6a619f1f79f6625bc8843c6b1ce8e921b06b459126ce172f7f1906a1f7b"
   }
  ],
  "calendar": [
@@ -294,9 +296,37 @@
   {
    "date": "2026-09-28",
    "status": "success"
+  },
+  {
+   "date": "2026-09-29",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-09-29",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "7cd41e760c62e49af2073c869bc2b66bdac86258",
+   "new_value": "8d0887daa8af483d79cdd2f0d7da85e59cff19fd",
+   "external_id": "abenzerps/Qwen-Image-2.1-Uncensored-GGUF"
+  },
+  {
+   "detected_date": "2026-09-29",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "c063053e004e9783631651df95cf55d0bbf88b32",
+   "new_value": "91bd022d5b49442a868bc35008f6c21e1860edfa",
+   "external_id": "RedHatAI/Qwen3.8-27B-INT4"
+  },
+  {
+   "detected_date": "2026-09-29",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "3a583c609552e21c09a817737932e2981fddbb72",
+   "new_value": "f9ce19996f5409fff367cb8b32419b01380ccc2f",
+   "external_id": "DeepBeepMeep/LTX-2"
+  },
   {
    "detected_date": "2026-09-28",
    "severity": "medium",
@@ -592,30 +622,6 @@
    "old_value": "45aaad562bd1944267db209b704c0be6d64c5313",
    "new_value": "293f5010f29668f529831c6eb52aa85f8c017d56",
    "external_id": "DeepBeepMeep/Wan2.1"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "6baad88896848433857c170ba4f05d2ea9d5f218",
-   "new_value": "9e364ccd290a401561091fb441ed19cd7de92550",
-   "external_id": "Comfy-Org/MiniMax-Music-3"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "101c239b4b64dd1b45d645365339c56e0e7df4c3",
-   "new_value": "ccde4ba417d7900669fd56dd292a883cee11ff37",
-   "external_id": "Comfy-Org/ltx-2"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "ab9055628ea245000e610f2aa2c96f4746093546",
-   "new_value": "ed33133cd56476eac818c0943b6f9419b3e4a3a1",
-   "external_id": "Comfy-Org/flux2-dev"
   }
  ]
 }
