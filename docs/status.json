@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-29T03:25:19Z",
- "last_success": "2026-09-29T03:25:19Z",
+ "generated_at": "2026-09-30T03:25:29Z",
+ "last_success": "2026-09-30T03:25:29Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 27969,
- "entities": 1224,
+ "observations": 28969,
+ "entities": 1232,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -31,7 +31,8 @@
   "2026-09-26",
   "2026-09-27",
   "2026-09-28",
-  "2026-09-29"
+  "2026-09-29",
+  "2026-09-30"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -60,25 +61,26 @@
   "2026-09-26": "success",
   "2026-09-27": "success",
   "2026-09-28": "success",
-  "2026-09-29": "success"
+  "2026-09-29": "success",
+  "2026-09-30": "success"
  },
- "days_covered": 26,
+ "days_covered": 27,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 4,
-  "low": 30388,
-  "medium": 186
+  "low": 31683,
+  "medium": 195
  },
- "declared": 1117,
- "has_file": 272,
- "gap": 858,
+ "declared": 1125,
+ "has_file": 274,
+ "gap": 864,
  "undeclared": 107,
  "gated": 44,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 666,
-   "nofile": 538
+   "total": 670,
+   "nofile": 541
   },
   {
    "lic": "mit",
@@ -91,13 +93,13 @@
    "nofile": 50
   },
   {
-   "lic": "cc-by-nc-4.0",
+   "lic": "gemma",
    "total": 20,
-   "nofile": 19
+   "nofile": 20
   },
   {
-   "lic": "gemma",
-   "total": 19,
+   "lic": "cc-by-nc-4.0",
+   "total": 20,
    "nofile": 19
   },
   {
@@ -117,8 +119,8 @@
   },
   {
    "lic": "llama3.1",
-   "total": 6,
-   "nofile": 2
+   "total": 7,
+   "nofile": 3
   },
   {
    "lic": "creativeml-openrail-m",
@@ -127,14 +129,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-09-28T13:30:42Z",
-  "archives_ok": 27,
+  "pulled_at": "2026-09-29T13:30:41Z",
+  "archives_ok": 28,
   "archives_failed": 0,
-  "mirror_kb": 91048,
+  "mirror_kb": 94448,
   "hours_ago": 13.9,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-09-30",
+   "archive_path": "data/raw/huggingface/2026-09-30.jsonl.gz",
+   "archive_sha256": "0b6832e7270a1237d9e692521c7e6201e6cdf0a050d7826820f33cf20b59587e",
+   "merkle_root": "245441656f55f8b10e170b46bf80c40424dfbafaa66054d4ceeb8d6a17307a15"
+  },
   {
    "d": "2026-09-29",
    "archive_path": "data/raw/huggingface/2026-09-29.jsonl.gz",
@@ -188,12 +196,6 @@
    "archive_path": "data/raw/huggingface/2026-09-21.jsonl.gz",
    "archive_sha256": "33b71e788d9bec2cdb63838b98376a4f40f0ee9e5a6d88f5cdb59209ba8a2f5b",
    "merkle_root": "3cdf0336c77398aef98c0744a980df7c94a054a895d911066a3959bc9cedd58f"
-  },
-  {
-   "d": "2026-09-20",
-   "archive_path": "data/raw/huggingface/2026-09-20.jsonl.gz",
-   "archive_sha256": "552f9460b067e8e53882eb4d7b76e0891d9f92ade7aa844d46efc91032817df5",
-   "merkle_root": "9486809bdb87f0345e8bdb7d2279a4fa10e2f423db69e2ae1b3799c69af04ee3"
   }
  ],
  "calendar": [
@@ -300,9 +302,85 @@
   {
    "date": "2026-09-29",
    "status": "success"
+  },
+  {
+   "date": "2026-09-30",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-09-30",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "2a55d75962e22f7a4a1d9963ab6eae3678537831",
+   "new_value": "ed59f92082b1e93c0e96d60a8b11aab089b52f09",
+   "external_id": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF"
+  },
+  {
+   "detected_date": "2026-09-30",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "8d0887daa8af483d79cdd2f0d7da85e59cff19fd",
+   "new_value": "6b34e59458d3eb7ba6a6f86a116aed5253dc02c3",
+   "external_id": "abenzerps/Qwen-Image-2.1-Uncensored-GGUF"
+  },
+  {
+   "detected_date": "2026-09-30",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "9a44dbdb47cefd046be9c0a13476192f34c8db8e",
+   "new_value": "cb504a4090723e43f17ad01cec0359490e2de613",
+   "external_id": "Comfy-Org/Qwen-Image-2.1"
+  },
+  {
+   "detected_date": "2026-09-30",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "12a3808a956f869c767195e9266b59c4d21d92e2",
+   "new_value": "f97400052a43d642bbc6e9975e2397e3ae6a6b52",
+   "external_id": "openbmb/MiniCPM5-2B"
+  },
+  {
+   "detected_date": "2026-09-30",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "f9ce19996f5409fff367cb8b32419b01380ccc2f",
+   "new_value": "6aa898aea1d968febdd834dc29e1dbef35340aeb",
+   "external_id": "DeepBeepMeep/LTX-2"
+  },
+  {
+   "detected_date": "2026-09-30",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "41163f153269fa7931b2bca65132b9486e28e364",
+   "new_value": "579065b9448c95ae5cc558c5f787ba8271227db4",
+   "external_id": "DeepBeepMeep/MiniMax-H3"
+  },
+  {
+   "detected_date": "2026-09-30",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "c5b8dc374d4162901be317d33710365ad6be53bd",
+   "new_value": "e82685101216af1953707faa42567d232a5e4d45",
+   "external_id": "trl-internal-testing/tiny-GptOssForCausalLM"
+  },
+  {
+   "detected_date": "2026-09-30",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "9b283bc750f20dfb03d1429862b1819cfc4b6a01",
+   "new_value": "62f13fe1c31492fb4195c72ec52cbb736f72fefb",
+   "external_id": "trl-internal-testing/tiny-Qwen2_5_VLForConditionalGeneration"
+  },
+  {
+   "detected_date": "2026-09-30",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "bf92c4091e333e69b8ca1998e0a669f15cb0832b",
+   "new_value": "e5eb578a89295337b8ff433a035929ce0279e0b6",
+   "external_id": "Comfy-Org/MiniMax-H3"
+  },
   {
    "detected_date": "2026-09-29",
    "severity": "medium",
@@ -550,78 +628,6 @@
    "old_value": "5dc5850eb514a3685f6a03a2641728a8f7549c69",
    "new_value": "9a44dbdb47cefd046be9c0a13476192f34c8db8e",
    "external_id": "Comfy-Org/Qwen-Image-2.1"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "b35ffffa61fa02a86c377d94b755d9fe65d185d9",
-   "new_value": "f37641be376725d324c56626007cc477f1249a69",
-   "external_id": "Comfy-Org/Pixal3D"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "90e6d6b0f78678f8a3d3bf47b8fe4f6d0766750e",
-   "new_value": "165c5840de98fb1c65d7d3a044ae56730ebf4b2f",
-   "external_id": "CMSManhattan/JiRackUltra_14b"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "673340c8a66db62b84e4099def7d01d337ae12dc",
-   "new_value": "df48879708206a403d2a61acd55578c2e80fd233",
-   "external_id": "Comfy-Org/SeedVR2"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "694a9723ff772285c73f0700caacf944d3f02f8d",
-   "new_value": "6707deb277e9e0907fd9c14ce6b6f1d695c6a3fc",
-   "external_id": "Comfy-Org/ace_step_1.5_ComfyUI_files"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "40a8a3d745c7d7adb077cb19879a975aa19c847b",
-   "new_value": "83c446ef27a6ac1e9e36ecf13257283aa12cf22a",
-   "external_id": "Comfy-Org/flux1-dev"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "ed158470869ff31fa51cf56012dac33fb00f494b",
-   "new_value": "e7181fe1896b7f2ce34120d1a3663413548240d7",
-   "external_id": "Comfy-Org/Wan-Animate-2"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "144e6ea259230936cdc6f140b3fe69c8529b5c47",
-   "new_value": "1405a2b738c29b890cf6d03fc038d8d3e92eeed7",
-   "external_id": "Comfy-Org/HunyuanVideo_1.5_repackaged"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "ca58dac87bed1894fa88a784544323aaf48770e4",
-   "new_value": "61b85e3d937fbbacb387714180e8182823512523",
-   "external_id": "pnnbao-ump/VieNeu-TTS-v3-Turbo"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "45aaad562bd1944267db209b704c0be6d64c5313",
-   "new_value": "293f5010f29668f529831c6eb52aa85f8c017d56",
-   "external_id": "DeepBeepMeep/Wan2.1"
   }
  ]
 }
