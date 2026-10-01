@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-30T03:25:29Z",
- "last_success": "2026-09-30T03:25:29Z",
+ "generated_at": "2026-10-01T03:25:20Z",
+ "last_success": "2026-10-01T03:25:19Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 28969,
- "entities": 1232,
+ "observations": 29969,
+ "entities": 1236,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -32,7 +32,8 @@
   "2026-09-27",
   "2026-09-28",
   "2026-09-29",
-  "2026-09-30"
+  "2026-09-30",
+  "2026-10-01"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -62,30 +63,31 @@
   "2026-09-27": "success",
   "2026-09-28": "success",
   "2026-09-29": "success",
-  "2026-09-30": "success"
+  "2026-09-30": "success",
+  "2026-10-01": "success"
  },
- "days_covered": 27,
+ "days_covered": 28,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 4,
-  "low": 31683,
-  "medium": 195
+  "low": 32974,
+  "medium": 201
  },
- "declared": 1125,
- "has_file": 274,
- "gap": 864,
+ "declared": 1129,
+ "has_file": 275,
+ "gap": 867,
  "undeclared": 107,
  "gated": 44,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 670,
-   "nofile": 541
+   "total": 672,
+   "nofile": 543
   },
   {
    "lic": "mit",
-   "total": 210,
-   "nofile": 170
+   "total": 211,
+   "nofile": 171
   },
   {
    "lic": "other",
@@ -129,14 +131,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-09-29T13:30:41Z",
-  "archives_ok": 28,
+  "pulled_at": "2026-09-30T13:31:22Z",
+  "archives_ok": 29,
   "archives_failed": 0,
-  "mirror_kb": 94448,
+  "mirror_kb": 97840,
   "hours_ago": 13.9,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-10-01",
+   "archive_path": "data/raw/huggingface/2026-10-01.jsonl.gz",
+   "archive_sha256": "175db29e8f3bd4dc0121061f70946600ca5604edd6b578269ba4831dbfb69089",
+   "merkle_root": "a1abf5f7ae4576c9c8fba30a076fc7bedd79ca39894d5180bdcbd4dcec721c0b"
+  },
   {
    "d": "2026-09-30",
    "archive_path": "data/raw/huggingface/2026-09-30.jsonl.gz",
@@ -190,12 +198,6 @@
    "archive_path": "data/raw/huggingface/2026-09-22.jsonl.gz",
    "archive_sha256": "1f9dd0ea12220622fe49147c2041ff0c92508a98ea4571090ed0ed53c3334a6e",
    "merkle_root": "69326995be2cd80ec39938d2e8fdfd4804cb59de247b6509e77b636e62ad900f"
-  },
-  {
-   "d": "2026-09-21",
-   "archive_path": "data/raw/huggingface/2026-09-21.jsonl.gz",
-   "archive_sha256": "33b71e788d9bec2cdb63838b98376a4f40f0ee9e5a6d88f5cdb59209ba8a2f5b",
-   "merkle_root": "3cdf0336c77398aef98c0744a980df7c94a054a895d911066a3959bc9cedd58f"
   }
  ],
  "calendar": [
@@ -306,9 +308,61 @@
   {
    "date": "2026-09-30",
    "status": "success"
+  },
+  {
+   "date": "2026-10-01",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-10-01",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "fc9d90d5531e4a70c2a699435fa0bc90065f6d96",
+   "new_value": "1501487661b655734ad718da728ee723299d54a5",
+   "external_id": "CMSManhattan/JiRackDeltaNet_27b"
+  },
+  {
+   "detected_date": "2026-10-01",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "4c37721f64dc278a64633117170937daed974b4a",
+   "new_value": "b7bed2f9342f28519bd5312dc3bb2e0c0698fd35",
+   "external_id": "CMSManhattan/JiRackUltra_1b"
+  },
+  {
+   "detected_date": "2026-10-01",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "995c097a2df24d3e5df29521985cb0846931dcb0",
+   "new_value": "0f502a6cb0ef61b56238b63d5752d1667d9a0a6a",
+   "external_id": "CMSManhattan/JiRackUltra_14b"
+  },
+  {
+   "detected_date": "2026-10-01",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "97d101e6db2642e162a1d05392d1b0231c91033e",
+   "new_value": "e4f489dc536556fc1be02b973ba06756e0d4a2ac",
+   "external_id": "PaddlePaddle/PP-DocLayoutV3_safetensors"
+  },
+  {
+   "detected_date": "2026-10-01",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "8f518e882455312b086101e60691f5e6e2f05c3c",
+   "new_value": "d13954661f83248295ba75c1ed411eef3b7b936e",
+   "external_id": "Qdrant/all-MiniLM-L6-v2-onnx"
+  },
+  {
+   "detected_date": "2026-10-01",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "83c5d96c03023ff5a7712570d057ce26c8769f98",
+   "new_value": "d1296e8c75b190b904a4fa7602fbc5afa27fc1a7",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
   {
    "detected_date": "2026-09-30",
    "severity": "medium",
@@ -580,54 +634,6 @@
    "old_value": "79c3a777abc572b4767922f3916cf63fb5754df2",
    "new_value": "9585099e705ab97bad441b836f49bba0f0e26ce3",
    "external_id": "fastino/gliner2-base-v1"
-  },
-  {
-   "detected_date": "2026-09-25",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "e27a8ef3a4b3ca74738d79ad1046c59ae4a6423f",
-   "new_value": "425937812d28d85a5b5bd70f90e66b590db1fb3c",
-   "external_id": "DavidAU/Qwen3.5-9B-The-Defiant-Fable-Uncensored-Heretic-NEO-IMATRIX-MAX-MTP-GGUF"
-  },
-  {
-   "detected_date": "2026-09-25",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "52398278842ec682c6f32300af41344b1c0b0bb2",
-   "new_value": "aa8f8b060edb00e03bfdd08813a2949946c8ba55",
-   "external_id": "Qdrant/bge-small-en-v1.5-onnx-Q"
-  },
-  {
-   "detected_date": "2026-09-25",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "a776907b362419343f4b9996bdd899619efcf3f8",
-   "new_value": "0a104324546d2622985e3c676a4b5550cc772127",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-09-25",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "1c41cfca8ebba91d0af792a05c5761fb2c3a7975",
-   "new_value": "bf92c4091e333e69b8ca1998e0a669f15cb0832b",
-   "external_id": "Comfy-Org/MiniMax-H3"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "7fb3aaca2d21c0db4716572945208db40cef9966",
-   "new_value": "2f0fa48fea4949b56685ddfc48c05dd81c7d772b",
-   "external_id": "RedHatAI/Qwen3.8-27B-INT4"
-  },
-  {
-   "detected_date": "2026-09-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "5dc5850eb514a3685f6a03a2641728a8f7549c69",
-   "new_value": "9a44dbdb47cefd046be9c0a13476192f34c8db8e",
-   "external_id": "Comfy-Org/Qwen-Image-2.1"
   }
  ]
 }
