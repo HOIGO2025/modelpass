@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-02T03:25:30Z",
- "last_success": "2026-10-02T03:25:29Z",
+ "generated_at": "2026-10-03T03:25:23Z",
+ "last_success": "2026-10-03T03:25:22Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 30969,
- "entities": 1245,
+ "observations": 31969,
+ "entities": 1254,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -34,7 +34,8 @@
   "2026-09-29",
   "2026-09-30",
   "2026-10-01",
-  "2026-10-02"
+  "2026-10-02",
+  "2026-10-03"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -66,25 +67,26 @@
   "2026-09-29": "success",
   "2026-09-30": "success",
   "2026-10-01": "success",
-  "2026-10-02": "success"
+  "2026-10-02": "success",
+  "2026-10-03": "success"
  },
- "days_covered": 29,
+ "days_covered": 30,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 4,
-  "low": 34249,
-  "medium": 208
+  "low": 35513,
+  "medium": 212
  },
- "declared": 1138,
- "has_file": 279,
- "gap": 872,
+ "declared": 1147,
+ "has_file": 281,
+ "gap": 880,
  "undeclared": 107,
  "gated": 44,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 675,
-   "nofile": 545
+   "total": 682,
+   "nofile": 551
   },
   {
    "lic": "mit",
@@ -93,18 +95,18 @@
   },
   {
    "lic": "other",
-   "total": 118,
-   "nofile": 51
+   "total": 119,
+   "nofile": 52
+  },
+  {
+   "lic": "cc-by-nc-4.0",
+   "total": 21,
+   "nofile": 20
   },
   {
    "lic": "gemma",
    "total": 20,
    "nofile": 20
-  },
-  {
-   "lic": "cc-by-nc-4.0",
-   "total": 20,
-   "nofile": 19
   },
   {
    "lic": "cc-by-4.0",
@@ -133,14 +135,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-10-01T13:30:47Z",
-  "archives_ok": 30,
+  "pulled_at": "2026-10-02T13:30:37Z",
+  "archives_ok": 31,
   "archives_failed": 0,
-  "mirror_kb": 101248,
+  "mirror_kb": 104684,
   "hours_ago": 13.9,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-10-03",
+   "archive_path": "data/raw/huggingface/2026-10-03.jsonl.gz",
+   "archive_sha256": "2e0a2a2f9dc749284c3dcdc4669204d09331cfebcccbe40bcc8f8060db734643",
+   "merkle_root": "9d8c84068b7408b6e18159b3fbae1a838ccfed2f84052e8df3cab9e99976f7ff"
+  },
   {
    "d": "2026-10-02",
    "archive_path": "data/raw/huggingface/2026-10-02.jsonl.gz",
@@ -194,12 +202,6 @@
    "archive_path": "data/raw/huggingface/2026-09-24.jsonl.gz",
    "archive_sha256": "e69bfab17cf82b96d707a48049b5f8fdc62cf243a8609ae2ab0c3f07a4709c85",
    "merkle_root": "1d6f054ec03a18beb48968962391f51ea36ebacb4226cfb3778ad22a04c52ad1"
-  },
-  {
-   "d": "2026-09-23",
-   "archive_path": "data/raw/huggingface/2026-09-23.jsonl.gz",
-   "archive_sha256": "e5865edefca1456d7e3ef38f9f6f06d00527263fa44d5f13f264c84215211395",
-   "merkle_root": "5631df78e07cac85f3a594f4f592c83ecda6bed81b58b793304db9368becd0ad"
   }
  ],
  "calendar": [
@@ -318,9 +320,45 @@
   {
    "date": "2026-10-02",
    "status": "success"
+  },
+  {
+   "date": "2026-10-03",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-10-03",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "d85343d46565d1f6a805585568b5aac31992ff2c",
+   "new_value": "f8c7ff42bab1c0597d33e405aba3add9a5c5c6c9",
+   "external_id": "CMSManhattan/JiRackDeltaNet_27b"
+  },
+  {
+   "detected_date": "2026-10-03",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "579065b9448c95ae5cc558c5f787ba8271227db4",
+   "new_value": "50763a51c575663b32a4d7b64d103ab7aae81061",
+   "external_id": "DeepBeepMeep/MiniMax-H3"
+  },
+  {
+   "detected_date": "2026-10-03",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "5948be4ced3a4493d1f836df64378ff136ddb770",
+   "new_value": "3c6a4e66e5d0a684231950b9c74dd4ded7b6fadc",
+   "external_id": "Lightricks/LTX-2.3"
+  },
+  {
+   "detected_date": "2026-10-03",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "5e6e71018ee1756ed329b697a7b4aedc934dfce9",
+   "new_value": "2356ce76915d6c48d313d7e8b25900e1dd3abaa8",
+   "external_id": "Lightricks/LTX-2.5"
+  },
   {
    "detected_date": "2026-10-02",
    "severity": "medium",
@@ -608,38 +646,6 @@
    "old_value": "293f5010f29668f529831c6eb52aa85f8c017d56",
    "new_value": "72147accc0b794361eee38257d2e4a9087ac7698",
    "external_id": "DeepBeepMeep/Wan2.1"
-  },
-  {
-   "detected_date": "2026-09-27",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "7b61c8edb895aaf25b248f064e9726ffdcc7ec46",
-   "new_value": "41163f153269fa7931b2bca65132b9486e28e364",
-   "external_id": "DeepBeepMeep/MiniMax-H3"
-  },
-  {
-   "detected_date": "2026-09-27",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "efbb3b1f70a21d97fd4495240648405f7228554f",
-   "new_value": "71bc7b627595dc8a91039addd9c791ae548d6747",
-   "external_id": "ggml-org/Qwen3.8-27B-GGUF"
-  },
-  {
-   "detected_date": "2026-09-27",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "0a104324546d2622985e3c676a4b5550cc772127",
-   "new_value": "1a73167f64a9bf0d280f2223a8cbbccb8273ef05",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-09-26",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "2f0fa48fea4949b56685ddfc48c05dd81c7d772b",
-   "new_value": "c063053e004e9783631651df95cf55d0bbf88b32",
-   "external_id": "RedHatAI/Qwen3.8-27B-INT4"
   }
  ]
 }
