@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-07T03:25:26Z",
- "last_success": "2026-10-07T03:25:25Z",
+ "generated_at": "2026-10-08T03:25:36Z",
+ "last_success": "2026-10-08T03:25:35Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 35969,
- "entities": 1284,
+ "observations": 36969,
+ "entities": 1288,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -39,7 +39,8 @@
   "2026-10-04",
   "2026-10-05",
   "2026-10-06",
-  "2026-10-07"
+  "2026-10-07",
+  "2026-10-08"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -76,30 +77,31 @@
   "2026-10-04": "success",
   "2026-10-05": "success",
   "2026-10-06": "success",
-  "2026-10-07": "success"
+  "2026-10-07": "success",
+  "2026-10-08": "success"
  },
- "days_covered": 34,
+ "days_covered": 35,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 5,
-  "low": 40644,
-  "medium": 228
+  "low": 41938,
+  "medium": 230
  },
- "declared": 1176,
+ "declared": 1180,
  "has_file": 293,
- "gap": 897,
+ "gap": 901,
  "undeclared": 108,
- "gated": 45,
+ "gated": 46,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 699,
-   "nofile": 561
+   "total": 702,
+   "nofile": 564
   },
   {
    "lic": "mit",
-   "total": 220,
-   "nofile": 177
+   "total": 221,
+   "nofile": 178
   },
   {
    "lic": "other",
@@ -143,14 +145,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-10-06T13:30:42Z",
-  "archives_ok": 35,
+  "pulled_at": "2026-10-07T13:30:42Z",
+  "archives_ok": 36,
   "archives_failed": 0,
-  "mirror_kb": 118392,
+  "mirror_kb": 121800,
   "hours_ago": 13.9,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-10-08",
+   "archive_path": "data/raw/huggingface/2026-10-08.jsonl.gz",
+   "archive_sha256": "5f4aa51e50d35a1b4529739b4629f243c7f468897bdb2ba5972f9568d2ad6db5",
+   "merkle_root": "517d7a9a3f99ca7a7fe153118965c6f695b6026db4e23477900e57d63b93d783"
+  },
   {
    "d": "2026-10-07",
    "archive_path": "data/raw/huggingface/2026-10-07.jsonl.gz",
@@ -204,12 +212,6 @@
    "archive_path": "data/raw/huggingface/2026-09-29.jsonl.gz",
    "archive_sha256": "08e1ecd9ae99a0f3bd802cb72596c42a395339a8ad2b12d8f3eda4472bdb27e5",
    "merkle_root": "f94c78c2099d861d599cca7160400eb0d79317c99716d1b04b292b701608fdda"
-  },
-  {
-   "d": "2026-09-28",
-   "archive_path": "data/raw/huggingface/2026-09-28.jsonl.gz",
-   "archive_sha256": "cdbd903bdb19a20557f86aea4634201b6ebe09a46f84b127892235f041fe3f66",
-   "merkle_root": "7c38a0411dbe99bc100e593b348b36465228057c4789b51f43e8c1003d4bff6f"
   }
  ],
  "calendar": [
@@ -348,9 +350,29 @@
   {
    "date": "2026-10-07",
    "status": "success"
+  },
+  {
+   "date": "2026-10-08",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-10-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "f34b598d4ef4bcefd337bee8d8e7ddd3b7733ccc",
+   "new_value": "ba3f0d584994b37998f235c0a3f6f1beff32ba1e",
+   "external_id": "autotrust/JEV-27B-VL"
+  },
+  {
+   "detected_date": "2026-10-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "e36610ac69b5262e914a52635324050bee8f1ad2",
+   "new_value": "1c54a999134fa52c2305716de8b9b72005c4395c",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
   {
    "detected_date": "2026-10-07",
    "severity": "medium",
@@ -654,22 +676,6 @@
    "old_value": "12a3808a956f869c767195e9266b59c4d21d92e2",
    "new_value": "f97400052a43d642bbc6e9975e2397e3ae6a6b52",
    "external_id": "openbmb/MiniCPM5-2B"
-  },
-  {
-   "detected_date": "2026-09-30",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "f9ce19996f5409fff367cb8b32419b01380ccc2f",
-   "new_value": "6aa898aea1d968febdd834dc29e1dbef35340aeb",
-   "external_id": "DeepBeepMeep/LTX-2"
-  },
-  {
-   "detected_date": "2026-09-30",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "41163f153269fa7931b2bca65132b9486e28e364",
-   "new_value": "579065b9448c95ae5cc558c5f787ba8271227db4",
-   "external_id": "DeepBeepMeep/MiniMax-H3"
   }
  ]
 }
