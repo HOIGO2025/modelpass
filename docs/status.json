@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-08T03:25:36Z",
- "last_success": "2026-10-08T03:25:35Z",
+ "generated_at": "2026-10-09T03:25:23Z",
+ "last_success": "2026-10-09T03:25:23Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 36969,
- "entities": 1288,
+ "observations": 37969,
+ "entities": 1299,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -40,7 +40,8 @@
   "2026-10-05",
   "2026-10-06",
   "2026-10-07",
-  "2026-10-08"
+  "2026-10-08",
+  "2026-10-09"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -78,34 +79,35 @@
   "2026-10-05": "success",
   "2026-10-06": "success",
   "2026-10-07": "success",
-  "2026-10-08": "success"
+  "2026-10-08": "success",
+  "2026-10-09": "success"
  },
- "days_covered": 35,
+ "days_covered": 36,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 5,
-  "low": 41938,
-  "medium": 230
+  "low": 43259,
+  "medium": 237
  },
- "declared": 1180,
- "has_file": 293,
- "gap": 901,
- "undeclared": 108,
+ "declared": 1190,
+ "has_file": 296,
+ "gap": 908,
+ "undeclared": 109,
  "gated": 46,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 702,
-   "nofile": 564
+   "total": 705,
+   "nofile": 567
   },
   {
    "lic": "mit",
-   "total": 221,
-   "nofile": 178
+   "total": 225,
+   "nofile": 182
   },
   {
    "lic": "other",
-   "total": 125,
+   "total": 128,
    "nofile": 54
   },
   {
@@ -145,14 +147,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-10-07T13:30:42Z",
-  "archives_ok": 36,
+  "pulled_at": "2026-10-08T13:30:46Z",
+  "archives_ok": 37,
   "archives_failed": 0,
-  "mirror_kb": 121800,
+  "mirror_kb": 125208,
   "hours_ago": 13.9,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-10-09",
+   "archive_path": "data/raw/huggingface/2026-10-09.jsonl.gz",
+   "archive_sha256": "d9ae2d8024dc4536689d00cebc78745cbed52a3866ae89c953a4c7d12b6ea580",
+   "merkle_root": "d1f4bbf3894ff7df78686738b3207d37d1af14d6152cc5d3ade651134fcdec33"
+  },
   {
    "d": "2026-10-08",
    "archive_path": "data/raw/huggingface/2026-10-08.jsonl.gz",
@@ -206,12 +214,6 @@
    "archive_path": "data/raw/huggingface/2026-09-30.jsonl.gz",
    "archive_sha256": "0b6832e7270a1237d9e692521c7e6201e6cdf0a050d7826820f33cf20b59587e",
    "merkle_root": "245441656f55f8b10e170b46bf80c40424dfbafaa66054d4ceeb8d6a17307a15"
-  },
-  {
-   "d": "2026-09-29",
-   "archive_path": "data/raw/huggingface/2026-09-29.jsonl.gz",
-   "archive_sha256": "08e1ecd9ae99a0f3bd802cb72596c42a395339a8ad2b12d8f3eda4472bdb27e5",
-   "merkle_root": "f94c78c2099d861d599cca7160400eb0d79317c99716d1b04b292b701608fdda"
   }
  ],
  "calendar": [
@@ -354,9 +356,69 @@
   {
    "date": "2026-10-08",
    "status": "success"
+  },
+  {
+   "date": "2026-10-09",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-10-09",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "c24b2e29cb25ec7c157850f402b304a5dafc5c2c",
+   "new_value": "8a31ca66485373f9d5c002f5400b2aecaff84dfe",
+   "external_id": "BoldingBuilds/orcarouter_GLM-5.3-Flash-Uncensored-GGUF"
+  },
+  {
+   "detected_date": "2026-10-09",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "64b030e3deb6e8150d2b7c0db641ef5a17eca8a3",
+   "new_value": "e630f2b8f6aedf8254c3186438633c1b5eeaf80a",
+   "external_id": "Serveurperso/YuE2-GGUF"
+  },
+  {
+   "detected_date": "2026-10-09",
+   "severity": "medium",
+   "field": "base_model_ref",
+   "old_value": "[\"m-a-p/YuE2-3B\",\"m-a-p/YuE2-Vae\",\"m-a-p/SheetSage2\",\"m-a-p/MERT-v2-FullSong\"]",
+   "new_value": "[\"m-a-p/YuE2-3B\",\"m-a-p/YuE2-Vae\",\"m-a-p/SheetSage2\",\"m-a-p/MERT-v2-FullSong\",\"Mothersuperior/yue2-mothersuperior-realaudio-tokenizer-v4\"]",
+   "external_id": "Serveurperso/YuE2-GGUF"
+  },
+  {
+   "detected_date": "2026-10-09",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "142262902a46f7daed19c79d0771534c8106ad59",
+   "new_value": "f8e187bfc6c802a04e145db06e604f337d6ad4ac",
+   "external_id": "AtomicChat/Qwen3.8-Flash-Next-GGUF"
+  },
+  {
+   "detected_date": "2026-10-09",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "e9b71b369c048e2c6b634d4c131061c34e441179",
+   "new_value": "2a77d305038dfc502fd9464e7d028b90381976cb",
+   "external_id": "ai4bharat/indic-conformer-600m-multilingual"
+  },
+  {
+   "detected_date": "2026-10-09",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "6e277385fc243685070fd73a21278adaaa914b6a",
+   "new_value": "05bf8d2597cae81e19d398f21fd483c216dc56c0",
+   "external_id": "DeepBeepMeep/Wan2.1"
+  },
+  {
+   "detected_date": "2026-10-09",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "1c54a999134fa52c2305716de8b9b72005c4395c",
+   "new_value": "a199f1a00ae893af0067caeab51f810de4c728a5",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
   {
    "detected_date": "2026-10-08",
    "severity": "medium",
@@ -620,62 +682,6 @@
    "old_value": "995c097a2df24d3e5df29521985cb0846931dcb0",
    "new_value": "0f502a6cb0ef61b56238b63d5752d1667d9a0a6a",
    "external_id": "CMSManhattan/JiRackUltra_14b"
-  },
-  {
-   "detected_date": "2026-10-01",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "97d101e6db2642e162a1d05392d1b0231c91033e",
-   "new_value": "e4f489dc536556fc1be02b973ba06756e0d4a2ac",
-   "external_id": "PaddlePaddle/PP-DocLayoutV3_safetensors"
-  },
-  {
-   "detected_date": "2026-10-01",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "8f518e882455312b086101e60691f5e6e2f05c3c",
-   "new_value": "d13954661f83248295ba75c1ed411eef3b7b936e",
-   "external_id": "Qdrant/all-MiniLM-L6-v2-onnx"
-  },
-  {
-   "detected_date": "2026-10-01",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "83c5d96c03023ff5a7712570d057ce26c8769f98",
-   "new_value": "d1296e8c75b190b904a4fa7602fbc5afa27fc1a7",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-09-30",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "2a55d75962e22f7a4a1d9963ab6eae3678537831",
-   "new_value": "ed59f92082b1e93c0e96d60a8b11aab089b52f09",
-   "external_id": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF"
-  },
-  {
-   "detected_date": "2026-09-30",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "8d0887daa8af483d79cdd2f0d7da85e59cff19fd",
-   "new_value": "6b34e59458d3eb7ba6a6f86a116aed5253dc02c3",
-   "external_id": "abenzerps/Qwen-Image-2.1-Uncensored-GGUF"
-  },
-  {
-   "detected_date": "2026-09-30",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "9a44dbdb47cefd046be9c0a13476192f34c8db8e",
-   "new_value": "cb504a4090723e43f17ad01cec0359490e2de613",
-   "external_id": "Comfy-Org/Qwen-Image-2.1"
-  },
-  {
-   "detected_date": "2026-09-30",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "12a3808a956f869c767195e9266b59c4d21d92e2",
-   "new_value": "f97400052a43d642bbc6e9975e2397e3ae6a6b52",
-   "external_id": "openbmb/MiniCPM5-2B"
   }
  ]
 }
