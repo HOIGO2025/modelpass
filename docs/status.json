@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-10T03:25:53Z",
- "last_success": "2026-10-10T03:25:53Z",
+ "generated_at": "2026-10-11T03:25:21Z",
+ "last_success": "2026-10-11T03:25:20Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 38969,
- "entities": 1305,
+ "observations": 39969,
+ "entities": 1313,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -42,7 +42,8 @@
   "2026-10-07",
   "2026-10-08",
   "2026-10-09",
-  "2026-10-10"
+  "2026-10-10",
+  "2026-10-11"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -82,25 +83,26 @@
   "2026-10-07": "success",
   "2026-10-08": "success",
   "2026-10-09": "success",
-  "2026-10-10": "success"
+  "2026-10-10": "success",
+  "2026-10-11": "success"
  },
- "days_covered": 37,
+ "days_covered": 38,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 5,
-  "low": 44546,
-  "medium": 240
+  "low": 45843,
+  "medium": 245
  },
- "declared": 1196,
- "has_file": 298,
- "gap": 912,
- "undeclared": 109,
- "gated": 46,
+ "declared": 1203,
+ "has_file": 300,
+ "gap": 917,
+ "undeclared": 110,
+ "gated": 47,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 708,
-   "nofile": 570
+   "total": 711,
+   "nofile": 573
   },
   {
    "lic": "mit",
@@ -109,13 +111,13 @@
   },
   {
    "lic": "other",
-   "total": 130,
+   "total": 132,
    "nofile": 55
   },
   {
    "lic": "cc-by-nc-4.0",
-   "total": 21,
-   "nofile": 20
+   "total": 22,
+   "nofile": 21
   },
   {
    "lic": "gemma",
@@ -149,14 +151,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-10-09T13:30:41Z",
-  "archives_ok": 38,
+  "pulled_at": "2026-10-10T15:01:54Z",
+  "archives_ok": 39,
   "archives_failed": 0,
-  "mirror_kb": 128604,
-  "hours_ago": 13.9,
+  "mirror_kb": 132952,
+  "hours_ago": 12.4,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-10-11",
+   "archive_path": "data/raw/huggingface/2026-10-11.jsonl.gz",
+   "archive_sha256": "fc101e0f5068f1f0a7020ef3e6291b5e07dc0d1b32ca32190b66355b7835bb45",
+   "merkle_root": "45d83ee3469eeec0b96c3a3e7dbd6c96ec9c96792a751a3f4e399261bf7f6606"
+  },
   {
    "d": "2026-10-10",
    "archive_path": "data/raw/huggingface/2026-10-10.jsonl.gz",
@@ -210,12 +218,6 @@
    "archive_path": "data/raw/huggingface/2026-10-02.jsonl.gz",
    "archive_sha256": "c98b4f5e14f9ae74b734b01de4f87639ae603b9482cf8dec408b8f8ddd1ee591",
    "merkle_root": "68353280721330e0d785dc4caa7f3b83d017d927b53196941bdb932dcac3a29f"
-  },
-  {
-   "d": "2026-10-01",
-   "archive_path": "data/raw/huggingface/2026-10-01.jsonl.gz",
-   "archive_sha256": "175db29e8f3bd4dc0121061f70946600ca5604edd6b578269ba4831dbfb69089",
-   "merkle_root": "a1abf5f7ae4576c9c8fba30a076fc7bedd79ca39894d5180bdcbd4dcec721c0b"
   }
  ],
  "calendar": [
@@ -366,9 +368,53 @@
   {
    "date": "2026-10-10",
    "status": "success"
+  },
+  {
+   "date": "2026-10-11",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-10-11",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "7c89590ead085bf77630b4bf68264ea30b6ddc78",
+   "new_value": "229de48119b0f734ac9cfd9da6cd2058a5d71c91",
+   "external_id": "autotrust/GEV-26B-Decide"
+  },
+  {
+   "detected_date": "2026-10-11",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "ba3f0d584994b37998f235c0a3f6f1beff32ba1e",
+   "new_value": "259fe7a7e58a81830f9a77ca12a7f7a8b6df61a7",
+   "external_id": "autotrust/JEV-27B-VL"
+  },
+  {
+   "detected_date": "2026-10-11",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "5adcfa292e712091dfc30f0e97f0b2282e6cc66c",
+   "new_value": "88695e4f8ed87b4ce08df2fea6ff25bfe0f9875b",
+   "external_id": "Octen/Octen-Embedding-8B"
+  },
+  {
+   "detected_date": "2026-10-11",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "e479ac197bae727f69574261a8025696bc51de48",
+   "new_value": "1b5981b2b89a1af578ebba5c8cf34226810e1f55",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
+  {
+   "detected_date": "2026-10-11",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "b146b417080fd3e0e842e9539e69921707360aae",
+   "new_value": "1c69098e9c32db6dc06fc48f1d6cc75ad07da89e",
+   "external_id": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF"
+  },
   {
    "detected_date": "2026-10-10",
    "severity": "medium",
@@ -648,46 +694,6 @@
    "old_value": "b7bed2f9342f28519bd5312dc3bb2e0c0698fd35",
    "new_value": "18cbff46548f6f7acea6dc78d997514df50a7ec2",
    "external_id": "CMSManhattan/JiRackUltra_1b"
-  },
-  {
-   "detected_date": "2026-10-02",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "dba1be0a40aa45a94ad051997016db3960a90277",
-   "new_value": "2cba9e42aa026125f3ed06c6d98c1db82f7ca027",
-   "external_id": "deepseek-ai/DeepSeek-V4.1-Flash"
-  },
-  {
-   "detected_date": "2026-10-02",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "0f502a6cb0ef61b56238b63d5752d1667d9a0a6a",
-   "new_value": "1998717242fdacc84bcf10365e05d2de9639d79b",
-   "external_id": "CMSManhattan/JiRackUltra_14b"
-  },
-  {
-   "detected_date": "2026-10-02",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "425937812d28d85a5b5bd70f90e66b590db1fb3c",
-   "new_value": "8b192a8e203440d6492a133f6cdfa4bf7bffac98",
-   "external_id": "DavidAU/Qwen3.5-9B-The-Defiant-Fable-Uncensored-Heretic-NEO-IMATRIX-MAX-MTP-GGUF"
-  },
-  {
-   "detected_date": "2026-10-02",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "d1296e8c75b190b904a4fa7602fbc5afa27fc1a7",
-   "new_value": "351dbab8d8534675ee29440bb402e348b09e55e2",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-10-02",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "3f101cd22b7999228bbd5d79a33975414eb9758b",
-   "new_value": "b146b417080fd3e0e842e9539e69921707360aae",
-   "external_id": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF"
   }
  ]
 }
