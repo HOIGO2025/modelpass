@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-17T03:10:05Z",
- "last_success": "2026-10-17T03:10:05Z",
+ "generated_at": "2026-10-18T03:10:02Z",
+ "last_success": "2026-10-18T03:10:02Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 45969,
- "entities": 1361,
+ "observations": 46969,
+ "entities": 1369,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -49,7 +49,8 @@
   "2026-10-14",
   "2026-10-15",
   "2026-10-16",
-  "2026-10-17"
+  "2026-10-17",
+  "2026-10-18"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -96,34 +97,35 @@
   "2026-10-14": "success",
   "2026-10-15": "success",
   "2026-10-16": "success",
-  "2026-10-17": "success"
+  "2026-10-17": "success",
+  "2026-10-18": "success"
  },
- "days_covered": 44,
+ "days_covered": 45,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 9,
-  "low": 54468,
-  "medium": 308
+  "low": 55745,
+  "medium": 315
  },
- "declared": 1251,
- "has_file": 323,
- "gap": 942,
- "undeclared": 110,
+ "declared": 1258,
+ "has_file": 326,
+ "gap": 946,
+ "undeclared": 111,
  "gated": 46,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 735,
-   "nofile": 586
+   "total": 738,
+   "nofile": 588
   },
   {
    "lic": "mit",
-   "total": 235,
-   "nofile": 189
+   "total": 237,
+   "nofile": 191
   },
   {
    "lic": "other",
-   "total": 143,
+   "total": 144,
    "nofile": 59
   },
   {
@@ -163,14 +165,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-10-16T06:36:22Z",
-  "archives_ok": 45,
+  "pulled_at": "2026-10-17T13:30:46Z",
+  "archives_ok": 46,
   "archives_failed": 0,
-  "mirror_kb": 153364,
-  "hours_ago": 20.6,
+  "mirror_kb": 155808,
+  "hours_ago": 13.7,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-10-18",
+   "archive_path": "data/raw/huggingface/2026-10-18.jsonl.gz",
+   "archive_sha256": "dbed4d6cc44d7bb7a099050018b04944776c0d5c79620ad16496570b2ae53dbb",
+   "merkle_root": "3cbbd1f8273a891f701e86643ed34d20d2733a9153093fb196eda54b9b48c0f8"
+  },
   {
    "d": "2026-10-17",
    "archive_path": "data/raw/huggingface/2026-10-17.jsonl.gz",
@@ -224,12 +232,6 @@
    "archive_path": "data/raw/huggingface/2026-10-09.jsonl.gz",
    "archive_sha256": "d9ae2d8024dc4536689d00cebc78745cbed52a3866ae89c953a4c7d12b6ea580",
    "merkle_root": "d1f4bbf3894ff7df78686738b3207d37d1af14d6152cc5d3ade651134fcdec33"
-  },
-  {
-   "d": "2026-10-08",
-   "archive_path": "data/raw/huggingface/2026-10-08.jsonl.gz",
-   "archive_sha256": "5f4aa51e50d35a1b4529739b4629f243c7f468897bdb2ba5972f9568d2ad6db5",
-   "merkle_root": "517d7a9a3f99ca7a7fe153118965c6f695b6026db4e23477900e57d63b93d783"
   }
  ],
  "calendar": [
@@ -408,9 +410,69 @@
   {
    "date": "2026-10-17",
    "status": "success"
+  },
+  {
+   "date": "2026-10-18",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-10-18",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "335bb040b11df6f209349dad21bf6d321f2efd39",
+   "new_value": "6653eb5b4cd46b73250f9401e1b9777cd17faad9",
+   "external_id": "fidel1234/Krea2_Asian_Character"
+  },
+  {
+   "detected_date": "2026-10-18",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "5e1fb5c3708ba689eaa456121fe55d52f41e2988",
+   "new_value": "5d97a7ca89c5036f8aa4b73e75cc478979ad32a0",
+   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-GGUF"
+  },
+  {
+   "detected_date": "2026-10-18",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "daa7df2cff21a8e06cd2a49953d28d0f1dcb99c7",
+   "new_value": "b9bce7e859c9b5047aca884e5bff76f8a0443de1",
+   "external_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF"
+  },
+  {
+   "detected_date": "2026-10-18",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "0e281e1132633c9ff66e1891c045c533e785ce67",
+   "new_value": "1798f80b3340d2f87cffae42f9fa5367d0963d0c",
+   "external_id": "DeepBeepMeep/LTX-2"
+  },
+  {
+   "detected_date": "2026-10-18",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "70b79e501161e3728ca0cabd731bc094d3fc17d6",
+   "new_value": "d5f3139249b7ee2535c20ab81125c9a6ab0c4915",
+   "external_id": "DavidAU/Qwen3.5-9B-The-Defiant-Fable-Uncensored-Heretic-NEO-IMATRIX-MAX-MTP-GGUF"
+  },
+  {
+   "detected_date": "2026-10-18",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "50f98b472ed6d7653eee1c44145a72886b150989",
+   "new_value": "81e6f49c3faf5b83c57a740521bd2974b6362fd1",
+   "external_id": "DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF"
+  },
+  {
+   "detected_date": "2026-10-18",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "f861648c0c1f4da9f18e9a0ce5e217b0679bb2f5",
+   "new_value": "235f70e17d42a43ff234d29059d4f57393db4bff",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
   {
    "detected_date": "2026-10-17",
    "severity": "medium",
@@ -674,62 +736,6 @@
    "old_value": "a411d838600baf0e3635a3daf66fb7c55fc97bb6",
    "new_value": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
    "external_id": "swiss-ai/Apertus-v1.5-8B"
-  },
-  {
-   "detected_date": "2026-10-15",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "c222674aaaea678c2f1b73081012e7969c46a22d",
-   "new_value": "ce2462229891e58aae49e53b0348d63922d8859d",
-   "external_id": "CMSManhattan/JiRackDeltaNet_27b"
-  },
-  {
-   "detected_date": "2026-10-15",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "915c3287dbaf42f4640cbf014e6951fb5c271fae",
-   "new_value": "eb49beca4706c33b8e765cb1e2249eafeb23214b",
-   "external_id": "CMSManhattan/JiRackUltra_14b"
-  },
-  {
-   "detected_date": "2026-10-15",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "ceb55042229d17dcf45df52ad84698339e63d4c5",
-   "new_value": "18bbb7658c951041aa2227076cb474e2bc53f82a",
-   "external_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF"
-  },
-  {
-   "detected_date": "2026-10-15",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "c5087a76d148760811ffbdedfe6ff9f194e46e38",
-   "new_value": "ba32f8c19c8738e2c57c71798c601d477a7bf844",
-   "external_id": "zai-org/GLM-5.3"
-  },
-  {
-   "detected_date": "2026-10-15",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "c9e42c51357fdd5f25af7cd7dc0e8bf59c81af4d",
-   "new_value": "22ce8a74e497443d89092f65260b746b576e8a94",
-   "external_id": "FINAL-Bench/POCKET-35B-GGUF"
-  },
-  {
-   "detected_date": "2026-10-15",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "8b192a8e203440d6492a133f6cdfa4bf7bffac98",
-   "new_value": "1c3de241dd3b10890b96d163dbb05375a294be62",
-   "external_id": "DavidAU/Qwen3.5-9B-The-Defiant-Fable-Uncensored-Heretic-NEO-IMATRIX-MAX-MTP-GGUF"
-  },
-  {
-   "detected_date": "2026-10-15",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "c6b3770b677093fafc44a801c23c9f88c41df93a",
-   "new_value": "69528d2fe97846d1e8b4b8572b4f6b8b4a33069c",
-   "external_id": "DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF"
   }
  ]
 }
