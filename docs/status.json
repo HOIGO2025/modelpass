@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-18T03:10:02Z",
- "last_success": "2026-10-18T03:10:02Z",
+ "generated_at": "2026-10-19T03:10:03Z",
+ "last_success": "2026-10-19T03:10:02Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 46969,
- "entities": 1369,
+ "observations": 47969,
+ "entities": 1372,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -50,7 +50,8 @@
   "2026-10-15",
   "2026-10-16",
   "2026-10-17",
-  "2026-10-18"
+  "2026-10-18",
+  "2026-10-19"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -98,35 +99,36 @@
   "2026-10-15": "success",
   "2026-10-16": "success",
   "2026-10-17": "success",
-  "2026-10-18": "success"
+  "2026-10-18": "success",
+  "2026-10-19": "success"
  },
- "days_covered": 45,
+ "days_covered": 46,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 9,
-  "low": 55745,
-  "medium": 315
+  "low": 57047,
+  "medium": 320
  },
- "declared": 1258,
+ "declared": 1261,
  "has_file": 326,
- "gap": 946,
+ "gap": 949,
  "undeclared": 111,
  "gated": 46,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 738,
-   "nofile": 588
+   "total": 739,
+   "nofile": 589
   },
   {
    "lic": "mit",
-   "total": 237,
-   "nofile": 191
+   "total": 238,
+   "nofile": 192
   },
   {
    "lic": "other",
-   "total": 144,
-   "nofile": 59
+   "total": 145,
+   "nofile": 60
   },
   {
    "lic": "cc-by-nc-4.0",
@@ -165,14 +167,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-10-17T13:30:46Z",
-  "archives_ok": 46,
+  "pulled_at": "2026-10-18T13:30:48Z",
+  "archives_ok": 47,
   "archives_failed": 0,
-  "mirror_kb": 155808,
+  "mirror_kb": 159200,
   "hours_ago": 13.7,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-10-19",
+   "archive_path": "data/raw/huggingface/2026-10-19.jsonl.gz",
+   "archive_sha256": "4687edb92eba81d7c5d975c6143fa42392b4683fe174add6b8fa51e3aeeca41e",
+   "merkle_root": "504f3bbb6a8e91679482faee3da5df985bad4d0bce82ccc88a849019c0201e2e"
+  },
   {
    "d": "2026-10-18",
    "archive_path": "data/raw/huggingface/2026-10-18.jsonl.gz",
@@ -226,12 +234,6 @@
    "archive_path": "data/raw/huggingface/2026-10-10.jsonl.gz",
    "archive_sha256": "77711dae707eb835130cb23f6b9cc9fcc09355d206e8730f8b4a3bd17630f362",
    "merkle_root": "2f4745c3fbf028bdbd6fdfb265862e370a94c5f940e377b6353e8ec19bcb96e3"
-  },
-  {
-   "d": "2026-10-09",
-   "archive_path": "data/raw/huggingface/2026-10-09.jsonl.gz",
-   "archive_sha256": "d9ae2d8024dc4536689d00cebc78745cbed52a3866ae89c953a4c7d12b6ea580",
-   "merkle_root": "d1f4bbf3894ff7df78686738b3207d37d1af14d6152cc5d3ade651134fcdec33"
   }
  ],
  "calendar": [
@@ -414,9 +416,53 @@
   {
    "date": "2026-10-18",
    "status": "success"
+  },
+  {
+   "date": "2026-10-19",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-10-19",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "6653eb5b4cd46b73250f9401e1b9777cd17faad9",
+   "new_value": "dd19f23cc97d2db538787eb64ebfba49b8c4a427",
+   "external_id": "fidel1234/Krea2_Asian_Character"
+  },
+  {
+   "detected_date": "2026-10-19",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "5d97a7ca89c5036f8aa4b73e75cc478979ad32a0",
+   "new_value": "7e1e7e665f95bb3cfa9d9950f5a24cd456580c69",
+   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-GGUF"
+  },
+  {
+   "detected_date": "2026-10-19",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "d27c0a15447dd92ae7c90919352c6810496945b1",
+   "new_value": "d366e279688c1f2fd6e75e2f98475d38db534f1d",
+   "external_id": "orcarouter/Qwen3.8-Flash-Next-Uncensored-GGUF"
+  },
+  {
+   "detected_date": "2026-10-19",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "daae89d760c9efb9fa521ed6397205f81a459977",
+   "new_value": "cc38588bfb355c23e790db6cb98e26ac4aa53e62",
+   "external_id": "DavidAU/Qwen3.8-27B-Cold-Fusion-GAIN-V1.1-NM-DAU-NEO-MAX-MTP-GGUF"
+  },
+  {
+   "detected_date": "2026-10-19",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "235f70e17d42a43ff234d29059d4f57393db4bff",
+   "new_value": "661a224e9d9adbd49c01626f85e426f5f425d771",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
   {
    "detected_date": "2026-10-18",
    "severity": "medium",
@@ -696,46 +742,6 @@
    "old_value": "d5249700b2382bf5c5024c2421d101b8db54a629",
    "new_value": "570a62fba135ab015576ea4ed2848f9842a735f0",
    "external_id": "handy-computer/parakeet-unified-en-0.6b-gguf"
-  },
-  {
-   "detected_date": "2026-10-16",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "062f7f566e2671336992b011dcb9387cd3cffe5e",
-   "new_value": "3020b7d543a987afd986f1a5a241d47c588fe865",
-   "external_id": "theainerd/Wav2Vec2-large-xlsr-hindi"
-  },
-  {
-   "detected_date": "2026-10-15",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "113e63bb993001b3411eb3470b84fc444040cd7e",
-   "new_value": "8f6e87bf67d2d932da3fb63f9848369ded40d8a6",
-   "external_id": "PrunaAI/Pruna-Qwen-Image-2.1"
-  },
-  {
-   "detected_date": "2026-10-15",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "80c5a8fa50b3a71af23ea432dee622fac01066a0",
-   "new_value": "eea849038e792cd09aa731d59d586f0eaf2c18f6",
-   "external_id": "autotrust/GEV-26B-Decide"
-  },
-  {
-   "detected_date": "2026-10-15",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "da7a40b6450584e5843fab57bb4d80e092b377e0",
-   "new_value": "9e53b8a809d2ab98e3e6a55b2b2dbf94b4c1e84a",
-   "external_id": "autotrust/JEV-27B-VL"
-  },
-  {
-   "detected_date": "2026-10-15",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "a411d838600baf0e3635a3daf66fb7c55fc97bb6",
-   "new_value": "ef4bbc54d6fe658bc782280ff9f3b53a10a9758f",
-   "external_id": "swiss-ai/Apertus-v1.5-8B"
   }
  ]
 }
