@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-19T03:10:03Z",
- "last_success": "2026-10-19T03:10:02Z",
+ "generated_at": "2026-10-20T03:10:05Z",
+ "last_success": "2026-10-20T03:10:04Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 47969,
- "entities": 1372,
+ "observations": 48969,
+ "entities": 1379,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -51,7 +51,8 @@
   "2026-10-16",
   "2026-10-17",
   "2026-10-18",
-  "2026-10-19"
+  "2026-10-19",
+  "2026-10-20"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -100,25 +101,26 @@
   "2026-10-16": "success",
   "2026-10-17": "success",
   "2026-10-18": "success",
-  "2026-10-19": "success"
+  "2026-10-19": "success",
+  "2026-10-20": "success"
  },
- "days_covered": 46,
+ "days_covered": 47,
  "days_missing": 0,
  "changes_by_severity": {
-  "high": 9,
-  "low": 57047,
-  "medium": 320
+  "high": 10,
+  "low": 58494,
+  "medium": 335
  },
- "declared": 1261,
- "has_file": 326,
- "gap": 949,
- "undeclared": 111,
- "gated": 46,
+ "declared": 1267,
+ "has_file": 330,
+ "gap": 951,
+ "undeclared": 112,
+ "gated": 47,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 739,
-   "nofile": 589
+   "total": 742,
+   "nofile": 591
   },
   {
    "lic": "mit",
@@ -127,12 +129,12 @@
   },
   {
    "lic": "other",
-   "total": 145,
+   "total": 147,
    "nofile": 60
   },
   {
    "lic": "cc-by-nc-4.0",
-   "total": 23,
+   "total": 24,
    "nofile": 22
   },
   {
@@ -167,14 +169,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-10-18T13:30:48Z",
-  "archives_ok": 47,
+  "pulled_at": "2026-10-19T13:30:56Z",
+  "archives_ok": 48,
   "archives_failed": 0,
-  "mirror_kb": 159200,
+  "mirror_kb": 162572,
   "hours_ago": 13.7,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-10-20",
+   "archive_path": "data/raw/huggingface/2026-10-20.jsonl.gz",
+   "archive_sha256": "b1071ff4a6379951c1c3b51d931bc878aa80dd10f86b2874b740b2893cd22409",
+   "merkle_root": "7612a28c1fbc3032aa5c4a744899e16c2b7c1f8225519e4475b6c3610f80e29d"
+  },
   {
    "d": "2026-10-19",
    "archive_path": "data/raw/huggingface/2026-10-19.jsonl.gz",
@@ -228,12 +236,6 @@
    "archive_path": "data/raw/huggingface/2026-10-11.jsonl.gz",
    "archive_sha256": "fc101e0f5068f1f0a7020ef3e6291b5e07dc0d1b32ca32190b66355b7835bb45",
    "merkle_root": "45d83ee3469eeec0b96c3a3e7dbd6c96ec9c96792a751a3f4e399261bf7f6606"
-  },
-  {
-   "d": "2026-10-10",
-   "archive_path": "data/raw/huggingface/2026-10-10.jsonl.gz",
-   "archive_sha256": "77711dae707eb835130cb23f6b9cc9fcc09355d206e8730f8b4a3bd17630f362",
-   "merkle_root": "2f4745c3fbf028bdbd6fdfb265862e370a94c5f940e377b6353e8ec19bcb96e3"
   }
  ],
  "calendar": [
@@ -420,9 +422,141 @@
   {
    "date": "2026-10-19",
    "status": "success"
+  },
+  {
+   "date": "2026-10-20",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-10-20",
+   "severity": "high",
+   "field": "declared_license",
+   "old_value": "apache-2.0",
+   "new_value": null,
+   "external_id": "lightx2v/Minimax-h3-Turbo"
+  },
+  {
+   "detected_date": "2026-10-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "900b5b275f1a63a96723e4c9f422769663beeb9f",
+   "new_value": "15027de49a5f8bbb5a131ed3fcfc1b54a543089d",
+   "external_id": "Accio-Lab/occamy-1.0-GGUF"
+  },
+  {
+   "detected_date": "2026-10-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "5348543e0147355ac9cbcb031184a3546350988e",
+   "new_value": "bba88856f8c3c0c9e40e45f82d05e228b814ac43",
+   "external_id": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-Coder-GGUF"
+  },
+  {
+   "detected_date": "2026-10-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "2eee7ac325f20eb8c9ac1d0e972f7c84663062da",
+   "new_value": "e6a3892a8c22cf87ff99583996149cf3cb32452b",
+   "external_id": "litert-community/gemma-4-E4B-it-litert-lm"
+  },
+  {
+   "detected_date": "2026-10-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "dd8a266f7145edc19e2334b46e19b6821f221dc7",
+   "new_value": "9dcee51692e6540f697141fc98b097e3c96492a3",
+   "external_id": "antirez/deepseek-v4.1-flash-gguf"
+  },
+  {
+   "detected_date": "2026-10-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "52cb3e759635ab4605e08790b6c47df8adcf0744",
+   "new_value": "6a762d2f2bada33557f3bf98facf916c585e0ed4",
+   "external_id": "peculiar-ragdoll/Dirk-Qwen3.8-27B-GGUF"
+  },
+  {
+   "detected_date": "2026-10-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "3505546dc794702515da4556c8383b16c61eb6e2",
+   "new_value": "0ecdceee1f982cbe92fc9cab74045049bfc94b94",
+   "external_id": "cyankiwi/MiniCPM-SALA-AWQ-8bit"
+  },
+  {
+   "detected_date": "2026-10-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "4bd30395b72ea6045edd04806c4fea448d4467b3",
+   "new_value": "cb67b41c4b82fb25d52fbfc1837e7cae9d3fe305",
+   "external_id": "cyankiwi/Qwen3-Coder-30B-A3B-Instruct-AWQ-4bit"
+  },
+  {
+   "detected_date": "2026-10-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "b3ca0d2f076785a8f4b2219ddbd2bdb99954eae1",
+   "new_value": "41c5569623a7c189d6eec3e5225260c58cedbce7",
+   "external_id": "litert-community/gemma-4-E2B-it-litert-lm"
+  },
+  {
+   "detected_date": "2026-10-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "71bc7b627595dc8a91039addd9c791ae548d6747",
+   "new_value": "a316ea527fde32c12487be7574e2db5ac2ad2a7e",
+   "external_id": "ggml-org/Qwen3.8-27B-GGUF"
+  },
+  {
+   "detected_date": "2026-10-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "a29e57d195f80ead07c89f89e55ecf2911e893c5",
+   "new_value": "9bc1f3c0407805b00da9f762639cb435c644b2dc",
+   "external_id": "lightx2v/Minimax-h3-Turbo"
+  },
+  {
+   "detected_date": "2026-10-20",
+   "severity": "medium",
+   "field": "base_model_ref",
+   "old_value": "[\"MiniMaxAI/MiniMax-H3\"]",
+   "new_value": null,
+   "external_id": "lightx2v/Minimax-h3-Turbo"
+  },
+  {
+   "detected_date": "2026-10-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "6e134bae811fb5adac50ee042ae5f029ac6779aa",
+   "new_value": "e3a700906e6a73ba4290b1873dc2ba8198527ab5",
+   "external_id": "cyankiwi/Qwen3.8-27B-AWQ-INT4"
+  },
+  {
+   "detected_date": "2026-10-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "e5cc0400fb2403c437c2c40a7c52fb5ae93fda18",
+   "new_value": "46d3c4aca0cfa475e99283abe9fb1254df1eef03",
+   "external_id": "cyankiwi/Qwen3.6-27B-AWQ-INT4"
+  },
+  {
+   "detected_date": "2026-10-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "661a224e9d9adbd49c01626f85e426f5f425d771",
+   "new_value": "02f5de92a82339ebb722ea6fdadc14b7bec43a7f",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
+  {
+   "detected_date": "2026-10-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "180b2d35e35e4e48f6245367f3b41036f7cdabd6",
+   "new_value": "5c5db8a7aeabb70b27923ef56536aa5343ecbb5b",
+   "external_id": "cyankiwi/gemma-4-26B-A4B-it-AWQ-4bit"
+  },
   {
    "detected_date": "2026-10-19",
    "severity": "medium",
@@ -614,134 +748,6 @@
    "old_value": "1c3de241dd3b10890b96d163dbb05375a294be62",
    "new_value": "70b79e501161e3728ca0cabd731bc094d3fc17d6",
    "external_id": "DavidAU/Qwen3.5-9B-The-Defiant-Fable-Uncensored-Heretic-NEO-IMATRIX-MAX-MTP-GGUF"
-  },
-  {
-   "detected_date": "2026-10-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "ab667acedcb5d8d56837ef3ed3568c3ad50dde47",
-   "new_value": "7353b6040bdc1be9e5a3823d99d5fe12afe88264",
-   "external_id": "handy-computer/cohere-transcribe-03-2026-gguf"
-  },
-  {
-   "detected_date": "2026-10-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "3ec17a324ced54151364f24f8b5fb6bf7e26414f",
-   "new_value": "a29e57d195f80ead07c89f89e55ecf2911e893c5",
-   "external_id": "lightx2v/Minimax-h3-Turbo"
-  },
-  {
-   "detected_date": "2026-10-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "69528d2fe97846d1e8b4b8572b4f6b8b4a33069c",
-   "new_value": "50f98b472ed6d7653eee1c44145a72886b150989",
-   "external_id": "DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF"
-  },
-  {
-   "detected_date": "2026-10-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "570a62fba135ab015576ea4ed2848f9842a735f0",
-   "new_value": "843b1b175ace04f5a89d379c79e2518c0d065b25",
-   "external_id": "handy-computer/parakeet-unified-en-0.6b-gguf"
-  },
-  {
-   "detected_date": "2026-10-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "8139c4ec14bdc45c361adf8d57c27c28e7478272",
-   "new_value": "53ce288f69326b415aeef030cfcb02a08a8096dd",
-   "external_id": "handy-computer/nemotron-3.5-asr-streaming-0.6b-gguf"
-  },
-  {
-   "detected_date": "2026-10-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "eb1eddd3983a54678545a9b2c178c5853b30f7be",
-   "new_value": "1171f4dc7e325bf3734586942e737872506c73e1",
-   "external_id": "Comfy-Org/Krea-2"
-  },
-  {
-   "detected_date": "2026-10-16",
-   "severity": "high",
-   "field": "declared_license",
-   "old_value": "apache-2.0",
-   "new_value": "mit",
-   "external_id": "handy-computer/whisper-large-v3-turbo-gguf"
-  },
-  {
-   "detected_date": "2026-10-16",
-   "severity": "high",
-   "field": "declared_license",
-   "old_value": "cc-by-4.0",
-   "new_value": "other",
-   "external_id": "handy-computer/parakeet-unified-en-0.6b-gguf"
-  },
-  {
-   "detected_date": "2026-10-16",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "ceea6c8a94a21ab85be244d311e874a39344dbf5",
-   "new_value": "c70af6f8089374911a3ec1f5944e59cf8ce243eb",
-   "external_id": "handy-computer/whisper-large-v3-turbo-gguf"
-  },
-  {
-   "detected_date": "2026-10-16",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "ce2462229891e58aae49e53b0348d63922d8859d",
-   "new_value": "775109e25de710a02a7b0febcd1bb0d974ad0c58",
-   "external_id": "CMSManhattan/JiRackDeltaNet_27b"
-  },
-  {
-   "detected_date": "2026-10-16",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "9b52afe7ad67a63200609259d603c5cdaf5f3157",
-   "new_value": "65ace7d3c9deb2ca00d5f56928e320d39ee8b4ed",
-   "external_id": "CMSManhattan/JiRackUltra_1b"
-  },
-  {
-   "detected_date": "2026-10-16",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "eb49beca4706c33b8e765cb1e2249eafeb23214b",
-   "new_value": "8ea6f82a55d391b8b7092b1ed35177e05b903064",
-   "external_id": "CMSManhattan/JiRackUltra_14b"
-  },
-  {
-   "detected_date": "2026-10-16",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "62e5db0a9b1089c0b40d517e4a25e5ef4c8b1e8a",
-   "new_value": "630975da14fd3c84169d6cd5092da3ce1287d137",
-   "external_id": "DeepBeepMeep/MiniMax-H3"
-  },
-  {
-   "detected_date": "2026-10-16",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "91b69215804f2d2036a8867f6ce44848e278dcda",
-   "new_value": "46a050bec13002ad29ee795c16e61cf4fa3c4a9c",
-   "external_id": "zai-org/GLM-5.3-Flash"
-  },
-  {
-   "detected_date": "2026-10-16",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "22ce8a74e497443d89092f65260b746b576e8a94",
-   "new_value": "625b95947505dd1b12a37024b0fb130e52fb9345",
-   "external_id": "FINAL-Bench/POCKET-35B-GGUF"
-  },
-  {
-   "detected_date": "2026-10-16",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "d5249700b2382bf5c5024c2421d101b8db54a629",
-   "new_value": "570a62fba135ab015576ea4ed2848f9842a735f0",
-   "external_id": "handy-computer/parakeet-unified-en-0.6b-gguf"
   }
  ]
 }
