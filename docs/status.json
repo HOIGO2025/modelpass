@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-20T03:10:05Z",
- "last_success": "2026-10-20T03:10:04Z",
+ "generated_at": "2026-10-21T03:10:08Z",
+ "last_success": "2026-10-21T03:10:07Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 48969,
- "entities": 1379,
+ "observations": 49969,
+ "entities": 1384,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -52,7 +52,8 @@
   "2026-10-17",
   "2026-10-18",
   "2026-10-19",
-  "2026-10-20"
+  "2026-10-20",
+  "2026-10-21"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -102,25 +103,26 @@
   "2026-10-17": "success",
   "2026-10-18": "success",
   "2026-10-19": "success",
-  "2026-10-20": "success"
+  "2026-10-20": "success",
+  "2026-10-21": "success"
  },
- "days_covered": 47,
+ "days_covered": 48,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 10,
-  "low": 58494,
-  "medium": 335
+  "low": 59818,
+  "medium": 344
  },
- "declared": 1267,
- "has_file": 330,
- "gap": 951,
+ "declared": 1272,
+ "has_file": 332,
+ "gap": 954,
  "undeclared": 112,
  "gated": 47,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 742,
-   "nofile": 591
+   "total": 743,
+   "nofile": 592
   },
   {
    "lic": "mit",
@@ -129,8 +131,8 @@
   },
   {
    "lic": "other",
-   "total": 147,
-   "nofile": 60
+   "total": 150,
+   "nofile": 61
   },
   {
    "lic": "cc-by-nc-4.0",
@@ -144,8 +146,8 @@
   },
   {
    "lic": "cc-by-4.0",
-   "total": 15,
-   "nofile": 14
+   "total": 16,
+   "nofile": 15
   },
   {
    "lic": "cc-by-nc-sa-4.0",
@@ -169,14 +171,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-10-19T13:30:56Z",
-  "archives_ok": 48,
+  "pulled_at": "2026-10-20T13:31:03Z",
+  "archives_ok": 49,
   "archives_failed": 0,
-  "mirror_kb": 162572,
+  "mirror_kb": 165936,
   "hours_ago": 13.7,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-10-21",
+   "archive_path": "data/raw/huggingface/2026-10-21.jsonl.gz",
+   "archive_sha256": "5713fe7b1bac6185c3f6b6ed5f70d6d4e9e6c5234953a019f5489686f23c58b3",
+   "merkle_root": "cfca80023bc321716877143a06406e828ad58b3a010cbec1c7a124c596533176"
+  },
   {
    "d": "2026-10-20",
    "archive_path": "data/raw/huggingface/2026-10-20.jsonl.gz",
@@ -230,12 +238,6 @@
    "archive_path": "data/raw/huggingface/2026-10-12.jsonl.gz",
    "archive_sha256": "30a2257f43221f1b1454a3587e656fa72de417f296e49f4f884ffc974943fe8c",
    "merkle_root": "6e0fadca794219fa55857e4bcde0a5a27685665cbda9ce6a7c7c1678190599d1"
-  },
-  {
-   "d": "2026-10-11",
-   "archive_path": "data/raw/huggingface/2026-10-11.jsonl.gz",
-   "archive_sha256": "fc101e0f5068f1f0a7020ef3e6291b5e07dc0d1b32ca32190b66355b7835bb45",
-   "merkle_root": "45d83ee3469eeec0b96c3a3e7dbd6c96ec9c96792a751a3f4e399261bf7f6606"
   }
  ],
  "calendar": [
@@ -426,9 +428,85 @@
   {
    "date": "2026-10-20",
    "status": "success"
+  },
+  {
+   "date": "2026-10-21",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-10-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "3284a1dbb351e3396d70f39f2a71cbf6ed2ef1bb",
+   "new_value": "ee64003102c8470ee32501cf883419235db81884",
+   "external_id": "Comfy-Org/MOSS-Image"
+  },
+  {
+   "detected_date": "2026-10-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "dd19f23cc97d2db538787eb64ebfba49b8c4a427",
+   "new_value": "981abcc2a7fee1a32b430f0ccc1e87086ff674e3",
+   "external_id": "fidel1234/Krea2_Asian_Character"
+  },
+  {
+   "detected_date": "2026-10-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "8097b9a003edf3c5e6c65011d94fbc1d80a414ad",
+   "new_value": "7121783767d959dee38b64bd937967badee3ab0b",
+   "external_id": "AiAngelGallery/ComfyPod-Models"
+  },
+  {
+   "detected_date": "2026-10-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "1c1f33abc8e835db3215390e8e14c6cc726f5843",
+   "new_value": "c4f844865189c05eeaa05406576a8d7d4931df5c",
+   "external_id": "AtomicChat/Qwen3.8-Flash-Next-GGUF"
+  },
+  {
+   "detected_date": "2026-10-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "fab11c26e2325a42f4b32da0249c819a0bade1b1",
+   "new_value": "b93dbd8128d3d2e6655b8570c992de97fc8ece6e",
+   "external_id": "ornith-ai/Ornith-1.5-35B-A3B-FP8"
+  },
+  {
+   "detected_date": "2026-10-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "fcefb8b218073d11392fcd0601da42c97d3eb089",
+   "new_value": "065b3455fd85b2059927b3ac0ed26e559a3d4b46",
+   "external_id": "ornith-ai/Ornith-1.5-397B-NVFP4"
+  },
+  {
+   "detected_date": "2026-10-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "70bf1b61ac09f91b24d39038091b41c582bc5d7a",
+   "new_value": "b44f1072cf75e918a1b82a3a17b45c4389b076e7",
+   "external_id": "meta-models/Muse-Glimmer-30B-GGUF"
+  },
+  {
+   "detected_date": "2026-10-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "9bc1f3c0407805b00da9f762639cb435c644b2dc",
+   "new_value": "30f485ed874aa44c8183348ad361c5eabad318da",
+   "external_id": "lightx2v/Minimax-h3-Turbo"
+  },
+  {
+   "detected_date": "2026-10-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "02f5de92a82339ebb722ea6fdadc14b7bec43a7f",
+   "new_value": "bb9aabc495826653c0a56760b0030ccdf4ca978b",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
   {
    "detected_date": "2026-10-20",
    "severity": "high",
@@ -676,78 +754,6 @@
    "old_value": "c70af6f8089374911a3ec1f5944e59cf8ce243eb",
    "new_value": "18ada752005f5fddef499256f9a458d0b37a203a",
    "external_id": "handy-computer/whisper-large-v3-turbo-gguf"
-  },
-  {
-   "detected_date": "2026-10-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "bcd7a7d3e251d4ec0fd15c72584b5eb9e0981383",
-   "new_value": "c99e13143cdf7014686ba128a8afb7ac976f6098",
-   "external_id": "esatapedico/Qwen3.8-27B-NVFP4-MTP-GGUF"
-  },
-  {
-   "detected_date": "2026-10-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "5254448103b6254fc646dacbca1cbbf20e9216c1",
-   "new_value": "314113f8a7dadb388215396ba5fbee2c610a04d6",
-   "external_id": "deepseek-ai/DeepSeek-V4.1-Flash"
-  },
-  {
-   "detected_date": "2026-10-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "18bbb7658c951041aa2227076cb474e2bc53f82a",
-   "new_value": "daa7df2cff21a8e06cd2a49953d28d0f1dcb99c7",
-   "external_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF"
-  },
-  {
-   "detected_date": "2026-10-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "65d1c9408859a0ca0f1c11b025ee951486af21d6",
-   "new_value": "7fd3d424fc558edca2c53808578b0541ef52a81a",
-   "external_id": "handy-computer/Voxtral-Mini-4B-Realtime-2602-gguf"
-  },
-  {
-   "detected_date": "2026-10-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "835ad19fff976143d650e35113a6544980cbd983",
-   "new_value": "60cfb00405a9a5bb85ee347ef93b68df7a311dc5",
-   "external_id": "handy-computer/whisper-medium-gguf"
-  },
-  {
-   "detected_date": "2026-10-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "d629413c2e5b51b38c453668b75ca3b06ca92703",
-   "new_value": "babc040eff0084465460ead58fdb8ec44296f8dd",
-   "external_id": "unsloth/MiniMax-H3-GGUF"
-  },
-  {
-   "detected_date": "2026-10-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "90f082450fcbacdb54e5900c44ef697c9ea59622",
-   "new_value": "d8d8c32cb2017c57e5307767343e97870f8a7f53",
-   "external_id": "handy-computer/parakeet-tdt-0.6b-v3-gguf"
-  },
-  {
-   "detected_date": "2026-10-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "503e754207c94da6bb26850b4469f367c9ea3582",
-   "new_value": "d59117d19ddb8a28a62f1b5f4e3b34ac48d510a4",
-   "external_id": "openbmb/MiniCPM-o-4_5"
-  },
-  {
-   "detected_date": "2026-10-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "1c3de241dd3b10890b96d163dbb05375a294be62",
-   "new_value": "70b79e501161e3728ca0cabd731bc094d3fc17d6",
-   "external_id": "DavidAU/Qwen3.5-9B-The-Defiant-Fable-Uncensored-Heretic-NEO-IMATRIX-MAX-MTP-GGUF"
   }
  ]
 }
