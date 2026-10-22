@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-21T03:10:08Z",
- "last_success": "2026-10-21T03:10:07Z",
+ "generated_at": "2026-10-22T03:10:03Z",
+ "last_success": "2026-10-22T03:10:02Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 49969,
- "entities": 1384,
+ "observations": 50969,
+ "entities": 1388,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -53,7 +53,8 @@
   "2026-10-18",
   "2026-10-19",
   "2026-10-20",
-  "2026-10-21"
+  "2026-10-21",
+  "2026-10-22"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -104,30 +105,31 @@
   "2026-10-18": "success",
   "2026-10-19": "success",
   "2026-10-20": "success",
-  "2026-10-21": "success"
+  "2026-10-21": "success",
+  "2026-10-22": "success"
  },
- "days_covered": 48,
+ "days_covered": 49,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 10,
-  "low": 59818,
-  "medium": 344
+  "low": 61422,
+  "medium": 353
  },
- "declared": 1272,
+ "declared": 1276,
  "has_file": 332,
- "gap": 954,
+ "gap": 958,
  "undeclared": 112,
  "gated": 47,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 743,
-   "nofile": 592
+   "total": 746,
+   "nofile": 595
   },
   {
    "lic": "mit",
-   "total": 238,
-   "nofile": 192
+   "total": 239,
+   "nofile": 193
   },
   {
    "lic": "other",
@@ -171,14 +173,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-10-20T13:31:03Z",
-  "archives_ok": 49,
+  "pulled_at": "2026-10-21T13:31:12Z",
+  "archives_ok": 50,
   "archives_failed": 0,
-  "mirror_kb": 165936,
+  "mirror_kb": 169320,
   "hours_ago": 13.7,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-10-22",
+   "archive_path": "data/raw/huggingface/2026-10-22.jsonl.gz",
+   "archive_sha256": "c19c7588fdf32bd917130f58d775edba18e05cb4138a4b9ead0209a67818a11b",
+   "merkle_root": "71284efe2a4201331a01756221a1865c8e7f776cf7a2f4cf2f553ea4ab8235a6"
+  },
   {
    "d": "2026-10-21",
    "archive_path": "data/raw/huggingface/2026-10-21.jsonl.gz",
@@ -232,12 +240,6 @@
    "archive_path": "data/raw/huggingface/2026-10-13.jsonl.gz",
    "archive_sha256": "347cdbb43c81486ef98a042321a2fab965b508d24f8ebcc145949b3a255d528d",
    "merkle_root": "f137f632c6ac401a1af43ec60b89558afb08fdcc30d9d177c69472788152a064"
-  },
-  {
-   "d": "2026-10-12",
-   "archive_path": "data/raw/huggingface/2026-10-12.jsonl.gz",
-   "archive_sha256": "30a2257f43221f1b1454a3587e656fa72de417f296e49f4f884ffc974943fe8c",
-   "merkle_root": "6e0fadca794219fa55857e4bcde0a5a27685665cbda9ce6a7c7c1678190599d1"
   }
  ],
  "calendar": [
@@ -432,9 +434,85 @@
   {
    "date": "2026-10-21",
    "status": "success"
+  },
+  {
+   "date": "2026-10-22",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-10-22",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "981abcc2a7fee1a32b430f0ccc1e87086ff674e3",
+   "new_value": "9c8cdddeb05c2a93319d698d618472064f9d7662",
+   "external_id": "fidel1234/Krea2_Asian_Character"
+  },
+  {
+   "detected_date": "2026-10-22",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "bb4531cda34d1ea09d9814959ed4d5833cf2a4c8",
+   "new_value": "9cf8c8db0f83fb4582f15381f8fb1a7c1b0b9ca2",
+   "external_id": "ggml-org/gemma-4-26B-A4B-it-GGUF"
+  },
+  {
+   "detected_date": "2026-10-22",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "af671d9214a6e41ab8c2f43e9f871ea56246115f",
+   "new_value": "a56850c870825d6a8ae501a595c4dbbbc77bbc7e",
+   "external_id": "WarmBloodAban/Minimax-h3_Singularity"
+  },
+  {
+   "detected_date": "2026-10-22",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "60fb1c3e42131a9fb04ae4e0c6d489efba5e9f12",
+   "new_value": "a4c0cc35033229072cb6d5a92952c3d51716837f",
+   "external_id": "DeepBeepMeep/Wan2.1"
+  },
+  {
+   "detected_date": "2026-10-22",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "630975da14fd3c84169d6cd5092da3ce1287d137",
+   "new_value": "b575601c4d8900c9a94c22e844427b488347d75b",
+   "external_id": "DeepBeepMeep/MiniMax-H3"
+  },
+  {
+   "detected_date": "2026-10-22",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "5df4c9c76d8170882c34f6986e848ee07fd0ba43",
+   "new_value": "2fd7b4b0f2393ddb39a267fb62df6c010928a6c6",
+   "external_id": "briaai/RMBG-2.0"
+  },
+  {
+   "detected_date": "2026-10-22",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "bb9aabc495826653c0a56760b0030ccdf4ca978b",
+   "new_value": "d81ea87066e0b48ddfc7ef3fc7254ad230d45faa",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
+  {
+   "detected_date": "2026-10-22",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "35b88df6c2e57a5514caec962ea87222ead7bce7",
+   "new_value": "102b87629072c9e8562f43a1864fb3ede8df11fa",
+   "external_id": "anuragshas/wav2vec2-large-xlsr-53-telugu"
+  },
+  {
+   "detected_date": "2026-10-22",
+   "severity": "medium",
+   "field": "base_model_ref",
+   "old_value": null,
+   "new_value": "[\"facebook/wav2vec2-large-xlsr-53\"]",
+   "external_id": "anuragshas/wav2vec2-large-xlsr-53-telugu"
+  },
   {
    "detected_date": "2026-10-21",
    "severity": "medium",
@@ -682,78 +760,6 @@
    "old_value": "335bb040b11df6f209349dad21bf6d321f2efd39",
    "new_value": "6653eb5b4cd46b73250f9401e1b9777cd17faad9",
    "external_id": "fidel1234/Krea2_Asian_Character"
-  },
-  {
-   "detected_date": "2026-10-18",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "5e1fb5c3708ba689eaa456121fe55d52f41e2988",
-   "new_value": "5d97a7ca89c5036f8aa4b73e75cc478979ad32a0",
-   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-GGUF"
-  },
-  {
-   "detected_date": "2026-10-18",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "daa7df2cff21a8e06cd2a49953d28d0f1dcb99c7",
-   "new_value": "b9bce7e859c9b5047aca884e5bff76f8a0443de1",
-   "external_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF"
-  },
-  {
-   "detected_date": "2026-10-18",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "0e281e1132633c9ff66e1891c045c533e785ce67",
-   "new_value": "1798f80b3340d2f87cffae42f9fa5367d0963d0c",
-   "external_id": "DeepBeepMeep/LTX-2"
-  },
-  {
-   "detected_date": "2026-10-18",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "70b79e501161e3728ca0cabd731bc094d3fc17d6",
-   "new_value": "d5f3139249b7ee2535c20ab81125c9a6ab0c4915",
-   "external_id": "DavidAU/Qwen3.5-9B-The-Defiant-Fable-Uncensored-Heretic-NEO-IMATRIX-MAX-MTP-GGUF"
-  },
-  {
-   "detected_date": "2026-10-18",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "50f98b472ed6d7653eee1c44145a72886b150989",
-   "new_value": "81e6f49c3faf5b83c57a740521bd2974b6362fd1",
-   "external_id": "DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF"
-  },
-  {
-   "detected_date": "2026-10-18",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "f861648c0c1f4da9f18e9a0ce5e217b0679bb2f5",
-   "new_value": "235f70e17d42a43ff234d29059d4f57393db4bff",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-10-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "b33a05f1459f33b0c876f014a57d51618b77d754",
-   "new_value": "274ad1d1cf680b7ee53cc70f78461394cd3a344b",
-   "external_id": "handy-computer/whisper-large-v3-gguf"
-  },
-  {
-   "detected_date": "2026-10-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "d74eba145674fd7e31b949324e148e21e7118abd",
-   "new_value": "107d238d68b8387e32843d0b4a2e24ceb0d3ad86",
-   "external_id": "lightx2v/Qwen-Image-Edit-2511-Lightning"
-  },
-  {
-   "detected_date": "2026-10-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "c70af6f8089374911a3ec1f5944e59cf8ce243eb",
-   "new_value": "18ada752005f5fddef499256f9a458d0b37a203a",
-   "external_id": "handy-computer/whisper-large-v3-turbo-gguf"
   }
  ]
 }
