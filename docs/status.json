@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-22T03:10:03Z",
- "last_success": "2026-10-22T03:10:02Z",
+ "generated_at": "2026-10-23T03:10:07Z",
+ "last_success": "2026-10-23T03:10:06Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 50969,
- "entities": 1388,
+ "observations": 51969,
+ "entities": 1406,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -54,7 +54,8 @@
   "2026-10-19",
   "2026-10-20",
   "2026-10-21",
-  "2026-10-22"
+  "2026-10-22",
+  "2026-10-23"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -106,25 +107,26 @@
   "2026-10-19": "success",
   "2026-10-20": "success",
   "2026-10-21": "success",
-  "2026-10-22": "success"
+  "2026-10-22": "success",
+  "2026-10-23": "success"
  },
- "days_covered": 49,
+ "days_covered": 50,
  "days_missing": 0,
  "changes_by_severity": {
-  "high": 10,
-  "low": 61422,
-  "medium": 353
+  "high": 11,
+  "low": 62872,
+  "medium": 362
  },
- "declared": 1276,
- "has_file": 332,
- "gap": 958,
+ "declared": 1294,
+ "has_file": 333,
+ "gap": 975,
  "undeclared": 112,
  "gated": 47,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 746,
-   "nofile": 595
+   "total": 757,
+   "nofile": 605
   },
   {
    "lic": "mit",
@@ -133,8 +135,8 @@
   },
   {
    "lic": "other",
-   "total": 150,
-   "nofile": 61
+   "total": 156,
+   "nofile": 67
   },
   {
    "lic": "cc-by-nc-4.0",
@@ -168,19 +170,25 @@
   },
   {
    "lic": "creativeml-openrail-m",
-   "total": 6,
-   "nofile": 6
+   "total": 7,
+   "nofile": 7
   }
  ],
  "offhost": {
-  "pulled_at": "2026-10-21T13:31:12Z",
-  "archives_ok": 50,
+  "pulled_at": "2026-10-22T13:33:43Z",
+  "archives_ok": 51,
   "archives_failed": 0,
-  "mirror_kb": 169320,
-  "hours_ago": 13.7,
+  "mirror_kb": 172648,
+  "hours_ago": 13.6,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-10-23",
+   "archive_path": "data/raw/huggingface/2026-10-23.jsonl.gz",
+   "archive_sha256": "7551155417a41d6c71429348809e42827a941acc11e468e4136c772e8ed5a513",
+   "merkle_root": "940443f39850b4cc801f5426b8b9abaad6334712afadc7bb8a3f0cc7ecbbee7a"
+  },
   {
    "d": "2026-10-22",
    "archive_path": "data/raw/huggingface/2026-10-22.jsonl.gz",
@@ -234,12 +242,6 @@
    "archive_path": "data/raw/huggingface/2026-10-14.jsonl.gz",
    "archive_sha256": "7e6f0f43918be0ea8f9610865e6352020f7902e77379342a940743e1fce98f07",
    "merkle_root": "fc6f772f1cbc9dc22f040d066a91b71239111f8dacbed59df31bb367f12242f6"
-  },
-  {
-   "d": "2026-10-13",
-   "archive_path": "data/raw/huggingface/2026-10-13.jsonl.gz",
-   "archive_sha256": "347cdbb43c81486ef98a042321a2fab965b508d24f8ebcc145949b3a255d528d",
-   "merkle_root": "f137f632c6ac401a1af43ec60b89558afb08fdcc30d9d177c69472788152a064"
   }
  ],
  "calendar": [
@@ -438,9 +440,93 @@
   {
    "date": "2026-10-22",
    "status": "success"
+  },
+  {
+   "date": "2026-10-23",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-10-23",
+   "severity": "high",
+   "field": "has_license_file",
+   "old_value": "1",
+   "new_value": "0",
+   "external_id": "Lightricks/LTX-2.3"
+  },
+  {
+   "detected_date": "2026-10-23",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "ee64003102c8470ee32501cf883419235db81884",
+   "new_value": "24147db865fcdc207270f844777587223fed8d6e",
+   "external_id": "Comfy-Org/MOSS-Image"
+  },
+  {
+   "detected_date": "2026-10-23",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "9c8cdddeb05c2a93319d698d618472064f9d7662",
+   "new_value": "e9d70257ef2a74e440a7d76f228e9b38183067b8",
+   "external_id": "fidel1234/Krea2_Asian_Character"
+  },
+  {
+   "detected_date": "2026-10-23",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "a2b599e06c59f2ccb01aaa44e6f182ba21e39f80",
+   "new_value": "7cf49018584612483c39e6f5445117308ca22413",
+   "external_id": "kindlingai/glm-5.3-exlr8-k2-k3-k4"
+  },
+  {
+   "detected_date": "2026-10-23",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "a8342359c61979b06a8dafb1a47991fe1f30e994",
+   "new_value": "0217efd1d9c9452e84f6448903d6e21bfa171ffd",
+   "external_id": "Comfy-Org/Qwen-Image-2.1"
+  },
+  {
+   "detected_date": "2026-10-23",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "292ee2bd5d0f1c49e1fb82b0fbd98cb3dbfb6269",
+   "new_value": "913604f6b4e56b0d0475706f3df7a6eb8c4dd415",
+   "external_id": "mradermacher/Qwen3-VL-8B-Instruct-abliterated-GGUF"
+  },
+  {
+   "detected_date": "2026-10-23",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "1d756cd27fa11c0896c4dfee093cd1bf36c7f7a1",
+   "new_value": "91eda216f820e5ecb3d17dc9fe3b7cdaf56b587d",
+   "external_id": "Lightricks/LTX-2.3-fp8"
+  },
+  {
+   "detected_date": "2026-10-23",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "41c5569623a7c189d6eec3e5225260c58cedbce7",
+   "new_value": "a790a852d433991c0c0a41c1154cf9b3850300fa",
+   "external_id": "litert-community/gemma-4-E2B-it-litert-lm"
+  },
+  {
+   "detected_date": "2026-10-23",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "3c6a4e66e5d0a684231950b9c74dd4ded7b6fadc",
+   "new_value": "c1521179de480464f366a98a9d9b2acc4cc097b9",
+   "external_id": "Lightricks/LTX-2.3"
+  },
+  {
+   "detected_date": "2026-10-23",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "d81ea87066e0b48ddfc7ef3fc7254ad230d45faa",
+   "new_value": "ef1ab2598f6d4d101486e4c5b9e605c687f20642",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
   {
    "detected_date": "2026-10-22",
    "severity": "medium",
@@ -680,86 +766,6 @@
    "old_value": "[\"MiniMaxAI/MiniMax-H3\"]",
    "new_value": null,
    "external_id": "lightx2v/Minimax-h3-Turbo"
-  },
-  {
-   "detected_date": "2026-10-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "6e134bae811fb5adac50ee042ae5f029ac6779aa",
-   "new_value": "e3a700906e6a73ba4290b1873dc2ba8198527ab5",
-   "external_id": "cyankiwi/Qwen3.8-27B-AWQ-INT4"
-  },
-  {
-   "detected_date": "2026-10-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "e5cc0400fb2403c437c2c40a7c52fb5ae93fda18",
-   "new_value": "46d3c4aca0cfa475e99283abe9fb1254df1eef03",
-   "external_id": "cyankiwi/Qwen3.6-27B-AWQ-INT4"
-  },
-  {
-   "detected_date": "2026-10-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "661a224e9d9adbd49c01626f85e426f5f425d771",
-   "new_value": "02f5de92a82339ebb722ea6fdadc14b7bec43a7f",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-10-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "180b2d35e35e4e48f6245367f3b41036f7cdabd6",
-   "new_value": "5c5db8a7aeabb70b27923ef56536aa5343ecbb5b",
-   "external_id": "cyankiwi/gemma-4-26B-A4B-it-AWQ-4bit"
-  },
-  {
-   "detected_date": "2026-10-19",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "6653eb5b4cd46b73250f9401e1b9777cd17faad9",
-   "new_value": "dd19f23cc97d2db538787eb64ebfba49b8c4a427",
-   "external_id": "fidel1234/Krea2_Asian_Character"
-  },
-  {
-   "detected_date": "2026-10-19",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "5d97a7ca89c5036f8aa4b73e75cc478979ad32a0",
-   "new_value": "7e1e7e665f95bb3cfa9d9950f5a24cd456580c69",
-   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-GGUF"
-  },
-  {
-   "detected_date": "2026-10-19",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "d27c0a15447dd92ae7c90919352c6810496945b1",
-   "new_value": "d366e279688c1f2fd6e75e2f98475d38db534f1d",
-   "external_id": "orcarouter/Qwen3.8-Flash-Next-Uncensored-GGUF"
-  },
-  {
-   "detected_date": "2026-10-19",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "daae89d760c9efb9fa521ed6397205f81a459977",
-   "new_value": "cc38588bfb355c23e790db6cb98e26ac4aa53e62",
-   "external_id": "DavidAU/Qwen3.8-27B-Cold-Fusion-GAIN-V1.1-NM-DAU-NEO-MAX-MTP-GGUF"
-  },
-  {
-   "detected_date": "2026-10-19",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "235f70e17d42a43ff234d29059d4f57393db4bff",
-   "new_value": "661a224e9d9adbd49c01626f85e426f5f425d771",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-10-18",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "335bb040b11df6f209349dad21bf6d321f2efd39",
-   "new_value": "6653eb5b4cd46b73250f9401e1b9777cd17faad9",
-   "external_id": "fidel1234/Krea2_Asian_Character"
   }
  ]
 }
