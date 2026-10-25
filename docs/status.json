@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-24T03:10:05Z",
- "last_success": "2026-10-24T03:10:04Z",
+ "generated_at": "2026-10-25T03:10:03Z",
+ "last_success": "2026-10-25T03:10:02Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 52969,
- "entities": 1411,
+ "observations": 53969,
+ "entities": 1419,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -56,7 +56,8 @@
   "2026-10-21",
   "2026-10-22",
   "2026-10-23",
-  "2026-10-24"
+  "2026-10-24",
+  "2026-10-25"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -110,30 +111,31 @@
   "2026-10-21": "success",
   "2026-10-22": "success",
   "2026-10-23": "success",
-  "2026-10-24": "success"
+  "2026-10-24": "success",
+  "2026-10-25": "success"
  },
- "days_covered": 51,
+ "days_covered": 52,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 11,
-  "low": 64551,
-  "medium": 367
+  "low": 65822,
+  "medium": 372
  },
- "declared": 1298,
- "has_file": 333,
- "gap": 979,
+ "declared": 1306,
+ "has_file": 334,
+ "gap": 986,
  "undeclared": 113,
  "gated": 47,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 761,
-   "nofile": 609
+   "total": 768,
+   "nofile": 615
   },
   {
    "lic": "mit",
-   "total": 239,
-   "nofile": 193
+   "total": 240,
+   "nofile": 194
   },
   {
    "lic": "other",
@@ -177,14 +179,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-10-23T13:31:44Z",
-  "archives_ok": 52,
+  "pulled_at": "2026-10-24T13:31:06Z",
+  "archives_ok": 53,
   "archives_failed": 0,
-  "mirror_kb": 175984,
-  "hours_ago": 13.6,
+  "mirror_kb": 179400,
+  "hours_ago": 13.7,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-10-25",
+   "archive_path": "data/raw/huggingface/2026-10-25.jsonl.gz",
+   "archive_sha256": "61eb8c33957e68b7afd43149f381fe81f80524d96f493b00d95281c1a536265e",
+   "merkle_root": "71d41d873186d9d669d8f4bd25471f9c5894d25b5ede852af96aa1227be13dfd"
+  },
   {
    "d": "2026-10-24",
    "archive_path": "data/raw/huggingface/2026-10-24.jsonl.gz",
@@ -238,12 +246,6 @@
    "archive_path": "data/raw/huggingface/2026-10-16.jsonl.gz",
    "archive_sha256": "1f76ca63650ed0d2977b69fb9e171600058642754504c1d8a6fd692fecc4d624",
    "merkle_root": "4d27b5846f2abb3aad3724f84173d01109c04c09473d28d46a021dac3b205789"
-  },
-  {
-   "d": "2026-10-15",
-   "archive_path": "data/raw/huggingface/2026-10-15.jsonl.gz",
-   "archive_sha256": "a0280e8bd1c78b5d968436582ef1ca7b4f62b08af9bd56b017fa9458673ff6ba",
-   "merkle_root": "46ec538812d614b144691c83eb38346f9e4753caeeb584093ce4867ba68edafb"
   }
  ],
  "calendar": [
@@ -450,9 +452,53 @@
   {
    "date": "2026-10-24",
    "status": "success"
+  },
+  {
+   "date": "2026-10-25",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-10-25",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "57c00f892e6b2ac425eb34b3ab12b3025901fb66",
+   "new_value": "f30b0d4bfea51543093bf52f1fc90f4fa67e539c",
+   "external_id": "nerkyor/Qwen3.8-27B-Coder390-EfficientThink-Opus5.5-GPT6Astra-Grok4.7-DSV4Pro-K3-SFT-RLOO-MTP-DFlash2"
+  },
+  {
+   "detected_date": "2026-10-25",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "674db8d2d3f6ad6ee32a18080b71730c6d6f555c",
+   "new_value": "511794f27dd62fd28cafb38b0a935f997b9df62e",
+   "external_id": "fidel1234/Krea2_Asian_Character"
+  },
+  {
+   "detected_date": "2026-10-25",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "eec4e10a2c29b440a2ae85591fa11569ce752963",
+   "new_value": "90a3350cd800ec1fe0d1660a38414ad9e985782f",
+   "external_id": "SC117/Qwen3.8-Flash-Next-GSQ-RCO-abliterated-GGUF"
+  },
+  {
+   "detected_date": "2026-10-25",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "b575601c4d8900c9a94c22e844427b488347d75b",
+   "new_value": "8b3f78bb29cafc5858ec4af2e855e4ffb354a714",
+   "external_id": "DeepBeepMeep/MiniMax-H3"
+  },
+  {
+   "detected_date": "2026-10-25",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "d59117d19ddb8a28a62f1b5f4e3b34ac48d510a4",
+   "new_value": "eb4141de24550a3a1a4082f718be58f46b761728",
+   "external_id": "openbmb/MiniCPM-o-4_5"
+  },
   {
    "detected_date": "2026-10-24",
    "severity": "medium",
@@ -732,46 +778,6 @@
    "old_value": "900b5b275f1a63a96723e4c9f422769663beeb9f",
    "new_value": "15027de49a5f8bbb5a131ed3fcfc1b54a543089d",
    "external_id": "Accio-Lab/occamy-1.0-GGUF"
-  },
-  {
-   "detected_date": "2026-10-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "5348543e0147355ac9cbcb031184a3546350988e",
-   "new_value": "bba88856f8c3c0c9e40e45f82d05e228b814ac43",
-   "external_id": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-Coder-GGUF"
-  },
-  {
-   "detected_date": "2026-10-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "2eee7ac325f20eb8c9ac1d0e972f7c84663062da",
-   "new_value": "e6a3892a8c22cf87ff99583996149cf3cb32452b",
-   "external_id": "litert-community/gemma-4-E4B-it-litert-lm"
-  },
-  {
-   "detected_date": "2026-10-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "dd8a266f7145edc19e2334b46e19b6821f221dc7",
-   "new_value": "9dcee51692e6540f697141fc98b097e3c96492a3",
-   "external_id": "antirez/deepseek-v4.1-flash-gguf"
-  },
-  {
-   "detected_date": "2026-10-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "52cb3e759635ab4605e08790b6c47df8adcf0744",
-   "new_value": "6a762d2f2bada33557f3bf98facf916c585e0ed4",
-   "external_id": "peculiar-ragdoll/Dirk-Qwen3.8-27B-GGUF"
-  },
-  {
-   "detected_date": "2026-10-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "3505546dc794702515da4556c8383b16c61eb6e2",
-   "new_value": "0ecdceee1f982cbe92fc9cab74045049bfc94b94",
-   "external_id": "cyankiwi/MiniCPM-SALA-AWQ-8bit"
   }
  ]
 }
