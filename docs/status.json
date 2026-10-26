@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-25T03:10:03Z",
- "last_success": "2026-10-25T03:10:02Z",
+ "generated_at": "2026-10-26T03:10:06Z",
+ "last_success": "2026-10-26T03:10:05Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 53969,
- "entities": 1419,
+ "observations": 54969,
+ "entities": 1427,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -57,7 +57,8 @@
   "2026-10-22",
   "2026-10-23",
   "2026-10-24",
-  "2026-10-25"
+  "2026-10-25",
+  "2026-10-26"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -112,35 +113,36 @@
   "2026-10-22": "success",
   "2026-10-23": "success",
   "2026-10-24": "success",
-  "2026-10-25": "success"
+  "2026-10-25": "success",
+  "2026-10-26": "success"
  },
- "days_covered": 52,
+ "days_covered": 53,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 11,
-  "low": 65822,
-  "medium": 372
+  "low": 67113,
+  "medium": 378
  },
- "declared": 1306,
- "has_file": 334,
- "gap": 986,
+ "declared": 1314,
+ "has_file": 335,
+ "gap": 993,
  "undeclared": 113,
  "gated": 47,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 768,
-   "nofile": 615
+   "total": 771,
+   "nofile": 618
   },
   {
    "lic": "mit",
-   "total": 240,
-   "nofile": 194
+   "total": 243,
+   "nofile": 196
   },
   {
    "lic": "other",
-   "total": 156,
-   "nofile": 67
+   "total": 157,
+   "nofile": 68
   },
   {
    "lic": "cc-by-nc-4.0",
@@ -164,8 +166,8 @@
   },
   {
    "lic": "llama3.2",
-   "total": 7,
-   "nofile": 2
+   "total": 8,
+   "nofile": 3
   },
   {
    "lic": "llama3.1",
@@ -179,14 +181,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-10-24T13:31:06Z",
-  "archives_ok": 53,
+  "pulled_at": "2026-10-25T13:30:59Z",
+  "archives_ok": 54,
   "archives_failed": 0,
-  "mirror_kb": 179400,
+  "mirror_kb": 182816,
   "hours_ago": 13.7,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-10-26",
+   "archive_path": "data/raw/huggingface/2026-10-26.jsonl.gz",
+   "archive_sha256": "4d5a9ae7129af464b0a32dc9a185152bd631080750124176270f2d9eaf6c9695",
+   "merkle_root": "6d9e577cab055fc494d6a69358642d8cb11a9a5e83f9c3a28956e66039622bc7"
+  },
   {
    "d": "2026-10-25",
    "archive_path": "data/raw/huggingface/2026-10-25.jsonl.gz",
@@ -240,12 +248,6 @@
    "archive_path": "data/raw/huggingface/2026-10-17.jsonl.gz",
    "archive_sha256": "d0858765e73cb40073c7bd5958dafebb5947ed32fa901f2d22d10530e0f06408",
    "merkle_root": "9565d1ae5ac78b8eb6823cfcb5bb582592ffb08c9537dfb3c3b93261c4992756"
-  },
-  {
-   "d": "2026-10-16",
-   "archive_path": "data/raw/huggingface/2026-10-16.jsonl.gz",
-   "archive_sha256": "1f76ca63650ed0d2977b69fb9e171600058642754504c1d8a6fd692fecc4d624",
-   "merkle_root": "4d27b5846f2abb3aad3724f84173d01109c04c09473d28d46a021dac3b205789"
   }
  ],
  "calendar": [
@@ -456,9 +458,61 @@
   {
    "date": "2026-10-25",
    "status": "success"
+  },
+  {
+   "date": "2026-10-26",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-10-26",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "f47268047fb3df74113675700c1e9dacdc68cb47",
+   "new_value": "51507f82e5884f7a9f2306038cfd4104b56748de",
+   "external_id": "pfnet/plamo-embedding-1b"
+  },
+  {
+   "detected_date": "2026-10-26",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "511794f27dd62fd28cafb38b0a935f997b9df62e",
+   "new_value": "062e1be7aa94d2b1c140d4fe2616da071658b119",
+   "external_id": "fidel1234/Krea2_Asian_Character"
+  },
+  {
+   "detected_date": "2026-10-26",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "65ace7d3c9deb2ca00d5f56928e320d39ee8b4ed",
+   "new_value": "008325a48ff5c850974a7ad93c2b53c800304f6e",
+   "external_id": "CMSManhattan/JiRackUltra_1b"
+  },
+  {
+   "detected_date": "2026-10-26",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "bbe9e566f39e4fc9652ac66b71968289a03c520a",
+   "new_value": "bb5f3f441849fc24c2d9037c310bc995404bfa0c",
+   "external_id": "peculiar-ragdoll/Tiel-Coder-35B-A3B-GGUF-MTP"
+  },
+  {
+   "detected_date": "2026-10-26",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "8b3f78bb29cafc5858ec4af2e855e4ffb354a714",
+   "new_value": "de1028e84b0fd5e7f15b2684b704d8c7289b02be",
+   "external_id": "DeepBeepMeep/MiniMax-H3"
+  },
+  {
+   "detected_date": "2026-10-26",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "ef1ab2598f6d4d101486e4c5b9e605c687f20642",
+   "new_value": "462b4cec041e06ffb3d8fcf0d8c655051b1cd9f5",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
   {
    "detected_date": "2026-10-25",
    "severity": "medium",
@@ -730,54 +784,6 @@
    "old_value": "fab11c26e2325a42f4b32da0249c819a0bade1b1",
    "new_value": "b93dbd8128d3d2e6655b8570c992de97fc8ece6e",
    "external_id": "ornith-ai/Ornith-1.5-35B-A3B-FP8"
-  },
-  {
-   "detected_date": "2026-10-21",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "fcefb8b218073d11392fcd0601da42c97d3eb089",
-   "new_value": "065b3455fd85b2059927b3ac0ed26e559a3d4b46",
-   "external_id": "ornith-ai/Ornith-1.5-397B-NVFP4"
-  },
-  {
-   "detected_date": "2026-10-21",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "70bf1b61ac09f91b24d39038091b41c582bc5d7a",
-   "new_value": "b44f1072cf75e918a1b82a3a17b45c4389b076e7",
-   "external_id": "meta-models/Muse-Glimmer-30B-GGUF"
-  },
-  {
-   "detected_date": "2026-10-21",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "9bc1f3c0407805b00da9f762639cb435c644b2dc",
-   "new_value": "30f485ed874aa44c8183348ad361c5eabad318da",
-   "external_id": "lightx2v/Minimax-h3-Turbo"
-  },
-  {
-   "detected_date": "2026-10-21",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "02f5de92a82339ebb722ea6fdadc14b7bec43a7f",
-   "new_value": "bb9aabc495826653c0a56760b0030ccdf4ca978b",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-10-20",
-   "severity": "high",
-   "field": "declared_license",
-   "old_value": "apache-2.0",
-   "new_value": null,
-   "external_id": "lightx2v/Minimax-h3-Turbo"
-  },
-  {
-   "detected_date": "2026-10-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "900b5b275f1a63a96723e4c9f422769663beeb9f",
-   "new_value": "15027de49a5f8bbb5a131ed3fcfc1b54a543089d",
-   "external_id": "Accio-Lab/occamy-1.0-GGUF"
   }
  ]
 }
