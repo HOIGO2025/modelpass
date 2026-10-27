@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-26T03:10:06Z",
- "last_success": "2026-10-26T03:10:05Z",
+ "generated_at": "2026-10-27T03:10:04Z",
+ "last_success": "2026-10-27T03:10:03Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 54969,
- "entities": 1427,
+ "observations": 55969,
+ "entities": 1436,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -58,7 +58,8 @@
   "2026-10-23",
   "2026-10-24",
   "2026-10-25",
-  "2026-10-26"
+  "2026-10-26",
+  "2026-10-27"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -114,34 +115,35 @@
   "2026-10-23": "success",
   "2026-10-24": "success",
   "2026-10-25": "success",
-  "2026-10-26": "success"
+  "2026-10-26": "success",
+  "2026-10-27": "success"
  },
- "days_covered": 53,
+ "days_covered": 54,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 11,
-  "low": 67113,
-  "medium": 378
+  "low": 68391,
+  "medium": 387
  },
- "declared": 1314,
- "has_file": 335,
- "gap": 993,
+ "declared": 1323,
+ "has_file": 339,
+ "gap": 998,
  "undeclared": 113,
  "gated": 47,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 771,
-   "nofile": 618
+   "total": 775,
+   "nofile": 619
   },
   {
    "lic": "mit",
-   "total": 243,
-   "nofile": 196
+   "total": 246,
+   "nofile": 199
   },
   {
    "lic": "other",
-   "total": 157,
+   "total": 158,
    "nofile": 68
   },
   {
@@ -181,14 +183,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-10-25T13:30:59Z",
-  "archives_ok": 54,
+  "pulled_at": "2026-10-26T13:30:53Z",
+  "archives_ok": 55,
   "archives_failed": 0,
-  "mirror_kb": 182816,
+  "mirror_kb": 186244,
   "hours_ago": 13.7,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-10-27",
+   "archive_path": "data/raw/huggingface/2026-10-27.jsonl.gz",
+   "archive_sha256": "a360be56217c0536425763d23430c5f4f0d3e03a035fb5b94cd7dd7dcc0cd8b6",
+   "merkle_root": "bbd63480fe175f3f3452de00db631f91f55246c255ba1be147a8496da71f1294"
+  },
   {
    "d": "2026-10-26",
    "archive_path": "data/raw/huggingface/2026-10-26.jsonl.gz",
@@ -242,12 +250,6 @@
    "archive_path": "data/raw/huggingface/2026-10-18.jsonl.gz",
    "archive_sha256": "dbed4d6cc44d7bb7a099050018b04944776c0d5c79620ad16496570b2ae53dbb",
    "merkle_root": "3cbbd1f8273a891f701e86643ed34d20d2733a9153093fb196eda54b9b48c0f8"
-  },
-  {
-   "d": "2026-10-17",
-   "archive_path": "data/raw/huggingface/2026-10-17.jsonl.gz",
-   "archive_sha256": "d0858765e73cb40073c7bd5958dafebb5947ed32fa901f2d22d10530e0f06408",
-   "merkle_root": "9565d1ae5ac78b8eb6823cfcb5bb582592ffb08c9537dfb3c3b93261c4992756"
   }
  ],
  "calendar": [
@@ -462,9 +464,85 @@
   {
    "date": "2026-10-26",
    "status": "success"
+  },
+  {
+   "date": "2026-10-27",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-10-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "24147db865fcdc207270f844777587223fed8d6e",
+   "new_value": "530a4c94f92c35ef6818b1b035a983fe9dcf5f54",
+   "external_id": "Comfy-Org/MOSS-Image"
+  },
+  {
+   "detected_date": "2026-10-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "e0075a6cb5f24fdf9b94c2c0d5268b4b925d0d9a",
+   "new_value": "a36ae4680871ffa6412061d5daf66c4d4ad5802c",
+   "external_id": "kindlingai/glm-5.3-exlr8-k2-k3-k4"
+  },
+  {
+   "detected_date": "2026-10-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "fa19d4f33561dc0d107c2a2f8943f1ca2e288109",
+   "new_value": "b62212407346cb7aafcc8d2788a1844555002fd3",
+   "external_id": "peculiar-ragdoll/Cyber-Tiel-Coder-35B-A3B-GGUF-MTP"
+  },
+  {
+   "detected_date": "2026-10-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "7e1e7e665f95bb3cfa9d9950f5a24cd456580c69",
+   "new_value": "784a6ad68e682ef21eef6e0684a98d734849a537",
+   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-GGUF"
+  },
+  {
+   "detected_date": "2026-10-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "c4f844865189c05eeaa05406576a8d7d4931df5c",
+   "new_value": "6e827401a7c10cfa4ff23df58096a010a2416a16",
+   "external_id": "AtomicChat/Qwen3.8-Flash-Next-GGUF"
+  },
+  {
+   "detected_date": "2026-10-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "f710177d938eff80b684d42c5aa84b382612f21f",
+   "new_value": "2515a3ea0afec1dd22d0c7794b3a91557804d195",
+   "external_id": "MiniMaxAI/MiniMax-M2.5"
+  },
+  {
+   "detected_date": "2026-10-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "d494266a4affc0d2995ba1fa35c8481cbd84294b",
+   "new_value": "0a6536713b0b03f3be97494e5cf8d22f668a3164",
+   "external_id": "MiniMaxAI/MiniMax-M2.7"
+  },
+  {
+   "detected_date": "2026-10-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "462b4cec041e06ffb3d8fcf0d8c655051b1cd9f5",
+   "new_value": "874fcb41ececda20bcbc0782d6b4ea7f7d069ea8",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
+  {
+   "detected_date": "2026-10-27",
+   "severity": "medium",
+   "field": "base_model_ref",
+   "old_value": "[\"MiniMaxAI/MiniMax-H3\",\"ACE-Step/Ace-Step1.5\",\"ACE-Step/acestep-v15-base\",\"Aratako/Irodori-TTS-500M-v3\",\"Aratako/Irodori-TTS-600M-v3-VoiceDesign\",\"Aratako/Irodori-TTS-v4.1-Small\",\"Aratako/MioCodec-25Hz-44.1kHz-v2\",\"Aratako/MioTTS-1.7B\",\"Aratako/Semantic-DACVAE-Japanese-32dim\",\"Banafo/Kroko-ASR\",\"dots-studio/dots.tts-mf\",\"dots-studio/dots.tts-soar\",\"fishaudio/s2-pro\",\"FunAudioLLM/Fun-ASR-Nano-2512-hf\",\"ai-sage/GigaAM-Multilingual\",\"ai-sage/GigaAM-v3\",\"HeartMuLa/HeartCodec-oss-20260123\",\"HeartMuLa/HeartMuLa-oss-3B\",\"HeartMuLa/HeartMuLaGen\",\"IndexTeam/IndexTTS-2\",\"IndexTeam/IndexTTS-2.5\",\"ASLP-lab/MeanVC2\",\"OpenBMB/VoxCPM2\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-v2\",\"OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5\",\"OpenMOSS-Team/MOSS-TTS-Nano-100M\",\"Qwen/Qwen3-ASR-0.6B\",\"Qwen/Qwen3-ASR-1.7B-hf\",\"Qwen/Qwen3-ForcedAligner-0.6B\",\"Qwen/Qwen3-TTS-12Hz-0.6B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice\",\"Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign\",\"Qwen/Qwen3-TTS-Tokenizer-12Hz\",\"ResembleAI/chatterbox\",\"RMSnow/Vevo2\",\"bosonai/higgs-audio-v3-stt\",\"bosonai/higgs-audio-v3-tts-4b\",\"k2-fsa/OmniVoice\",\"kyutai/pocket-tts\",\"llm-jp/llm-jp-3-150m\",\"microsoft/VibeVoice-1.5B\",\"microsoft/VibeVoice-ASR\",\"mistralai/Voxtral-Mini-4B-Realtime-2602\",\"mlx-community/SeedVC-MLX\",\"mlx-community/mel-roformer-mlx\",\"mlx-community/supertonic-3-mlx\",\"mlx-community/wavlm-base-plus-mlx\",\"MuScriptor/muscriptor-small\",\"neuphonic/neutts-2e\",\"syvai/hviske-v5.3\",\"nvidia/diar_sortformer_4spk-v1\",\"nvidia/magpie_tts_multilingual_357m\",\"nvidia/nemotron-3.5-asr-streaming-0.6b\",\"nvidia/parakeet-tdt-0.6b-v3\",\"nvidia/personaplex-7b-v1\",\"owensong/Inflect-Micro-v2\",\"stabilityai/stable-audio-3-medium\",\"stabilityai/stable-audio-3-small-music\",\"stabilityai/stable-audio-3-small-sfx\"]",
+   "new_value": "[\"MiniMaxAI/MiniMax-H3\",\"ACE-Step/Ace-Step1.5\",\"ACE-Step/acestep-v15-base\",\"Aratako/Irodori-TTS-500M-v3\",\"Aratako/Irodori-TTS-600M-v3-VoiceDesign\",\"Aratako/Irodori-TTS-v4.1-Small\",\"Aratako/MioCodec-25Hz-44.1kHz-v2\",\"Aratako/MioTTS-1.7B\",\"Aratako/Semantic-DACVAE-Japanese-32dim\",\"Banafo/Kroko-ASR\",\"dots-studio/dots.tts-mf\",\"dots-studio/dots.tts-soar\",\"fishaudio/s2-pro\",\"FunAudioLLM/Fun-ASR-Nano-2512-hf\",\"ai-sage/GigaAM-Multilingual\",\"ai-sage/GigaAM-v3\",\"HeartMuLa/HeartCodec-oss-20260123\",\"HeartMuLa/HeartMuLa-oss-3B\",\"HeartMuLa/HeartMuLaGen\",\"IndexTeam/IndexTTS-2\",\"IndexTeam/IndexTTS-2.5\",\"ASLP-lab/MeanVC2\",\"OpenBMB/VoxCPM2\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-v2\",\"OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5\",\"OpenMOSS-Team/MOSS-TTS-Nano-100M\",\"Qwen/Qwen3-ASR-0.6B\",\"Qwen/Qwen3-ASR-1.7B-hf\",\"Qwen/Qwen3-ForcedAligner-0.6B\",\"Qwen/Qwen3-TTS-12Hz-0.6B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice\",\"Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign\",\"Qwen/Qwen3-TTS-Tokenizer-12Hz\",\"ResembleAI/chatterbox\",\"RMSnow/Vevo2\",\"bosonai/higgs-audio-v3-stt\",\"bosonai/higgs-audio-v3-tts-4b\",\"k2-fsa/OmniVoice\",\"KittenML/kitten-tts-2\",\"kyutai/pocket-tts\",\"llm-jp/llm-jp-3-150m\",\"microsoft/VibeVoice-1.5B\",\"microsoft/VibeVoice-ASR\",\"microsoft/VibeVoice-ASR-Streaming-7B\",\"mistralai/Voxtral-Mini-4B-Realtime-2602\",\"mlx-community/SeedVC-MLX\",\"mlx-community/mel-roformer-mlx\",\"mlx-community/supertonic-3-mlx\",\"mlx-community/wavlm-base-plus-mlx\",\"MuScriptor/muscriptor-small\",\"neuphonic/neutts-2e\",\"syvai/hviske-v5.3\",\"nvidia/diar_sortformer_4spk-v1\",\"nvidia/magpie_tts_multilingual_357m\",\"nvidia/nemotron-3.5-asr-streaming-0.6b\",\"nvidia/parakeet-tdt-0.6b-v3\",\"nvidia/personaplex-7b-v1\",\"owensong/Inflect-Micro-v2\",\"stabilityai/stable-audio-3-medium\",\"stabilityai/stable-audio-3-small-music\",\"stabilityai/stable-audio-3-small-sfx\"]",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
   {
    "detected_date": "2026-10-26",
    "severity": "medium",
@@ -712,78 +790,6 @@
    "old_value": "630975da14fd3c84169d6cd5092da3ce1287d137",
    "new_value": "b575601c4d8900c9a94c22e844427b488347d75b",
    "external_id": "DeepBeepMeep/MiniMax-H3"
-  },
-  {
-   "detected_date": "2026-10-22",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "5df4c9c76d8170882c34f6986e848ee07fd0ba43",
-   "new_value": "2fd7b4b0f2393ddb39a267fb62df6c010928a6c6",
-   "external_id": "briaai/RMBG-2.0"
-  },
-  {
-   "detected_date": "2026-10-22",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "bb9aabc495826653c0a56760b0030ccdf4ca978b",
-   "new_value": "d81ea87066e0b48ddfc7ef3fc7254ad230d45faa",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-10-22",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "35b88df6c2e57a5514caec962ea87222ead7bce7",
-   "new_value": "102b87629072c9e8562f43a1864fb3ede8df11fa",
-   "external_id": "anuragshas/wav2vec2-large-xlsr-53-telugu"
-  },
-  {
-   "detected_date": "2026-10-22",
-   "severity": "medium",
-   "field": "base_model_ref",
-   "old_value": null,
-   "new_value": "[\"facebook/wav2vec2-large-xlsr-53\"]",
-   "external_id": "anuragshas/wav2vec2-large-xlsr-53-telugu"
-  },
-  {
-   "detected_date": "2026-10-21",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "3284a1dbb351e3396d70f39f2a71cbf6ed2ef1bb",
-   "new_value": "ee64003102c8470ee32501cf883419235db81884",
-   "external_id": "Comfy-Org/MOSS-Image"
-  },
-  {
-   "detected_date": "2026-10-21",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "dd19f23cc97d2db538787eb64ebfba49b8c4a427",
-   "new_value": "981abcc2a7fee1a32b430f0ccc1e87086ff674e3",
-   "external_id": "fidel1234/Krea2_Asian_Character"
-  },
-  {
-   "detected_date": "2026-10-21",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "8097b9a003edf3c5e6c65011d94fbc1d80a414ad",
-   "new_value": "7121783767d959dee38b64bd937967badee3ab0b",
-   "external_id": "AiAngelGallery/ComfyPod-Models"
-  },
-  {
-   "detected_date": "2026-10-21",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "1c1f33abc8e835db3215390e8e14c6cc726f5843",
-   "new_value": "c4f844865189c05eeaa05406576a8d7d4931df5c",
-   "external_id": "AtomicChat/Qwen3.8-Flash-Next-GGUF"
-  },
-  {
-   "detected_date": "2026-10-21",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "fab11c26e2325a42f4b32da0249c819a0bade1b1",
-   "new_value": "b93dbd8128d3d2e6655b8570c992de97fc8ece6e",
-   "external_id": "ornith-ai/Ornith-1.5-35B-A3B-FP8"
   }
  ]
 }
