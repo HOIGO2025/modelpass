@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-28T03:10:04Z",
- "last_success": "2026-10-28T03:10:03Z",
+ "generated_at": "2026-10-29T03:10:04Z",
+ "last_success": "2026-10-29T03:10:03Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 56969,
- "entities": 1443,
+ "observations": 57969,
+ "entities": 1450,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -60,7 +60,8 @@
   "2026-10-25",
   "2026-10-26",
   "2026-10-27",
-  "2026-10-28"
+  "2026-10-28",
+  "2026-10-29"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -118,35 +119,36 @@
   "2026-10-25": "success",
   "2026-10-26": "success",
   "2026-10-27": "success",
-  "2026-10-28": "success"
+  "2026-10-28": "success",
+  "2026-10-29": "success"
  },
- "days_covered": 55,
+ "days_covered": 56,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 11,
-  "low": 70091,
-  "medium": 399
+  "low": 71406,
+  "medium": 407
  },
- "declared": 1330,
- "has_file": 341,
- "gap": 1003,
+ "declared": 1337,
+ "has_file": 343,
+ "gap": 1008,
  "undeclared": 113,
  "gated": 48,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 780,
-   "nofile": 624
+   "total": 782,
+   "nofile": 626
   },
   {
    "lic": "mit",
-   "total": 246,
-   "nofile": 199
+   "total": 247,
+   "nofile": 200
   },
   {
    "lic": "other",
-   "total": 160,
-   "nofile": 68
+   "total": 163,
+   "nofile": 69
   },
   {
    "lic": "cc-by-nc-4.0",
@@ -165,8 +167,8 @@
   },
   {
    "lic": "cc-by-nc-sa-4.0",
-   "total": 10,
-   "nofile": 8
+   "total": 11,
+   "nofile": 9
   },
   {
    "lic": "llama3.2",
@@ -185,14 +187,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-10-26T13:30:53Z",
-  "archives_ok": 55,
+  "pulled_at": "2026-10-28T13:32:12Z",
+  "archives_ok": 57,
   "archives_failed": 0,
-  "mirror_kb": 186244,
-  "hours_ago": 37.7,
+  "mirror_kb": 193156,
+  "hours_ago": 13.6,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-10-29",
+   "archive_path": "data/raw/huggingface/2026-10-29.jsonl.gz",
+   "archive_sha256": "e06dfc71826c81ec001d091f102de481ae4b770704932aaf74e5442bf675ec66",
+   "merkle_root": "1be190ab2490077c5abf5342ea3219d2730fb74e5040d4c8c974cb56914b6df7"
+  },
   {
    "d": "2026-10-28",
    "archive_path": "data/raw/huggingface/2026-10-28.jsonl.gz",
@@ -246,12 +254,6 @@
    "archive_path": "data/raw/huggingface/2026-10-20.jsonl.gz",
    "archive_sha256": "b1071ff4a6379951c1c3b51d931bc878aa80dd10f86b2874b740b2893cd22409",
    "merkle_root": "7612a28c1fbc3032aa5c4a744899e16c2b7c1f8225519e4475b6c3610f80e29d"
-  },
-  {
-   "d": "2026-10-19",
-   "archive_path": "data/raw/huggingface/2026-10-19.jsonl.gz",
-   "archive_sha256": "4687edb92eba81d7c5d975c6143fa42392b4683fe174add6b8fa51e3aeeca41e",
-   "merkle_root": "504f3bbb6a8e91679482faee3da5df985bad4d0bce82ccc88a849019c0201e2e"
   }
  ],
  "calendar": [
@@ -474,9 +476,77 @@
   {
    "date": "2026-10-28",
    "status": "success"
+  },
+  {
+   "date": "2026-10-29",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-10-29",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "a419d74cd28d5b9f8c5e2b9077d11a609c17bc32",
+   "new_value": "65d53bc8be65123e255ff02f3ded958b6dbf54fd",
+   "external_id": "ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-GGUF"
+  },
+  {
+   "detected_date": "2026-10-29",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "85cd6716494360367b75f642b5bc78667605d0b4",
+   "new_value": "49990ca512e170d705827d69c1064ce262434be6",
+   "external_id": "cis-lmu/glotlid"
+  },
+  {
+   "detected_date": "2026-10-29",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "df96693dbdfb8738c0bf1bbd0337d149808db948",
+   "new_value": "881a778e306c44920e42536def3e52c3a3ecc7cd",
+   "external_id": "AtomicChat/Qwen-Image-2.1-Turbo-Uncensored-GGUF"
+  },
+  {
+   "detected_date": "2026-10-29",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "2b2ce8ac730f1170700d26f89d0d397ad6499448",
+   "new_value": "504e45eb93d253f057071780309786345ee60675",
+   "external_id": "fidel1234/Krea2_Asian_Character"
+  },
+  {
+   "detected_date": "2026-10-29",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "035aa7d6ae66edbd3d520d1064980175f0773b54",
+   "new_value": "2c387d95ea4026aff8110628f888ab767cd3f759",
+   "external_id": "agentionai/Qwen3.8-27B-AP-GGUF"
+  },
+  {
+   "detected_date": "2026-10-29",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "784a6ad68e682ef21eef6e0684a98d734849a537",
+   "new_value": "618634e5a05b9619b0aa74e3e2f00d8a9928f062",
+   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-GGUF"
+  },
+  {
+   "detected_date": "2026-10-29",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "6e827401a7c10cfa4ff23df58096a010a2416a16",
+   "new_value": "2755fb984773b64ccb3353e4d7cec220ae1c13b7",
+   "external_id": "AtomicChat/Qwen3.8-Flash-Next-GGUF"
+  },
+  {
+   "detected_date": "2026-10-29",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "de1028e84b0fd5e7f15b2684b704d8c7289b02be",
+   "new_value": "5905b204b04d019c69707d89d49be4c8ae1b134f",
+   "external_id": "DeepBeepMeep/MiniMax-H3"
+  },
   {
    "detected_date": "2026-10-28",
    "severity": "medium",
@@ -732,70 +802,6 @@
    "old_value": "d59117d19ddb8a28a62f1b5f4e3b34ac48d510a4",
    "new_value": "eb4141de24550a3a1a4082f718be58f46b761728",
    "external_id": "openbmb/MiniCPM-o-4_5"
-  },
-  {
-   "detected_date": "2026-10-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "e9d70257ef2a74e440a7d76f228e9b38183067b8",
-   "new_value": "674db8d2d3f6ad6ee32a18080b71730c6d6f555c",
-   "external_id": "fidel1234/Krea2_Asian_Character"
-  },
-  {
-   "detected_date": "2026-10-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "7cf49018584612483c39e6f5445117308ca22413",
-   "new_value": "e0075a6cb5f24fdf9b94c2c0d5268b4b925d0d9a",
-   "external_id": "kindlingai/glm-5.3-exlr8-k2-k3-k4"
-  },
-  {
-   "detected_date": "2026-10-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "c3a8b43bfb85c20995d70fdf272565d9337758c2",
-   "new_value": "035aa7d6ae66edbd3d520d1064980175f0773b54",
-   "external_id": "agentionai/Qwen3.8-27B-AP-GGUF"
-  },
-  {
-   "detected_date": "2026-10-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "a56850c870825d6a8ae501a595c4dbbbc77bbc7e",
-   "new_value": "1259cf16cd0b655ba691a32fb46a409142762972",
-   "external_id": "WarmBloodAban/Minimax-h3_Singularity"
-  },
-  {
-   "detected_date": "2026-10-24",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "a790a852d433991c0c0a41c1154cf9b3850300fa",
-   "new_value": "1caa527c1e88b55f046fcd8d2b4265606680663d",
-   "external_id": "litert-community/gemma-4-E2B-it-litert-lm"
-  },
-  {
-   "detected_date": "2026-10-23",
-   "severity": "high",
-   "field": "has_license_file",
-   "old_value": "1",
-   "new_value": "0",
-   "external_id": "Lightricks/LTX-2.3"
-  },
-  {
-   "detected_date": "2026-10-23",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "ee64003102c8470ee32501cf883419235db81884",
-   "new_value": "24147db865fcdc207270f844777587223fed8d6e",
-   "external_id": "Comfy-Org/MOSS-Image"
-  },
-  {
-   "detected_date": "2026-10-23",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "9c8cdddeb05c2a93319d698d618472064f9d7662",
-   "new_value": "e9d70257ef2a74e440a7d76f228e9b38183067b8",
-   "external_id": "fidel1234/Krea2_Asian_Character"
   }
  ]
 }
