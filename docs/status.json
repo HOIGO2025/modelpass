@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-30T03:10:05Z",
- "last_success": "2026-10-30T03:10:03Z",
+ "generated_at": "2026-10-31T03:10:04Z",
+ "last_success": "2026-10-31T03:10:02Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 58969,
- "entities": 1460,
+ "observations": 59969,
+ "entities": 1470,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -62,7 +62,8 @@
   "2026-10-27",
   "2026-10-28",
   "2026-10-29",
-  "2026-10-30"
+  "2026-10-30",
+  "2026-10-31"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -122,25 +123,26 @@
   "2026-10-27": "success",
   "2026-10-28": "success",
   "2026-10-29": "success",
-  "2026-10-30": "success"
+  "2026-10-30": "success",
+  "2026-10-31": "success"
  },
- "days_covered": 57,
+ "days_covered": 58,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 11,
-  "low": 72703,
-  "medium": 418
+  "low": 73985,
+  "medium": 424
  },
- "declared": 1346,
- "has_file": 349,
- "gap": 1011,
+ "declared": 1356,
+ "has_file": 355,
+ "gap": 1015,
  "undeclared": 114,
  "gated": 48,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 784,
-   "nofile": 627
+   "total": 788,
+   "nofile": 629
   },
   {
    "lic": "mit",
@@ -149,8 +151,8 @@
   },
   {
    "lic": "other",
-   "total": 167,
-   "nofile": 69
+   "total": 171,
+   "nofile": 70
   },
   {
    "lic": "cc-by-nc-4.0",
@@ -189,14 +191,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-10-29T13:30:51Z",
-  "archives_ok": 58,
+  "pulled_at": "2026-10-30T13:31:22Z",
+  "archives_ok": 59,
   "archives_failed": 0,
-  "mirror_kb": 196616,
-  "hours_ago": 13.7,
+  "mirror_kb": 200064,
+  "hours_ago": 13.6,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-10-31",
+   "archive_path": "data/raw/huggingface/2026-10-31.jsonl.gz",
+   "archive_sha256": "f93c042d3f8a5584a93e559c56ebedca3dafaf6a9df3ac825e9442653c5f161e",
+   "merkle_root": "9973500099476814e5986cecd897f7697032928d1dc28c1d634113852901cf0c"
+  },
   {
    "d": "2026-10-30",
    "archive_path": "data/raw/huggingface/2026-10-30.jsonl.gz",
@@ -250,12 +258,6 @@
    "archive_path": "data/raw/huggingface/2026-10-22.jsonl.gz",
    "archive_sha256": "c19c7588fdf32bd917130f58d775edba18e05cb4138a4b9ead0209a67818a11b",
    "merkle_root": "71284efe2a4201331a01756221a1865c8e7f776cf7a2f4cf2f553ea4ab8235a6"
-  },
-  {
-   "d": "2026-10-21",
-   "archive_path": "data/raw/huggingface/2026-10-21.jsonl.gz",
-   "archive_sha256": "5713fe7b1bac6185c3f6b6ed5f70d6d4e9e6c5234953a019f5489686f23c58b3",
-   "merkle_root": "cfca80023bc321716877143a06406e828ad58b3a010cbec1c7a124c596533176"
   }
  ],
  "calendar": [
@@ -486,9 +488,61 @@
   {
    "date": "2026-10-30",
    "status": "success"
+  },
+  {
+   "date": "2026-10-31",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-10-31",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "c1c3e177d049fa0c058e1294c8b3a5d7277d992b",
+   "new_value": "aee6d41a4c851bfecd5bda145b2ba10b7c3cf124",
+   "external_id": "fidel1234/Krea2_Asian_Character"
+  },
+  {
+   "detected_date": "2026-10-31",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "618634e5a05b9619b0aa74e3e2f00d8a9928f062",
+   "new_value": "588b32ce0a6a7b34bfe677100a484de7b63f67c2",
+   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-GGUF"
+  },
+  {
+   "detected_date": "2026-10-31",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "a670dbb0eec69fe0fd3d0b0b1b5265043de9c5be",
+   "new_value": "59540f2ab77e807c2fc5693ab79ce4e6865adfae",
+   "external_id": "remsky/kokoro-inno-clone-tuner"
+  },
+  {
+   "detected_date": "2026-10-31",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "b072e1d3b35a0a630cece372c2127528e0994386",
+   "new_value": "94dd51cdbbec5309ed8b76a12f3268bc4fdceb93",
+   "external_id": "prism-ml/Ternary-Bonsai-2-27B-gguf"
+  },
+  {
+   "detected_date": "2026-10-31",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+   "new_value": "43c9d014b231474fa7212dbb48a762566c2b255d",
+   "external_id": "google/gemma-4-12B-it"
+  },
+  {
+   "detected_date": "2026-10-31",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "1824797e7887cbec1990e4adbd6675960a36c589",
+   "new_value": "76b303ec28c466e9df37f4745dfb7aef20ab87ae",
+   "external_id": "timm/mobilenetv3_small_100.lamb_in1k"
+  },
   {
    "detected_date": "2026-10-30",
    "severity": "medium",
@@ -760,54 +814,6 @@
    "old_value": "fa19d4f33561dc0d107c2a2f8943f1ca2e288109",
    "new_value": "b62212407346cb7aafcc8d2788a1844555002fd3",
    "external_id": "peculiar-ragdoll/Cyber-Tiel-Coder-35B-A3B-GGUF-MTP"
-  },
-  {
-   "detected_date": "2026-10-27",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "7e1e7e665f95bb3cfa9d9950f5a24cd456580c69",
-   "new_value": "784a6ad68e682ef21eef6e0684a98d734849a537",
-   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-GGUF"
-  },
-  {
-   "detected_date": "2026-10-27",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "c4f844865189c05eeaa05406576a8d7d4931df5c",
-   "new_value": "6e827401a7c10cfa4ff23df58096a010a2416a16",
-   "external_id": "AtomicChat/Qwen3.8-Flash-Next-GGUF"
-  },
-  {
-   "detected_date": "2026-10-27",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "f710177d938eff80b684d42c5aa84b382612f21f",
-   "new_value": "2515a3ea0afec1dd22d0c7794b3a91557804d195",
-   "external_id": "MiniMaxAI/MiniMax-M2.5"
-  },
-  {
-   "detected_date": "2026-10-27",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "d494266a4affc0d2995ba1fa35c8481cbd84294b",
-   "new_value": "0a6536713b0b03f3be97494e5cf8d22f668a3164",
-   "external_id": "MiniMaxAI/MiniMax-M2.7"
-  },
-  {
-   "detected_date": "2026-10-27",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "462b4cec041e06ffb3d8fcf0d8c655051b1cd9f5",
-   "new_value": "874fcb41ececda20bcbc0782d6b4ea7f7d069ea8",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-10-27",
-   "severity": "medium",
-   "field": "base_model_ref",
-   "old_value": "[\"MiniMaxAI/MiniMax-H3\",\"ACE-Step/Ace-Step1.5\",\"ACE-Step/acestep-v15-base\",\"Aratako/Irodori-TTS-500M-v3\",\"Aratako/Irodori-TTS-600M-v3-VoiceDesign\",\"Aratako/Irodori-TTS-v4.1-Small\",\"Aratako/MioCodec-25Hz-44.1kHz-v2\",\"Aratako/MioTTS-1.7B\",\"Aratako/Semantic-DACVAE-Japanese-32dim\",\"Banafo/Kroko-ASR\",\"dots-studio/dots.tts-mf\",\"dots-studio/dots.tts-soar\",\"fishaudio/s2-pro\",\"FunAudioLLM/Fun-ASR-Nano-2512-hf\",\"ai-sage/GigaAM-Multilingual\",\"ai-sage/GigaAM-v3\",\"HeartMuLa/HeartCodec-oss-20260123\",\"HeartMuLa/HeartMuLa-oss-3B\",\"HeartMuLa/HeartMuLaGen\",\"IndexTeam/IndexTTS-2\",\"IndexTeam/IndexTTS-2.5\",\"ASLP-lab/MeanVC2\",\"OpenBMB/VoxCPM2\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-v2\",\"OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5\",\"OpenMOSS-Team/MOSS-TTS-Nano-100M\",\"Qwen/Qwen3-ASR-0.6B\",\"Qwen/Qwen3-ASR-1.7B-hf\",\"Qwen/Qwen3-ForcedAligner-0.6B\",\"Qwen/Qwen3-TTS-12Hz-0.6B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice\",\"Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign\",\"Qwen/Qwen3-TTS-Tokenizer-12Hz\",\"ResembleAI/chatterbox\",\"RMSnow/Vevo2\",\"bosonai/higgs-audio-v3-stt\",\"bosonai/higgs-audio-v3-tts-4b\",\"k2-fsa/OmniVoice\",\"kyutai/pocket-tts\",\"llm-jp/llm-jp-3-150m\",\"microsoft/VibeVoice-1.5B\",\"microsoft/VibeVoice-ASR\",\"mistralai/Voxtral-Mini-4B-Realtime-2602\",\"mlx-community/SeedVC-MLX\",\"mlx-community/mel-roformer-mlx\",\"mlx-community/supertonic-3-mlx\",\"mlx-community/wavlm-base-plus-mlx\",\"MuScriptor/muscriptor-small\",\"neuphonic/neutts-2e\",\"syvai/hviske-v5.3\",\"nvidia/diar_sortformer_4spk-v1\",\"nvidia/magpie_tts_multilingual_357m\",\"nvidia/nemotron-3.5-asr-streaming-0.6b\",\"nvidia/parakeet-tdt-0.6b-v3\",\"nvidia/personaplex-7b-v1\",\"owensong/Inflect-Micro-v2\",\"stabilityai/stable-audio-3-medium\",\"stabilityai/stable-audio-3-small-music\",\"stabilityai/stable-audio-3-small-sfx\"]",
-   "new_value": "[\"MiniMaxAI/MiniMax-H3\",\"ACE-Step/Ace-Step1.5\",\"ACE-Step/acestep-v15-base\",\"Aratako/Irodori-TTS-500M-v3\",\"Aratako/Irodori-TTS-600M-v3-VoiceDesign\",\"Aratako/Irodori-TTS-v4.1-Small\",\"Aratako/MioCodec-25Hz-44.1kHz-v2\",\"Aratako/MioTTS-1.7B\",\"Aratako/Semantic-DACVAE-Japanese-32dim\",\"Banafo/Kroko-ASR\",\"dots-studio/dots.tts-mf\",\"dots-studio/dots.tts-soar\",\"fishaudio/s2-pro\",\"FunAudioLLM/Fun-ASR-Nano-2512-hf\",\"ai-sage/GigaAM-Multilingual\",\"ai-sage/GigaAM-v3\",\"HeartMuLa/HeartCodec-oss-20260123\",\"HeartMuLa/HeartMuLa-oss-3B\",\"HeartMuLa/HeartMuLaGen\",\"IndexTeam/IndexTTS-2\",\"IndexTeam/IndexTTS-2.5\",\"ASLP-lab/MeanVC2\",\"OpenBMB/VoxCPM2\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-v2\",\"OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5\",\"OpenMOSS-Team/MOSS-TTS-Nano-100M\",\"Qwen/Qwen3-ASR-0.6B\",\"Qwen/Qwen3-ASR-1.7B-hf\",\"Qwen/Qwen3-ForcedAligner-0.6B\",\"Qwen/Qwen3-TTS-12Hz-0.6B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice\",\"Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign\",\"Qwen/Qwen3-TTS-Tokenizer-12Hz\",\"ResembleAI/chatterbox\",\"RMSnow/Vevo2\",\"bosonai/higgs-audio-v3-stt\",\"bosonai/higgs-audio-v3-tts-4b\",\"k2-fsa/OmniVoice\",\"KittenML/kitten-tts-2\",\"kyutai/pocket-tts\",\"llm-jp/llm-jp-3-150m\",\"microsoft/VibeVoice-1.5B\",\"microsoft/VibeVoice-ASR\",\"microsoft/VibeVoice-ASR-Streaming-7B\",\"mistralai/Voxtral-Mini-4B-Realtime-2602\",\"mlx-community/SeedVC-MLX\",\"mlx-community/mel-roformer-mlx\",\"mlx-community/supertonic-3-mlx\",\"mlx-community/wavlm-base-plus-mlx\",\"MuScriptor/muscriptor-small\",\"neuphonic/neutts-2e\",\"syvai/hviske-v5.3\",\"nvidia/diar_sortformer_4spk-v1\",\"nvidia/magpie_tts_multilingual_357m\",\"nvidia/nemotron-3.5-asr-streaming-0.6b\",\"nvidia/parakeet-tdt-0.6b-v3\",\"nvidia/personaplex-7b-v1\",\"owensong/Inflect-Micro-v2\",\"stabilityai/stable-audio-3-medium\",\"stabilityai/stable-audio-3-small-music\",\"stabilityai/stable-audio-3-small-sfx\"]",
-   "external_id": "audio-cpp/audio.cpp-gguf"
   }
  ]
 }
