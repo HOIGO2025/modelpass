@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-01T03:10:04Z",
- "last_success": "2026-11-01T03:10:03Z",
+ "generated_at": "2026-11-02T03:10:06Z",
+ "last_success": "2026-11-02T03:10:05Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 60969,
- "entities": 1482,
+ "observations": 61969,
+ "entities": 1486,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -64,7 +64,8 @@
   "2026-10-29",
   "2026-10-30",
   "2026-10-31",
-  "2026-11-01"
+  "2026-11-01",
+  "2026-11-02"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -126,25 +127,26 @@
   "2026-10-29": "success",
   "2026-10-30": "success",
   "2026-10-31": "success",
-  "2026-11-01": "success"
+  "2026-11-01": "success",
+  "2026-11-02": "success"
  },
- "days_covered": 59,
+ "days_covered": 60,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 11,
-  "low": 75246,
-  "medium": 432
+  "low": 76532,
+  "medium": 436
  },
- "declared": 1366,
- "has_file": 360,
- "gap": 1020,
+ "declared": 1370,
+ "has_file": 362,
+ "gap": 1022,
  "undeclared": 116,
  "gated": 48,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 793,
-   "nofile": 630
+   "total": 795,
+   "nofile": 632
   },
   {
    "lic": "mit",
@@ -153,7 +155,7 @@
   },
   {
    "lic": "other",
-   "total": 172,
+   "total": 174,
    "nofile": 71
   },
   {
@@ -193,14 +195,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-10-31T13:30:58Z",
-  "archives_ok": 60,
+  "pulled_at": "2026-11-01T13:31:13Z",
+  "archives_ok": 61,
   "archives_failed": 0,
-  "mirror_kb": 203584,
+  "mirror_kb": 207060,
   "hours_ago": 13.7,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-11-02",
+   "archive_path": "data/raw/huggingface/2026-11-02.jsonl.gz",
+   "archive_sha256": "b7321cdcad4676bf2167b0b36d56b47a834d40cd0efbb88e1529dabb690b8b98",
+   "merkle_root": "0bcf6d244a81d39242bd771dd5fc000793cd57bf28bbdc04c2ec533f3430f73f"
+  },
   {
    "d": "2026-11-01",
    "archive_path": "data/raw/huggingface/2026-11-01.jsonl.gz",
@@ -254,12 +262,6 @@
    "archive_path": "data/raw/huggingface/2026-10-24.jsonl.gz",
    "archive_sha256": "1ec5b761429d19d70b85460e612ff71c8df23c44beb77b774f88728a55cad977",
    "merkle_root": "f5726bedfb5f18bc27136c13909b0fa9e0f57acc908b2e3d8b874b2fb9f6f9be"
-  },
-  {
-   "d": "2026-10-23",
-   "archive_path": "data/raw/huggingface/2026-10-23.jsonl.gz",
-   "archive_sha256": "7551155417a41d6c71429348809e42827a941acc11e468e4136c772e8ed5a513",
-   "merkle_root": "940443f39850b4cc801f5426b8b9abaad6334712afadc7bb8a3f0cc7ecbbee7a"
   }
  ],
  "calendar": [
@@ -498,9 +500,45 @@
   {
    "date": "2026-11-01",
    "status": "success"
+  },
+  {
+   "date": "2026-11-02",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-11-02",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "cdcf26cf8845b721c1661dab68522b37b978a811",
+   "new_value": "d175f9854ba04de3144764f3126544fc18a2b079",
+   "external_id": "farbodtavakkoli/OTel-2.0-LLM-31B-IT-QLoRA"
+  },
+  {
+   "detected_date": "2026-11-02",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "27cc74341b6db137033b0e41c1aaff19395eae55",
+   "new_value": "a60e88219aaf33e75d59d45cb5f121654935b68d",
+   "external_id": "farbodtavakkoli/OTel-2.0-Decision-26B-A4B-4bit"
+  },
+  {
+   "detected_date": "2026-11-02",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "699656a3c10d896a4172c56dfc0af67e52ff8112",
+   "new_value": "82c48ba3a165b04bac7204a70fcb85f5c28010a0",
+   "external_id": "fidel1234/Krea2_Asian_Character"
+  },
+  {
+   "detected_date": "2026-11-02",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "de9c87a5681a4d6dce4ea2419eec8a2aadd5e071",
+   "new_value": "dd9a4c46b67a6483dd6e8886db6c54cf5279e211",
+   "external_id": "farbodtavakkoli/OTel-2.0-LLM-31B-IT"
+  },
   {
    "detected_date": "2026-11-01",
    "severity": "medium",
@@ -788,38 +826,6 @@
    "old_value": "c2b683ea00713d6feadcd54b39e3725bbc78638b",
    "new_value": "d31e04067066d92c55ece2b01748dcc337725d7a",
    "external_id": "Comfy-Org/Flux-1-Schnell"
-  },
-  {
-   "detected_date": "2026-10-28",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "6707deb277e9e0907fd9c14ce6b6f1d695c6a3fc",
-   "new_value": "371bb1680f8c88d8c1083f6ffb6330d3d55bff76",
-   "external_id": "Comfy-Org/ACE-Step-1.5"
-  },
-  {
-   "detected_date": "2026-10-28",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "3f62d9d8ae1fec33c6e91453d5c712855b096b55",
-   "new_value": "1138ce884c8e977cdacacbe779784fec4426bb3f",
-   "external_id": "Comfy-Org/Flux-2-Klein-9B"
-  },
-  {
-   "detected_date": "2026-10-28",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "533c4cbc3d3b89af1743d9466c434e89810391c0",
-   "new_value": "5b3abca5c0dc1ecd4eaf3340868d09063fc1c965",
-   "external_id": "Comfy-Org/Flux-2-Klein-4B"
-  },
-  {
-   "detected_date": "2026-10-28",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "83c446ef27a6ac1e9e36ecf13257283aa12cf22a",
-   "new_value": "10cf201a3d49f7ff4de84d6a97d6a32cdfa8cb86",
-   "external_id": "Comfy-Org/Flux-1-Dev"
   }
  ]
 }
