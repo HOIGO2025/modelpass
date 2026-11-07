@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-06T03:10:05Z",
- "last_success": "2026-11-06T03:10:04Z",
+ "generated_at": "2026-11-07T03:10:05Z",
+ "last_success": "2026-11-07T03:10:03Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 65969,
- "entities": 1519,
+ "observations": 66969,
+ "entities": 1527,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -69,7 +69,8 @@
   "2026-11-03",
   "2026-11-04",
   "2026-11-05",
-  "2026-11-06"
+  "2026-11-06",
+  "2026-11-07"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -136,35 +137,36 @@
   "2026-11-03": "success",
   "2026-11-04": "success",
   "2026-11-05": "success",
-  "2026-11-06": "success"
+  "2026-11-06": "success",
+  "2026-11-07": "success"
  },
- "days_covered": 64,
+ "days_covered": 65,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 13,
-  "low": 81737,
-  "medium": 479
+  "low": 83050,
+  "medium": 485
  },
- "declared": 1400,
- "has_file": 373,
- "gap": 1041,
+ "declared": 1408,
+ "has_file": 376,
+ "gap": 1046,
  "undeclared": 119,
  "gated": 48,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 807,
-   "nofile": 640
+   "total": 811,
+   "nofile": 642
   },
   {
    "lic": "mit",
-   "total": 253,
-   "nofile": 206
+   "total": 255,
+   "nofile": 208
   },
   {
    "lic": "other",
-   "total": 180,
-   "nofile": 72
+   "total": 182,
+   "nofile": 73
   },
   {
    "lic": "cc-by-nc-4.0",
@@ -203,14 +205,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-11-05T13:31:03Z",
-  "archives_ok": 65,
+  "pulled_at": "2026-11-06T13:30:51Z",
+  "archives_ok": 66,
   "archives_failed": 0,
-  "mirror_kb": 221136,
+  "mirror_kb": 224608,
   "hours_ago": 13.7,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-11-07",
+   "archive_path": "data/raw/huggingface/2026-11-07.jsonl.gz",
+   "archive_sha256": "7fa5c4b22bd72a8c773bc46230046fd32195c17d288ffe4ae20d40035f032550",
+   "merkle_root": "38c522741e8f9c23247b124068d9c33fea523a771f6f8f7750f6e4ad98c2c164"
+  },
   {
    "d": "2026-11-06",
    "archive_path": "data/raw/huggingface/2026-11-06.jsonl.gz",
@@ -264,12 +272,6 @@
    "archive_path": "data/raw/huggingface/2026-10-29.jsonl.gz",
    "archive_sha256": "e06dfc71826c81ec001d091f102de481ae4b770704932aaf74e5442bf675ec66",
    "merkle_root": "1be190ab2490077c5abf5342ea3219d2730fb74e5040d4c8c974cb56914b6df7"
-  },
-  {
-   "d": "2026-10-28",
-   "archive_path": "data/raw/huggingface/2026-10-28.jsonl.gz",
-   "archive_sha256": "b21a32333b406fa823fa0e5a71cb76a1439d8b72659724b30dc76b6ed47ad990",
-   "merkle_root": "6de1b5aa31c96e6ce72af941b67f4184906500284e755e7cddb1d88b84c7d038"
   }
  ],
  "calendar": [
@@ -528,9 +530,61 @@
   {
    "date": "2026-11-06",
    "status": "success"
+  },
+  {
+   "date": "2026-11-07",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-11-07",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "bb703f2087f43f2f706e3da86577ea3b3b42da42",
+   "new_value": "5fee44808148828299dec576603a58b74e41a393",
+   "external_id": "LuffyTheFox/Qwen3.6-35B-A3B-Uncensored-Genesis-Hermes-MTP-GGUF"
+  },
+  {
+   "detected_date": "2026-11-07",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "3c33ab38746828196b9b5979c739ee2d0bef894d",
+   "new_value": "9d716770ac7477776de5f891f70cdf98b003a5cd",
+   "external_id": "XHToken/Spark-X2.6-4B-GGUF"
+  },
+  {
+   "detected_date": "2026-11-07",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "70f847754ff88285157b56aeb37c54086f4d3f9b",
+   "new_value": "174a32f5dbe786b36a39f487e92652941541bb2b",
+   "external_id": "fidel1234/Krea2_Asian_Character"
+  },
+  {
+   "detected_date": "2026-11-07",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "6eb8d8bd3f83fcd2c206fd04dc0c73a480537e3e",
+   "new_value": "176bbae94db7b26f00e5b698d95d4f578debc51c",
+   "external_id": "DeepBeepMeep/Wan2.1"
+  },
+  {
+   "detected_date": "2026-11-07",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "d96201194f103c906994f283f504209dc8d2a10c",
+   "new_value": "04dc4f9d39671ed1e790503cda5c8b6670b788cb",
+   "external_id": "unsloth/Qwen3.8-Flash-Next-GGUF"
+  },
+  {
+   "detected_date": "2026-11-07",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "fd2fe4c3195bc410f8b817bf7c7519fd822686fb",
+   "new_value": "57de533382ad47d5527e7562d1f80c41f769553b",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
   {
    "detected_date": "2026-11-06",
    "severity": "high",
@@ -802,54 +856,6 @@
    "old_value": "874fcb41ececda20bcbc0782d6b4ea7f7d069ea8",
    "new_value": "9251401acab7d95b43e089e6304c5f58cb96d9a6",
    "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-11-04",
-   "severity": "medium",
-   "field": "base_model_ref",
-   "old_value": "[\"MiniMaxAI/MiniMax-H3\",\"ACE-Step/Ace-Step1.5\",\"ACE-Step/acestep-v15-base\",\"Aratako/Irodori-TTS-500M-v3\",\"Aratako/Irodori-TTS-600M-v3-VoiceDesign\",\"Aratako/Irodori-TTS-v4.1-Small\",\"Aratako/MioCodec-25Hz-44.1kHz-v2\",\"Aratako/MioTTS-1.7B\",\"Aratako/Semantic-DACVAE-Japanese-32dim\",\"Banafo/Kroko-ASR\",\"dots-studio/dots.tts-mf\",\"dots-studio/dots.tts-soar\",\"fishaudio/s2-pro\",\"FunAudioLLM/Fun-ASR-Nano-2512-hf\",\"ai-sage/GigaAM-Multilingual\",\"ai-sage/GigaAM-v3\",\"HeartMuLa/HeartCodec-oss-20260123\",\"HeartMuLa/HeartMuLa-oss-3B\",\"HeartMuLa/HeartMuLaGen\",\"IndexTeam/IndexTTS-2\",\"IndexTeam/IndexTTS-2.5\",\"ASLP-lab/MeanVC2\",\"OpenBMB/VoxCPM2\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-v2\",\"OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5\",\"OpenMOSS-Team/MOSS-TTS-Nano-100M\",\"Qwen/Qwen3-ASR-0.6B\",\"Qwen/Qwen3-ASR-1.7B-hf\",\"Qwen/Qwen3-ForcedAligner-0.6B\",\"Qwen/Qwen3-TTS-12Hz-0.6B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice\",\"Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign\",\"Qwen/Qwen3-TTS-Tokenizer-12Hz\",\"ResembleAI/chatterbox\",\"RMSnow/Vevo2\",\"bosonai/higgs-audio-v3-stt\",\"bosonai/higgs-audio-v3-tts-4b\",\"k2-fsa/OmniVoice\",\"KittenML/kitten-tts-2\",\"kyutai/pocket-tts\",\"llm-jp/llm-jp-3-150m\",\"microsoft/VibeVoice-1.5B\",\"microsoft/VibeVoice-ASR\",\"microsoft/VibeVoice-ASR-Streaming-7B\",\"mistralai/Voxtral-Mini-4B-Realtime-2602\",\"mlx-community/SeedVC-MLX\",\"mlx-community/mel-roformer-mlx\",\"mlx-community/supertonic-3-mlx\",\"mlx-community/wavlm-base-plus-mlx\",\"MuScriptor/muscriptor-small\",\"neuphonic/neutts-2e\",\"syvai/hviske-v5.3\",\"nvidia/diar_sortformer_4spk-v1\",\"nvidia/magpie_tts_multilingual_357m\",\"nvidia/nemotron-3.5-asr-streaming-0.6b\",\"nvidia/parakeet-tdt-0.6b-v3\",\"nvidia/personaplex-7b-v1\",\"owensong/Inflect-Micro-v2\",\"stabilityai/stable-audio-3-medium\",\"stabilityai/stable-audio-3-small-music\",\"stabilityai/stable-audio-3-small-sfx\"]",
-   "new_value": "[\"MiniMaxAI/MiniMax-H3\",\"ACE-Step/Ace-Step1.5\",\"ACE-Step/acestep-v15-base\",\"Aratako/Irodori-TTS-500M-v3\",\"Aratako/Irodori-TTS-600M-v3-VoiceDesign\",\"Aratako/Irodori-TTS-v4.1-Small\",\"Aratako/MioCodec-25Hz-44.1kHz-v2\",\"Aratako/MioTTS-1.7B\",\"Aratako/Semantic-DACVAE-Japanese-32dim\",\"Banafo/Kroko-ASR\",\"ConwayResearch/Underdog-Bark-3.0\",\"dots-studio/dots.tts-mf\",\"dots-studio/dots.tts-soar\",\"FermionResearch/Phonon-2\",\"fishaudio/s2-pro\",\"FunAudioLLM/Fun-ASR-Nano-2512-hf\",\"ai-sage/GigaAM-Multilingual\",\"ai-sage/GigaAM-v3\",\"HeartMuLa/HeartCodec-oss-20260123\",\"HeartMuLa/HeartMuLa-oss-3B\",\"HeartMuLa/HeartMuLaGen\",\"IndexTeam/IndexTTS-2\",\"IndexTeam/IndexTTS-2.5\",\"ASLP-lab/MeanVC2\",\"OpenBMB/VoxCPM2\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-v2\",\"OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5\",\"OpenMOSS-Team/MOSS-TTS-Nano-100M\",\"Qwen/Qwen3-ASR-0.6B\",\"Qwen/Qwen3-ASR-1.7B-hf\",\"Qwen/Qwen3-ForcedAligner-0.6B\",\"Qwen/Qwen3-TTS-12Hz-0.6B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice\",\"Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign\",\"Qwen/Qwen3-TTS-Tokenizer-12Hz\",\"ResembleAI/chatterbox\",\"RMSnow/Vevo2\",\"bosonai/higgs-audio-v3-stt\",\"bosonai/higgs-audio-v3-tts-4b\",\"k2-fsa/OmniVoice\",\"KittenML/kitten-tts-2\",\"kyutai/pocket-tts\",\"llm-jp/llm-jp-3-150m\",\"microsoft/VibeVoice-1.5B\",\"microsoft/VibeVoice-ASR\",\"microsoft/VibeVoice-ASR-Streaming-7B\",\"mistralai/Voxtral-Mini-4B-Realtime-2602\",\"mlx-community/SeedVC-MLX\",\"mlx-community/mel-roformer-mlx\",\"mlx-community/supertonic-3-mlx\",\"mlx-community/wavlm-base-plus-mlx\",\"MuScriptor/muscriptor-small\",\"neuphonic/neutts-2e\",\"syvai/hviske-v5.3\",\"nvidia/diar_sortformer_4spk-v1\",\"nvidia/magpie_tts_multilingual_357m\",\"nvidia/nemotron-3.5-asr-streaming-0.6b\",\"nvidia/parakeet-tdt-0.6b-v3\",\"nvidia/personaplex-7b-v1\",\"owensong/Inflect-Micro-v2\",\"stabilityai/stable-audio-3-medium\",\"stabilityai/stable-audio-3-small-music\",\"stabilityai/stable-audio-3-small-sfx\",\"third-intelligence/Haas-ja-v1.0\"]",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-11-04",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
-   "new_value": "4adf15748de9e1a0097b6274cee9c15836c41c37",
-   "external_id": "google/gemma-4-E2B-it"
-  },
-  {
-   "detected_date": "2026-11-04",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "ee0ef6023621cff504d758262d4e04895a5af4a2",
-   "new_value": "4ecc2ba63bcac23ba4a767fc87025b1450f84c9c",
-   "external_id": "google/gemma-4-E4B-it"
-  },
-  {
-   "detected_date": "2026-11-03",
-   "severity": "high",
-   "field": "declared_license",
-   "old_value": "apache-2.0",
-   "new_value": "cc-by-nc-4.0",
-   "external_id": "iitolstykh/mivolo_v2"
-  },
-  {
-   "detected_date": "2026-11-03",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "8a6ec9cf118e785a362ea94ee123c61c70553be6",
-   "new_value": "2688c0c3c2c3b052ec4f6d10a8417b0ef7ee4eba",
-   "external_id": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF"
-  },
-  {
-   "detected_date": "2026-11-03",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "f16ee4ba50d8fd2bb726ea1862ca6ca14ba188da",
-   "new_value": "a1c2a554ea72a7e8e66cc28b3eaf5036c9313860",
-   "external_id": "peasantsmith/GLM-5.3-Flash-Maya-GGUF"
   }
  ]
 }
