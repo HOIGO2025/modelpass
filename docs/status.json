@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-07T03:10:05Z",
- "last_success": "2026-11-07T03:10:03Z",
+ "generated_at": "2026-11-08T03:10:05Z",
+ "last_success": "2026-11-08T03:10:04Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 66969,
- "entities": 1527,
+ "observations": 67969,
+ "entities": 1532,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -70,7 +70,8 @@
   "2026-11-04",
   "2026-11-05",
   "2026-11-06",
-  "2026-11-07"
+  "2026-11-07",
+  "2026-11-08"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -138,30 +139,31 @@
   "2026-11-04": "success",
   "2026-11-05": "success",
   "2026-11-06": "success",
-  "2026-11-07": "success"
+  "2026-11-07": "success",
+  "2026-11-08": "success"
  },
- "days_covered": 65,
+ "days_covered": 66,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 13,
-  "low": 83050,
-  "medium": 485
+  "low": 84330,
+  "medium": 503
  },
- "declared": 1408,
- "has_file": 376,
- "gap": 1046,
+ "declared": 1413,
+ "has_file": 377,
+ "gap": 1050,
  "undeclared": 119,
  "gated": 48,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 811,
-   "nofile": 642
+   "total": 813,
+   "nofile": 643
   },
   {
    "lic": "mit",
-   "total": 255,
-   "nofile": 208
+   "total": 258,
+   "nofile": 211
   },
   {
    "lic": "other",
@@ -205,14 +207,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-11-06T13:30:51Z",
-  "archives_ok": 66,
+  "pulled_at": "2026-11-07T13:31:00Z",
+  "archives_ok": 67,
   "archives_failed": 0,
-  "mirror_kb": 224608,
+  "mirror_kb": 228956,
   "hours_ago": 13.7,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-11-08",
+   "archive_path": "data/raw/huggingface/2026-11-08.jsonl.gz",
+   "archive_sha256": "a12c089fff4ea2f37a8655fc5a55a2e2dddabf9e261b0aa9fbfb0dc0fe3b829d",
+   "merkle_root": "26682f0ee40e3bc18be70a5d6833bccda24c93c4d9e8d879922b731be9e7524a"
+  },
   {
    "d": "2026-11-07",
    "archive_path": "data/raw/huggingface/2026-11-07.jsonl.gz",
@@ -266,12 +274,6 @@
    "archive_path": "data/raw/huggingface/2026-10-30.jsonl.gz",
    "archive_sha256": "4b4f19ad7c6b484c2f1bd960650bfb4791bb4460e75293822c6dfce2c4625ffc",
    "merkle_root": "d5ccc5ab1bbfd14c0471a163c232d523a331fcf411178f8f5e70cd1ab5ffd479"
-  },
-  {
-   "d": "2026-10-29",
-   "archive_path": "data/raw/huggingface/2026-10-29.jsonl.gz",
-   "archive_sha256": "e06dfc71826c81ec001d091f102de481ae4b770704932aaf74e5442bf675ec66",
-   "merkle_root": "1be190ab2490077c5abf5342ea3219d2730fb74e5040d4c8c974cb56914b6df7"
   }
  ],
  "calendar": [
@@ -534,9 +536,157 @@
   {
    "date": "2026-11-07",
    "status": "success"
+  },
+  {
+   "date": "2026-11-08",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-11-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "4349e324130f1868a6b092c87304ef2bb8750a57",
+   "new_value": "51b62b907aa55077ca324eab4103d0e7642c5c86",
+   "external_id": "FINAL-Bench/POCKET-Darwin-180B-GGUF"
+  },
+  {
+   "detected_date": "2026-11-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "411f1f7349c9711e6f75aa8d20e1612eb3a4d55d",
+   "new_value": "6e298f56319a5735f88ae952dd27222369f2f44a",
+   "external_id": "huihui-ai/Huihui-Qwen3.8-Flash-Next-abliterated-v2-GGUF"
+  },
+  {
+   "detected_date": "2026-11-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "867580abd28d142bb4c56218bb81a752b7dea988",
+   "new_value": "1a22815d178a79f78bb44e6858f0ee446ae8f0d4",
+   "external_id": "kindlingai/glm-5.3-flash-exlr8-k2-k3-k4"
+  },
+  {
+   "detected_date": "2026-11-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "174a32f5dbe786b36a39f487e92652941541bb2b",
+   "new_value": "e96cf36a2f673faa33990e990034046c62cc480f",
+   "external_id": "fidel1234/Krea2_Asian_Character"
+  },
+  {
+   "detected_date": "2026-11-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "c532a5d21c078a16cb633718e9182bfd71a5b760",
+   "new_value": "4a8194aa1dd958033ee449b3ad30c37e536b216e",
+   "external_id": "ampixa/sanoTTS"
+  },
+  {
+   "detected_date": "2026-11-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "7ecef55a2e549814c62143fcf8b5be457695e3b9",
+   "new_value": "812d96e10a0dd82b69d749e68693698cf6c36daa",
+   "external_id": "Qwen/Qwen3.8-Flash-Next"
+  },
+  {
+   "detected_date": "2026-11-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "1393e9b5638161ed1206bf75cdb57043f75f6526",
+   "new_value": "9b5fc50456a239f0845de78cd95849755d628247",
+   "external_id": "DeepBeepMeep/MiniMax-H3"
+  },
+  {
+   "detected_date": "2026-11-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "66c4fb6ec404b606e3f3eb5a56b0b88c63cbde61",
+   "new_value": "8920b274a193dcd86cc523ebcc07791504912b86",
+   "external_id": "FINAL-Bench/POCKET-35B-GGUF"
+  },
+  {
+   "detected_date": "2026-11-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "04dc4f9d39671ed1e790503cda5c8b6670b788cb",
+   "new_value": "084c631ac221016019d6e0a863afe92d90edd3b0",
+   "external_id": "unsloth/Qwen3.8-Flash-Next-GGUF"
+  },
+  {
+   "detected_date": "2026-11-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "62f13fe1c31492fb4195c72ec52cbb736f72fefb",
+   "new_value": "55e748d763dd508bee02008c68b89239583ba3a7",
+   "external_id": "trl-internal-testing/tiny-Qwen2_5_VLForConditionalGeneration"
+  },
+  {
+   "detected_date": "2026-11-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "57de533382ad47d5527e7562d1f80c41f769553b",
+   "new_value": "73ce4162f6cce370dd533c6782b772135c1b2a8e",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
+  {
+   "detected_date": "2026-11-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+   "new_value": "345d467b117d1fd5eda9b879a5988de9ae5f47a7",
+   "external_id": "Qwen/Qwen3.6-35B-A3B"
+  },
+  {
+   "detected_date": "2026-11-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "6a9e13bd6fc8f0983b9b99948120bc37f49c13e9",
+   "new_value": "8f33b98937c6031bb49e713dee3e8e185aafd26f",
+   "external_id": "Qwen/Qwen3.6-27B"
+  },
+  {
+   "detected_date": "2026-11-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "8c0b3d30f3ae96f5c7f774de704bf0ada83e422a",
+   "new_value": "37561816e66b5b9153b1b64c10968c18c1e6f4a0",
+   "external_id": "Qwen/Qwen3.8-27B"
+  },
+  {
+   "detected_date": "2026-11-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "017b9c7af6b5689d5dd426a76e0bc077eb5ca20a",
+   "new_value": "c3a462cc3d38cf351f3b26cbd763469eeb74ef81",
+   "external_id": "Qwen/Qwen3.8-27B-FP8"
+  },
+  {
+   "detected_date": "2026-11-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "e89b16ebf1988b3d6befa7de50abc2d76f26eb09",
+   "new_value": "a56219b8202864dc6d3e565be5ff1eea01f54cb4",
+   "external_id": "Qwen/Qwen3.6-27B-FP8"
+  },
+  {
+   "detected_date": "2026-11-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "95a723d08a9490559dae23d0cff1d9466213d989",
+   "new_value": "c653bba46dfa06e9658dcc0b0dc87fe4685f14a2",
+   "external_id": "Qwen/Qwen3.6-35B-A3B-FP8"
+  },
+  {
+   "detected_date": "2026-11-08",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "ce8d0bf270b28c8fab026ced69fe8aa14b0f0eda",
+   "new_value": "edca82771e1fad8f0b7ce110ffe770c682043fec",
+   "external_id": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5"
+  },
   {
    "detected_date": "2026-11-07",
    "severity": "medium",
@@ -712,150 +862,6 @@
    "old_value": "683f7be2629342a50987627b40881e54761a2430",
    "new_value": "a6032a5089ac27e96be3a80c7b42d1ad0bd89887",
    "external_id": "prism-ml/Ternary-Bonsai-2-2B-gguf"
-  },
-  {
-   "detected_date": "2026-11-05",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "5b2abb02362efbed46bbe204014b02837778b2c2",
-   "new_value": "82265ccc78ddaac4700286a35e9badcc32376dd9",
-   "external_id": "prism-ml/Ternary-Bonsai-2-9B-gguf"
-  },
-  {
-   "detected_date": "2026-11-05",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "530a4c94f92c35ef6818b1b035a983fe9dcf5f54",
-   "new_value": "2929efe3cdd506c0a430bcfca70a9a8d805cc095",
-   "external_id": "Comfy-Org/MOSS-Image"
-  },
-  {
-   "detected_date": "2026-11-05",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "2501da24b1b155e4a4e5fc1455d9eafdd61b4ac8",
-   "new_value": "8c3e449a94b2f77666d62fe1328ef96c2b11e245",
-   "external_id": "fidel1234/Krea2_Asian_Character"
-  },
-  {
-   "detected_date": "2026-11-05",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "e797ddf6a57d9ecfddf68394438d2667ecb42dad",
-   "new_value": "7ffdc99a8aeb8575362b7f5e4fc6c4637d4f1661",
-   "external_id": "peculiar-ragdoll/Sharp-Spark-X2.5-4B-GGUF"
-  },
-  {
-   "detected_date": "2026-11-05",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "1041d1eabbce89549c1b6e28b52e972093e832a1",
-   "new_value": "6fd9d4f96fc8efe5032032a2635898f744903d01",
-   "external_id": "mradermacher/Ornith-1.5-9B-uncensored-GGUF"
-  },
-  {
-   "detected_date": "2026-11-05",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "94dd51cdbbec5309ed8b76a12f3268bc4fdceb93",
-   "new_value": "839bd57023c1558945afea70a74fa83c054f35f9",
-   "external_id": "prism-ml/Ternary-Bonsai-2-27B-gguf"
-  },
-  {
-   "detected_date": "2026-11-05",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "936ea57b8d9a45e861136383b3ea9f96f35ea995",
-   "new_value": "1393e9b5638161ed1206bf75cdb57043f75f6526",
-   "external_id": "DeepBeepMeep/MiniMax-H3"
-  },
-  {
-   "detected_date": "2026-11-05",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "3870039a87406fb90764b27e3984c8b1a36b269e",
-   "new_value": "66c4fb6ec404b606e3f3eb5a56b0b88c63cbde61",
-   "external_id": "FINAL-Bench/POCKET-35B-GGUF"
-  },
-  {
-   "detected_date": "2026-11-05",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "766911a6b7369840a91dbcd95f9f997acaab6cd6",
-   "new_value": "d96201194f103c906994f283f504209dc8d2a10c",
-   "external_id": "unsloth/Qwen3.8-Flash-Next-GGUF"
-  },
-  {
-   "detected_date": "2026-11-05",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "9251401acab7d95b43e089e6304c5f58cb96d9a6",
-   "new_value": "fd2fe4c3195bc410f8b817bf7c7519fd822686fb",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-11-04",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "58dc2775a5c19e18af188bfb2bfc4732b0342f23",
-   "new_value": "98e79ba972b586ac6146d3505771ce1467e199ba",
-   "external_id": "openbmb/MiniCPM-V-4.7-35B-A3B"
-  },
-  {
-   "detected_date": "2026-11-04",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "a60e88219aaf33e75d59d45cb5f121654935b68d",
-   "new_value": "4cf9d54108483c2041bdfb767d356e8edc52d888",
-   "external_id": "farbodtavakkoli/OTel-2.0-Decision-26B-A4B-4bit"
-  },
-  {
-   "detected_date": "2026-11-04",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "18af79606a99e565d7c5655454c1f827e190eac2",
-   "new_value": "c3308829fe5145559c1dbd48e5ef1f23c367d4bc",
-   "external_id": "DeepBeepMeep/Wan2.2"
-  },
-  {
-   "detected_date": "2026-11-04",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "82c48ba3a165b04bac7204a70fcb85f5c28010a0",
-   "new_value": "2501da24b1b155e4a4e5fc1455d9eafdd61b4ac8",
-   "external_id": "fidel1234/Krea2_Asian_Character"
-  },
-  {
-   "detected_date": "2026-11-04",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "6820fad1471275c1f9ddaea68d8ab961e020c059",
-   "new_value": "936ea57b8d9a45e861136383b3ea9f96f35ea995",
-   "external_id": "DeepBeepMeep/MiniMax-H3"
-  },
-  {
-   "detected_date": "2026-11-04",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "411aa17b749aa952df1359d2dcea73917a544d9a",
-   "new_value": "11b8250ef59eb3ebc5dae7b21144d7b84f2c06dd",
-   "external_id": "google/gemma-4-E4B"
-  },
-  {
-   "detected_date": "2026-11-04",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "cbb97a3e73fd566bd089ca762461458c78ed4761",
-   "new_value": "c658da437244f072bf2f1cabc916b60d66d97663",
-   "external_id": "litert-community/gemma-4-E2B-it-litert-lm"
-  },
-  {
-   "detected_date": "2026-11-04",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "874fcb41ececda20bcbc0782d6b4ea7f7d069ea8",
-   "new_value": "9251401acab7d95b43e089e6304c5f58cb96d9a6",
-   "external_id": "audio-cpp/audio.cpp-gguf"
   }
  ]
 }
