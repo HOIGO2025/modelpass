@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-08T03:10:05Z",
- "last_success": "2026-11-08T03:10:04Z",
+ "generated_at": "2026-11-09T03:10:04Z",
+ "last_success": "2026-11-09T03:10:02Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 67969,
- "entities": 1532,
+ "observations": 68969,
+ "entities": 1542,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -71,7 +71,8 @@
   "2026-11-05",
   "2026-11-06",
   "2026-11-07",
-  "2026-11-08"
+  "2026-11-08",
+  "2026-11-09"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -140,40 +141,41 @@
   "2026-11-05": "success",
   "2026-11-06": "success",
   "2026-11-07": "success",
-  "2026-11-08": "success"
+  "2026-11-08": "success",
+  "2026-11-09": "success"
  },
- "days_covered": 66,
+ "days_covered": 67,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 13,
-  "low": 84330,
-  "medium": 503
+  "low": 85621,
+  "medium": 509
  },
- "declared": 1413,
+ "declared": 1422,
  "has_file": 377,
- "gap": 1050,
- "undeclared": 119,
+ "gap": 1059,
+ "undeclared": 120,
  "gated": 48,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 813,
-   "nofile": 643
+   "total": 816,
+   "nofile": 646
   },
   {
    "lic": "mit",
-   "total": 258,
-   "nofile": 211
+   "total": 259,
+   "nofile": 212
   },
   {
    "lic": "other",
-   "total": 182,
-   "nofile": 73
+   "total": 185,
+   "nofile": 76
   },
   {
    "lic": "cc-by-nc-4.0",
-   "total": 28,
-   "nofile": 25
+   "total": 29,
+   "nofile": 26
   },
   {
    "lic": "gemma",
@@ -207,14 +209,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-11-07T13:31:00Z",
-  "archives_ok": 67,
+  "pulled_at": "2026-11-08T13:43:58Z",
+  "archives_ok": 68,
   "archives_failed": 0,
-  "mirror_kb": 228956,
-  "hours_ago": 13.7,
+  "mirror_kb": 232420,
+  "hours_ago": 13.4,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-11-09",
+   "archive_path": "data/raw/huggingface/2026-11-09.jsonl.gz",
+   "archive_sha256": "e280058abaf8de330553781057da34f63789c18bfc04f1bc136eeb2bd0c080ca",
+   "merkle_root": "50628508e93137ab6d1bd532b3402c9e216b7bd5b1b82c656ce94740f7fff94e"
+  },
   {
    "d": "2026-11-08",
    "archive_path": "data/raw/huggingface/2026-11-08.jsonl.gz",
@@ -268,12 +276,6 @@
    "archive_path": "data/raw/huggingface/2026-10-31.jsonl.gz",
    "archive_sha256": "f93c042d3f8a5584a93e559c56ebedca3dafaf6a9df3ac825e9442653c5f161e",
    "merkle_root": "9973500099476814e5986cecd897f7697032928d1dc28c1d634113852901cf0c"
-  },
-  {
-   "d": "2026-10-30",
-   "archive_path": "data/raw/huggingface/2026-10-30.jsonl.gz",
-   "archive_sha256": "4b4f19ad7c6b484c2f1bd960650bfb4791bb4460e75293822c6dfce2c4625ffc",
-   "merkle_root": "d5ccc5ab1bbfd14c0471a163c232d523a331fcf411178f8f5e70cd1ab5ffd479"
   }
  ],
  "calendar": [
@@ -540,9 +542,61 @@
   {
    "date": "2026-11-08",
    "status": "success"
+  },
+  {
+   "date": "2026-11-09",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-11-09",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "af17a3f0de2b8557849c1b6fcc303d3160052450",
+   "new_value": "e632461c0b8b835db69c7efc6aaac539f55b84de",
+   "external_id": "migtissera/Tess-4.5-27B-GGUF"
+  },
+  {
+   "detected_date": "2026-11-09",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "81b22bad9f05b99970e30c5ee5e4bbc52fedf2f8",
+   "new_value": "e4fae6493ffb8bbeacc402d1b36f18dfa18fc8d5",
+   "external_id": "HoppouAI/Breeze-TTS-2.cpp"
+  },
+  {
+   "detected_date": "2026-11-09",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "4cf9d54108483c2041bdfb767d356e8edc52d888",
+   "new_value": "b93f422a263b9ea7dfaf418ec53d516df9bd52a6",
+   "external_id": "farbodtavakkoli/OTel-2.0-Decision-26B-A4B-4bit"
+  },
+  {
+   "detected_date": "2026-11-09",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "e96cf36a2f673faa33990e990034046c62cc480f",
+   "new_value": "15d7e904798d7b641a072dc6996cb5f08953a013",
+   "external_id": "fidel1234/Krea2_Asian_Character"
+  },
+  {
+   "detected_date": "2026-11-09",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "9b5fc50456a239f0845de78cd95849755d628247",
+   "new_value": "3d3c6fb64d610dcd2d0ea5dd69a9360e69d5f24f",
+   "external_id": "DeepBeepMeep/MiniMax-H3"
+  },
+  {
+   "detected_date": "2026-11-09",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "a316ea527fde32c12487be7574e2db5ac2ad2a7e",
+   "new_value": "8ccda149192dec5f41450a402e66889e5fd25a24",
+   "external_id": "ggml-org/Qwen3.8-27B-GGUF"
+  },
   {
    "detected_date": "2026-11-08",
    "severity": "medium",
@@ -814,54 +868,6 @@
    "old_value": "59540f2ab77e807c2fc5693ab79ce4e6865adfae",
    "new_value": "1eb15a97331f04252d22056de9fddc25b742b634",
    "external_id": "remsky/kokoro-inno-clone-tuner"
-  },
-  {
-   "detected_date": "2026-11-06",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "de4b8e4d43b917e7706784d8bb445c9af86a3540",
-   "new_value": "7ecef55a2e549814c62143fcf8b5be457695e3b9",
-   "external_id": "Qwen/Qwen3.8-Flash-Next"
-  },
-  {
-   "detected_date": "2026-11-06",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "8bea7cd2b3c548fbba4f30bd98d24eebd954f2cf",
-   "new_value": "6eb8d8bd3f83fcd2c206fd04dc0c73a480537e3e",
-   "external_id": "DeepBeepMeep/Wan2.1"
-  },
-  {
-   "detected_date": "2026-11-06",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "c658da437244f072bf2f1cabc916b60d66d97663",
-   "new_value": "3d48132a00cf76de57d926de30f5c5c5ed9b8c0d",
-   "external_id": "litert-community/gemma-4-E2B-it-litert-lm"
-  },
-  {
-   "detected_date": "2026-11-06",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
-   "new_value": "8c0b3d30f3ae96f5c7f774de704bf0ada83e422a",
-   "external_id": "Qwen/Qwen3.8-27B"
-  },
-  {
-   "detected_date": "2026-11-05",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "69fc3dd1409507de5dc12d81767f909ac2511567",
-   "new_value": "4349e324130f1868a6b092c87304ef2bb8750a57",
-   "external_id": "FINAL-Bench/POCKET-Darwin-180B-GGUF"
-  },
-  {
-   "detected_date": "2026-11-05",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "683f7be2629342a50987627b40881e54761a2430",
-   "new_value": "a6032a5089ac27e96be3a80c7b42d1ad0bd89887",
-   "external_id": "prism-ml/Ternary-Bonsai-2-2B-gguf"
   }
  ]
 }
