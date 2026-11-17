@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-16T03:10:08Z",
- "last_success": "2026-11-16T03:10:06Z",
+ "generated_at": "2026-11-17T03:10:06Z",
+ "last_success": "2026-11-17T03:10:04Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 75969,
- "entities": 1592,
+ "observations": 76969,
+ "entities": 1598,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -79,7 +79,8 @@
   "2026-11-13",
   "2026-11-14",
   "2026-11-15",
-  "2026-11-16"
+  "2026-11-16",
+  "2026-11-17"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -156,34 +157,35 @@
   "2026-11-13": "success",
   "2026-11-14": "success",
   "2026-11-15": "success",
-  "2026-11-16": "success"
+  "2026-11-16": "success",
+  "2026-11-17": "success"
  },
- "days_covered": 74,
+ "days_covered": 75,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 14,
-  "low": 95024,
-  "medium": 578
+  "low": 96353,
+  "medium": 591
  },
- "declared": 1469,
- "has_file": 398,
- "gap": 1085,
+ "declared": 1475,
+ "has_file": 401,
+ "gap": 1088,
  "undeclared": 123,
  "gated": 48,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 844,
+   "total": 846,
    "nofile": 662
   },
   {
    "lic": "mit",
-   "total": 267,
-   "nofile": 219
+   "total": 270,
+   "nofile": 222
   },
   {
    "lic": "other",
-   "total": 194,
+   "total": 195,
    "nofile": 78
   },
   {
@@ -223,14 +225,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-11-15T13:31:09Z",
-  "archives_ok": 75,
+  "pulled_at": "2026-11-16T13:31:11Z",
+  "archives_ok": 76,
   "archives_failed": 0,
-  "mirror_kb": 256192,
+  "mirror_kb": 259692,
   "hours_ago": 13.7,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-11-17",
+   "archive_path": "data/raw/huggingface/2026-11-17.jsonl.gz",
+   "archive_sha256": "bda4a4dbc4942c9b027bc8c11158d6899f71e79aba1afdcfb3d77ca1cae55c3e",
+   "merkle_root": "030ee7190a1255e5fdf1932dabf889a661ab2f162bc53b6174edb27c849f562d"
+  },
   {
    "d": "2026-11-16",
    "archive_path": "data/raw/huggingface/2026-11-16.jsonl.gz",
@@ -284,12 +292,6 @@
    "archive_path": "data/raw/huggingface/2026-11-08.jsonl.gz",
    "archive_sha256": "a12c089fff4ea2f37a8655fc5a55a2e2dddabf9e261b0aa9fbfb0dc0fe3b829d",
    "merkle_root": "26682f0ee40e3bc18be70a5d6833bccda24c93c4d9e8d879922b731be9e7524a"
-  },
-  {
-   "d": "2026-11-07",
-   "archive_path": "data/raw/huggingface/2026-11-07.jsonl.gz",
-   "archive_sha256": "7fa5c4b22bd72a8c773bc46230046fd32195c17d288ffe4ae20d40035f032550",
-   "merkle_root": "38c522741e8f9c23247b124068d9c33fea523a771f6f8f7750f6e4ad98c2c164"
   }
  ],
  "calendar": [
@@ -588,9 +590,117 @@
   {
    "date": "2026-11-16",
    "status": "success"
+  },
+  {
+   "date": "2026-11-17",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-11-17",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "8752a32b89ad0e30dfc67a18ed0d63e6f1bcff9b",
+   "new_value": "d9e6b7240921a810734f65b514ec52537534ad2c",
+   "external_id": "fidel1234/Krea2"
+  },
+  {
+   "detected_date": "2026-11-17",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "5f90473023975e6271b0ed1dd84c4e88e4bbc6d3",
+   "new_value": "8ced60068623def5b74b4d10558117cb61d6482d",
+   "external_id": "MiniMaxAI/MiniMax-H3-Image"
+  },
+  {
+   "detected_date": "2026-11-17",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "c72ea73534cf71d6f00a78290923fcea96d272f9",
+   "new_value": "3bbf108f2fcf5bd7f1bd1a0b029026356cd4b033",
+   "external_id": "turintech/Qwen3.5-4B-Artemis-GGUF"
+  },
+  {
+   "detected_date": "2026-11-17",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "2b6be27ffef113143d544dced5228aebfb1cff6a",
+   "new_value": "5559580169f9e97801574707ee911b78d849353d",
+   "external_id": "turintech/Qwen3.5-9B-Artemis-GGUF"
+  },
+  {
+   "detected_date": "2026-11-17",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "b8de0145a02a4885cb9c3b328eec35484d771d41",
+   "new_value": "55c5a89496c682f1b998282d5f080762327555b6",
+   "external_id": "turintech/gemma-4-E4B-it-Artemis-GGUF"
+  },
+  {
+   "detected_date": "2026-11-17",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "b49e56f90fb727ca1dc1dde9889ac8b4e1fb69a2",
+   "new_value": "58a5dbc8b32a1652cb440bad33fe1c864fe189c7",
+   "external_id": "turintech/gemma-4-E2B-it-Artemis-GGUF"
+  },
+  {
+   "detected_date": "2026-11-17",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "0480966938291445591f69f08a13b041c073a96a",
+   "new_value": "cb16b920ec2249c4b280f3aa67942e00b5099122",
+   "external_id": "baidu/Unlimited-OCR-2"
+  },
+  {
+   "detected_date": "2026-11-17",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "9cd896d4a3793fe628e40868becd0f480168940e",
+   "new_value": "f54960d4620b338f8f83e61dad7c7b0badb23b33",
+   "external_id": "turintech/Qwen3.5-0.8B-Artemis-GGUF"
+  },
+  {
+   "detected_date": "2026-11-17",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "1a22815d178a79f78bb44e6858f0ee446ae8f0d4",
+   "new_value": "9bc9e0c476448f686659a9f82b5492f1a3c06c4e",
+   "external_id": "kindlingai/glm-5.3-flash-exlr8-k2-k3-k4"
+  },
+  {
+   "detected_date": "2026-11-17",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "1641ba4f7d71ae3976e05f7c9f621f160bc47a13",
+   "new_value": "8bfdd064e2e6ef207e4dea58a56a57a9f9f7e2ff",
+   "external_id": "ukisai/Swift-1.5-Qwen3.8-Flash-Next-GSQ-RCO-GGUF"
+  },
+  {
+   "detected_date": "2026-11-17",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "2fd7b4b0f2393ddb39a267fb62df6c010928a6c6",
+   "new_value": "6a88d6a65119856a743be87ec1e6bee6f08e1f93",
+   "external_id": "briaai/RMBG-2.0"
+  },
+  {
+   "detected_date": "2026-11-17",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "1a4a150fc6707329409eb52e5d75a0e987ac1928",
+   "new_value": "c2bf13b837e33bd851b370285fc7db99482d2ab2",
+   "external_id": "lightx2v/Minimax-h3-Turbo"
+  },
+  {
+   "detected_date": "2026-11-17",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "f7f5b7f5fa82ffc52addd066915886d497f5517b",
+   "new_value": "cd40195554d3cfcb56f34b9adfb66efc790ed5b6",
+   "external_id": "google/diffusiongemma-26B-A4B-it"
+  },
   {
    "detected_date": "2026-11-16",
    "severity": "medium",
@@ -806,110 +916,6 @@
    "old_value": "30f485ed874aa44c8183348ad361c5eabad318da",
    "new_value": "1a4a150fc6707329409eb52e5d75a0e987ac1928",
    "external_id": "lightx2v/Minimax-h3-Turbo"
-  },
-  {
-   "detected_date": "2026-11-13",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "c765b66c4b00e4be8689823fb04ba610b5e7658c",
-   "new_value": "06b4baa33b310388002b3dd1c1ea701ff691c901",
-   "external_id": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF"
-  },
-  {
-   "detected_date": "2026-11-12",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "cf943fbe32f840b20ca05ccc146e7dc72baf9a9b",
-   "new_value": "adc779c0f3c4936016d7124395ccf260ec696567",
-   "external_id": "openbmb/MiniCPM-V-4.7-35B-A3B-gguf"
-  },
-  {
-   "detected_date": "2026-11-12",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "5eff2ddd90624426f705e9213bb56fcd7209977c",
-   "new_value": "8ad02b786ab81e33d465e1c80562640c55ab2877",
-   "external_id": "openbmb/MiniCPM5-2B-GGUF"
-  },
-  {
-   "detected_date": "2026-11-12",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "a1c2a554ea72a7e8e66cc28b3eaf5036c9313860",
-   "new_value": "5ca1df1d2436bd1ab270b169c5ea6c47aad23641",
-   "external_id": "peasantsmith/GLM-5.3-Flash-Maya-GGUF"
-  },
-  {
-   "detected_date": "2026-11-12",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "5d1f9f759ea877ae556cda88dbec958b62ad3809",
-   "new_value": "bd53e520a64472adaff780da0b2f2d7eb1605e30",
-   "external_id": "unsloth/Qwen-Image-2.1-Turbo-GGUF"
-  },
-  {
-   "detected_date": "2026-11-12",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "8b77b27bfeb8d39447ac174c07d5bcde70e45d81",
-   "new_value": "f254b5ba6e36f7d89cc7892e268e9877bc20f0a0",
-   "external_id": "litert-community/gemma-4-E4B-it-litert-lm"
-  },
-  {
-   "detected_date": "2026-11-12",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "26b70613695b3c154767396794832b7baa969a71",
-   "new_value": "af949e191a0c714653fbc5ded51045aa4d83bf7a",
-   "external_id": "remsky/kokoro-inno-clone-tuner"
-  },
-  {
-   "detected_date": "2026-11-12",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "6a762d2f2bada33557f3bf98facf916c585e0ed4",
-   "new_value": "c4d587fbcd64d0e2c768465706cfa0705d91f2fa",
-   "external_id": "peculiar-ragdoll/Dirk-Qwen3.8-27B-GGUF"
-  },
-  {
-   "detected_date": "2026-11-12",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "3d48132a00cf76de57d926de30f5c5c5ed9b8c0d",
-   "new_value": "2d74ac41a33d7da82f39f7d5720a04c68514a103",
-   "external_id": "litert-community/gemma-4-E2B-it-litert-lm"
-  },
-  {
-   "detected_date": "2026-11-12",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "1c69098e9c32db6dc06fc48f1d6cc75ad07da89e",
-   "new_value": "c765b66c4b00e4be8689823fb04ba610b5e7658c",
-   "external_id": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF"
-  },
-  {
-   "detected_date": "2026-11-12",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "43f522df59109a037f64f1e29ab1eff5c00e8e1e",
-   "new_value": "4af51b3542f775b0a8e4b310bfb3f17e01c306c9",
-   "external_id": "unsloth/Qwen3.8-27B-GGUF"
-  },
-  {
-   "detected_date": "2026-11-11",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "07d01f4016c2e0ec614b3b04cfce1820a116d2dc",
-   "new_value": "9cd896d4a3793fe628e40868becd0f480168940e",
-   "external_id": "turintech/Qwen3.5-0.8B-Artemis-GGUF"
-  },
-  {
-   "detected_date": "2026-11-11",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "b90c1253d9dabf52ef81476c1762150f5687e3bd",
-   "new_value": "657b80fe61334271ae8b7f6cece7f289845abbdb",
-   "external_id": "DavidAU/Qwen3.8-27B-Turbo-Brilliance-50X-Reasoning-Instruct-NEO-MAX-MTP-GGUF"
   }
  ]
 }
