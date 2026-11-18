@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-17T03:10:06Z",
- "last_success": "2026-11-17T03:10:04Z",
+ "generated_at": "2026-11-18T03:10:07Z",
+ "last_success": "2026-11-18T03:10:05Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 76969,
- "entities": 1598,
+ "observations": 77969,
+ "entities": 1604,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -80,7 +80,8 @@
   "2026-11-14",
   "2026-11-15",
   "2026-11-16",
-  "2026-11-17"
+  "2026-11-17",
+  "2026-11-18"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -158,34 +159,35 @@
   "2026-11-14": "success",
   "2026-11-15": "success",
   "2026-11-16": "success",
-  "2026-11-17": "success"
+  "2026-11-17": "success",
+  "2026-11-18": "success"
  },
- "days_covered": 75,
+ "days_covered": 76,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 14,
-  "low": 96353,
-  "medium": 591
+  "low": 97765,
+  "medium": 597
  },
- "declared": 1475,
- "has_file": 401,
- "gap": 1088,
+ "declared": 1481,
+ "has_file": 404,
+ "gap": 1091,
  "undeclared": 123,
  "gated": 48,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 846,
-   "nofile": 662
+   "total": 848,
+   "nofile": 664
   },
   {
    "lic": "mit",
-   "total": 270,
-   "nofile": 222
+   "total": 272,
+   "nofile": 223
   },
   {
    "lic": "other",
-   "total": 195,
+   "total": 196,
    "nofile": 78
   },
   {
@@ -225,14 +227,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-11-16T13:31:11Z",
-  "archives_ok": 76,
+  "pulled_at": "2026-11-17T13:31:06Z",
+  "archives_ok": 77,
   "archives_failed": 0,
-  "mirror_kb": 259692,
+  "mirror_kb": 263208,
   "hours_ago": 13.7,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-11-18",
+   "archive_path": "data/raw/huggingface/2026-11-18.jsonl.gz",
+   "archive_sha256": "9cac7fa1dff0d6cc23e2db915fe66b6a43436e4efbeca1b7af31b376aaa9254b",
+   "merkle_root": "a1751efac9d66ce975f09e490f04be848d4deb4c2ec2fb69e3886757ff9426d3"
+  },
   {
    "d": "2026-11-17",
    "archive_path": "data/raw/huggingface/2026-11-17.jsonl.gz",
@@ -286,12 +294,6 @@
    "archive_path": "data/raw/huggingface/2026-11-09.jsonl.gz",
    "archive_sha256": "e280058abaf8de330553781057da34f63789c18bfc04f1bc136eeb2bd0c080ca",
    "merkle_root": "50628508e93137ab6d1bd532b3402c9e216b7bd5b1b82c656ce94740f7fff94e"
-  },
-  {
-   "d": "2026-11-08",
-   "archive_path": "data/raw/huggingface/2026-11-08.jsonl.gz",
-   "archive_sha256": "a12c089fff4ea2f37a8655fc5a55a2e2dddabf9e261b0aa9fbfb0dc0fe3b829d",
-   "merkle_root": "26682f0ee40e3bc18be70a5d6833bccda24c93c4d9e8d879922b731be9e7524a"
   }
  ],
  "calendar": [
@@ -594,9 +596,61 @@
   {
    "date": "2026-11-17",
    "status": "success"
+  },
+  {
+   "date": "2026-11-18",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-11-18",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "8bf2e40cc304ab2f43148d2f578ea9fc1ee4533c",
+   "new_value": "e82e6bc7a65dc695e68b5c80fc92df026948b290",
+   "external_id": "trl-internal-testing/tiny-Phi3ForCausalLM-3"
+  },
+  {
+   "detected_date": "2026-11-18",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "d9e6b7240921a810734f65b514ec52537534ad2c",
+   "new_value": "2e55d2722474f2f411dca7b5382424fbb58ed80a",
+   "external_id": "fidel1234/Krea2"
+  },
+  {
+   "detected_date": "2026-11-18",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "257c95704b87e99d12e4b1cbd65794837009d587",
+   "new_value": "8efdc41d092da63763f39173b0fff80eac1c0898",
+   "external_id": "agentionai/Qwen3.8-Flash-Next-Gyro-GGUF"
+  },
+  {
+   "detected_date": "2026-11-18",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "5ca1df1d2436bd1ab270b169c5ea6c47aad23641",
+   "new_value": "1f0c987919a34a8c0495ce80abec1934ab613cff",
+   "external_id": "peasantsmith/GLM-5.3-Flash-Maya-GGUF"
+  },
+  {
+   "detected_date": "2026-11-18",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "86f37c79a89ec308434485e8846ffe66068c4a56",
+   "new_value": "25410576d005d7f08d186990fd91f6a2651243de",
+   "external_id": "ampixa/sanoTTS"
+  },
+  {
+   "detected_date": "2026-11-18",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "176bbae94db7b26f00e5b698d95d4f578debc51c",
+   "new_value": "378286d397e160409d4d453e0c9336d54780ac74",
+   "external_id": "DeepBeepMeep/Wan2.1"
+  },
   {
    "detected_date": "2026-11-17",
    "severity": "medium",
@@ -868,54 +922,6 @@
    "old_value": "15dcfc7e7c608c6161507211ed43c5b590801b4b",
    "new_value": "41e8a94d15d62070b36cf4553a0250717ecf46b8",
    "external_id": "ggml-org/gpt-oss-20b-GGUF"
-  },
-  {
-   "detected_date": "2026-11-13",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "cec9d585b8e12e5aae0d6508aea94b1f25a35b46",
-   "new_value": "45666784803b3a7ad577e0def405f9afcc3bddb2",
-   "external_id": "nvidia/Cosmos3-Nano"
-  },
-  {
-   "detected_date": "2026-11-13",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "55b0209310fbf5d79c486aa11847f474019043d1",
-   "new_value": "7ab9f02e63fbd94ab98c19d924b04ca335cd1f0f",
-   "external_id": "FINAL-Bench/POCKET-Darwin-180B-GGUF"
-  },
-  {
-   "detected_date": "2026-11-13",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "99bb8f7f95c7aa7b24a36a7786a4f657b30f5d3d",
-   "new_value": "1641ba4f7d71ae3976e05f7c9f621f160bc47a13",
-   "external_id": "ukisai/Swift-1.5-Qwen3.8-Flash-Next-GSQ-RCO-GGUF"
-  },
-  {
-   "detected_date": "2026-11-13",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "f973fc41ec7545364ac9776c2440285f43ff2a30",
-   "new_value": "6e0b2da2112573380abfb6a1435a60a994b254f2",
-   "external_id": "circlestone-labs/Anima"
-  },
-  {
-   "detected_date": "2026-11-13",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "8ccda149192dec5f41450a402e66889e5fd25a24",
-   "new_value": "c1869413dece09109e55b7dcc2c77ef382b0d0bd",
-   "external_id": "ggml-org/Qwen3.8-27B-GGUF"
-  },
-  {
-   "detected_date": "2026-11-13",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "30f485ed874aa44c8183348ad361c5eabad318da",
-   "new_value": "1a4a150fc6707329409eb52e5d75a0e987ac1928",
-   "external_id": "lightx2v/Minimax-h3-Turbo"
   }
  ]
 }
