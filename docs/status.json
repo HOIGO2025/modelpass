@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-18T03:10:07Z",
- "last_success": "2026-11-18T03:10:05Z",
+ "generated_at": "2026-11-19T03:10:07Z",
+ "last_success": "2026-11-19T03:10:05Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 77969,
- "entities": 1604,
+ "observations": 78969,
+ "entities": 1609,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -81,7 +81,8 @@
   "2026-11-15",
   "2026-11-16",
   "2026-11-17",
-  "2026-11-18"
+  "2026-11-18",
+  "2026-11-19"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -160,25 +161,26 @@
   "2026-11-15": "success",
   "2026-11-16": "success",
   "2026-11-17": "success",
-  "2026-11-18": "success"
+  "2026-11-18": "success",
+  "2026-11-19": "success"
  },
- "days_covered": 76,
+ "days_covered": 77,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 14,
-  "low": 97765,
-  "medium": 597
+  "low": 99079,
+  "medium": 605
  },
- "declared": 1481,
- "has_file": 404,
- "gap": 1091,
- "undeclared": 123,
+ "declared": 1485,
+ "has_file": 406,
+ "gap": 1093,
+ "undeclared": 124,
  "gated": 48,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 848,
-   "nofile": 664
+   "total": 850,
+   "nofile": 665
   },
   {
    "lic": "mit",
@@ -187,8 +189,8 @@
   },
   {
    "lic": "other",
-   "total": 196,
-   "nofile": 78
+   "total": 198,
+   "nofile": 79
   },
   {
    "lic": "cc-by-nc-4.0",
@@ -227,14 +229,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-11-17T13:31:06Z",
-  "archives_ok": 77,
+  "pulled_at": "2026-11-18T13:31:02Z",
+  "archives_ok": 78,
   "archives_failed": 0,
-  "mirror_kb": 263208,
+  "mirror_kb": 266744,
   "hours_ago": 13.7,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-11-19",
+   "archive_path": "data/raw/huggingface/2026-11-19.jsonl.gz",
+   "archive_sha256": "dc07ead3a91c62621b654c44e3bc1342083ef698a3401142442ebd65aee169e2",
+   "merkle_root": "5fc61628f404ef9763f3ad18d0e2a062db15cb51939f62191be96e894edd3912"
+  },
   {
    "d": "2026-11-18",
    "archive_path": "data/raw/huggingface/2026-11-18.jsonl.gz",
@@ -288,12 +296,6 @@
    "archive_path": "data/raw/huggingface/2026-11-10.jsonl.gz",
    "archive_sha256": "cdb0ab3bbeea0594310d9f29d2243fc2c4c40d7c1208eadba33cad992b14f8cc",
    "merkle_root": "8c3133788d0998bb026918cee6f6d7b05476bfd11d7b133141b0e1f11326676f"
-  },
-  {
-   "d": "2026-11-09",
-   "archive_path": "data/raw/huggingface/2026-11-09.jsonl.gz",
-   "archive_sha256": "e280058abaf8de330553781057da34f63789c18bfc04f1bc136eeb2bd0c080ca",
-   "merkle_root": "50628508e93137ab6d1bd532b3402c9e216b7bd5b1b82c656ce94740f7fff94e"
   }
  ],
  "calendar": [
@@ -600,9 +602,77 @@
   {
    "date": "2026-11-18",
    "status": "success"
+  },
+  {
+   "date": "2026-11-19",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-11-19",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "2e55d2722474f2f411dca7b5382424fbb58ed80a",
+   "new_value": "779f7d97ca0dbccc471359718f6a5a4edb2c35c9",
+   "external_id": "fidel1234/Krea2"
+  },
+  {
+   "detected_date": "2026-11-19",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "0bb149f51e3156ed4b90dd45d5620346bfe1df8f",
+   "new_value": "89c635085f539d03ad35485ed542c5a286e3c6d6",
+   "external_id": "Comfy-Org/MiniMax-H3-Image"
+  },
+  {
+   "detected_date": "2026-11-19",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "9bc9e0c476448f686659a9f82b5492f1a3c06c4e",
+   "new_value": "535fc3fd9b72f3a0f944b78795aca1227945a91c",
+   "external_id": "kindlingai/glm-5.3-flash-exlr8-k2-k3-k4"
+  },
+  {
+   "detected_date": "2026-11-19",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "123acf1cc74bccbb9bfff8ac1ee72edc08c2341d",
+   "new_value": "d6258323e18f14c60d37899da97ca555f3118259",
+   "external_id": "Comfy-Org/Wan-2.1"
+  },
+  {
+   "detected_date": "2026-11-19",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "ee6f4a40737a995bf5818954cfce6d59443b0f04",
+   "new_value": "5df3a4a3ed0628002308022198249dbbbd045d09",
+   "external_id": "Comfy-Org/Wan-2.2"
+  },
+  {
+   "detected_date": "2026-11-19",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "a36ae4680871ffa6412061d5daf66c4d4ad5802c",
+   "new_value": "9e25c28a2e8808d8b2599d780521fd6af24e7558",
+   "external_id": "kindlingai/glm-5.3-exlr8-k2-k3-k4"
+  },
+  {
+   "detected_date": "2026-11-19",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "b62212407346cb7aafcc8d2788a1844555002fd3",
+   "new_value": "04b28a94b55965c0124c87c4096e141017116338",
+   "external_id": "peculiar-ragdoll/Cyber-Tiel-Coder-35B-A3B-GGUF-MTP"
+  },
+  {
+   "detected_date": "2026-11-19",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "b8093469224f83f5c38f691eb906c380e9e63114",
+   "new_value": "8903cb408c7df39cde2ed15fac397e6d7be92951",
+   "external_id": "ggml-org/gemma-4-E4B-it-GGUF"
+  },
   {
    "detected_date": "2026-11-18",
    "severity": "medium",
@@ -858,70 +928,6 @@
    "old_value": "fe905e15831c620e804ba9e9382e4d9b4f60b21e",
    "new_value": "b2292a57700a7cb15a27265d4493416534b20c1f",
    "external_id": "DeepBeepMeep/MiniMax-H3"
-  },
-  {
-   "detected_date": "2026-11-14",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "3b6f11e221195ee3650d7ac0ffce6f9fe7275d8f",
-   "new_value": "a713868aa6cd2df2225dee8f77d1b8b07414d742",
-   "external_id": "mradermacher/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic-GGUF"
-  },
-  {
-   "detected_date": "2026-11-14",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "e2d64985a4a5de0ff2ba67bc8a026f9531689c75",
-   "new_value": "36116c48f4e81b4c66a9c63da13a72959999a5f6",
-   "external_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF"
-  },
-  {
-   "detected_date": "2026-11-14",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "084c631ac221016019d6e0a863afe92d90edd3b0",
-   "new_value": "f5d175de2cf7f720d45d6064019a81fcf056e986",
-   "external_id": "unsloth/Qwen3.8-Flash-Next-GGUF"
-  },
-  {
-   "detected_date": "2026-11-14",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "7b375e1b73b11138ff12fe22c8f2822d8fe03467",
-   "new_value": "4cde9d208e19519c36917aa170fffc7e381aa0ad",
-   "external_id": "HuggingFaceTB/SmolVLM2-500M-Video-Instruct"
-  },
-  {
-   "detected_date": "2026-11-14",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "73ce4162f6cce370dd533c6782b772135c1b2a8e",
-   "new_value": "ca0b203eb1bb87f333a7cfbad2d5f6672b4ccba7",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-11-14",
-   "severity": "medium",
-   "field": "base_model_ref",
-   "old_value": "[\"MiniMaxAI/MiniMax-H3\",\"ACE-Step/Ace-Step1.5\",\"ACE-Step/acestep-v15-base\",\"Aratako/Irodori-TTS-500M-v3\",\"Aratako/Irodori-TTS-600M-v3-VoiceDesign\",\"Aratako/Irodori-TTS-v4.1-Small\",\"Aratako/MioCodec-25Hz-44.1kHz-v2\",\"Aratako/MioTTS-1.7B\",\"Aratako/Semantic-DACVAE-Japanese-32dim\",\"Banafo/Kroko-ASR\",\"ConwayResearch/Underdog-Bark-3.0\",\"dots-studio/dots.tts-mf\",\"dots-studio/dots.tts-soar\",\"FermionResearch/Phonon-2\",\"fishaudio/s2-pro\",\"FunAudioLLM/Fun-ASR-Nano-2512-hf\",\"ai-sage/GigaAM-Multilingual\",\"ai-sage/GigaAM-v3\",\"HeartMuLa/HeartCodec-oss-20260123\",\"HeartMuLa/HeartMuLa-oss-3B\",\"HeartMuLa/HeartMuLaGen\",\"IndexTeam/IndexTTS-2\",\"IndexTeam/IndexTTS-2.5\",\"ASLP-lab/MeanVC2\",\"OpenBMB/VoxCPM2\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-v2\",\"OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5\",\"OpenMOSS-Team/MOSS-TTS-Nano-100M\",\"Qwen/Qwen3-ASR-0.6B\",\"Qwen/Qwen3-ASR-1.7B-hf\",\"Qwen/Qwen3-ForcedAligner-0.6B\",\"Qwen/Qwen3-TTS-12Hz-0.6B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice\",\"Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign\",\"Qwen/Qwen3-TTS-Tokenizer-12Hz\",\"ResembleAI/chatterbox\",\"RMSnow/Vevo2\",\"bosonai/higgs-audio-v3-stt\",\"bosonai/higgs-audio-v3-tts-4b\",\"k2-fsa/OmniVoice\",\"KittenML/kitten-tts-2\",\"kyutai/pocket-tts\",\"llm-jp/llm-jp-3-150m\",\"microsoft/VibeVoice-1.5B\",\"microsoft/VibeVoice-ASR\",\"microsoft/VibeVoice-ASR-Streaming-7B\",\"mistralai/Voxtral-Mini-4B-Realtime-2602\",\"mlx-community/SeedVC-MLX\",\"mlx-community/mel-roformer-mlx\",\"mlx-community/supertonic-3-mlx\",\"mlx-community/wavlm-base-plus-mlx\",\"MuScriptor/muscriptor-small\",\"neuphonic/neutts-2e\",\"syvai/hviske-v5.3\",\"nvidia/diar_sortformer_4spk-v1\",\"nvidia/magpie_tts_multilingual_357m\",\"nvidia/nemotron-3.5-asr-streaming-0.6b\",\"nvidia/parakeet-tdt-0.6b-v3\",\"nvidia/personaplex-7b-v1\",\"owensong/Inflect-Micro-v2\",\"stabilityai/stable-audio-3-medium\",\"stabilityai/stable-audio-3-small-music\",\"stabilityai/stable-audio-3-small-sfx\",\"third-intelligence/Haas-ja-v1.0\"]",
-   "new_value": "[\"alibabasglab/MossFormer2_SR_48K\",\"alibabasglab/MossFormer2_SE_48K\",\"alibabasglab/MossFormer2_SS_16K\",\"oruk/orukeet\",\"HeartMuLa/MuLaCover\",\"OpenMOSS-Team/MOSS-SoundEffect-v2.0\",\"MiniMaxAI/MiniMax-H3\",\"ACE-Step/Ace-Step1.5\",\"ACE-Step/acestep-v15-base\",\"Aratako/Irodori-TTS-500M-v3\",\"Aratako/Irodori-TTS-600M-v3-VoiceDesign\",\"Aratako/Irodori-TTS-v4.1-Small\",\"Aratako/MioCodec-25Hz-44.1kHz-v2\",\"Aratako/MioTTS-1.7B\",\"Aratako/Semantic-DACVAE-Japanese-32dim\",\"Banafo/Kroko-ASR\",\"ConwayResearch/Underdog-Bark-3.0\",\"dots-studio/dots.tts-mf\",\"dots-studio/dots.tts-soar\",\"FermionResearch/Phonon-2\",\"fishaudio/s2-pro\",\"FunAudioLLM/Fun-ASR-Nano-2512-hf\",\"ai-sage/GigaAM-Multilingual\",\"ai-sage/GigaAM-v3\",\"HeartMuLa/HeartCodec-oss-20260123\",\"HeartMuLa/HeartMuLa-oss-3B\",\"HeartMuLa/HeartMuLaGen\",\"IndexTeam/IndexTTS-2\",\"IndexTeam/IndexTTS-2.5\",\"ASLP-lab/MeanVC2\",\"OpenBMB/VoxCPM2\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-v2\",\"OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5\",\"OpenMOSS-Team/MOSS-TTS-Nano-100M\",\"Qwen/Qwen3-ASR-0.6B\",\"Qwen/Qwen3-ASR-1.7B-hf\",\"Qwen/Qwen3-ForcedAligner-0.6B\",\"Qwen/Qwen3-TTS-12Hz-0.6B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice\",\"Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign\",\"Qwen/Qwen3-TTS-Tokenizer-12Hz\",\"ResembleAI/chatterbox\",\"RMSnow/Vevo2\",\"bosonai/higgs-audio-v3-stt\",\"bosonai/higgs-audio-v3-tts-4b\",\"k2-fsa/OmniVoice\",\"KittenML/kitten-tts-2\",\"kyutai/pocket-tts\",\"llm-jp/llm-jp-3-150m\",\"microsoft/VibeVoice-1.5B\",\"microsoft/VibeVoice-ASR\",\"microsoft/VibeVoice-ASR-Streaming-7B\",\"mistralai/Voxtral-Mini-4B-Realtime-2602\",\"mlx-community/SeedVC-MLX\",\"mlx-community/mel-roformer-mlx\",\"mlx-community/supertonic-3-mlx\",\"mlx-community/wavlm-base-plus-mlx\",\"MuScriptor/muscriptor-small\",\"neuphonic/neutts-2e\",\"syvai/hviske-v5.3\",\"nvidia/diar_sortformer_4spk-v1\",\"nvidia/magpie_tts_multilingual_357m\",\"nvidia/nemotron-3.5-asr-streaming-0.6b\",\"nvidia/parakeet-tdt-0.6b-v3\",\"nvidia/personaplex-7b-v1\",\"owensong/Inflect-Micro-v2\",\"stabilityai/stable-audio-3-medium\",\"stabilityai/stable-audio-3-small-music\",\"stabilityai/stable-audio-3-small-sfx\",\"third-intelligence/Haas-ja-v1.0\"]",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-11-13",
-   "severity": "high",
-   "field": "declared_license",
-   "old_value": null,
-   "new_value": "other",
-   "external_id": "lightx2v/Minimax-h3-Turbo"
-  },
-  {
-   "detected_date": "2026-11-13",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "15dcfc7e7c608c6161507211ed43c5b590801b4b",
-   "new_value": "41e8a94d15d62070b36cf4553a0250717ecf46b8",
-   "external_id": "ggml-org/gpt-oss-20b-GGUF"
   }
  ]
 }
