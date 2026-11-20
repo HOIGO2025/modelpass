@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-19T03:10:07Z",
- "last_success": "2026-11-19T03:10:05Z",
+ "generated_at": "2026-11-20T03:10:07Z",
+ "last_success": "2026-11-20T03:10:05Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 78969,
- "entities": 1609,
+ "observations": 79969,
+ "entities": 1622,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -82,7 +82,8 @@
   "2026-11-16",
   "2026-11-17",
   "2026-11-18",
-  "2026-11-19"
+  "2026-11-19",
+  "2026-11-20"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -162,40 +163,41 @@
   "2026-11-16": "success",
   "2026-11-17": "success",
   "2026-11-18": "success",
-  "2026-11-19": "success"
+  "2026-11-19": "success",
+  "2026-11-20": "success"
  },
- "days_covered": 77,
+ "days_covered": 78,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 14,
-  "low": 99079,
-  "medium": 605
+  "low": 100389,
+  "medium": 617
  },
- "declared": 1485,
- "has_file": 406,
- "gap": 1093,
+ "declared": 1498,
+ "has_file": 411,
+ "gap": 1101,
  "undeclared": 124,
  "gated": 48,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 850,
-   "nofile": 665
+   "total": 855,
+   "nofile": 668
   },
   {
    "lic": "mit",
-   "total": 272,
-   "nofile": 223
+   "total": 274,
+   "nofile": 225
   },
   {
    "lic": "other",
-   "total": 198,
+   "total": 201,
    "nofile": 79
   },
   {
    "lic": "cc-by-nc-4.0",
-   "total": 30,
-   "nofile": 27
+   "total": 31,
+   "nofile": 28
   },
   {
    "lic": "gemma",
@@ -229,14 +231,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-11-18T13:31:02Z",
-  "archives_ok": 78,
+  "pulled_at": "2026-11-19T13:30:58Z",
+  "archives_ok": 79,
   "archives_failed": 0,
-  "mirror_kb": 266744,
+  "mirror_kb": 270272,
   "hours_ago": 13.7,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-11-20",
+   "archive_path": "data/raw/huggingface/2026-11-20.jsonl.gz",
+   "archive_sha256": "33089a9b21cbd58c4baa84d8a91b163378157582838b4749002e8112bcb262eb",
+   "merkle_root": "d4b7b5757cd72509fecbba28801bda302b82152cc952e229ad5f9fa02e007e71"
+  },
   {
    "d": "2026-11-19",
    "archive_path": "data/raw/huggingface/2026-11-19.jsonl.gz",
@@ -290,12 +298,6 @@
    "archive_path": "data/raw/huggingface/2026-11-11.jsonl.gz",
    "archive_sha256": "239bdb59eafd3fc8447f27816db8a08fa6eade013208dca94086a27c18719452",
    "merkle_root": "45f9d2ad72a8b971dc82b2284b11caf8b3454f5cc83a81c423c1a1ee10d36508"
-  },
-  {
-   "d": "2026-11-10",
-   "archive_path": "data/raw/huggingface/2026-11-10.jsonl.gz",
-   "archive_sha256": "cdb0ab3bbeea0594310d9f29d2243fc2c4c40d7c1208eadba33cad992b14f8cc",
-   "merkle_root": "8c3133788d0998bb026918cee6f6d7b05476bfd11d7b133141b0e1f11326676f"
   }
  ],
  "calendar": [
@@ -606,9 +608,109 @@
   {
    "date": "2026-11-19",
    "status": "success"
+  },
+  {
+   "date": "2026-11-20",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-11-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "779f7d97ca0dbccc471359718f6a5a4edb2c35c9",
+   "new_value": "b8c7bd62cbce2c2eaaf93a9dd67427734b6bcb77",
+   "external_id": "fidel1234/Krea2"
+  },
+  {
+   "detected_date": "2026-11-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "44cbbe0e7303f242cb99d21e4475bbf653bcc742",
+   "new_value": "3fbf688dd9f155d68656f54910532f0ba4be5b1c",
+   "external_id": "FINAL-Bench/POCKET-Darwin-180B-GGUF"
+  },
+  {
+   "detected_date": "2026-11-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "1f0c987919a34a8c0495ce80abec1934ab613cff",
+   "new_value": "6f6c6a8394c32f556c09bea0a06dce0b76a3dc37",
+   "external_id": "peasantsmith/GLM-5.3-Flash-Maya-GGUF"
+  },
+  {
+   "detected_date": "2026-11-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "9d36114cf7a2e03a45c28f5cc4987d20ebfdb6c1",
+   "new_value": "09192d1abae1e57e1a2fcbc5b701cd1d9e2abd51",
+   "external_id": "black-forest-labs/flux-3-image-klein-comfy"
+  },
+  {
+   "detected_date": "2026-11-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "ed69cc815b7fcdc1429f6ce7bb00db4a3d462574",
+   "new_value": "903acbd734a8af07c50a65a019536d92393a6166",
+   "external_id": "RedHatAI/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-FP8"
+  },
+  {
+   "detected_date": "2026-11-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "2515a3ea0afec1dd22d0c7794b3a91557804d195",
+   "new_value": "36f171c15db66576b4b40a4011eb77fe9ac770c2",
+   "external_id": "MiniMaxAI/MiniMax-M2.5"
+  },
+  {
+   "detected_date": "2026-11-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "4d01dfe0332d63057c186e0b262165819efb6611",
+   "new_value": "94b44e57fb4797fde1c1872bed70aef3c93a07f6",
+   "external_id": "moonshotai/Kimi-K2.5"
+  },
+  {
+   "detected_date": "2026-11-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "6db57163fa56fa0e00d4b820169908ac0d3a219d",
+   "new_value": "c3314bf03b67c8e547516e9c5fda87c08a88d480",
+   "external_id": "trl-internal-testing/tiny-Qwen3MoeForCausalLM"
+  },
+  {
+   "detected_date": "2026-11-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21",
+   "new_value": "45d95c497444bbaebe766e1528792fc9158c0c3a",
+   "external_id": "black-forest-labs/FLUX.1-dev"
+  },
+  {
+   "detected_date": "2026-11-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "25bb9b8963688237e94750f6f3e48f1947d3c7a3",
+   "new_value": "92ee0a3c801d3ffbec16626c3b9f5fe60e778253",
+   "external_id": "trl-internal-testing/tiny-Qwen3ForCausalLM"
+  },
+  {
+   "detected_date": "2026-11-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "7a103b33f04120535bdfe97b5f65b79d3c90d708",
+   "new_value": "32c1ce1fea57a513eb9386aa62408d47b1cf7ab2",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
+  {
+   "detected_date": "2026-11-20",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "f831ab66814297da540d832a5235f8e904f29d06",
+   "new_value": "1f5d44f794ef598de7b6f529ef7923729b7e5408",
+   "external_id": "moonshotai/Kimi-K3"
+  },
   {
    "detected_date": "2026-11-19",
    "severity": "medium",
@@ -832,102 +934,6 @@
    "old_value": "7ab9f02e63fbd94ab98c19d924b04ca335cd1f0f",
    "new_value": "44cbbe0e7303f242cb99d21e4475bbf653bcc742",
    "external_id": "FINAL-Bench/POCKET-Darwin-180B-GGUF"
-  },
-  {
-   "detected_date": "2026-11-16",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "2688c0c3c2c3b052ec4f6d10a8417b0ef7ee4eba",
-   "new_value": "dfcee0ec8d6b874c6663eca0fc55d90ab32534c8",
-   "external_id": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF"
-  },
-  {
-   "detected_date": "2026-11-16",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "44b13a82d39e63d1c039eece3826e90e2f28eefa",
-   "new_value": "7eced947d7132dffbc2c0ea4db332081360afbf8",
-   "external_id": "nerkyor/Qwen3.8-27B-Coder390-EfficientThink-Opus5.5-GPT6Astra-Grok4.7-DSV4Pro-K3-SFT-RLOO-MTP-DFlash2"
-  },
-  {
-   "detected_date": "2026-11-16",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "ea81e8e592a29075f2e3e9c87b17d0c3d94c3244",
-   "new_value": "082faa013513b9fb32d39b8873adc60d19544704",
-   "external_id": "FINAL-Bench/POCKET-35B-GGUF"
-  },
-  {
-   "detected_date": "2026-11-16",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "ca0b203eb1bb87f333a7cfbad2d5f6672b4ccba7",
-   "new_value": "7a103b33f04120535bdfe97b5f65b79d3c90d708",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-11-16",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "06b4baa33b310388002b3dd1c1ea701ff691c901",
-   "new_value": "c4b90228246aef7ecc6cb2be9d80575a911a0f3a",
-   "external_id": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF"
-  },
-  {
-   "detected_date": "2026-11-16",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "54472221d27c695fca9621b0c3ed52f06c4af707",
-   "new_value": "4b53a35191437de05370da548e59aeabe2a5a09a",
-   "external_id": "Comfy-Org/MiniMax-H3"
-  },
-  {
-   "detected_date": "2026-11-15",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "c8f74e481b9f7743cd91d2d3c4bf108eeb723748",
-   "new_value": "6834923e1a9ca4d15a2349a622b6677bea1404cb",
-   "external_id": "VideoRebirthAI/hyperflow-h3-flash"
-  },
-  {
-   "detected_date": "2026-11-15",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "7bb84cd2cb5a3754facb1b1a09bd8e85fa4e152b",
-   "new_value": "44b13a82d39e63d1c039eece3826e90e2f28eefa",
-   "external_id": "nerkyor/Qwen3.8-27B-Coder390-EfficientThink-Opus5.5-GPT6Astra-Grok4.7-DSV4Pro-K3-SFT-RLOO-MTP-DFlash2"
-  },
-  {
-   "detected_date": "2026-11-15",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "eb7de0903bf4dfbd14a2384ae0c0d14150cfa2c7",
-   "new_value": "adfde38393fee922e02794e0d1c43c75f19866c6",
-   "external_id": "scragnog/YuE2-GGUF"
-  },
-  {
-   "detected_date": "2026-11-15",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "4a8194aa1dd958033ee449b3ad30c37e536b216e",
-   "new_value": "86f37c79a89ec308434485e8846ffe66068c4a56",
-   "external_id": "ampixa/sanoTTS"
-  },
-  {
-   "detected_date": "2026-11-15",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "a1ae34c609d9ef03827f373a215795f22545334c",
-   "new_value": "dd9b8f8be29bd939afe0fb5c712f09ed1ff87bb6",
-   "external_id": "peculiar-ragdoll/Tiel-Coder-35B-A3B-GGUF"
-  },
-  {
-   "detected_date": "2026-11-15",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "fe905e15831c620e804ba9e9382e4d9b4f60b21e",
-   "new_value": "b2292a57700a7cb15a27265d4493416534b20c1f",
-   "external_id": "DeepBeepMeep/MiniMax-H3"
   }
  ]
 }
