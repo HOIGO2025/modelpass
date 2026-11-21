@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-20T03:10:07Z",
- "last_success": "2026-11-20T03:10:05Z",
+ "generated_at": "2026-11-21T03:10:06Z",
+ "last_success": "2026-11-21T03:10:04Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 79969,
- "entities": 1622,
+ "observations": 80969,
+ "entities": 1629,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -83,7 +83,8 @@
   "2026-11-17",
   "2026-11-18",
   "2026-11-19",
-  "2026-11-20"
+  "2026-11-20",
+  "2026-11-21"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -164,34 +165,35 @@
   "2026-11-17": "success",
   "2026-11-18": "success",
   "2026-11-19": "success",
-  "2026-11-20": "success"
+  "2026-11-20": "success",
+  "2026-11-21": "success"
  },
- "days_covered": 78,
+ "days_covered": 79,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 14,
-  "low": 100389,
-  "medium": 617
+  "low": 101711,
+  "medium": 634
  },
- "declared": 1498,
- "has_file": 411,
- "gap": 1101,
- "undeclared": 124,
+ "declared": 1504,
+ "has_file": 412,
+ "gap": 1106,
+ "undeclared": 125,
  "gated": 48,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 855,
-   "nofile": 668
+   "total": 856,
+   "nofile": 669
   },
   {
    "lic": "mit",
-   "total": 274,
-   "nofile": 225
+   "total": 278,
+   "nofile": 229
   },
   {
    "lic": "other",
-   "total": 201,
+   "total": 202,
    "nofile": 79
   },
   {
@@ -235,10 +237,16 @@
   "archives_ok": 79,
   "archives_failed": 0,
   "mirror_kb": 270272,
-  "hours_ago": 13.7,
+  "hours_ago": 37.7,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-11-21",
+   "archive_path": "data/raw/huggingface/2026-11-21.jsonl.gz",
+   "archive_sha256": "887089e10c03dac9e9d33be3f937e4f7ec37d7c3f52249f425e605038ce6285b",
+   "merkle_root": "a7ff4c7ecdff34b268acfcba966f6455b62340d6a9700c8b85c9a73709ea104b"
+  },
   {
    "d": "2026-11-20",
    "archive_path": "data/raw/huggingface/2026-11-20.jsonl.gz",
@@ -292,12 +300,6 @@
    "archive_path": "data/raw/huggingface/2026-11-12.jsonl.gz",
    "archive_sha256": "bd36fc104afa3e3fb3a27b5daeda4c3673f1c9a752069d3adce94e09988a4514",
    "merkle_root": "64ebfcddb5b9187af2abbd15519039a555292282c739cb5af2b9eff133518892"
-  },
-  {
-   "d": "2026-11-11",
-   "archive_path": "data/raw/huggingface/2026-11-11.jsonl.gz",
-   "archive_sha256": "239bdb59eafd3fc8447f27816db8a08fa6eade013208dca94086a27c18719452",
-   "merkle_root": "45f9d2ad72a8b971dc82b2284b11caf8b3454f5cc83a81c423c1a1ee10d36508"
   }
  ],
  "calendar": [
@@ -612,9 +614,149 @@
   {
    "date": "2026-11-20",
    "status": "success"
+  },
+  {
+   "date": "2026-11-21",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-11-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "1bf3b0cee1bc1ff45408d0af7a246ae594fbdf74",
+   "new_value": "177745a635feb2f0adf3db3693297cb63fea3dda",
+   "external_id": "PrunaAI/P-Image-OSS-Comfy"
+  },
+  {
+   "detected_date": "2026-11-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "b8c7bd62cbce2c2eaaf93a9dd67427734b6bcb77",
+   "new_value": "5b4c4b551221b127011fc21bc2517d12f68004af",
+   "external_id": "fidel1234/Krea2"
+  },
+  {
+   "detected_date": "2026-11-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "3fbf688dd9f155d68656f54910532f0ba4be5b1c",
+   "new_value": "0a6fbf3e420801c827095c665996850137f9497e",
+   "external_id": "FINAL-Bench/POCKET-Darwin-180B-GGUF"
+  },
+  {
+   "detected_date": "2026-11-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "9b70ad3f640b2546449bd05387407a64113acf8b",
+   "new_value": "346744eb39b93e3d45b79dfb476a59043504adc6",
+   "external_id": "Maximilian228/Qwen3.8-Flash-Next-NVFP4-GPTQ-Strata"
+  },
+  {
+   "detected_date": "2026-11-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "8efdc41d092da63763f39173b0fff80eac1c0898",
+   "new_value": "abef06b8e0d6d3dc49021460fe09bfbe12e513da",
+   "external_id": "agentionai/Qwen3.8-Flash-Next-Gyro-GGUF"
+  },
+  {
+   "detected_date": "2026-11-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "9e25c28a2e8808d8b2599d780521fd6af24e7558",
+   "new_value": "c61022955565d143035dd4b0994fb6654c9c4899",
+   "external_id": "kindlingai/glm-5.3-exlr8-k2-k3-k4"
+  },
+  {
+   "detected_date": "2026-11-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "ecb87867b0977dfd1554d2fc54105a802b34345a",
+   "new_value": "86c0e7b169e5c8a24a95f031513e14441f24617a",
+   "external_id": "Jackrong/Qwopus3.8-27B-Flash-V2-GGUF"
+  },
+  {
+   "detected_date": "2026-11-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "8b418a58414668e75532ed045c22d9ca018ae2b2",
+   "new_value": "444abe2a0ef1d6fd226b31de0b94133430b4de8e",
+   "external_id": "nlpai-lab/KURE-v1"
+  },
+  {
+   "detected_date": "2026-11-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "2d74ac41a33d7da82f39f7d5720a04c68514a103",
+   "new_value": "2e12bfd869b2962984f97a1f2a26807316d534cc",
+   "external_id": "litert-community/gemma-4-E2B-it-litert-lm"
+  },
+  {
+   "detected_date": "2026-11-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "c5fdb5ccb189668d56333f77ba2629f4cd7535f4",
+   "new_value": "3fc979d1cd72492cd679c5ac2611e0d7ac047ba1",
+   "external_id": "k2-fsa/OmniVoice"
+  },
+  {
+   "detected_date": "2026-11-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "32c1ce1fea57a513eb9386aa62408d47b1cf7ab2",
+   "new_value": "33120a4cfdf0d56786db934a03a093d4675de938",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
+  {
+   "detected_date": "2026-11-21",
+   "severity": "medium",
+   "field": "base_model_ref",
+   "old_value": "[\"alibabasglab/MossFormer2_SR_48K\",\"alibabasglab/MossFormer2_SE_48K\",\"alibabasglab/MossFormer2_SS_16K\",\"oruk/orukeet\",\"HeartMuLa/MuLaCover\",\"OpenMOSS-Team/MOSS-SoundEffect-v2.0\",\"MiniMaxAI/MiniMax-H3\",\"ACE-Step/Ace-Step1.5\",\"ACE-Step/acestep-v15-base\",\"Aratako/Irodori-TTS-500M-v3\",\"Aratako/Irodori-TTS-600M-v3-VoiceDesign\",\"Aratako/Irodori-TTS-v4.1-Small\",\"Aratako/MioCodec-25Hz-44.1kHz-v2\",\"Aratako/MioTTS-1.7B\",\"Aratako/Semantic-DACVAE-Japanese-32dim\",\"Banafo/Kroko-ASR\",\"ConwayResearch/Underdog-Bark-3.0\",\"dots-studio/dots.tts-mf\",\"dots-studio/dots.tts-soar\",\"FermionResearch/Phonon-2\",\"fishaudio/s2-pro\",\"FunAudioLLM/Fun-ASR-Nano-2512-hf\",\"ai-sage/GigaAM-Multilingual\",\"ai-sage/GigaAM-v3\",\"HeartMuLa/HeartCodec-oss-20260123\",\"HeartMuLa/HeartMuLa-oss-3B\",\"HeartMuLa/HeartMuLaGen\",\"IndexTeam/IndexTTS-2\",\"IndexTeam/IndexTTS-2.5\",\"ASLP-lab/MeanVC2\",\"OpenBMB/VoxCPM2\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-v2\",\"OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5\",\"OpenMOSS-Team/MOSS-TTS-Nano-100M\",\"Qwen/Qwen3-ASR-0.6B\",\"Qwen/Qwen3-ASR-1.7B-hf\",\"Qwen/Qwen3-ForcedAligner-0.6B\",\"Qwen/Qwen3-TTS-12Hz-0.6B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice\",\"Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign\",\"Qwen/Qwen3-TTS-Tokenizer-12Hz\",\"ResembleAI/chatterbox\",\"RMSnow/Vevo2\",\"bosonai/higgs-audio-v3-stt\",\"bosonai/higgs-audio-v3-tts-4b\",\"k2-fsa/OmniVoice\",\"KittenML/kitten-tts-2\",\"kyutai/pocket-tts\",\"llm-jp/llm-jp-3-150m\",\"microsoft/VibeVoice-1.5B\",\"microsoft/VibeVoice-ASR\",\"microsoft/VibeVoice-ASR-Streaming-7B\",\"mistralai/Voxtral-Mini-4B-Realtime-2602\",\"mlx-community/SeedVC-MLX\",\"mlx-community/mel-roformer-mlx\",\"mlx-community/supertonic-3-mlx\",\"mlx-community/wavlm-base-plus-mlx\",\"MuScriptor/muscriptor-small\",\"neuphonic/neutts-2e\",\"syvai/hviske-v5.3\",\"nvidia/diar_sortformer_4spk-v1\",\"nvidia/magpie_tts_multilingual_357m\",\"nvidia/nemotron-3.5-asr-streaming-0.6b\",\"nvidia/parakeet-tdt-0.6b-v3\",\"nvidia/personaplex-7b-v1\",\"owensong/Inflect-Micro-v2\",\"stabilityai/stable-audio-3-medium\",\"stabilityai/stable-audio-3-small-music\",\"stabilityai/stable-audio-3-small-sfx\",\"third-intelligence/Haas-ja-v1.0\"]",
+   "new_value": "[\"ASLP-lab/M5-TTS-50M-VoiceClone\",\"ASLP-lab/M5-TTS-50M-CustomVoice\",\"ASLP-lab/M5-TTS-Audio-Tokenizer\",\"ibm-granite/granite-speech-5.0-2b\",\"VoxDance-Lab/VoxMel-0.6B\",\"charactr/vocos-mel-24khz\",\"alibabasglab/MossFormer2_SR_48K\",\"alibabasglab/MossFormer2_SE_48K\",\"alibabasglab/MossFormer2_SS_16K\",\"oruk/orukeet\",\"HeartMuLa/MuLaCover\",\"OpenMOSS-Team/MOSS-SoundEffect-v2.0\",\"MiniMaxAI/MiniMax-H3\",\"ACE-Step/Ace-Step1.5\",\"ACE-Step/acestep-v15-base\",\"Aratako/Irodori-TTS-500M-v3\",\"Aratako/Irodori-TTS-600M-v3-VoiceDesign\",\"Aratako/Irodori-TTS-v4.1-Small\",\"Aratako/MioCodec-25Hz-44.1kHz-v2\",\"Aratako/MioTTS-1.7B\",\"Aratako/Semantic-DACVAE-Japanese-32dim\",\"Banafo/Kroko-ASR\",\"ConwayResearch/Underdog-Bark-3.0\",\"dots-studio/dots.tts-mf\",\"dots-studio/dots.tts-soar\",\"FermionResearch/Phonon-2\",\"fishaudio/s2-pro\",\"FunAudioLLM/Fun-ASR-Nano-2512-hf\",\"ai-sage/GigaAM-Multilingual\",\"ai-sage/GigaAM-v3\",\"HeartMuLa/HeartCodec-oss-20260123\",\"HeartMuLa/HeartMuLa-oss-3B\",\"HeartMuLa/HeartMuLaGen\",\"IndexTeam/IndexTTS-2\",\"IndexTeam/IndexTTS-2.5\",\"ASLP-lab/MeanVC2\",\"OpenBMB/VoxCPM2\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-v2\",\"OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5\",\"OpenMOSS-Team/MOSS-TTS-Nano-100M\",\"Qwen/Qwen3-ASR-0.6B\",\"Qwen/Qwen3-ASR-1.7B-hf\",\"Qwen/Qwen3-ForcedAligner-0.6B\",\"Qwen/Qwen3-TTS-12Hz-0.6B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice\",\"Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign\",\"Qwen/Qwen3-TTS-Tokenizer-12Hz\",\"ResembleAI/chatterbox\",\"RMSnow/Vevo2\",\"bosonai/higgs-audio-v3-stt\",\"bosonai/higgs-audio-v3-tts-4b\",\"k2-fsa/OmniVoice\",\"KittenML/kitten-tts-2\",\"kyutai/pocket-tts\",\"llm-jp/llm-jp-3-150m\",\"microsoft/VibeVoice-1.5B\",\"microsoft/VibeVoice-ASR\",\"microsoft/VibeVoice-ASR-Streaming-7B\",\"mistralai/Voxtral-Mini-4B-Realtime-2602\",\"mlx-community/SeedVC-MLX\",\"mlx-community/mel-roformer-mlx\",\"mlx-community/supertonic-3-mlx\",\"mlx-community/wavlm-base-plus-mlx\",\"MuScriptor/muscriptor-small\",\"neuphonic/neutts-2e\",\"syvai/hviske-v5.3\",\"nvidia/diar_sortformer_4spk-v1\",\"nvidia/magpie_tts_multilingual_357m\",\"nvidia/nemotron-3.5-asr-streaming-0.6b\",\"nvidia/parakeet-tdt-0.6b-v3\",\"nvidia/personaplex-7b-v1\",\"owensong/Inflect-Micro-v2\",\"stabilityai/stable-audio-3-medium\",\"stabilityai/stable-audio-3-small-music\",\"stabilityai/stable-audio-3-small-sfx\",\"third-intelligence/Haas-ja-v1.0\"]",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
+  {
+   "detected_date": "2026-11-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "895c3a49bc3fa70a340399125c650a463535e71c",
+   "new_value": "1860c46f12b7449d0f5b426a7474ab715342bc65",
+   "external_id": "Qwen/Qwen2-VL-2B-Instruct"
+  },
+  {
+   "detected_date": "2026-11-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "fc05daec18b0a78c049392ed2e771dde82bdf654",
+   "new_value": "81a287ca484a5e71148f5beb7f367bb5286d70f9",
+   "external_id": "Qwen/Qwen3.5-27B"
+  },
+  {
+   "detected_date": "2026-11-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "59d61f3ce65a6d9863b86d2e96597125219dc754",
+   "new_value": "2508b2437e382c605eb0fc52b83f5545960f6b4a",
+   "external_id": "Qwen/Qwen3.5-35B-A3B"
+  },
+  {
+   "detected_date": "2026-11-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "0919fb684102ef115126612f3fbb84d1027e7317",
+   "new_value": "1cc7549f2cf0af8ff2f09b24f3c57303c8aa6317",
+   "external_id": "MiniMaxAI/MiniMax-H3"
+  },
+  {
+   "detected_date": "2026-11-21",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "8f33b98937c6031bb49e713dee3e8e185aafd26f",
+   "new_value": "1cda14dd71a3f47115850eb790f416f165da1cb5",
+   "external_id": "Qwen/Qwen3.6-27B"
+  },
   {
    "detected_date": "2026-11-20",
    "severity": "medium",
@@ -798,142 +940,6 @@
    "old_value": "257c95704b87e99d12e4b1cbd65794837009d587",
    "new_value": "8efdc41d092da63763f39173b0fff80eac1c0898",
    "external_id": "agentionai/Qwen3.8-Flash-Next-Gyro-GGUF"
-  },
-  {
-   "detected_date": "2026-11-18",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "5ca1df1d2436bd1ab270b169c5ea6c47aad23641",
-   "new_value": "1f0c987919a34a8c0495ce80abec1934ab613cff",
-   "external_id": "peasantsmith/GLM-5.3-Flash-Maya-GGUF"
-  },
-  {
-   "detected_date": "2026-11-18",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "86f37c79a89ec308434485e8846ffe66068c4a56",
-   "new_value": "25410576d005d7f08d186990fd91f6a2651243de",
-   "external_id": "ampixa/sanoTTS"
-  },
-  {
-   "detected_date": "2026-11-18",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "176bbae94db7b26f00e5b698d95d4f578debc51c",
-   "new_value": "378286d397e160409d4d453e0c9336d54780ac74",
-   "external_id": "DeepBeepMeep/Wan2.1"
-  },
-  {
-   "detected_date": "2026-11-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "8752a32b89ad0e30dfc67a18ed0d63e6f1bcff9b",
-   "new_value": "d9e6b7240921a810734f65b514ec52537534ad2c",
-   "external_id": "fidel1234/Krea2"
-  },
-  {
-   "detected_date": "2026-11-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "5f90473023975e6271b0ed1dd84c4e88e4bbc6d3",
-   "new_value": "8ced60068623def5b74b4d10558117cb61d6482d",
-   "external_id": "MiniMaxAI/MiniMax-H3-Image"
-  },
-  {
-   "detected_date": "2026-11-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "c72ea73534cf71d6f00a78290923fcea96d272f9",
-   "new_value": "3bbf108f2fcf5bd7f1bd1a0b029026356cd4b033",
-   "external_id": "turintech/Qwen3.5-4B-Artemis-GGUF"
-  },
-  {
-   "detected_date": "2026-11-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "2b6be27ffef113143d544dced5228aebfb1cff6a",
-   "new_value": "5559580169f9e97801574707ee911b78d849353d",
-   "external_id": "turintech/Qwen3.5-9B-Artemis-GGUF"
-  },
-  {
-   "detected_date": "2026-11-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "b8de0145a02a4885cb9c3b328eec35484d771d41",
-   "new_value": "55c5a89496c682f1b998282d5f080762327555b6",
-   "external_id": "turintech/gemma-4-E4B-it-Artemis-GGUF"
-  },
-  {
-   "detected_date": "2026-11-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "b49e56f90fb727ca1dc1dde9889ac8b4e1fb69a2",
-   "new_value": "58a5dbc8b32a1652cb440bad33fe1c864fe189c7",
-   "external_id": "turintech/gemma-4-E2B-it-Artemis-GGUF"
-  },
-  {
-   "detected_date": "2026-11-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "0480966938291445591f69f08a13b041c073a96a",
-   "new_value": "cb16b920ec2249c4b280f3aa67942e00b5099122",
-   "external_id": "baidu/Unlimited-OCR-2"
-  },
-  {
-   "detected_date": "2026-11-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "9cd896d4a3793fe628e40868becd0f480168940e",
-   "new_value": "f54960d4620b338f8f83e61dad7c7b0badb23b33",
-   "external_id": "turintech/Qwen3.5-0.8B-Artemis-GGUF"
-  },
-  {
-   "detected_date": "2026-11-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "1a22815d178a79f78bb44e6858f0ee446ae8f0d4",
-   "new_value": "9bc9e0c476448f686659a9f82b5492f1a3c06c4e",
-   "external_id": "kindlingai/glm-5.3-flash-exlr8-k2-k3-k4"
-  },
-  {
-   "detected_date": "2026-11-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "1641ba4f7d71ae3976e05f7c9f621f160bc47a13",
-   "new_value": "8bfdd064e2e6ef207e4dea58a56a57a9f9f7e2ff",
-   "external_id": "ukisai/Swift-1.5-Qwen3.8-Flash-Next-GSQ-RCO-GGUF"
-  },
-  {
-   "detected_date": "2026-11-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "2fd7b4b0f2393ddb39a267fb62df6c010928a6c6",
-   "new_value": "6a88d6a65119856a743be87ec1e6bee6f08e1f93",
-   "external_id": "briaai/RMBG-2.0"
-  },
-  {
-   "detected_date": "2026-11-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "1a4a150fc6707329409eb52e5d75a0e987ac1928",
-   "new_value": "c2bf13b837e33bd851b370285fc7db99482d2ab2",
-   "external_id": "lightx2v/Minimax-h3-Turbo"
-  },
-  {
-   "detected_date": "2026-11-17",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "f7f5b7f5fa82ffc52addd066915886d497f5517b",
-   "new_value": "cd40195554d3cfcb56f34b9adfb66efc790ed5b6",
-   "external_id": "google/diffusiongemma-26B-A4B-it"
-  },
-  {
-   "detected_date": "2026-11-16",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "7ab9f02e63fbd94ab98c19d924b04ca335cd1f0f",
-   "new_value": "44cbbe0e7303f242cb99d21e4475bbf653bcc742",
-   "external_id": "FINAL-Bench/POCKET-Darwin-180B-GGUF"
   }
  ]
 }
