@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-22T03:10:06Z",
- "last_success": "2026-11-22T03:10:04Z",
+ "generated_at": "2026-11-23T03:10:08Z",
+ "last_success": "2026-11-23T03:10:06Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 81969,
- "entities": 1633,
+ "observations": 82969,
+ "entities": 1638,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -85,7 +85,8 @@
   "2026-11-19",
   "2026-11-20",
   "2026-11-21",
-  "2026-11-22"
+  "2026-11-22",
+  "2026-11-23"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -168,25 +169,26 @@
   "2026-11-19": "success",
   "2026-11-20": "success",
   "2026-11-21": "success",
-  "2026-11-22": "success"
+  "2026-11-22": "success",
+  "2026-11-23": "success"
  },
- "days_covered": 80,
+ "days_covered": 81,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 14,
-  "low": 103028,
-  "medium": 645
+  "low": 104440,
+  "medium": 648
  },
- "declared": 1508,
- "has_file": 412,
- "gap": 1110,
+ "declared": 1513,
+ "has_file": 414,
+ "gap": 1113,
  "undeclared": 125,
  "gated": 48,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 858,
-   "nofile": 671
+   "total": 861,
+   "nofile": 674
   },
   {
    "lic": "mit",
@@ -195,7 +197,7 @@
   },
   {
    "lic": "other",
-   "total": 202,
+   "total": 204,
    "nofile": 79
   },
   {
@@ -235,14 +237,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-11-19T13:30:58Z",
-  "archives_ok": 79,
+  "pulled_at": "2026-11-22T13:31:26Z",
+  "archives_ok": 82,
   "archives_failed": 0,
-  "mirror_kb": 270272,
-  "hours_ago": 61.7,
-  "stale": true
+  "mirror_kb": 281144,
+  "hours_ago": 13.7,
+  "stale": false
  },
  "archives": [
+  {
+   "d": "2026-11-23",
+   "archive_path": "data/raw/huggingface/2026-11-23.jsonl.gz",
+   "archive_sha256": "97bbcc7eeb8c00f8824d51b137d6f06e1f2795d17ac2cceab3e5df1abc99ee3d",
+   "merkle_root": "e281d1b7280f81d7e530846a75c9a31f7f1289dd4f6b1bef44fb477160e4a619"
+  },
   {
    "d": "2026-11-22",
    "archive_path": "data/raw/huggingface/2026-11-22.jsonl.gz",
@@ -296,12 +304,6 @@
    "archive_path": "data/raw/huggingface/2026-11-14.jsonl.gz",
    "archive_sha256": "002ab29d5791d06241c51798da43e45155f891b53f3edfa5fffc83e8c99b3573",
    "merkle_root": "1f533dd0c824ffd23a3b640dd48360fd5ea7e04f9b1d52847d2acfa341fbed65"
-  },
-  {
-   "d": "2026-11-13",
-   "archive_path": "data/raw/huggingface/2026-11-13.jsonl.gz",
-   "archive_sha256": "adbd2af10d270b98ce24f0e3459c693b990d8a3088c0bbfba90b66af6fa42b2b",
-   "merkle_root": "c95d3de976579dc5762b9f15b06c8d001b3d210953243f3f97d15970d03f7fab"
   }
  ],
  "calendar": [
@@ -624,9 +626,37 @@
   {
    "date": "2026-11-22",
    "status": "success"
+  },
+  {
+   "date": "2026-11-23",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-11-23",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "1fc1b4ffd73f3f19cdc8d9f2efd1df77116e5de4",
+   "new_value": "56e64d7fe89ad6c82d8b1827db0affb444e7be01",
+   "external_id": "fidel1234/Krea2"
+  },
+  {
+   "detected_date": "2026-11-23",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "1e664931451831589ce16389a55e0d5605dd4bc5",
+   "new_value": "22f1fb9eb4846bdea6bce6b32fc96f05c9db5f6b",
+   "external_id": "ttindall/Qwen3.8-27B-Defiance-Uncensored-MTP-GGUF"
+  },
+  {
+   "detected_date": "2026-11-23",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "236dfdf285828023ca3bcd3f37366c58a3469b13",
+   "new_value": "7fb48d708ca6cd8eeed8f4db0433be18af96984f",
+   "external_id": "Qwen/Qwen3.8-Flash-Next-FP8"
+  },
   {
    "detected_date": "2026-11-22",
    "severity": "medium",
@@ -922,30 +952,6 @@
    "old_value": "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21",
    "new_value": "45d95c497444bbaebe766e1528792fc9158c0c3a",
    "external_id": "black-forest-labs/FLUX.1-dev"
-  },
-  {
-   "detected_date": "2026-11-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "25bb9b8963688237e94750f6f3e48f1947d3c7a3",
-   "new_value": "92ee0a3c801d3ffbec16626c3b9f5fe60e778253",
-   "external_id": "trl-internal-testing/tiny-Qwen3ForCausalLM"
-  },
-  {
-   "detected_date": "2026-11-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "7a103b33f04120535bdfe97b5f65b79d3c90d708",
-   "new_value": "32c1ce1fea57a513eb9386aa62408d47b1cf7ab2",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-11-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "f831ab66814297da540d832a5235f8e904f29d06",
-   "new_value": "1f5d44f794ef598de7b6f529ef7923729b7e5408",
-   "external_id": "moonshotai/Kimi-K3"
   }
  ]
 }
