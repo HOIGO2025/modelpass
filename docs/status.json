@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-23T03:10:08Z",
- "last_success": "2026-11-23T03:10:06Z",
+ "generated_at": "2026-11-24T03:10:04Z",
+ "last_success": "2026-11-24T03:10:02Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 82969,
- "entities": 1638,
+ "observations": 83969,
+ "entities": 1646,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -86,7 +86,8 @@
   "2026-11-20",
   "2026-11-21",
   "2026-11-22",
-  "2026-11-23"
+  "2026-11-23",
+  "2026-11-24"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -170,25 +171,26 @@
   "2026-11-20": "success",
   "2026-11-21": "success",
   "2026-11-22": "success",
-  "2026-11-23": "success"
+  "2026-11-23": "success",
+  "2026-11-24": "success"
  },
- "days_covered": 81,
+ "days_covered": 82,
  "days_missing": 0,
  "changes_by_severity": {
-  "high": 14,
-  "low": 104440,
-  "medium": 648
+  "high": 16,
+  "low": 105773,
+  "medium": 653
  },
- "declared": 1513,
- "has_file": 414,
- "gap": 1113,
- "undeclared": 125,
- "gated": 48,
+ "declared": 1520,
+ "has_file": 415,
+ "gap": 1119,
+ "undeclared": 126,
+ "gated": 50,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 861,
-   "nofile": 674
+   "total": 867,
+   "nofile": 680
   },
   {
    "lic": "mit",
@@ -197,7 +199,7 @@
   },
   {
    "lic": "other",
-   "total": 204,
+   "total": 205,
    "nofile": 79
   },
   {
@@ -237,14 +239,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-11-22T13:31:26Z",
-  "archives_ok": 82,
+  "pulled_at": "2026-11-23T13:54:00Z",
+  "archives_ok": 83,
   "archives_failed": 0,
-  "mirror_kb": 281144,
-  "hours_ago": 13.7,
+  "mirror_kb": 284856,
+  "hours_ago": 13.3,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-11-24",
+   "archive_path": "data/raw/huggingface/2026-11-24.jsonl.gz",
+   "archive_sha256": "3b00f3d2cc94748d432ad58266f3a4e16e18e5cbeb2c8e1c5dcd48c187e55648",
+   "merkle_root": "c0ac9dd9e8ce7867f462a569c3f979b2fadb265ddbb2053ced77bdc53a087953"
+  },
   {
    "d": "2026-11-23",
    "archive_path": "data/raw/huggingface/2026-11-23.jsonl.gz",
@@ -298,12 +306,6 @@
    "archive_path": "data/raw/huggingface/2026-11-15.jsonl.gz",
    "archive_sha256": "708b573700dbc74038e1c4a5f2e2816c8ac2b44a8c55cf1d431c066d97ef5826",
    "merkle_root": "881331e117d0eb1c250d999866c46d50250c951d4f0907043ce06509f02e25c7"
-  },
-  {
-   "d": "2026-11-14",
-   "archive_path": "data/raw/huggingface/2026-11-14.jsonl.gz",
-   "archive_sha256": "002ab29d5791d06241c51798da43e45155f891b53f3edfa5fffc83e8c99b3573",
-   "merkle_root": "1f533dd0c824ffd23a3b640dd48360fd5ea7e04f9b1d52847d2acfa341fbed65"
   }
  ],
  "calendar": [
@@ -630,9 +632,69 @@
   {
    "date": "2026-11-23",
    "status": "success"
+  },
+  {
+   "date": "2026-11-24",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-11-24",
+   "severity": "high",
+   "field": "is_gated",
+   "old_value": "0",
+   "new_value": "1",
+   "external_id": "Qwen/Qwen3.8-Flash-Next-FP8"
+  },
+  {
+   "detected_date": "2026-11-24",
+   "severity": "high",
+   "field": "is_gated",
+   "old_value": "0",
+   "new_value": "1",
+   "external_id": "Qwen/Qwen3.8-Flash-Next"
+  },
+  {
+   "detected_date": "2026-11-24",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "45fd08764f2b0bf16b03a5483a80e5c7aaec8772",
+   "new_value": "8078d149286eec7193795413b9e0643da6d11fa1",
+   "external_id": "unsloth/Inkling-2-Mini-GGUF"
+  },
+  {
+   "detected_date": "2026-11-24",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "ae30db608bb603dafa88289cacf85d1571b18df4",
+   "new_value": "9c95cd8f4a34be7a9d47e1b53cfcc12c9cb75bbc",
+   "external_id": "nphSi/Z-Image-Lora"
+  },
+  {
+   "detected_date": "2026-11-24",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "89c635085f539d03ad35485ed542c5a286e3c6d6",
+   "new_value": "a70325ac34ca5c0c83df578bb5e02237460c1d8d",
+   "external_id": "Comfy-Org/MiniMax-H3-Image"
+  },
+  {
+   "detected_date": "2026-11-24",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "dc9e8a57022bc57103906ab77cf165d2efdb4559",
+   "new_value": "f3034aabaf4b40f02edcb52bc584d057f1da9914",
+   "external_id": "agentionai/Qwen3.8-Flash-Next-Gyro-GGUF"
+  },
+  {
+   "detected_date": "2026-11-24",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "5140b027d3c416e5e3719002f98f09a196e0db6a",
+   "new_value": "8aa1ea478487ca24608573bbc7c4f4e3ecac3f91",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
   {
    "detected_date": "2026-11-23",
    "severity": "medium",
@@ -896,62 +958,6 @@
    "old_value": "44cbbe0e7303f242cb99d21e4475bbf653bcc742",
    "new_value": "3fbf688dd9f155d68656f54910532f0ba4be5b1c",
    "external_id": "FINAL-Bench/POCKET-Darwin-180B-GGUF"
-  },
-  {
-   "detected_date": "2026-11-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "1f0c987919a34a8c0495ce80abec1934ab613cff",
-   "new_value": "6f6c6a8394c32f556c09bea0a06dce0b76a3dc37",
-   "external_id": "peasantsmith/GLM-5.3-Flash-Maya-GGUF"
-  },
-  {
-   "detected_date": "2026-11-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "9d36114cf7a2e03a45c28f5cc4987d20ebfdb6c1",
-   "new_value": "09192d1abae1e57e1a2fcbc5b701cd1d9e2abd51",
-   "external_id": "black-forest-labs/flux-3-image-klein-comfy"
-  },
-  {
-   "detected_date": "2026-11-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "ed69cc815b7fcdc1429f6ce7bb00db4a3d462574",
-   "new_value": "903acbd734a8af07c50a65a019536d92393a6166",
-   "external_id": "RedHatAI/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-FP8"
-  },
-  {
-   "detected_date": "2026-11-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "2515a3ea0afec1dd22d0c7794b3a91557804d195",
-   "new_value": "36f171c15db66576b4b40a4011eb77fe9ac770c2",
-   "external_id": "MiniMaxAI/MiniMax-M2.5"
-  },
-  {
-   "detected_date": "2026-11-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "4d01dfe0332d63057c186e0b262165819efb6611",
-   "new_value": "94b44e57fb4797fde1c1872bed70aef3c93a07f6",
-   "external_id": "moonshotai/Kimi-K2.5"
-  },
-  {
-   "detected_date": "2026-11-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "6db57163fa56fa0e00d4b820169908ac0d3a219d",
-   "new_value": "c3314bf03b67c8e547516e9c5fda87c08a88d480",
-   "external_id": "trl-internal-testing/tiny-Qwen3MoeForCausalLM"
-  },
-  {
-   "detected_date": "2026-11-20",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21",
-   "new_value": "45d95c497444bbaebe766e1528792fc9158c0c3a",
-   "external_id": "black-forest-labs/FLUX.1-dev"
   }
  ]
 }
