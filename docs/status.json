@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-25T03:10:05Z",
- "last_success": "2026-11-25T03:10:02Z",
+ "generated_at": "2026-11-26T03:10:10Z",
+ "last_success": "2026-11-26T03:10:08Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 84969,
- "entities": 1655,
+ "observations": 85969,
+ "entities": 1662,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -88,7 +88,8 @@
   "2026-11-22",
   "2026-11-23",
   "2026-11-24",
-  "2026-11-25"
+  "2026-11-25",
+  "2026-11-26"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -174,35 +175,36 @@
   "2026-11-22": "success",
   "2026-11-23": "success",
   "2026-11-24": "success",
-  "2026-11-25": "success"
+  "2026-11-25": "success",
+  "2026-11-26": "success"
  },
- "days_covered": 83,
+ "days_covered": 84,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 16,
-  "low": 107103,
-  "medium": 664
+  "low": 108445,
+  "medium": 671
  },
- "declared": 1528,
- "has_file": 419,
- "gap": 1123,
- "undeclared": 127,
- "gated": 50,
+ "declared": 1534,
+ "has_file": 421,
+ "gap": 1127,
+ "undeclared": 128,
+ "gated": 51,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 871,
-   "nofile": 683
+   "total": 874,
+   "nofile": 686
   },
   {
    "lic": "mit",
-   "total": 280,
+   "total": 281,
    "nofile": 230
   },
   {
    "lic": "other",
-   "total": 207,
-   "nofile": 79
+   "total": 209,
+   "nofile": 80
   },
   {
    "lic": "cc-by-nc-4.0",
@@ -241,14 +243,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-11-24T13:31:15Z",
-  "archives_ok": 84,
+  "pulled_at": "2026-11-25T14:04:19Z",
+  "archives_ok": 85,
   "archives_failed": 0,
-  "mirror_kb": 288556,
-  "hours_ago": 13.7,
+  "mirror_kb": 292904,
+  "hours_ago": 13.1,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-11-26",
+   "archive_path": "data/raw/huggingface/2026-11-26.jsonl.gz",
+   "archive_sha256": "5eaabf7e3c008395e4a5fc51bb44252a2f2a3b3bcca54e50eabaadd21b2ae1cc",
+   "merkle_root": "e3f1f06ac2d7b1be801c19d991afb983f8958a791ed12c2312d6d163afa10555"
+  },
   {
    "d": "2026-11-25",
    "archive_path": "data/raw/huggingface/2026-11-25.jsonl.gz",
@@ -302,12 +310,6 @@
    "archive_path": "data/raw/huggingface/2026-11-17.jsonl.gz",
    "archive_sha256": "bda4a4dbc4942c9b027bc8c11158d6899f71e79aba1afdcfb3d77ca1cae55c3e",
    "merkle_root": "030ee7190a1255e5fdf1932dabf889a661ab2f162bc53b6174edb27c849f562d"
-  },
-  {
-   "d": "2026-11-16",
-   "archive_path": "data/raw/huggingface/2026-11-16.jsonl.gz",
-   "archive_sha256": "6a4c36f4e4ef2d8ff570eb8830dbed5e912e205e1984755647eb0c24446e5e6b",
-   "merkle_root": "f2490bcc1a825289025f5fe7e9571f00d838c1f967d6d3c573a2c9ce8612ea71"
   }
  ],
  "calendar": [
@@ -642,9 +644,69 @@
   {
    "date": "2026-11-25",
    "status": "success"
+  },
+  {
+   "date": "2026-11-26",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-11-26",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "e8a2cecf0e78914f07cc27b9be711a9b2c7561d9",
+   "new_value": "0bdc580634ceac4c4d921f452777bf44228de9af",
+   "external_id": "ggml-org/Inkling-2-Mini-GGUF"
+  },
+  {
+   "detected_date": "2026-11-26",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "bcdcd40ac8e4aaa742540f15c0909fd062b51466",
+   "new_value": "d243fa89e6a5e09928cf52880d87bf831aa04aef",
+   "external_id": "nphSi/Z-Image-Lora"
+  },
+  {
+   "detected_date": "2026-11-26",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "927f5be31280298a51cf29af8a29cb111ed812c5",
+   "new_value": "6bc7caf42bfcd5873ed76309cd0785cb1f550f51",
+   "external_id": "hindsight-ai/hs-rerank-1"
+  },
+  {
+   "detected_date": "2026-11-26",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "c61022955565d143035dd4b0994fb6654c9c4899",
+   "new_value": "501d259894bf0de607ee4aa6f8a564a14d0c6b63",
+   "external_id": "kindlingai/glm-5.3-exlr8-k2-k3-k4"
+  },
+  {
+   "detected_date": "2026-11-26",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "2561d5412ae97fd05917bbf88e9e783e420002f1",
+   "new_value": "980eac2998ce76c55aee3b332cc8bb8007833708",
+   "external_id": "ampixa/sanoTTS"
+  },
+  {
+   "detected_date": "2026-11-26",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "047ec541cc3f7e50c583acd56e0177ae286c4078",
+   "new_value": "dac3915042a8ddfbb79f87b108214fda57e4b753",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
+  {
+   "detected_date": "2026-11-26",
+   "severity": "medium",
+   "field": "base_model_ref",
+   "old_value": "[\"ASLP-lab/M5-TTS-50M-VoiceClone\",\"ASLP-lab/M5-TTS-50M-CustomVoice\",\"ASLP-lab/M5-TTS-Audio-Tokenizer\",\"ibm-granite/granite-speech-5.0-2b\",\"VoxDance-Lab/VoxMel-0.6B\",\"charactr/vocos-mel-24khz\",\"alibabasglab/MossFormer2_SR_48K\",\"alibabasglab/MossFormer2_SE_48K\",\"alibabasglab/MossFormer2_SS_16K\",\"oruk/orukeet\",\"HeartMuLa/MuLaCover\",\"OpenMOSS-Team/MOSS-SoundEffect-v2.0\",\"MiniMaxAI/MiniMax-H3\",\"ACE-Step/Ace-Step1.5\",\"ACE-Step/acestep-v15-base\",\"Aratako/Irodori-TTS-500M-v3\",\"Aratako/Irodori-TTS-600M-v3-VoiceDesign\",\"Aratako/Irodori-TTS-v4.1-Small\",\"Aratako/MioCodec-25Hz-44.1kHz-v2\",\"Aratako/MioTTS-1.7B\",\"Aratako/Semantic-DACVAE-Japanese-32dim\",\"Banafo/Kroko-ASR\",\"ConwayResearch/Underdog-Bark-3.0\",\"dots-studio/dots.tts-mf\",\"dots-studio/dots.tts-soar\",\"FermionResearch/Phonon-2\",\"fishaudio/s2-pro\",\"FunAudioLLM/Fun-ASR-Nano-2512-hf\",\"ai-sage/GigaAM-Multilingual\",\"ai-sage/GigaAM-v3\",\"HeartMuLa/HeartCodec-oss-20260123\",\"HeartMuLa/HeartMuLa-oss-3B\",\"HeartMuLa/HeartMuLaGen\",\"IndexTeam/IndexTTS-2\",\"IndexTeam/IndexTTS-2.5\",\"ASLP-lab/MeanVC2\",\"OpenBMB/VoxCPM2\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-v2\",\"OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5\",\"OpenMOSS-Team/MOSS-TTS-Nano-100M\",\"Qwen/Qwen3-ASR-0.6B\",\"Qwen/Qwen3-ASR-1.7B-hf\",\"Qwen/Qwen3-ForcedAligner-0.6B\",\"Qwen/Qwen3-TTS-12Hz-0.6B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice\",\"Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign\",\"Qwen/Qwen3-TTS-Tokenizer-12Hz\",\"ResembleAI/chatterbox\",\"RMSnow/Vevo2\",\"bosonai/higgs-audio-v3-stt\",\"bosonai/higgs-audio-v3-tts-4b\",\"k2-fsa/OmniVoice\",\"KittenML/kitten-tts-2\",\"kyutai/pocket-tts\",\"llm-jp/llm-jp-3-150m\",\"microsoft/VibeVoice-1.5B\",\"microsoft/VibeVoice-ASR\",\"microsoft/VibeVoice-ASR-Streaming-7B\",\"mistralai/Voxtral-Mini-4B-Realtime-2602\",\"mlx-community/SeedVC-MLX\",\"mlx-community/mel-roformer-mlx\",\"mlx-community/supertonic-3-mlx\",\"mlx-community/wavlm-base-plus-mlx\",\"MuScriptor/muscriptor-small\",\"neuphonic/neutts-2e\",\"syvai/hviske-v5.3\",\"nvidia/diar_sortformer_4spk-v1\",\"nvidia/magpie_tts_multilingual_357m\",\"nvidia/nemotron-3.5-asr-streaming-0.6b\",\"nvidia/parakeet-tdt-0.6b-v3\",\"nvidia/personaplex-7b-v1\",\"owensong/Inflect-Micro-v2\",\"stabilityai/stable-audio-3-medium\",\"stabilityai/stable-audio-3-small-music\",\"stabilityai/stable-audio-3-small-sfx\",\"third-intelligence/Haas-ja-v1.0\"]",
+   "new_value": "[\"kobimusic/dettato\",\"kobimusic/dettato-evidence\",\"kobimusic/dettato-grouper\",\"kobimusic/dettato-drums\",\"gradium/phonon-40m-fr\",\"gradium/phonon-40m-multilingual\",\"Reson8/Rumble-2-Flash\",\"ASLP-lab/M5-TTS-50M-VoiceClone\",\"ASLP-lab/M5-TTS-50M-CustomVoice\",\"ASLP-lab/M5-TTS-Audio-Tokenizer\",\"ibm-granite/granite-speech-5.0-2b\",\"VoxDance-Lab/VoxMel-0.6B\",\"charactr/vocos-mel-24khz\",\"alibabasglab/MossFormer2_SR_48K\",\"alibabasglab/MossFormer2_SE_48K\",\"alibabasglab/MossFormer2_SS_16K\",\"oruk/orukeet\",\"HeartMuLa/MuLaCover\",\"OpenMOSS-Team/MOSS-SoundEffect-v2.0\",\"MiniMaxAI/MiniMax-H3\",\"ACE-Step/Ace-Step1.5\",\"ACE-Step/acestep-v15-base\",\"Aratako/Irodori-TTS-500M-v3\",\"Aratako/Irodori-TTS-600M-v3-VoiceDesign\",\"Aratako/Irodori-TTS-v4.1-Small\",\"Aratako/MioCodec-25Hz-44.1kHz-v2\",\"Aratako/MioTTS-1.7B\",\"Aratako/Semantic-DACVAE-Japanese-32dim\",\"Banafo/Kroko-ASR\",\"ConwayResearch/Underdog-Bark-3.0\",\"dots-studio/dots.tts-mf\",\"dots-studio/dots.tts-soar\",\"FermionResearch/Phonon-2\",\"fishaudio/s2-pro\",\"FunAudioLLM/Fun-ASR-Nano-2512-hf\",\"ai-sage/GigaAM-Multilingual\",\"ai-sage/GigaAM-v3\",\"HeartMuLa/HeartCodec-oss-20260123\",\"HeartMuLa/HeartMuLa-oss-3B\",\"HeartMuLa/HeartMuLaGen\",\"IndexTeam/IndexTTS-2\",\"IndexTeam/IndexTTS-2.5\",\"ASLP-lab/MeanVC2\",\"OpenBMB/VoxCPM2\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano\",\"OpenMOSS-Team/MOSS-Audio-Tokenizer-v2\",\"OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5\",\"OpenMOSS-Team/MOSS-TTS-Nano-100M\",\"Qwen/Qwen3-ASR-0.6B\",\"Qwen/Qwen3-ASR-1.7B-hf\",\"Qwen/Qwen3-ForcedAligner-0.6B\",\"Qwen/Qwen3-TTS-12Hz-0.6B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-Base\",\"Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice\",\"Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign\",\"Qwen/Qwen3-TTS-Tokenizer-12Hz\",\"ResembleAI/chatterbox\",\"RMSnow/Vevo2\",\"bosonai/higgs-audio-v3-stt\",\"bosonai/higgs-audio-v3-tts-4b\",\"k2-fsa/OmniVoice\",\"KaleComputer/kale-tts-1-nano\",\"KaleComputer/kale-tts-1-tiny\",\"KittenML/kitten-tts-2\",\"kyutai/pocket-tts\",\"llm-jp/llm-jp-3-150m\",\"microsoft/VibeVoice-1.5B\",\"microsoft/VibeVoice-ASR\",\"microsoft/VibeVoice-ASR-Streaming-7B\",\"mistralai/Voxtral-Mini-4B-Realtime-2602\",\"mlx-community/SeedVC-MLX\",\"mlx-community/mel-roformer-mlx\",\"mlx-community/supertonic-3-mlx\",\"mlx-community/wavlm-base-plus-mlx\",\"MuScriptor/muscriptor-small\",\"neuphonic/neutts-2e\",\"syvai/hviske-v5.3\",\"nvidia/diar_sortformer_4spk-v1\",\"nvidia/magpie_tts_multilingual_357m\",\"nvidia/nemotron-3.5-asr-streaming-0.6b\",\"nvidia/parakeet-tdt-0.6b-v3\",\"nvidia/personaplex-7b-v1\",\"owensong/Inflect-Micro-v2\",\"stabilityai/stable-audio-3-medium\",\"stabilityai/stable-audio-3-small-music\",\"stabilityai/stable-audio-3-small-sfx\",\"third-intelligence/Haas-ja-v1.0\"]",
+   "external_id": "audio-cpp/audio.cpp-gguf"
+  },
   {
    "detected_date": "2026-11-25",
    "severity": "medium",
@@ -908,62 +970,6 @@
    "old_value": "1bf3b0cee1bc1ff45408d0af7a246ae594fbdf74",
    "new_value": "177745a635feb2f0adf3db3693297cb63fea3dda",
    "external_id": "PrunaAI/P-Image-OSS-Comfy"
-  },
-  {
-   "detected_date": "2026-11-21",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "b8c7bd62cbce2c2eaaf93a9dd67427734b6bcb77",
-   "new_value": "5b4c4b551221b127011fc21bc2517d12f68004af",
-   "external_id": "fidel1234/Krea2"
-  },
-  {
-   "detected_date": "2026-11-21",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "3fbf688dd9f155d68656f54910532f0ba4be5b1c",
-   "new_value": "0a6fbf3e420801c827095c665996850137f9497e",
-   "external_id": "FINAL-Bench/POCKET-Darwin-180B-GGUF"
-  },
-  {
-   "detected_date": "2026-11-21",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "9b70ad3f640b2546449bd05387407a64113acf8b",
-   "new_value": "346744eb39b93e3d45b79dfb476a59043504adc6",
-   "external_id": "Maximilian228/Qwen3.8-Flash-Next-NVFP4-GPTQ-Strata"
-  },
-  {
-   "detected_date": "2026-11-21",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "8efdc41d092da63763f39173b0fff80eac1c0898",
-   "new_value": "abef06b8e0d6d3dc49021460fe09bfbe12e513da",
-   "external_id": "agentionai/Qwen3.8-Flash-Next-Gyro-GGUF"
-  },
-  {
-   "detected_date": "2026-11-21",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "9e25c28a2e8808d8b2599d780521fd6af24e7558",
-   "new_value": "c61022955565d143035dd4b0994fb6654c9c4899",
-   "external_id": "kindlingai/glm-5.3-exlr8-k2-k3-k4"
-  },
-  {
-   "detected_date": "2026-11-21",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "ecb87867b0977dfd1554d2fc54105a802b34345a",
-   "new_value": "86c0e7b169e5c8a24a95f031513e14441f24617a",
-   "external_id": "Jackrong/Qwopus3.8-27B-Flash-V2-GGUF"
-  },
-  {
-   "detected_date": "2026-11-21",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "8b418a58414668e75532ed045c22d9ca018ae2b2",
-   "new_value": "444abe2a0ef1d6fd226b31de0b94133430b4de8e",
-   "external_id": "nlpai-lab/KURE-v1"
   }
  ]
 }
