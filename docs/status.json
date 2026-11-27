@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-26T03:10:10Z",
- "last_success": "2026-11-26T03:10:08Z",
+ "generated_at": "2026-11-27T03:10:05Z",
+ "last_success": "2026-11-27T03:10:02Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 85969,
- "entities": 1662,
+ "observations": 86969,
+ "entities": 1664,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -89,7 +89,8 @@
   "2026-11-23",
   "2026-11-24",
   "2026-11-25",
-  "2026-11-26"
+  "2026-11-26",
+  "2026-11-27"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -176,25 +177,26 @@
   "2026-11-23": "success",
   "2026-11-24": "success",
   "2026-11-25": "success",
-  "2026-11-26": "success"
+  "2026-11-26": "success",
+  "2026-11-27": "success"
  },
- "days_covered": 84,
+ "days_covered": 85,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 16,
-  "low": 108445,
-  "medium": 671
+  "low": 109473,
+  "medium": 676
  },
- "declared": 1534,
+ "declared": 1536,
  "has_file": 421,
- "gap": 1127,
+ "gap": 1129,
  "undeclared": 128,
  "gated": 51,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 874,
-   "nofile": 686
+   "total": 876,
+   "nofile": 688
   },
   {
    "lic": "mit",
@@ -243,14 +245,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-11-25T14:04:19Z",
-  "archives_ok": 85,
+  "pulled_at": "2026-11-26T13:31:05Z",
+  "archives_ok": 86,
   "archives_failed": 0,
-  "mirror_kb": 292904,
-  "hours_ago": 13.1,
+  "mirror_kb": 295952,
+  "hours_ago": 13.7,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-11-27",
+   "archive_path": "data/raw/huggingface/2026-11-27.jsonl.gz",
+   "archive_sha256": "fda13e3ca71d30ac8472ffdec451279b1fda3a48e8bf620b280267d3f9ebc880",
+   "merkle_root": "2242796b3f7d26da30eceab6530a150da5be27c8c018feded27b8e116aaf7e02"
+  },
   {
    "d": "2026-11-26",
    "archive_path": "data/raw/huggingface/2026-11-26.jsonl.gz",
@@ -304,12 +312,6 @@
    "archive_path": "data/raw/huggingface/2026-11-18.jsonl.gz",
    "archive_sha256": "9cac7fa1dff0d6cc23e2db915fe66b6a43436e4efbeca1b7af31b376aaa9254b",
    "merkle_root": "a1751efac9d66ce975f09e490f04be848d4deb4c2ec2fb69e3886757ff9426d3"
-  },
-  {
-   "d": "2026-11-17",
-   "archive_path": "data/raw/huggingface/2026-11-17.jsonl.gz",
-   "archive_sha256": "bda4a4dbc4942c9b027bc8c11158d6899f71e79aba1afdcfb3d77ca1cae55c3e",
-   "merkle_root": "030ee7190a1255e5fdf1932dabf889a661ab2f162bc53b6174edb27c849f562d"
   }
  ],
  "calendar": [
@@ -648,9 +650,53 @@
   {
    "date": "2026-11-26",
    "status": "success"
+  },
+  {
+   "date": "2026-11-27",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-11-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "82b34b9b0e5bc2e3e7b6d617ec8cc3e0f9692ee2",
+   "new_value": "c311009ce2b34e35c07a0f374b7eeff24a8d95c6",
+   "external_id": "AtomicChat/Inkling-2-Mini-Uncensored-GGUF"
+  },
+  {
+   "detected_date": "2026-11-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "d243fa89e6a5e09928cf52880d87bf831aa04aef",
+   "new_value": "e31c1894ebb67423342769ad2b53ca641ad8d073",
+   "external_id": "nphSi/Z-Image-Lora"
+  },
+  {
+   "detected_date": "2026-11-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "980eac2998ce76c55aee3b332cc8bb8007833708",
+   "new_value": "72ad9e997d03724e100aa0ca86200cd67ab5e8f2",
+   "external_id": "ampixa/sanoTTS"
+  },
+  {
+   "detected_date": "2026-11-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "8031d2e6ce6631b7fc45629dddfc00271116d981",
+   "new_value": "8d451f7dd78e428d06b6b2f4ee2b2b43f24932f5",
+   "external_id": "distil-whisper/distil-large-v3"
+  },
+  {
+   "detected_date": "2026-11-27",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "49b093a39c19169a8a81721dcc541e07e945232f",
+   "new_value": "69ecadd4932572caf956135d41cbcdbd697aa442",
+   "external_id": "Lightricks/LTX-2.5"
+  },
   {
    "detected_date": "2026-11-26",
    "severity": "medium",
@@ -930,46 +976,6 @@
    "old_value": "a829fd0e060bb84554da0dfd354d0de0f7712b7f",
    "new_value": "892d11dc7320304e154eff120028c58cffd4e739",
    "external_id": "Alibaba-NLP/gte-base-en-v1.5"
-  },
-  {
-   "detected_date": "2026-11-22",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "b2292a57700a7cb15a27265d4493416534b20c1f",
-   "new_value": "da05e475e3266b30efbdc98befdf7888a069bbcc",
-   "external_id": "DeepBeepMeep/MiniMax-H3"
-  },
-  {
-   "detected_date": "2026-11-22",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "104333d6af6f97649377c2afbde10a7704870c7b",
-   "new_value": "64398e609b86432f369a09219c102a3eaa1d3c9e",
-   "external_id": "Alibaba-NLP/gte-large-en-v1.5"
-  },
-  {
-   "detected_date": "2026-11-22",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
-   "new_value": "6dde5e2ebcac02a5459a3cf310346901fa1dc8ff",
-   "external_id": "Alibaba-NLP/gte-multilingual-base"
-  },
-  {
-   "detected_date": "2026-11-22",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "33120a4cfdf0d56786db934a03a093d4675de938",
-   "new_value": "5140b027d3c416e5e3719002f98f09a196e0db6a",
-   "external_id": "audio-cpp/audio.cpp-gguf"
-  },
-  {
-   "detected_date": "2026-11-21",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "1bf3b0cee1bc1ff45408d0af7a246ae594fbdf74",
-   "new_value": "177745a635feb2f0adf3db3693297cb63fea3dda",
-   "external_id": "PrunaAI/P-Image-OSS-Comfy"
   }
  ]
 }
