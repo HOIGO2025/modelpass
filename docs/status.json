@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-27T03:10:05Z",
- "last_success": "2026-11-27T03:10:02Z",
+ "generated_at": "2026-11-28T03:10:05Z",
+ "last_success": "2026-11-28T03:10:03Z",
  "hours_since_success": 0.0,
  "stale": false,
- "observations": 86969,
- "entities": 1664,
+ "observations": 87969,
+ "entities": 1679,
  "days": [
   "2026-09-04",
   "2026-09-05",
@@ -90,7 +90,8 @@
   "2026-11-24",
   "2026-11-25",
   "2026-11-26",
-  "2026-11-27"
+  "2026-11-27",
+  "2026-11-28"
  ],
  "first_day": "2026-09-04",
  "day_status": {
@@ -178,39 +179,40 @@
   "2026-11-24": "success",
   "2026-11-25": "success",
   "2026-11-26": "success",
-  "2026-11-27": "success"
+  "2026-11-27": "success",
+  "2026-11-28": "success"
  },
- "days_covered": 85,
+ "days_covered": 86,
  "days_missing": 0,
  "changes_by_severity": {
   "high": 16,
-  "low": 109473,
-  "medium": 676
+  "low": 110797,
+  "medium": 680
  },
- "declared": 1536,
- "has_file": 421,
- "gap": 1129,
- "undeclared": 128,
+ "declared": 1550,
+ "has_file": 431,
+ "gap": 1133,
+ "undeclared": 129,
  "gated": 51,
  "licenses": [
   {
    "lic": "apache-2.0",
-   "total": 876,
-   "nofile": 688
+   "total": 880,
+   "nofile": 690
   },
   {
    "lic": "mit",
-   "total": 281,
-   "nofile": 230
+   "total": 283,
+   "nofile": 231
   },
   {
    "lic": "other",
-   "total": 209,
-   "nofile": 80
+   "total": 215,
+   "nofile": 81
   },
   {
    "lic": "cc-by-nc-4.0",
-   "total": 33,
+   "total": 34,
    "nofile": 30
   },
   {
@@ -245,14 +247,20 @@
   }
  ],
  "offhost": {
-  "pulled_at": "2026-11-26T13:31:05Z",
-  "archives_ok": 86,
+  "pulled_at": "2026-11-27T13:31:04Z",
+  "archives_ok": 87,
   "archives_failed": 0,
-  "mirror_kb": 295952,
+  "mirror_kb": 300300,
   "hours_ago": 13.7,
   "stale": false
  },
  "archives": [
+  {
+   "d": "2026-11-28",
+   "archive_path": "data/raw/huggingface/2026-11-28.jsonl.gz",
+   "archive_sha256": "9d811aac2422b2abee8526d5956f7dfe29ec3a9ca27b0564a2193d7aad82db09",
+   "merkle_root": "52b364650d29891dfc4d243b89afba994d60f885da7462c613007123793c6343"
+  },
   {
    "d": "2026-11-27",
    "archive_path": "data/raw/huggingface/2026-11-27.jsonl.gz",
@@ -306,12 +314,6 @@
    "archive_path": "data/raw/huggingface/2026-11-19.jsonl.gz",
    "archive_sha256": "dc07ead3a91c62621b654c44e3bc1342083ef698a3401142442ebd65aee169e2",
    "merkle_root": "5fc61628f404ef9763f3ad18d0e2a062db15cb51939f62191be96e894edd3912"
-  },
-  {
-   "d": "2026-11-18",
-   "archive_path": "data/raw/huggingface/2026-11-18.jsonl.gz",
-   "archive_sha256": "9cac7fa1dff0d6cc23e2db915fe66b6a43436e4efbeca1b7af31b376aaa9254b",
-   "merkle_root": "a1751efac9d66ce975f09e490f04be848d4deb4c2ec2fb69e3886757ff9426d3"
   }
  ],
  "calendar": [
@@ -654,9 +656,45 @@
   {
    "date": "2026-11-27",
    "status": "success"
+  },
+  {
+   "date": "2026-11-28",
+   "status": "success"
   }
  ],
  "notable_changes": [
+  {
+   "detected_date": "2026-11-28",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "c311009ce2b34e35c07a0f374b7eeff24a8d95c6",
+   "new_value": "c5667da36fe35da026fbee394d00547a921e98ab",
+   "external_id": "AtomicChat/Inkling-2-Mini-Uncensored-GGUF"
+  },
+  {
+   "detected_date": "2026-11-28",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "e31c1894ebb67423342769ad2b53ca641ad8d073",
+   "new_value": "4702326492c15ea54ba7eebebcbce0106c57b054",
+   "external_id": "nphSi/Z-Image-Lora"
+  },
+  {
+   "detected_date": "2026-11-28",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "cd23c6471022c233b7014913a6e471501539d2ba",
+   "new_value": "3cb6d6c0048ff65be53cf81e53f1849899924ea1",
+   "external_id": "agentionai/Qwen3.8-Flash-Next-Gyro-GGUF"
+  },
+  {
+   "detected_date": "2026-11-28",
+   "severity": "medium",
+   "field": "revision",
+   "old_value": "43046b85ec22d584a13f8098c2ed39c889e129c2",
+   "new_value": "297aa8f81ab7e152fa70c00de64e2da596d50572",
+   "external_id": "google/timesfm-3.0-pytorch"
+  },
   {
    "detected_date": "2026-11-27",
    "severity": "medium",
@@ -944,38 +982,6 @@
    "old_value": "ea3bd58cd257d371b65ea54a644e4f61f4bd4156",
    "new_value": "9755622f2dc17e4175c9dc65cf4f973e8c220f26",
    "external_id": "agentionai/Qwen3.8-Flash-Next-Gyro-abliterated-Huihui-GGUF"
-  },
-  {
-   "detected_date": "2026-11-22",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "abef06b8e0d6d3dc49021460fe09bfbe12e513da",
-   "new_value": "dc9e8a57022bc57103906ab77cf165d2efdb4559",
-   "external_id": "agentionai/Qwen3.8-Flash-Next-Gyro-GGUF"
-  },
-  {
-   "detected_date": "2026-11-22",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "2c387d95ea4026aff8110628f888ab767cd3f759",
-   "new_value": "a7b283027639c520725ceaf3cd14c7eec9efdf6a",
-   "external_id": "agentionai/Qwen3.8-27B-AP-GGUF"
-  },
-  {
-   "detected_date": "2026-11-22",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "10c35caafbb80f7dc6a7a432cdd11af10a6d4818",
-   "new_value": "b935172e4bb5dcd0543774a34748fb92422e3027",
-   "external_id": "mlx-community/Qwen3.8-27B-4bit"
-  },
-  {
-   "detected_date": "2026-11-22",
-   "severity": "medium",
-   "field": "revision",
-   "old_value": "a829fd0e060bb84554da0dfd354d0de0f7712b7f",
-   "new_value": "892d11dc7320304e154eff120028c58cffd4e739",
-   "external_id": "Alibaba-NLP/gte-base-en-v1.5"
   }
  ]
 }
